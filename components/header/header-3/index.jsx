@@ -60,8 +60,7 @@ const Header1 = () => {
                   }
                 </Link>
                 {/* End logo */}
-
-                <HeaderSearch />
+                {/* <HeaderSearch /> */}
                 {/* End logo */}
 
                {
@@ -79,6 +78,7 @@ const Header1 = () => {
 
             <div className="col-auto">
               <div className="d-flex items-center">
+              <HeaderSearch />
                 <div className="row x-gap-20 items-center xxl:d-none">
                   <CurrenctyMegaMenu textClass="text-dark-1" />
                   {/* End Megamenu for Currencty */}

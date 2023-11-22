@@ -18,9 +18,27 @@ const index = () => {
             <FooterContent />
             {/* End footer menu content */}
 
-            <div className="col-xl-2 col-lg-4 col-sm-6">
+            <div className="col-xl-3 col-lg-4 col-sm-6">
               {/* <h5 className="text-16 fw-500 mb-30">Mobile</h5> */}
+              <h5 className="text-16 fw-500 mb-30">Sign up to our newsletter</h5>
               {/* <AppButton /> */}
+              <div className="single-field w-100 d-flex flex-column y-gap-20">
+              <div>
+                <input
+                  className=" border border-secondary h-50"
+                  type="text"
+                  placeholder="Your Email"
+                />
+              </div>
+              {/* End email input */}
+
+              <div>
+                <button className="button -md h-50 bg-blue-1 w-100 text-white">
+                  Subscribe
+                </button>
+              </div>
+              {/* End subscribe btn */}
+            </div>
             </div>
           </div>
         </div>
