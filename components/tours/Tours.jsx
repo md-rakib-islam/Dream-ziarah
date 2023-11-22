@@ -28,7 +28,7 @@ const Tours = () => {
       tag:  tour.id === 140 || tour.id === 102 ? "top rated": "best seller",
       slideImg: [`${BASE_URL}/media/${data.content_images[tour.name]}`],
       title: tour.name,
-      location: "Westminster Borough, London",
+      location: "Mecca, Saudi Arabia",
       duration: "16",
       numberOfReviews: "3014",
       price: tour.price,

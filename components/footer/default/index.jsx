@@ -1,9 +1,21 @@
 // import AppButton from "./AppButton";
+"use client";
+import { useCreateNewsLetterMutation } from "@/features/newsLetter/newsLetterSlice";
+import { useState } from "react";
 import ContactInfo from "./ContactInfo";
 import Copyright from "./Copyright";
 import FooterContent from "./FooterContent";
 
 const index = () => {
+  const [email, setEmail] = useState("");
+  const [createNewsLetter, {isLoading}] = useCreateNewsLetterMutation();
+
+  const handleSubmit = async() => {
+    const res = await createNewsLetter(JSON.stringify({email}));
+    setEmail("");
+    // console.log(res);
+  }
+
   return (
     <footer className="footer -type-1">
       <div className="container">
@@ -25,7 +37,11 @@ const index = () => {
               <div className="single-field w-100 d-flex flex-column y-gap-20">
               <div>
                 <input
-                  className=" border border-secondary h-50"
+                  onChange={(e) => setEmail(e.target.value)}
+                  value={email}
+                  required
+                  name="email"
+                  className="border border-secondary h-50"
                   type="text"
                   placeholder="Your Email"
                 />
@@ -33,7 +49,7 @@ const index = () => {
               {/* End email input */}
 
               <div>
-                <button className="button -md h-50 bg-blue-1 w-100 text-white">
+                <button disabled={!email || isLoading} onClick={handleSubmit} className="button -md h-50 bg-blue-1 w-100 text-white">
                   Subscribe
                 </button>
               </div>

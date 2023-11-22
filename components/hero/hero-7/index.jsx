@@ -3,14 +3,20 @@
 
 import { BASE_URL } from "@/constant/constants";
 import { useGetSliderImagesQuery } from "@/features/image/imageApi";
+import { Interweave } from "interweave";
 import { Autoplay, Navigation, Pagination } from "swiper";
 import { Swiper, SwiperSlide } from "swiper/react";
 // import MainFilterSearchBox from "./MainFilterSearchBox";
 
 const index = () => {
   const {isSuccess, data} = useGetSliderImagesQuery();
+  let sliderImageItems = []
   if(isSuccess){
-    console.log("images", data?.homepage_sliders)
+    sliderImageItems = data?.homepage_sliders?.map((item) => ({
+      ...item,
+      image : `${BASE_URL}/${item.image}`
+    }))
+    // console.log("images", data?.homepage_sliders)
   }
   
   return (
@@ -33,7 +39,39 @@ const index = () => {
               prevEl: ".hero7-prev-active",
             }}
           >
-            <SwiperSlide>
+            {
+              sliderImageItems?.map((item) => (<SwiperSlide>
+                <div className="row justify-center text-center">
+                  <div className="col-auto">
+                    <div className="masthead__content">
+                      <div className="masthead__bg">
+                        <img src={item.image} alt="image" />
+                      </div>
+                      <h1
+                      className="text-45 lg:text-40 md:text-30 text-white"
+                      data-aos="fade-up"
+                      data-aos-delay="300"
+                    >
+                       <Interweave
+                        allowAttributes
+                        allowElements
+                        disableLineBreaks={false}
+                        content={item.title}
+                      />
+                    </h1>
+                      <div
+                        className="text-white text-30"
+                        data-aos="fade-up"
+                        data-aos-delay="100"
+                      >
+                        {item.subtitle}
+                      </div>
+                    </div>
+                  </div>
+                </div>
+              </SwiperSlide>))
+            }
+            {/* <SwiperSlide>
               <div className="row justify-center text-center">
                 <div className="col-auto">
                   <div className="masthead__content">
@@ -46,8 +84,8 @@ const index = () => {
                       data-aos-delay="300"
                     >
                       Experience the Spiritual Essence like Never Before.
-                      {/* Unique Houses Are Waiting
-                      <br className="lg:d-none" /> For You */}
+                      Unique Houses Are Waiting
+                      <br className="lg:d-none" /> For You
                     </h1>
                     <div
                       className="text-white text-30"
@@ -59,8 +97,8 @@ const index = () => {
                   </div>
                 </div>
               </div>
-            </SwiperSlide>
-            <SwiperSlide>
+            </SwiperSlide> */}
+            {/* <SwiperSlide>
               <div className="row justify-center text-center">
                 <div className="col-auto">
                   <div className="masthead__content">
@@ -73,8 +111,8 @@ const index = () => {
                       data-aos-delay="300"
                     >
                       Experience the Spiritual Essence like Never Before.
-                      {/* Unique Houses Are Waiting
-                      <br className="lg:d-none" /> For You */}
+                      Unique Houses Are Waiting
+                      <br className="lg:d-none" /> For You
                     </h1>
                     <div
                       className="text-white text-30"
@@ -87,7 +125,7 @@ const index = () => {
                   </div>
                 </div>
               </div>
-            </SwiperSlide>
+            </SwiperSlide> */}
           </Swiper>
 
           <div className="masthead-slider__nav -prev js-prev">
