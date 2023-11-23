@@ -16,7 +16,7 @@ const localConfig =  {
 const nextConfig = {
     images: {
         remotePatterns: [
-          prodConfig
+          localConfig
           // {
           //   protocol: 'https',
           //   hostname: 'ziarahapi.dreamtourism.co.uk',

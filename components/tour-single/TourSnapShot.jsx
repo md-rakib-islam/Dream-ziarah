@@ -6,7 +6,7 @@ const TourSnapShot = () => {
           <i className="icon-clock text-22 text-blue-1 mr-10"></i>
           <div className="text-15 lh-15">
             Duration:
-            <br /> 11h
+            <br /> 3h
           </div>
         </div>
       </div>

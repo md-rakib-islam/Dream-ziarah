@@ -1,9 +1,24 @@
-const IntroTown = () => {
+"use client";
+import { useGetAllContentQuery } from "@/features/content/contentApi";
+import { Interweave } from "interweave";
+import { useSelector } from "react-redux";
+
+const IntroTown = ({slug}) => {
+  const {menuItems} = useSelector(state => state.menus);
+  const destinationId = menuItems?.find((item) => item.name === "Destinations")?.children?.find((item) => item.name.toLowerCase() === slug)?.id;
+  const {isSuccess, data} = useGetAllContentQuery(destinationId);
+
+  let value = "";
+  if(isSuccess){
+    value = data[0]?.value;
+    console.log(data[0]?.value);
+  }
+
   return (
     <>
       <div className="col-xl-8">
         <p className="text-15 text-dark-1">
-          London is a shining example of a metropolis at the highest peak of
+          {/* London is a shining example of a metropolis at the highest peak of
           modernity and boasts an economy and cultural diversity that’s the envy
           of other global superpowers.
           <br />
@@ -19,7 +34,13 @@ const IntroTown = () => {
           culture by visiting places like the National Gallery, the Tate Modern,
           West End, Abbey Road, the Royal Albert Hall, Oxford Street and the
           Westfield Shopping Centers, and areas referenced and seen in
-          literature and film.
+          literature and film. */}
+          <Interweave
+                allowAttributes
+                allowElements
+                disableLineBreaks={false}
+                content={value}
+              />
         </p>
         <a
           href="#"

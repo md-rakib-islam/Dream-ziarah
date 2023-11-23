@@ -6,7 +6,7 @@ import dynamic from "next/dynamic";
 import Slights from "@/components/block/Slights";
 import Blog from "@/components/blog/Blog3";
 // import Cars from "@/components/cars/Cars";
-import LocationTopBar from "@/components/common/LocationTopBar";
+// import LocationTopBar from "@/components/common/LocationTopBar";
 import TopDestinations2 from "@/components/destinations/TopDestinations2";
 import Banner from "@/components/destinations/components/Banner";
 // import Categories from "@/components/destinations/components/Categories";
@@ -26,7 +26,10 @@ export const metadata = {
   description: "GoTrip - Travel & Tour React NextJS Template",
 };
 
-const Destinations = () => {
+const Destinations = ({ params }) => {
+  const slug = params.slug[0];
+  // const {isSuccess, data, isLoading} = useGetImagesByMenuIdQuery(blogId);
+  // const {isSuccess: isBlogDetailSuccess, data : blogDetails, isLoading: isBlogDetailsLoading} = useGetAllBlogContentsQuery(id);
   return (
     <>
       {/* End Page Title */}
@@ -37,13 +40,13 @@ const Destinations = () => {
       {/* <DefaultHeader /> */}
       {/* End Header 1 */}
 
-      <LocationTopBar />
+      {/* <LocationTopBar /> */}
       {/* End location top bar section */}
 
       <section className="layout-pb-md">
         <div className="container">
           <div className="row">
-            <Banner />
+            <Banner slug ={slug}/>
           </div>
           {/* End .row */}
 
@@ -54,11 +57,12 @@ const Destinations = () => {
 
           <div className="row y-gap-20 pt-40">
             <div className="col-auto">
-              <h2>What to know before visiting London</h2>
+              <h2>What to know before visiting {slug.charAt(0).toUpperCase()
+      + slug.slice(1)}</h2>
             </div>
             {/* End .col-auto */}
 
-            <IntroTown />
+            <IntroTown slug={slug}/>
           </div>
           {/* End .row */}
 

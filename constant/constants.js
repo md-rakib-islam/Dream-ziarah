@@ -2,8 +2,8 @@
 //http://192.168.0.8:8002
 
 //base url
-// export const BASE_URL = "http://192.168.0.100:8000";
-export const BASE_URL = "https://ziarahapi.dreamtourism.co.uk";
+export const BASE_URL = "http://192.168.0.100:8000";
+// export const BASE_URL = "https://ziarahapi.dreamtourism.co.uk";
 // export const BASE_URL = "https://api.activemanpowerservices.com/";
 // export const BASE_URL = "https://api.surmainternational.com";
 // export const BASE_URL = "https://api.labbaikintbd.com/";
@@ -987,3 +987,5 @@ export const GET_ALL_CATEGORIZED_ORDER_ITEM_COUNT = `${BASE_URL}/dashboard/api/v
 export const GET_BEST_SELLER_AMOUNT = `${BASE_URL}/dashboard/api/v1/get_best_seller_by_amount/`;
 // Get Best seller Quantity
 export const GET_BEST_SELLER_QUANTITY = `${BASE_URL}/dashboard/api/v1/get_best_seller_by_quantity/`;
+
+export const CREATE_NEWS_LETTER = `${BASE_URL}/email/api/store-and-send-email/`;

@@ -1,10 +1,22 @@
+"use client";
 import Link from "next/link";
-import { destinations5 } from "../../data/desinations";
+import { useSelector } from 'react-redux';
+// import { destinations5 } from "../../data/desinations";
 
 const TopDestinations = () => {
+  const {menuItems} = useSelector(state => state.menus);
+  const destinations = menuItems.find((item) => item.name === "Destinations")?.children;
+  const modifiedDestinations = destinations?.map((item, indx) => ({
+    id: item.id,
+    colClass: (indx + 1) <= 3 ? (indx + 1) % 2 !== 0? "col-xl-3 col-md-4 col-sm-6" : "col-xl-6 col-md-4 col-sm-6" : "col-xl-6 col-md-4 col-sm-6",
+    img: "/img/destinations/2/1.png",
+    name: item.name,
+    numberOfProperties: "1714",
+    delayAnimation: "200",
+  }))
   return (
     <>
-      {destinations5.map((item) => (
+      {modifiedDestinations?.map((item) => (
         <div
           className={item.colClass}
           key={item.id}

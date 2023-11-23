@@ -8,12 +8,14 @@ import FooterContent from "./FooterContent";
 
 const index = () => {
   const [email, setEmail] = useState("");
-  const [createNewsLetter, {isLoading}] = useCreateNewsLetterMutation();
+  const [createNewsLetter, {isLoading, isSuccess}] = useCreateNewsLetterMutation();
 
   const handleSubmit = async() => {
-    const res = await createNewsLetter(JSON.stringify({email}));
-    setEmail("");
-    // console.log(res);
+    const res = await createNewsLetter({email});
+    if(res.data){
+      alert("subcription added! thank you");
+      setEmail("");
+    }
   }
 
   return (
@@ -42,7 +44,7 @@ const index = () => {
                   required
                   name="email"
                   className="border border-secondary h-50"
-                  type="text"
+                  type="email"
                   placeholder="Your Email"
                 />
               </div>

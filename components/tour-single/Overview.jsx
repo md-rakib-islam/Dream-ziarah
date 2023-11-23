@@ -6,22 +6,44 @@ const Overview = () => {
           <h3 className="text-22 fw-500">Overview</h3>
 
           <p className="text-dark-1 text-15 mt-20">
-            Unless you hire a car, visiting Stonehenge, Bath, and Windsor Castle
-            in one day is next to impossible. Designed specifically for
-            travelers with limited time in London, this tour allows you to check
-            off a range of southern England&lsquo;s historical attractions in
-            just one day by eliminating the hassle of traveling between each one
-            independently. Travel by comfortable coach and witness your guide
-            bring each UNESCO World Heritage Site to life with commentary. Plus,
-            all admission tickets are included in the tour price.
+          Over the course of 3 hours, you will embark on a spiritual odyssey that will deepen your understanding of this sacred city.
+
+          Our experienced guide will lead you on a profound journey of discovery, offering insights into the historical and religious significance of each site. Your ziarah will take you to:
           </p>
 
-          <a
+          <ul className="list-disc text-15 mt-10">
+            <li>
+            <span className="fw-bold">Jabal al Thawr :</span> Begin your journey at the majestic Jabal al Thawr, an awe-inspiring mountain that holds a special place in Islamic history.
+            </li>
+            <li>
+            <span className="fw-bold">Mina : </span>Visit the holy valley of Mina, where pilgrims participate in symbolic rituals during Hajj.
+            </li>
+            <li>
+            <span className="fw-bold">Jabal al Thawr :</span> Begin your journey at the majestic Jabal al Thawr, an awe-inspiring mountain that holds a special place in Islamic history.
+            </li>
+            <li>
+            <span className="fw-bold">Jabal al Thawr :</span> Begin your journey at the majestic Jabal al Thawr, an awe-inspiring mountain that holds a special place in Islamic history.
+            </li>
+            <li>
+            <span className="fw-bold">Jabal al Thawr :</span> Begin your journey at the majestic Jabal al Thawr, an awe-inspiring mountain that holds a special place in Islamic history.
+            </li>
+            <li>
+            <span className="fw-bold">Jabal al Thawr :</span> Begin your journey at the majestic Jabal al Thawr, an awe-inspiring mountain that holds a special place in Islamic history.
+            </li>
+            <li>
+            <span className="fw-bold">Jabal al Thawr :</span> Begin your journey at the majestic Jabal al Thawr, an awe-inspiring mountain that holds a special place in Islamic history.
+            </li>
+            <li>
+            <span className="fw-bold">Jabal al Thawr :</span> Begin your journey at the majestic Jabal al Thawr, an awe-inspiring mountain that holds a special place in Islamic history.
+            </li>
+          </ul>
+
+          {/* <a
             href="#"
             className="d-block text-14 text-blue-1 fw-500 underline mt-10"
           >
             Show More
-          </a>
+          </a> */}
         </div>
 
         <div className="col-md-6">
