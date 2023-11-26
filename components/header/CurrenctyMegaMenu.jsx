@@ -1,9 +1,12 @@
 
 'use client'
 
+import { addCurrency } from "@/features/currency/currencySlice";
 import { useState } from "react";
+import { useDispatch } from "react-redux";
 
 const CurrenctyMegaMenu = ({ textClass }) => {
+  const dispatch = useDispatch();
   const [click, setClick] = useState(false);
   const handleCurrency = () => setClick((prevState) => !prevState);
 
@@ -34,8 +37,10 @@ const CurrenctyMegaMenu = ({ textClass }) => {
 
   const handleItemClick = (item) => {
     setSelectedCurrency(item);
+    dispatch(addCurrency(item));
     setClick(false);
   };
+  // console.log("Currency", selectedCurrency)
 
   return (
     <>

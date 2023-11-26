@@ -1,13 +1,24 @@
 
 'use client'
 
-import Link from "next/link";
-import { Swiper, SwiperSlide } from "swiper/react";
-import { Navigation } from "swiper";
-import { destinations4 } from "../../data/desinations";
 import Image from "next/image";
+import Link from "next/link";
+import { useSelector } from "react-redux";
+import { Navigation } from "swiper";
+import { Swiper, SwiperSlide } from "swiper/react";
+// import { destinations4 } from "../../data/desinations";
 
-const TopDestinations2 = () => {
+const TopDestinations2 = ({slug}) => {
+  const {menuItems} = useSelector(state => state.menus);
+  const destinations = menuItems.find((item) => item.name === "Destinations")?.children?.filter((subItem) => subItem.name.toLowerCase() !==slug)?.map((item) => ( {
+    id: item.id,
+    img: "/img/destinations/3/1.png",
+    location: item.name,
+    properties: "4,090",
+    delayAnimation: "0",
+  }));
+
+  
   return (
     <>
       <Swiper
@@ -35,7 +46,7 @@ const TopDestinations2 = () => {
           },
         }}
       >
-        {destinations4.map((item) => (
+        {destinations.map((item) => (
           <SwiperSlide key={item.id}>
             <Link
               href="#"

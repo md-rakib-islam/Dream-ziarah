@@ -6,7 +6,8 @@ export const metadata = {
   description: "GoTrip - Travel & Tour React NextJS Template",
 };
 
-export default function Home() {
+export default async function Home() {
+  
   return (
     <>
       <Wrapper>

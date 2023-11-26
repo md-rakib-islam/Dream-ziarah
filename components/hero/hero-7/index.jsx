@@ -2,13 +2,20 @@
 'use client'
 
 import { BASE_URL } from "@/constant/constants";
+import { addExchangeRates } from "@/features/currency/currencySlice";
 import { useGetSliderImagesQuery } from "@/features/image/imageApi";
+import useCurrencyExchangeRates from "@/hooks/currency";
 import { Interweave } from "interweave";
+import { useDispatch } from "react-redux";
 import { Autoplay, Navigation, Pagination } from "swiper";
 import { Swiper, SwiperSlide } from "swiper/react";
 // import MainFilterSearchBox from "./MainFilterSearchBox";
 
 const index = () => {
+  const dispatch = useDispatch();
+  const exchangeRates = useCurrencyExchangeRates();
+  dispatch(addExchangeRates(exchangeRates));
+  // console.log("exchageRates", exchangeRates);
   const {isSuccess, data} = useGetSliderImagesQuery();
   let sliderImageItems = []
   if(isSuccess){

@@ -4,23 +4,29 @@
 import { BASE_URL } from "@/constant/constants";
 import { useGetAllContentQuery } from "@/features/content/contentApi";
 import { useGetImagesByMenuIdQuery } from "@/features/image/imageApi";
+import convertCurrency from "@/utils/currency";
 import Image from "next/image";
 import Link from "next/link";
+import { useEffect, useState } from "react";
 import { useSelector } from "react-redux";
 import Slider from "react-slick";
-// import toursData from "../../data/tours";
 import isTextMatched from "../../utils/isTextMatched";
+// import toursData from "../../data/tours";
 
 const Tours = () => {
+  const [tourItems, setTourItems] = useState([]);
   const {menuItems} = useSelector(state => state.menus);
+  const {currentCurrency, exchangeRates} = useSelector(state => state.currency);
   const ziarahId = menuItems.find((item) => item.name === "Ziarah")?.id;
   const {isSuccess, data, isLoading} = useGetImagesByMenuIdQuery(ziarahId);
   const {isSuccess: isContentSuccess, data : contentItems, isLoading: isContentLoading} = useGetAllContentQuery(ziarahId);
+  
+  
+  useEffect(() => {
+    if(isSuccess && isContentSuccess){
+      console.log("ccc",contentItems)
 
-  let tourItems = [];
-  if(isSuccess && isContentSuccess){
-
-      tourItems = contentItems.filter((item) => {
+      let tours = contentItems.filter((item) => {
       if(item.name === "Title" || item.name ==="Our Tour" || item.name ==="Our Tour Image" || item.name === "About" || item.name === "Companies") return false;
       return true;
     }).map((tour) => ({
@@ -31,13 +37,60 @@ const Tours = () => {
       location: "Mecca, Saudi Arabia",
       duration: "16",
       numberOfReviews: "3014",
-      price: tour.price,
+      price: convertCurrency(parseInt(tour.price?.slice(0)), "USD", currentCurrency?.currency, exchangeRates),
       tourType: "Full-day Tours",
       delayAnimation: "100",
     }));
+
+    setTourItems(tours);
+
+    // if(currentCurrency?.currency !== "USD"){
+    //   if(currentCurrency?.currency === "SAR"){
+    //     const items = tours?.map((tour) => ({
+    //       ...tour,
+    //       price : (3.75 * tour.price).toFixed(2)
+    //     }));
+    //     // console.log("items", items)
+    //     setTourItems(items);
+    //   }else{
+    //     const main = async() => {
+    //       const result = await generateToursForCurrentCurrency(tours, "USD", currentCurrency?.currency);
+    //       setTourItems(result)
+         
+    //   };
+      
+    //   main();
+    //   }
+    // }
     
   }
-  console.log(tourItems);
+
+  }, [isSuccess, isContentSuccess, currentCurrency])
+  
+
+
+  // let tourItems = [];
+  // if(isSuccess && isContentSuccess){
+
+  //     tourItems = contentItems.filter((item) => {
+  //     if(item.name === "Title" || item.name ==="Our Tour" || item.name ==="Our Tour Image" || item.name === "About" || item.name === "Companies") return false;
+  //     return true;
+  //   }).map((tour) => ({
+  //     id: tour.id,
+  //     tag:  tour.id === 140 || tour.id === 102 ? "top rated": "best seller",
+  //     slideImg: [`${BASE_URL}/media/${data.content_images[tour.name]}`],
+  //     title: tour.name,
+  //     location: "Mecca, Saudi Arabia",
+  //     duration: "16",
+  //     numberOfReviews: "3014",
+  //     price: tour.price,
+  //     tourType: "Full-day Tours",
+  //     delayAnimation: "100",
+  //   }));
+    
+  // }
+  // // console.log(parseInt(tourItems[0]?.price.split(" ")[1].slice(1)));
+ 
   var settings = {
     dots: true,
     infinite: true,
@@ -198,9 +251,10 @@ const Tours = () => {
                   </div>
                   <div className="col-auto">
                     <div className="text-14 text-light-1">
-                      
+                      From {currentCurrency?.symbol} 
                       <span className="text-16 fw-500 text-dark-1">
                         {" "}
+                        
                         {item.price}
                       </span>
                     </div>

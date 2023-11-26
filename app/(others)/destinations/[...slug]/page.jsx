@@ -293,7 +293,8 @@ const Destinations = ({ params }) => {
           <div className="row">
             <div className="col-auto">
               <div className="sectionTitle -md">
-                <h2 className="sectionTitle__title">Top sights in London</h2>
+                <h2 className="sectionTitle__title">Top sights in {slug.charAt(0).toUpperCase()
+      + slug.slice(1)}</h2>
                 <p className=" sectionTitle__text mt-5 sm:mt-0">
                   These popular destinations have a lot to offer
                 </p>
@@ -354,7 +355,8 @@ const Destinations = ({ params }) => {
               <h2 className="text-30 fw-500">
                 FAQs about
                 <br />
-                London
+                {slug.charAt(0).toUpperCase()
+      + slug.slice(1)}
               </h2>
             </div>
             {/* End .col */}
@@ -378,7 +380,8 @@ const Destinations = ({ params }) => {
             <div className="col-auto">
               <div className="sectionTitle -md">
                 <h2 className="sectionTitle__title">
-                  Destinations near London
+                  Destinations near {slug.charAt(0).toUpperCase()
+      + slug.slice(1)}
                 </h2>
                 <p className=" sectionTitle__text mt-5 sm:mt-0">
                   These popular destinations have a lot to offer
@@ -389,7 +392,7 @@ const Destinations = ({ params }) => {
           {/* End .row */}
 
           <div className="pt-40 relative">
-            <TopDestinations2 />
+            <TopDestinations2 slug={slug} />
           </div>
         </div>
         {/* End .container */}

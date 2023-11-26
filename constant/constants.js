@@ -989,3 +989,5 @@ export const GET_BEST_SELLER_AMOUNT = `${BASE_URL}/dashboard/api/v1/get_best_sel
 export const GET_BEST_SELLER_QUANTITY = `${BASE_URL}/dashboard/api/v1/get_best_seller_by_quantity/`;
 
 export const CREATE_NEWS_LETTER = `${BASE_URL}/email/api/store-and-send-email/`;
+
+export const GET_LATEST_EXCHANGE_RATE = `https://v6.exchangerate-api.com/v6/81dd55f0d406c9a2f17b5298/latest/USD`;
