@@ -1,4 +1,7 @@
+import { useSelector } from "react-redux";
 const TourSnapShot = () => {
+  const {tourItem} = useSelector(state => state.tour);
+ 
   return (
     <div className="row y-gap-30 justify-between pt-20">
       <div className="col-md-auto col-6">
@@ -6,7 +9,7 @@ const TourSnapShot = () => {
           <i className="icon-clock text-22 text-blue-1 mr-10"></i>
           <div className="text-15 lh-15">
             Duration:
-            <br /> 3h
+            <br /> {tourItem?.duration}
           </div>
         </div>
       </div>

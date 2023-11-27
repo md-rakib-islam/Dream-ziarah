@@ -10,13 +10,13 @@ const localConfig =  {
   protocol: 'http',
   hostname: '192.168.0.100',
   port: '8000',
-  pathname: '**//**',
+  pathname: '**/media/**',
 }
 
 const nextConfig = {
     images: {
         remotePatterns: [
-          prodConfig
+          localConfig
           // {
           //   protocol: 'https',
           //   hostname: 'ziarahapi.dreamtourism.co.uk',

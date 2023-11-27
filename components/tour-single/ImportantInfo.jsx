@@ -1,21 +1,30 @@
+import { Interweave } from "interweave";
+import { useSelector } from "react-redux";
+
 const ImportantInfo = () => {
+  const {tourItem} = useSelector(state => state.tour);
   return (
     <div className="row x-gap-40 y-gap-40 justify-between pt-20">
       <div className="col-lg-4 col-md-6">
         <div className="fw-500 mb-10">Inclusions</div>
-        <ul className="list-disc">
+        <Interweave
+                allowAttributes
+                allowElements
+                disableLineBreaks={false}
+                content={tourItem?.inclution}
+              />
+        {/* <ul className="list-disc">
           <li>Superior Coach, Wi-Fi and USB Charging On-board</li>
           <li>Expert guide</li>
           <li>Admission to Windsor Castle (if option selected)</li>
           <li>Admission to Stonehenge</li>
-        </ul>
+        </ul> */}
       </div>
 
       <div className="col-lg-4 col-md-6">
         <div className="fw-500 mb-10">Departure details</div>
         <div className="text-15">
-          Departures from 01st April 2022: Tour departs at 8 am (boarding at
-          7.30 am), Victoria Coach Station Gate 1-5
+        Our service includes convenient traveler pickup within the Makkah City area, within a distance not exceeding 9 kilometers from your hotel. We are pleased to offer pickup services for all tourists and Umrah pilgrims from their respective hotels. We ensure a timely and efficient pickup process to make your journey as smooth as possible. Please be ready for pickup at your hotel within the specified distance limit in the Makkah City area.
         </div>
       </div>
 
@@ -30,31 +39,35 @@ const ImportantInfo = () => {
 
       <div className="col-lg-4 col-md-6">
         <div className="fw-500 mb-10">Exclusions</div>
-        <ul className="list-disc">
+        {/* <ul className="list-disc">
           <li>Hotel pick-up and drop-off</li>
           <li>Gratuities</li>
           <li>Lunch</li>
-        </ul>
+        </ul> */}
+        <Interweave
+                allowAttributes
+                allowElements
+                disableLineBreaks={false}
+                content={tourItem?.exclusion}
+              />
       </div>
 
       <div className="col-12">
         <div className="fw-500 mb-10">Additional information</div>
         <ul className="list-disc">
-          <li>Confirmation will be received at time of booking</li>
+          <li><span className="text-dark fw-500">Confirmation:</span> You will receive a confirmation at the time of booking.</li>
           <li>
-            Departs at 8am (boarding at 7.30am), Victoria Coach Station Gate
-            1-5, 164 Buckingham Palace Road, London, SW1W 9TP
+          <span className="text-dark fw-500">Participant Suitability:</span> Most travelers can participate.
           </li>
           <li>
-            As Windsor Castle is a working royal palace, sometimes the entire
-            Castle or the State Apartments within the Castle need to be closed
-            at short notice. (if selected this option)
+          <span className="text-dark fw-500">Weather Consideration:</span> Weather-dependent experience. In case of poor weather, you'll be offered an alternative date or a full refund.
           </li>
           <li>
-            Stonehenge is closed on 21 June due to the Summer Solstice. During
-            this time, we will instead visit the Avebury Stone Circle.
+          <span className="text-dark fw-500">Private Experience:</span> This is a private tour/activity. Your group will be the sole participants.
           </li>
-          <li>Please note: the tour itinerary and order may change</li>
+          <li>
+          <span className="text-dark fw-500">Refund Window:</span> To receive a full refund, please cancel at least 24 hours before the experience start date.
+          </li>
         </ul>
       </div>
     </div>

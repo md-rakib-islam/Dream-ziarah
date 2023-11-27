@@ -2,15 +2,15 @@
 
 'use client'
 
-import Image from "next/image";
-import React, { useState } from 'react';
-import SidebarRight from "@/components/tour-single/SidebarRight";
 import Overview from "@/components/tour-single/Overview";
+import SidebarRight from "@/components/tour-single/SidebarRight";
 import TourSnapShot from "@/components/tour-single/TourSnapShot";
+import Image from "next/image";
+import { useState } from 'react';
+import ModalVideo from "react-modal-video";
 import { Gallery, Item } from "react-photoswipe-gallery";
-import { Swiper, SwiperSlide } from "swiper/react";
 import { Navigation } from "swiper";
-import ModalVideo from "react-modal-video"
+import { Swiper, SwiperSlide } from "swiper/react";
 
 export default function TourGallery({tour}) {
     const [isOpen, setOpen] = useState(false);

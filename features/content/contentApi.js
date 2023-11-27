@@ -1,4 +1,4 @@
-import { GET_CONTENTS, GET_CONTENTS_WITH_URL_BY_MENU_ID } from "@/constant/constants";
+import { GET_CONTENTS, GET_CONTENTS_BY_MENU_CONTENT_ID, GET_CONTENTS_WITH_URL_BY_MENU_ID } from "@/constant/constants";
 import { apiSlice } from "../api/apiSlice";
 
 export const contentApi = apiSlice.injectEndpoints({
@@ -15,7 +15,13 @@ export const contentApi = apiSlice.injectEndpoints({
                 method : 'GET'
             })
         }),
+        getContentsByMenuContentId : builder.query({
+            query : (menuContentId) => ({
+                url : `${GET_CONTENTS_BY_MENU_CONTENT_ID}/${menuContentId}`,
+                method : 'GET'
+            })
+        }),
     })
 });
 
-export const {useGetAllContentQuery, useGetAllBlogContentsQuery} = contentApi;
+export const {useGetAllContentQuery, useGetAllBlogContentsQuery, useGetContentsByMenuContentIdQuery} = contentApi;

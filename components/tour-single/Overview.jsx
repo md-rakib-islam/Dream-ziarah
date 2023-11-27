@@ -1,11 +1,20 @@
+import { Interweave } from "interweave";
+import { useSelector } from "react-redux";
 const Overview = () => {
+  const {tourItem} = useSelector(state => state.tour);
   return (
     <>
       <div className="row x-gap-40 y-gap-40">
-        <div className="col-12">
+        <div className="col-12 text-dark-1 text-15">
           <h3 className="text-22 fw-500">Overview</h3>
+          <Interweave
+                allowAttributes
+                allowElements
+                disableLineBreaks={false}
+                content={tourItem?.description}
+              />
 
-          <p className="text-dark-1 text-15 mt-20">
+          {/* <p className="text-dark-1 text-15 mt-20">
           Over the course of 3 hours, you will embark on a spiritual odyssey that will deepen your understanding of this sacred city.
 
           Our experienced guide will lead you on a profound journey of discovery, offering insights into the historical and religious significance of each site. Your ziarah will take you to:
@@ -36,7 +45,7 @@ const Overview = () => {
             <li>
             <span className="fw-bold">Jabal al Thawr :</span> Begin your journey at the majestic Jabal al Thawr, an awe-inspiring mountain that holds a special place in Islamic history.
             </li>
-          </ul>
+          </ul> */}
 
           {/* <a
             href="#"
@@ -57,8 +66,12 @@ const Overview = () => {
         <div className="col-md-6">
           <h5 className="text-16 fw-500">Cancellation policy</h5>
           <div className="text-15 mt-10">
-            For a full refund, cancel at least 24 hours in advance of the start
-            date of the experience.
+            {/* For a full refund, cancel at least 24 hours in advance of the start
+            date of the experience. */}
+            <ul className="list-disc">
+              <li>We will charge a cancellation fee of 100% if booking is cancelled 1 day or less before the event</li>
+              <li>We will charge a cancellation fee of 0% if booking is cancelled 1000 days or less before the event</li>
+            </ul>
           </div>
         </div>
 

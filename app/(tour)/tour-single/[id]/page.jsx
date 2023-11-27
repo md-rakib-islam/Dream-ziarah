@@ -1,4 +1,6 @@
-import toursData from "@/data/tours";
+"use client";
+// import toursData from "@/data/tours";
+import { useGetContentsByMenuContentIdQuery } from "@/features/content/contentApi";
 import dynamic from "next/dynamic";
 import "photoswipe/dist/photoswipe.css";
 // import Header11 from "@/components/header/header-11";
@@ -9,22 +11,49 @@ import Faq from "@/components/faq/Faq";
 import ImportantInfo from "@/components/tour-single/ImportantInfo";
 import ReplyForm from "@/components/tour-single/ReplyForm";
 import ReplyFormReview2 from "@/components/tour-single/ReplyFormReview2";
-import TopBreadCrumb from "@/components/tour-single/TopBreadCrumb";
+// import TopBreadCrumb from "@/components/tour-single/TopBreadCrumb";
 import TourGallery from "@/components/tour-single/TourGallery";
 import DetailsReview2 from "@/components/tour-single/guest-reviews/DetailsReview2";
 import ReviewProgress2 from "@/components/tour-single/guest-reviews/ReviewProgress2";
 import Itinerary from "@/components/tour-single/itinerary";
 import Tours from "@/components/tours/Tours";
+import { BASE_URL } from "@/constant/constants";
+import { useGetImagesByMenuIdQuery } from "@/features/image/imageApi";
+import { addtourItem } from "@/features/tour/tourSlice";
 import Link from "next/link";
+import { useDispatch, useSelector } from "react-redux";
 
-export const metadata = {
-  title: "Tour Single || GoTrip - Travel & Tour React NextJS Template",
-  description: "GoTrip - Travel & Tour React NextJS Template",
-};
+// export const metadata = {
+//   title: "Tour Single || GoTrip - Travel & Tour React NextJS Template",
+//   description: "GoTrip - Travel & Tour React NextJS Template",
+// };
 
 const TourSingleV1Dynamic = ({ params }) => {
+  const dispatch = useDispatch();
   const id = params.id;
-  const tour = toursData.find((item) => item.id == id) || toursData[0];
+  const {menuItems} = useSelector(state => state.menus);
+  const ziarahId = menuItems.find((item) => item.name === "Ziarah")?.id;
+  // const tour = toursData.find((item) => item.id == id) || toursData[0];
+  const {data, isSuccess} = useGetContentsByMenuContentIdQuery(id);
+  const {data : imageContents, isSuccess: isImageContentsSuccess} = useGetImagesByMenuIdQuery(ziarahId);
+  let tour = {};
+  if(isSuccess && isImageContentsSuccess){
+    // console.log("images", imageContents.content_images[data?.name]);
+    tour =   {
+      id: data?.id,
+      tag: "",
+      slideImg: [`${BASE_URL}/media/${imageContents.content_images[data?.name]}`],
+      title: data?.name,
+      location: "Ciutat Vella, Barcelona",
+      duration: data?.duration,
+      numberOfReviews: "2045",
+      price: data?.price,
+      tourType: "Attractions & Museums",
+      delayAnimation: "200",
+    }
+    console.log("Hele", data);
+    dispatch(addtourItem(data));
+  }
 
   return (
     <>
@@ -37,7 +66,7 @@ const TourSingleV1Dynamic = ({ params }) => {
       {/* <Header3/> */}
       {/* End Header 1 */}
 
-      <TopBreadCrumb />
+      {/* <TopBreadCrumb /> */}
       {/* End top breadcrumb */}
 
       <section className="pt-40">

@@ -24,7 +24,7 @@ const Tours = () => {
   
   useEffect(() => {
     if(isSuccess && isContentSuccess){
-      console.log("ccc",contentItems)
+      // console.log("ccc",contentItems)
 
       let tours = contentItems.filter((item) => {
       if(item.name === "Title" || item.name ==="Our Tour" || item.name ==="Our Tour Image" || item.name === "About" || item.name === "Companies") return false;
@@ -37,7 +37,7 @@ const Tours = () => {
       location: "Mecca, Saudi Arabia",
       duration: "16",
       numberOfReviews: "3014",
-      price: convertCurrency(parseInt(tour.price?.slice(0)), "USD", currentCurrency?.currency, exchangeRates),
+      price: convertCurrency(parseInt(tour?.price), "USD", currentCurrency?.currency, exchangeRates),
       tourType: "Full-day Tours",
       delayAnimation: "100",
     }));

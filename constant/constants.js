@@ -2,8 +2,8 @@
 //http://192.168.0.8:8002
 
 //base url
-// export const BASE_URL = "http://192.168.0.100:8000";
-export const BASE_URL = "https://ziarahapi.dreamtourism.co.uk";
+export const BASE_URL = "http://192.168.0.100:8000";
+// export const BASE_URL = "https://ziarahapi.dreamtourism.co.uk";
 // export const BASE_URL = "https://api.activemanpowerservices.com/";
 // export const BASE_URL = "https://api.surmainternational.com";
 // export const BASE_URL = "https://api.labbaikintbd.com/";
@@ -585,6 +585,8 @@ export const GET_CONTENTS_BY_MENU_ID = `${BASE_URL}/cms_menu_content/api/v1/get_
 export const GET_CONTENTS_WITH_URL_BY_MENU_ID = `${BASE_URL}/cms_menu_content/api/v1/cms_menu_content/get_cms_menu_content_by_cms_menu_id`;
 
 export const GET_CONTENTS_WITHOUT_PAGINATION = `${BASE_URL}/cms_menu_content/api/v1/cms_menu_content/without_pagination/all/`;
+
+export const GET_CONTENTS_BY_MENU_CONTENT_ID = `${BASE_URL}/cms_menu_content/api/v1/cms_menu_content`;
 
 // // menu content images
 // export const CREATE_CONTENT_IMAGE = `${BASE_URL}/cms_menu_content_image/api/v1/cms_menu_content_image/create/`;

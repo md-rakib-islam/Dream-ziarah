@@ -197,8 +197,9 @@ const defaultExchangeRates = {
   
 
   const convertCurrency = (amount = 0, fromCurrency = "USD", toCurrency, currentExchangeRates) =>{
-    const exchangeRates = currentExchangeRates ? currentExchangeRates : defaultExchangeRates;
-    console.log(exchangeRates)
+    console.log(currentExchangeRates, amount);
+    const exchangeRates = Object.keys(currentExchangeRates).length ? currentExchangeRates : defaultExchangeRates;
+    
     if (exchangeRates[fromCurrency] && exchangeRates[toCurrency]) {
   
       const amountInUSD = amount / exchangeRates[fromCurrency];
