@@ -1,7 +1,8 @@
 import { createSlice } from "@reduxjs/toolkit";
 
 const initialState = {
-    tourItem : {}
+    tourItem : {},
+    itenarayItems : [],
 };
 
 export const tourSlice = createSlice({
@@ -10,9 +11,12 @@ export const tourSlice = createSlice({
     reducers : {
         addtourItem : (state, action) => {
             state.tourItem = action.payload
+        },
+        addItenarayItems : (state, action) => {
+            state.itenarayItems = action.payload
         }
     }
 });
 
-export const {addtourItem} = tourSlice.actions;
+export const {addtourItem, addItenarayItems} = tourSlice.actions;
 export default tourSlice.reducer;

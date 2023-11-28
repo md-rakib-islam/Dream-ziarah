@@ -2,8 +2,8 @@
 //http://192.168.0.8:8002
 
 //base url
-export const BASE_URL = "http://192.168.0.100:8000";
-// export const BASE_URL = "https://ziarahapi.dreamtourism.co.uk";
+// export const BASE_URL = "http://192.168.0.100:8000";
+export const BASE_URL = "https://ziarahapi.dreamtourism.co.uk";
 // export const BASE_URL = "https://api.activemanpowerservices.com/";
 // export const BASE_URL = "https://api.surmainternational.com";
 // export const BASE_URL = "https://api.labbaikintbd.com/";
@@ -993,3 +993,6 @@ export const GET_BEST_SELLER_QUANTITY = `${BASE_URL}/dashboard/api/v1/get_best_s
 export const CREATE_NEWS_LETTER = `${BASE_URL}/email/api/store-and-send-email/`;
 
 export const GET_LATEST_EXCHANGE_RATE = `https://v6.exchangerate-api.com/v6/81dd55f0d406c9a2f17b5298/latest/USD`;
+
+// get itenaries
+export const GET_ITENARIES_BY_CONTENT_ID = `${BASE_URL}/cms_itinerary/api/v1/Itinerary/get_Itinerary_by_cms_content_id`;

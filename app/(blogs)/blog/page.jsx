@@ -26,7 +26,7 @@ const BlogListV2 = () => {
       {/* <LocationTopBar /> */}
       {/* End location top bar section */}
 
-      <section className="layout-pt-md">
+      {/* <section className="layout-pt-md">
         <div className="container">
           <div className="row justify-center text-center">
             <div className="col-auto">
@@ -39,7 +39,7 @@ const BlogListV2 = () => {
             </div>
           </div>
         </div>
-      </section>
+      </section> */}
       {/* End title */}
 
       <section className="layout-pt-md layout-pb-lg">

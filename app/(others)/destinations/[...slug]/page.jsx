@@ -19,6 +19,7 @@ import TestimonialLeftCol from "@/components/home/home-1/TestimonialLeftCol";
 // import Hotels from "@/components/hotels/Hotels2";
 // import Rentals from "@/components/rentals/Rentals";
 import Tours from "@/components/tours/Tours";
+import { slightContent } from "@/data/desinations";
 import Link from "next/link";
 
 export const metadata = {
@@ -296,7 +297,7 @@ const Destinations = ({ params }) => {
                 <h2 className="sectionTitle__title">Top sights in {slug.charAt(0).toUpperCase()
       + slug.slice(1)}</h2>
                 <p className=" sectionTitle__text mt-5 sm:mt-0">
-                  These popular destinations have a lot to offer
+                  {slightContent[slug]?.title}
                 </p>
               </div>
             </div>
@@ -304,9 +305,19 @@ const Destinations = ({ params }) => {
           {/* End .row */}
 
           <div className="row y-gap-30 pt-40">
-            <Slights />
+            <Slights slug={slug}/>
           </div>
           {/* End .row */}
+
+          <div className="row">
+            <div className="col-auto">
+              <div className="mt-20 sectionTitle -md">
+                <p className=" sectionTitle__text mt-5 sm:mt-0">
+                  {slightContent[slug]?.footerContent}
+                </p>
+              </div>
+            </div>
+          </div>
 
           <div className="row justify-center mt-40">
             <div className="col-auto">
@@ -363,7 +374,7 @@ const Destinations = ({ params }) => {
 
             <div className="col-lg-8">
               <div className="accordion -simple row y-gap-20 js-accordion">
-                <Faq />
+                <Faq slug ={slug}/>
               </div>
             </div>
             {/* End .col-lg-8 */}

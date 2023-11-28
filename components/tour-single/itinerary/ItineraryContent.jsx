@@ -1,6 +1,20 @@
+"use client";
 import Image from "next/image";
+import { useSelector } from "react-redux";
 
 const ItineraryContent = () => {
+  const {itenarayItems} = useSelector(state => state.tour);
+  
+  const modifiedItenarayItem = itenarayItems?.map((item, indx) => ({
+    id: item.id,
+    targetCollapse: "item_1",
+    itemNo: indx + 1,
+    title: item.title,
+    img: "/img/tours/list.png",
+    content: item.description,
+    classShowHide: "",
+    location : item.location
+  }))
   const itineraryContent = [
     {
       id: 1,
@@ -42,7 +56,7 @@ const ItineraryContent = () => {
 
   return (
     <>
-      {itineraryContent.map((item) => (
+      {modifiedItenarayItem.map((item) => (
         <div className="col-12" key={item.id}>
           <div className="accordion__item ">
             <div className="d-flex">

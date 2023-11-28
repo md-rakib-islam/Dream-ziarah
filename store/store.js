@@ -1,5 +1,6 @@
 import { apiSlice } from "@/features/api/apiSlice";
 import { configureStore } from "@reduxjs/toolkit";
+import blogReducer from "../features/blog/blogSlice";
 import currencyReducer from "../features/currency/currencySlice";
 import findPlaceSlice from "../features/hero/findPlaceSlice";
 import menuReducer from "../features/menu/menuSlice";
@@ -13,6 +14,7 @@ export const store = configureStore({
         hero: findPlaceSlice,
         menus : menuReducer,
         tour : tourReducer,
+        blog : blogReducer,
         currency : currencyReducer,
         siteSettings : siteSettingReducer,
         pagination : paginatonReducer,

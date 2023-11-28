@@ -4,7 +4,7 @@ import { useSelector } from "react-redux";
 
 const SidebarRight = ({ tour }) => {
   const {tourItem} = useSelector(state => state.tour);
-  console.log(tourItem)
+  console.log("Tour", tourItem)
   useEffect(() => {
     const script = document.createElement("script");
     script.src =

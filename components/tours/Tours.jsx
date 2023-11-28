@@ -24,19 +24,19 @@ const Tours = () => {
   
   useEffect(() => {
     if(isSuccess && isContentSuccess){
-      // console.log("ccc",contentItems)
+      console.log("ccc",contentItems)
 
       let tours = contentItems.filter((item) => {
       if(item.name === "Title" || item.name ==="Our Tour" || item.name ==="Our Tour Image" || item.name === "About" || item.name === "Companies") return false;
       return true;
     }).map((tour) => ({
       id: tour.id,
-      tag:  tour.id === 140 || tour.id === 102 ? "top rated": "best seller",
+      tag:  tour.id === 10 ? "top rated": tour.id === 9 ? "best seller" : "LIKELY TO SELL OUT*",
       slideImg: [`${BASE_URL}/media/${data.content_images[tour.name]}`],
       title: tour.name,
       location: "Mecca, Saudi Arabia",
-      duration: "16",
-      numberOfReviews: "3014",
+      duration: "3",
+      numberOfReviews: tour.id === 10 ? "57": tour.id === 9 ? "51" : "61",
       price: convertCurrency(parseInt(tour?.price), "USD", currentCurrency?.currency, exchangeRates),
       tourType: "Full-day Tours",
       delayAnimation: "100",
@@ -67,35 +67,12 @@ const Tours = () => {
 
   }, [isSuccess, isContentSuccess, currentCurrency])
   
-
-
-  // let tourItems = [];
-  // if(isSuccess && isContentSuccess){
-
-  //     tourItems = contentItems.filter((item) => {
-  //     if(item.name === "Title" || item.name ==="Our Tour" || item.name ==="Our Tour Image" || item.name === "About" || item.name === "Companies") return false;
-  //     return true;
-  //   }).map((tour) => ({
-  //     id: tour.id,
-  //     tag:  tour.id === 140 || tour.id === 102 ? "top rated": "best seller",
-  //     slideImg: [`${BASE_URL}/media/${data.content_images[tour.name]}`],
-  //     title: tour.name,
-  //     location: "Mecca, Saudi Arabia",
-  //     duration: "16",
-  //     numberOfReviews: "3014",
-  //     price: tour.price,
-  //     tourType: "Full-day Tours",
-  //     delayAnimation: "100",
-  //   }));
-    
-  // }
-  // // console.log(parseInt(tourItems[0]?.price.split(" ")[1].slice(1)));
  
   var settings = {
     dots: true,
     infinite: true,
     speed: 500,
-    slidesToShow: 3,
+    slidesToShow: tourItems?.length,
     slidesToScroll: 1,
     responsive: [
       {
@@ -152,7 +129,7 @@ const Tours = () => {
     );
   }
 
-  return (
+  return tourItems?.length === 0 ? (<h2 className="text-center">There is no tour</h2>) : (
     <>
       <Slider {...settings}>
         {tourItems?.map((item) => (
@@ -222,7 +199,8 @@ const Tours = () => {
                   <div className="text-14 text-light-1">
                     {item?.duration}+ hours
                   </div>
-                  <div className="size-3 bg-light-1 rounded-full ml-10 mr-10" />
+                  {/* <div className="size-3 bg-light-1 rounded-full ml-10 mr-10" /> */}
+                  <div className="ml-10 mr-10" />
                   <div className="text-14 text-light-1">{item?.tourType}</div>
                 </div>
                 <h4 className="tourCard__title text-dark-1 text-18 lh-16 fw-500">

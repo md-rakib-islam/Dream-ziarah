@@ -1,6 +1,6 @@
 "use client";
 // import toursData from "@/data/tours";
-import { useGetContentsByMenuContentIdQuery } from "@/features/content/contentApi";
+import { useGetContentsByMenuContentIdQuery, useGetItenariesByMenuContentIdQuery } from "@/features/content/contentApi";
 import dynamic from "next/dynamic";
 import "photoswipe/dist/photoswipe.css";
 // import Header11 from "@/components/header/header-11";
@@ -19,7 +19,7 @@ import Itinerary from "@/components/tour-single/itinerary";
 import Tours from "@/components/tours/Tours";
 import { BASE_URL } from "@/constant/constants";
 import { useGetImagesByMenuIdQuery } from "@/features/image/imageApi";
-import { addtourItem } from "@/features/tour/tourSlice";
+import { addItenarayItems, addtourItem } from "@/features/tour/tourSlice";
 import Link from "next/link";
 import { useDispatch, useSelector } from "react-redux";
 
@@ -35,7 +35,13 @@ const TourSingleV1Dynamic = ({ params }) => {
   const ziarahId = menuItems.find((item) => item.name === "Ziarah")?.id;
   // const tour = toursData.find((item) => item.id == id) || toursData[0];
   const {data, isSuccess} = useGetContentsByMenuContentIdQuery(id);
+  const {data : itenarayItems, isSuccess: isItenariesSuccess} = useGetItenariesByMenuContentIdQuery(id);
   const {data : imageContents, isSuccess: isImageContentsSuccess} = useGetImagesByMenuIdQuery(ziarahId);
+
+  if(isItenariesSuccess){
+    // console.log("Itenaries", itenarayItems);
+    dispatch(addItenarayItems(itenarayItems));
+  }
   let tour = {};
   if(isSuccess && isImageContentsSuccess){
     // console.log("images", imageContents.content_images[data?.name]);
@@ -44,14 +50,14 @@ const TourSingleV1Dynamic = ({ params }) => {
       tag: "",
       slideImg: [`${BASE_URL}/media/${imageContents.content_images[data?.name]}`],
       title: data?.name,
-      location: "Ciutat Vella, Barcelona",
+      location: "Mecca, Saudi Arabia",
       duration: data?.duration,
-      numberOfReviews: "2045",
+      numberOfReviews: "50",
       price: data?.price,
       tourType: "Attractions & Museums",
       delayAnimation: "200",
     }
-    console.log("Hele", data);
+    // console.log("Hele", data);
     dispatch(addtourItem(data));
   }
 
@@ -106,14 +112,14 @@ const TourSingleV1Dynamic = ({ params }) => {
                       </div>
                     </div>
 
-                    <div className="col-auto">
+                    {/* <div className="col-auto">
                       <button
                         data-x-click="mapFilter"
                         className="text-blue-1 text-15 underline"
                       >
                         Show on map
                       </button>
-                    </div>
+                    </div> */}
                   </div>
                 </div>
               </div>

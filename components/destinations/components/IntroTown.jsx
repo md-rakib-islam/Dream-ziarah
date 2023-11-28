@@ -42,12 +42,12 @@ const IntroTown = ({slug}) => {
                 content={value}
               />
         </p>
-        <a
+        {/* <a
           href="#"
           className="d-block text-14 fw-500 text-blue-1 underline mt-20"
         >
           Show More
-        </a>
+        </a> */}
       </div>
       {/* End .col */}
 

@@ -64,7 +64,7 @@ const home_3 = () => {
               <div className="sectionTitle -md">
                 <h2 className="sectionTitle__title">Why Choose Us</h2>
                 <p className=" sectionTitle__text mt-5 sm:mt-0">
-                  These popular destinations have a lot to offer
+                Experience Quality and Excellence with DreamZiarah
                 </p>
               </div>
             </div>
@@ -87,7 +87,7 @@ const home_3 = () => {
               <div className="sectionTitle -md">
                 <h2 className="sectionTitle__title">Top Destinations</h2>
                 <p className=" sectionTitle__text mt-5 sm:mt-0">
-                  These popular destinations have a lot to offer
+                Explore Exciting Destinations, Tailored for Every Explorer
                 </p>
               </div>
             </div>
@@ -142,7 +142,7 @@ const home_3 = () => {
               <div className="sectionTitle -md">
                 <h2 className="sectionTitle__title">Most Popular Tours</h2>
                 <p className=" sectionTitle__text mt-5 sm:mt-0">
-                  Interdum et malesuada fames ac ante ipsum
+                Explore Our Best Sellers: Unmatched Experiences in Every Journey
                 </p>
               </div>
             </div>

@@ -46,7 +46,7 @@ const TopDestinations2 = ({slug}) => {
           },
         }}
       >
-        {destinations.map((item) => (
+        {destinations?.map((item) => (
           <SwiperSlide key={item.id}>
             <Link
               href="#"
