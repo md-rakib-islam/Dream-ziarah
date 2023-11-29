@@ -4,6 +4,7 @@ import { useSelector } from "react-redux";
 
 const ItineraryContent = () => {
   const {itenarayItems} = useSelector(state => state.tour);
+  console.log("itenaray",itenarayItems)
   
   const modifiedItenarayItem = itenarayItems?.map((item, indx) => ({
     id: item.id,
