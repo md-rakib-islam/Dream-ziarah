@@ -57,84 +57,7 @@ const home_3 = () => {
       </section> */}
       {/* End AddBanner Section */}
 
-      <section className="layout-pt-md layout-pb-md">
-        <div className="container">
-          <div className="row justify-center text-center">
-            <div className="col-auto">
-              <div className="sectionTitle -md">
-                <h2 className="sectionTitle__title">Why Choose Us</h2>
-                <p className=" sectionTitle__text mt-5 sm:mt-0">
-                Experience Quality and Excellence with DreamZiarah
-                </p>
-              </div>
-            </div>
-          </div>
-          {/* End .row */}
-
-          <div className="row y-gap-40 justify-between pt-50">
-            <WhyChoose />
-          </div>
-          {/* End row */}
-        </div>
-        {/* End .container */}
-      </section>
-      {/* End Why choose Section */}
-
-      <section className="layout-pt-md layout-pb-md">
-        <div className="container">
-          <div className="row justify-center text-center">
-            <div className="col-auto">
-              <div className="sectionTitle -md">
-                <h2 className="sectionTitle__title">Top Destinations</h2>
-                <p className=" sectionTitle__text mt-5 sm:mt-0">
-                Explore Exciting Destinations, Tailored for Every Explorer
-                </p>
-              </div>
-            </div>
-          </div>
-          {/* End .row */}
-
-          <div className="row y-gap-40 justify-between pt-40 sm:pt-20">
-            <TopDestinations />
-          </div>
-          {/* End .row */}
-        </div>
-        {/* End .container */}
-      </section>
-      {/* End Top Destinations Section */}
-
-      {/* <section className="layout-pt-md layout-pb-md">
-        <div className="container">
-          <div className="row y-gap-20 justify-between items-end">
-            <div className="col-auto">
-              <div className="sectionTitle -md">
-                <h2 className="sectionTitle__title">Recommended Hotels</h2>
-                <p className=" sectionTitle__text mt-5 sm:mt-0">
-                  Interdum et malesuada fames ac ante ipsum
-                </p>
-              </div>
-            </div>
-           
-
-            <div className="col-auto">
-              <Link
-                href="#"
-                className="button -md -blue-1 bg-blue-1-05 text-blue-1"
-              >
-                More <div className="icon-arrow-top-right ml-15" />
-              </Link>
-            </div>
-          </div>
-          
-
-          <div className="row y-gap-30 pt-40 sm:pt-20 item_gap-x30">
-            <Hotels />
-          </div>
-          
-        </div>
-      </section> */}
-      {/* End  Hotel sections */}
-
+      
       <section className="layout-pt-md layout-pb-md">
         <div className="container">
           <div className="row y-gap-20 justify-between items-end">
@@ -168,6 +91,85 @@ const home_3 = () => {
         {/* End .container */}
       </section>
       {/* End Tours Sections */}
+
+      <section className="layout-pt-md layout-pb-md">
+        <div className="container">
+          <div className="row justify-center text-center">
+            <div className="col-auto">
+              <div className="sectionTitle -md">
+                <h2 className="sectionTitle__title">Top Destinations</h2>
+                <p className=" sectionTitle__text mt-5 sm:mt-0">
+                Explore Exciting Destinations, Tailored for Every Explorer
+                </p>
+              </div>
+            </div>
+          </div>
+          {/* End .row */}
+
+          <div className="row y-gap-40 justify-between pt-40 sm:pt-20">
+            <TopDestinations />
+          </div>
+          {/* End .row */}
+        </div>
+        {/* End .container */}
+      </section>
+      {/* End Top Destinations Section */}
+
+      <section className="layout-pt-md layout-pb-md">
+        <div className="container">
+          <div className="row justify-center text-center">
+            <div className="col-auto">
+              <div className="sectionTitle -md">
+                <h2 className="sectionTitle__title">Why Choose Us</h2>
+                <p className=" sectionTitle__text mt-5 sm:mt-0">
+                Experience Quality and Excellence with DreamZiarah
+                </p>
+              </div>
+            </div>
+          </div>
+          {/* End .row */}
+
+          <div className="row y-gap-40 justify-between pt-50">
+            <WhyChoose />
+          </div>
+          {/* End row */}
+        </div>
+        {/* End .container */}
+      </section>
+      {/* End Why choose Section */}
+
+      {/* <section className="layout-pt-md layout-pb-md">
+        <div className="container">
+          <div className="row y-gap-20 justify-between items-end">
+            <div className="col-auto">
+              <div className="sectionTitle -md">
+                <h2 className="sectionTitle__title">Recommended Hotels</h2>
+                <p className=" sectionTitle__text mt-5 sm:mt-0">
+                  Interdum et malesuada fames ac ante ipsum
+                </p>
+              </div>
+            </div>
+           
+
+            <div className="col-auto">
+              <Link
+                href="#"
+                className="button -md -blue-1 bg-blue-1-05 text-blue-1"
+              >
+                More <div className="icon-arrow-top-right ml-15" />
+              </Link>
+            </div>
+          </div>
+          
+
+          <div className="row y-gap-30 pt-40 sm:pt-20 item_gap-x30">
+            <Hotels />
+          </div>
+          
+        </div>
+      </section> */}
+      {/* End  Hotel sections */}
+
 
       {/* <section className="layout-pt-md layout-pb-md">
         <div className="container">

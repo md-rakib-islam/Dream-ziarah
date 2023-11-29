@@ -4,8 +4,8 @@
 import Image from "next/image";
 
 // Import Swiper React components
+import { Autoplay, Scrollbar } from "swiper";
 import { Swiper, SwiperSlide } from "swiper/react";
-import { Scrollbar } from "swiper";
 import { testimonial1 } from "../../../data/testimonialData";
 
 const Testimonial = () => {
@@ -16,7 +16,11 @@ const Testimonial = () => {
           el: ".js-scrollbar",
           draggable: true,
         }}
-        modules={[Scrollbar]}
+        autoplay={{
+          delay: 2000,
+          disableOnInteraction: false,
+        }}
+        modules={[Scrollbar, Autoplay]}
       >
         {testimonial1.map((item) => (
           <SwiperSlide key={item.id}>

@@ -1,13 +1,38 @@
 
 'use client'
 
-import Link from 'next/link';
+import { useRouter, useSearchParams } from 'next/navigation';
+import { useEffect, useState } from 'react';
 import AnchorLink from 'react-anchor-link-smooth-scroll';
 import { Tab, TabList, TabPanel, Tabs } from "react-tabs";
 
 const TermsConent = () => {
+  const [tabIndex, setTabIndex] = useState(0);
+  const router = useRouter();
+  const searchParams = useSearchParams()
+  // console.log(searchParams.get("type"))
+
+  useEffect(() => {
+
+    if(searchParams.get("type")==="general_terms_of_use"){
+      setTabIndex(0);
+    }
+    if(searchParams.get("type")==="privacy_policy"){
+      setTabIndex(1);
+    }
+
+  }, []);
+  
+  useEffect(() => {
+    if(tabIndex === 0){
+      router.push("/terms?type=general_terms_of_use")
+    }
+    if(tabIndex === 1){
+      router.push("/terms?type=privacy_policy")
+    }
+  }, [tabIndex])
   return (
-    <Tabs>
+    <Tabs selectedIndex={tabIndex} onSelect={(index) => setTabIndex(index)}>
       <div className="row y-gap-30">
         <div className="col-lg-3">
           <div className="px-30 py-30 rounded-4 border-light">
@@ -35,7 +60,7 @@ const TermsConent = () => {
               <h1 className="text-30 fw-600 mb-15">Terms and Conditions of Use</h1>
               <h2 className="text-16 fw-500">1. Terms</h2>
               <p className="text-15 text-justify text-dark-1 mt-5">
-              By accessing this Website, accessible from <a className="text-primary" href='https://ziarah.dreamtourism.co.uk/' target="_blank">https://ziarah.dreamtourism.co.uk/</a>, you are agreeing to be bound by these Website Terms and Conditions of Use and agree that you are responsible for the agreement with any applicable local laws. If you disagree with any of these terms, you are prohibited from accessing this site. The materials contained in this Website are protected by copyright and trade mark law.
+              By accessing this Website, accessible from <a className="text-primary" href='https://dreamziarah.com' target="_blank">https://dreamziarah.com</a>, you are agreeing to be bound by these Website Terms and Conditions of Use and agree that you are responsible for the agreement with any applicable local laws. If you disagree with any of these terms, you are prohibited from accessing this site. The materials contained in this Website are protected by copyright and trade mark law.
               </p>
               <h2 className="text-16 fw-500 mt-35">
                 2. Use License
@@ -87,7 +112,7 @@ const TermsConent = () => {
               8. Your Privacy
               </h2>
               <p className="text-15 text-justify text-dark-1 mt-5">
-              Please read our <Link className="text-primary" href="/privacy-policy">Privacy Policy</Link>.
+              Please read our <span onClick={() => setTabIndex(1)} className="cursor-pointer text-primary">Privacy Policy</span>.
               </p>
               <h2 className="text-16 fw-500 mt-35">
               9. Governing Law

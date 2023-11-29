@@ -2,15 +2,15 @@ const ContactInfo = () => {
   const contactContent = [
     {
       id: 1,
-      title: "Toll Free Customer Care",
+      title: "Customer Care",
       action: "tel:+(1) 123 456 7890",
-      text: "+(1) 123 456 7890",
+      text: "+966 54 803 7409",
     },
     {
       id: 2,
       title: "Need live support?",
       action: "mailto:xyz@abc.com",
-      text: "hi@gotrip.com",
+      text: "sales@dreamziarah.com",
     },
   ];
   return (

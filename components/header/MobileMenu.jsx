@@ -1,39 +1,70 @@
 "use client";
 
+import Image from "next/image";
 import Link from "next/link";
 
+import Loading from "@/app/loading";
+import { BASE_URL } from "@/constant/constants";
+import { useGetLogoUrlQuery } from "@/features/site-setting/siteSettingApi";
+import { usePathname, useRouter } from "next/navigation";
+import { useEffect, useState } from "react";
 import {
-
-  Sidebar,
   Menu,
   MenuItem,
+  Sidebar,
   SubMenu,
 } from "react-pro-sidebar";
+import { useSelector } from "react-redux";
 import {
-  homeItems,
-  blogItems,
-  pageItems,
-  dashboardItems,
-  categorieMobileItems,
-  categorieMegaMenuItems,
+  categorieMegaMenuItems
 } from "../../data/mainMenuData";
 import {
   isActiveLink,
-
 } from "../../utils/linkActiveChecker";
 import Social from "../common/social/Social";
 import ContactInfo from "./ContactInfo";
-import { usePathname, useRouter } from "next/navigation";
-import { useEffect, useState } from "react";
 
 const MobileMenu = () => {
   const pathname = usePathname();
+  const router = useRouter()
+  const {menuItems} = useSelector(state => state.menus);
 
   const [isActiveParent, setIsActiveParent] = useState(false)
   const [isActiveNestedParentTwo, setisActiveNestedParentTwo] = useState(false)
   const [isActiveNestedParent, setisActiveNestedParent] = useState(false)
 
-  const router = useRouter()
+  const {data, isSuccess, isLoading} = useGetLogoUrlQuery(null);
+  
+  const filteredMenus = menuItems?.filter((item) => {
+    if(item.name ==="About" || item.name === "Contact") {
+      return false;
+    };
+    return true;
+  });
+  filteredMenus.sort((a, b) => a.position - b.position);
+  
+  const modifiedMenuItems = filteredMenus?.map((item) => {
+    if(item.name === "Ziarah"){
+      return{
+        ...item,
+        routePath : "/",
+        children : item?.children?.length > 0 ? item.children.map((subItem) => ({...subItem, routePath : `/${item.name.toLowerCase()}/${subItem.name.toLowerCase()}`})) : []
+      }
+    }
+    return {
+      ...item,
+      routePath : `/${item?.name?.toLowerCase()}`,
+      children : item?.children?.length > 0 ? item.children.map((subItem) => ({...subItem, routePath : `/${item.name.toLowerCase()}/${subItem.name.toLowerCase()}`})) : []
+    }
+  });
+  let logoUrl = "";
+ if(isSuccess){
+  // console.log(data);
+  logoUrl = `${BASE_URL}/${data?.general_settings[0].favicon}`
+ }
+
+ const currentPathName = pathname.split('/')[1] === 'destinations' ? '/destinations' : pathname.split('/')[1] === 'blog-details' ? "/blog": pathname;
+
 
    useEffect(() => {
 
@@ -55,11 +86,15 @@ const MobileMenu = () => {
    
  }, [])
 
+
   return (
     <>
       <div className="pro-header d-flex align-items-center justify-between border-bottom-light">
         <Link href="/">
-          <img src="/img/general/logo-dark.svg" alt="brand" />
+          {/* <img src="/img/general/logo-dark.svg" alt="brand" /> */}
+          {
+                    isLoading ? (<Loading/>) : (<Image style={{width : "60px", height:"60px"}} src={logoUrl} width={128} height={128} alt="logo"/>)
+                  }
         </Link>
         {/* End logo */}
 
@@ -78,7 +113,41 @@ const MobileMenu = () => {
         <Sidebar width="400" backgroundColor="#fff">
 
           <Menu>
-            <SubMenu label="Home" className={ homeItems.some((item=>item.routePath?.split('/')[1] == pathname.split('/')[1])) ? "menu-active-link":''}>
+            {
+              modifiedMenuItems?.map((menu) => {
+                if(menu?.children.length === 0){
+                  return (<MenuItem
+                    onClick={()=>router.push(menu?.routePath)}
+                    className={
+                     pathname === menu?.routePath
+                       ? "menu-active-link"
+                       : ""
+                   }
+                     
+                   >
+                     {menu.name}
+                   </MenuItem>)
+                }else{
+                  return (<SubMenu label={menu?.name} className={ menu?.children?.some((item=>item.routePath?.split('/')[1] == currentPathName.split("/")[1])) ? "menu-active-link":''}>
+                  {menu?.children?.map((item, i) => (
+                    <MenuItem
+                      key={i}
+                      onClick={()=>router.push(item.routePath)}
+                      className={
+                        isActiveLink(item.routePath, pathname)
+                          ? "menu-active-link"
+                          : "inactive-menu"
+                      }
+                     
+                    >
+                      {item.name}
+                    </MenuItem>
+                  ))}
+                </SubMenu>)
+                }
+              })
+            }
+            {/* <SubMenu label="Home" className={ homeItems.some((item=>item.routePath?.split('/')[1] == pathname.split('/')[1])) ? "menu-active-link":''}>
               {homeItems.map((item, i) => (
                 <MenuItem
                   key={i}
@@ -93,10 +162,10 @@ const MobileMenu = () => {
                   {item.name}
                 </MenuItem>
               ))}
-            </SubMenu>
+            </SubMenu> */}
             {/* End  All Home Menu */}
 
-            <SubMenu label="Categories" className={isActiveParent ? 'menu-active-link':'' }>
+            {/* <SubMenu label="Categories" className={isActiveParent ? 'menu-active-link':'' }>
               {categorieMobileItems.map((item) => (
                 <SubMenu label={item.title} key={item.id} className={isActiveNestedParent == item.id ? 'menu-active-link':'inactive-menu'}>
                   {item.menuItems.map((single) => (
@@ -118,10 +187,10 @@ const MobileMenu = () => {
                   ))}
                 </SubMenu>
               ))}
-            </SubMenu>
+            </SubMenu> */}
             {/* End  All Categories Menu */}
 
-            <MenuItem
+            {/* <MenuItem
              onClick={()=>router.push("/destinations")}
              className={
               pathname === "/destinations"
@@ -131,10 +200,10 @@ const MobileMenu = () => {
               
             >
               Desitinations
-            </MenuItem>
+            </MenuItem> */}
             {/* End  Desitinations Menu */}
 
-            <SubMenu label="Blog" className={ blogItems.some((item=>item.routePath?.split('/')[1] == pathname.split('/')[1])) ? "menu-active-link":''}>
+            {/* <SubMenu label="Blog" className={ blogItems.some((item=>item.routePath?.split('/')[1] == pathname.split('/')[1])) ? "menu-active-link":''}>
               {blogItems.map((item, i) => (
                 <MenuItem
                   key={i}
@@ -148,10 +217,10 @@ const MobileMenu = () => {
                   {item.name}
                 </MenuItem>
               ))}
-            </SubMenu>
+            </SubMenu> */}
             {/* End  All Blog Menu */}
 
-            <SubMenu label="Pages" className={ pageItems.some((item=>item.routePath?.split('/')[1] == pathname.split('/')[1])) ? "menu-active-link":''}>
+            {/* <SubMenu label="Pages" className={ pageItems.some((item=>item.routePath?.split('/')[1] == pathname.split('/')[1])) ? "menu-active-link":''}>
               {pageItems.map((item, i) => (
                 <MenuItem
                   key={i}
@@ -165,10 +234,10 @@ const MobileMenu = () => {
                   {item.name}
                 </MenuItem>
               ))}
-            </SubMenu>
+            </SubMenu> */}
             {/* End  All Pages Menu */}
 
-            <SubMenu label="Dashboard" className={ pathname.split('/')[1] == 'dashboard'  || pathname.split('/')[1] == 'vendor-dashboard' ? "menu-active-link":''}>
+            {/* <SubMenu label="Dashboard" className={ pathname.split('/')[1] == 'dashboard'  || pathname.split('/')[1] == 'vendor-dashboard' ? "menu-active-link":''}>
               {dashboardItems.map((item, i) => (
                 <MenuItem
                   key={i}
@@ -182,7 +251,7 @@ const MobileMenu = () => {
                   {item.name}
                 </MenuItem>
               ))}
-            </SubMenu>
+            </SubMenu> */}
             {/* End  All Dashboard Menu */}
 
             <MenuItem

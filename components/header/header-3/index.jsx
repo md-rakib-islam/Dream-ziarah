@@ -24,7 +24,7 @@ const Header1 = () => {
   const {data : menuData, isSuccess: isMenuSuccess, isLoading:isMenuLoading} = useGetAllMenuQuery(null)
   let logoUrl = "";
  if(isSuccess){
-  console.log(data);
+  // console.log(data);
   logoUrl = `${BASE_URL}/${data?.general_settings[0].favicon}`
  }
  if(isMenuSuccess){

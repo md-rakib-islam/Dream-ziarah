@@ -14,9 +14,9 @@ const Slights = ({slug}) => {
           data-aos-delay={item.delayAnimation}
         >
           <div className="rounded-4 border-light">
-            <div className="d-flex flex-wrap y-gap-30">
+            <div className="d-flex flex-wrap">
               <div className="col-auto">
-                <div className="ratio ratio-1:1 w-200">
+                <div className="ratio ratio-1:1 w-200 py-20">
                   <Image
                     width={200}
                     height={200}
@@ -27,7 +27,7 @@ const Slights = ({slug}) => {
                 </div>
               </div>
               <div className="col">
-                <div className="d-flex flex-column justify-center h-full px-30 py-20">
+                <div className="d-flex flex-column justify-center h-full px-30">
                   <h3 className="text-18 fw-500">{item.title}</h3>
                   <p className="text-15 mt-5">{item.text}</p>
                   {/* <Link

@@ -83,7 +83,7 @@ const Contact = () => {
               <div className="sectionTitle -md">
                 <h2 className="sectionTitle__title">Why Choose Us</h2>
                 <p className=" sectionTitle__text mt-5 sm:mt-0">
-                  These popular destinations have a lot to offer
+                  Experience Quality and Excellence with DreamZiarah
                 </p>
               </div>
             </div>

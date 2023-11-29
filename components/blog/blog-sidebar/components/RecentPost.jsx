@@ -5,7 +5,7 @@ import blogsData from "../../../../data/blogs";
 const RecentPost = () => {
   return (
     <>
-      {blogsData.slice(3, 6).map((item) => (
+      {blogsData.slice(0, 0).map((item) => (
         <div className="col-12" key={item.id}>
           <div className="d-flex items-center">
             <Image

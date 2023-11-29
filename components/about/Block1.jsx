@@ -5,18 +5,12 @@ const Block1 = () => {
     <>
       <div className="col-lg-5">
         <h2 className="text-30 fw-600">About Dream Ziarah</h2>
-        <p className="mt-5">These popular destinations have a lot to offer</p>
+        <p className="mt-5">Where Journeys Become Spiritual Narratives</p>
         <p className="text-dark-1 mt-60 lg:mt-40 md:mt-20">
-          London is a shining example of a metropolis at the highest peak of
-          modernity and boasts an economy and cultural diversity that’s the envy
-          of other global superpowers.
+        Welcome to Dream Ziarah, your trusted partner for spiritual journeys. We specialize in making your pilgrimage comfortable and meaningful. Whether it's Ziarah, Hajj, or Umrah, we're here to simplify your experience. Our legacy is built on excellence, ensuring every detail is taken care of for a hassle-free journey.
           <br />
           <br />
-          Take the opportunity to acquaint yourself with its fascinating history
-          chronicled by institutions like the British Museum as well as see how
-          far it has come by simply riding the Tube and passing by celebrated
-          landmarks like Buckingham Palace, Westminster Abbey, and marvels like
-          Big Ben, the London Eye, and the Tower Bridge.
+          We prioritize your spiritual well-being, offering cozy accommodations, expert guidance, and moments of reflection. Join us for a journey where every step is filled with peace and purpose. Dream Ziarah is more than a service; it's your companion in turning your spiritual dreams into reality.
         </p>
       </div>
       {/* End .col */}

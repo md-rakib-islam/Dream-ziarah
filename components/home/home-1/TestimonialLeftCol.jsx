@@ -6,8 +6,7 @@ const TestimonialLeftCol = () => {
         <br /> saying us?
       </h2>
       <p className="mt-20">
-        Lorem ipsum dolor sit amet, consectetur adipiscing elit. Maecenas varius
-        tortor nibh, sit amet tempor nibh finibus et. Aenean eu enim justo.
+      Dream Ziarah turned my Ziarah journey into a spiritual retreat. The warmth of their team and the carefully curated experience made it a cherished memory. - Farida Rahman
       </p>
       <div className="row y-gap-30 pt-60 lg:pt-40">
         <div className="col-sm-5 col-6">

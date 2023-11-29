@@ -1,19 +1,44 @@
 
 'use client'
 
-import React from "react";
+import { useCreateNewsLetterMutation } from "@/features/newsLetter/newsLetterSlice";
+import { useState } from "react";
+
+const initialState = {
+  fullName : "",
+  email : "",
+  subject : "",
+  message : "",
+}
 
 const ContactForm = () => {
-  const handleSubmit = (event) => {
+  const [formState, setFormState] = useState({...initialState});
+  const [createNewsLetter, {isLoading, isSuccess}] = useCreateNewsLetterMutation();
+  
+  const handleSubmit = async(event) => {
     event.preventDefault();
-    // handle form submission logic here
+    const res = await createNewsLetter(formState);
+    if(res.data){
+      alert("thanks for contact with us!");
+      setFormState(initialState);
+    }
+    
+    
   };
+
+  const handleChange = (event) => {
+    setFormState((prev) => ({
+      ...prev,
+      [event.target.name] : event.target.value
+    }));
+
+  }
 
   return (
     <form className="row y-gap-20 pt-20" onSubmit={handleSubmit}>
       <div className="col-12">
         <div className="form-input">
-          <input type="text" id="name" required />
+          <input onChange={handleChange} value={formState.fullName} type="text" name="fullName" id="name" required />
           <label htmlFor="name" className="lh-1 text-16 text-light-1">
             Full Name
           </label>
@@ -21,7 +46,7 @@ const ContactForm = () => {
       </div>
       <div className="col-12">
         <div className="form-input">
-          <input type="email" id="email" required />
+          <input onChange={handleChange} value={formState.email} type="email" name="email" id="email" required />
           <label htmlFor="email" className="lh-1 text-16 text-light-1">
             Email
           </label>
@@ -29,7 +54,7 @@ const ContactForm = () => {
       </div>
       <div className="col-12">
         <div className="form-input">
-          <input type="text" id="subject" required />
+          <input onChange={handleChange} value={formState.subject} type="text" name="subject" id="subject" required />
           <label htmlFor="subject" className="lh-1 text-16 text-light-1">
             Subject
           </label>
@@ -37,7 +62,7 @@ const ContactForm = () => {
       </div>
       <div className="col-12">
         <div className="form-input">
-          <textarea id="message" required rows="4"></textarea>
+          <textarea onChange={handleChange} value={formState.message} id="message" name="message" required rows="4"></textarea>
           <label htmlFor="message" className="lh-1 text-16 text-light-1">
             Your Message
           </label>

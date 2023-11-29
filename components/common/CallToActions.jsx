@@ -1,4 +1,18 @@
+"use client";
+import { useCreateNewsLetterMutation } from "@/features/newsLetter/newsLetterSlice";
+import { useState } from "react";
+
 const CallToActions = () => {
+  const [email, setEmail] = useState("");
+  const [createNewsLetter, {isLoading, isSuccess}] = useCreateNewsLetterMutation();
+
+  const handleSubmit = async() => {
+    const res = await createNewsLetter({email});
+    if(res.data){
+      alert("subcription added! thank you");
+      setEmail("");
+    }
+  }
   return (
     <section className="layout-pt-md layout-pb-md bg-dark-2">
       <div className="container">
@@ -24,15 +38,19 @@ const CallToActions = () => {
             <div className="single-field -w-410 d-flex x-gap-10 y-gap-20">
               <div>
                 <input
+                  onChange={(e) => setEmail(e.target.value)}
+                  value={email}
+                  required
+                  name="email"
                   className="bg-white h-60"
-                  type="text"
+                  type="email"
                   placeholder="Your Email"
                 />
               </div>
               {/* End email input */}
 
               <div>
-                <button className="button -md h-60 bg-blue-1 text-white">
+                <button disabled={!email || isLoading} onClick={handleSubmit} className="button -md h-60 bg-blue-1 text-white">
                   Subscribe
                 </button>
               </div>
