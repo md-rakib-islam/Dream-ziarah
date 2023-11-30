@@ -40,9 +40,9 @@ const Testimonial = () => {
   return (
     <>
       <Slider {...settings}>
-        {testimonial1.map((item) => (
+        {testimonial1.slice(0, 6).map((item) => (
           <div
-            className="testimonials -type-1 bg-white rounded-4 pt-40 pb-30 px-40"
+            className="testimonials h-75 -type-1 bg-white rounded-4 pt-40 pb-30 px-40"
             key={item.id}
             data-aos="fade"
             data-aos-delay={item.dealyAnimation}
@@ -64,9 +64,9 @@ const Testimonial = () => {
                 </div>
                 <div className="col-auto">
                   <div className="text-15 fw-500 lh-14">{item.name}</div>
-                  <div className="text-14 lh-14 text-light-1 mt-5">
+                  {/* <div className="text-14 lh-14 text-light-1 mt-5">
                     {item.designation}
-                  </div>
+                  </div> */}
                 </div>
               </div>
             </div>

@@ -4,7 +4,6 @@ import dynamic from "next/dynamic";
 // import DefaultFooter from "@/components/footer/default";
 // import Activity from "@/components/activity/Activity";
 import Slights from "@/components/block/Slights";
-import Blog from "@/components/blog/Blog3";
 // import Cars from "@/components/cars/Cars";
 // import LocationTopBar from "@/components/common/LocationTopBar";
 import TopDestinations2 from "@/components/destinations/TopDestinations2";
@@ -84,13 +83,13 @@ const Destinations = ({ params }) => {
           {/* <div className="row y-gap-20">
             <div className="col-12">
               <h2 className="text-22 fw-500">General info</h2>
-            </div> */}
-            {/* End .col */}
-            {/* <GeneralInfo /> */}
-          {/* </div> */}
-          {/* End .row */}
+            </div>
+            
+            <GeneralInfo />
+          </div> */}
+         
           {/* <div className="mt-30 border-top-light" /> */}
-          {/* border separation */}
+          
         </div>
         {/* End .container */}
       </section>
@@ -128,14 +127,14 @@ const Destinations = ({ params }) => {
       </section> */}
       {/* End  Hotel sections */}
 
-      <section className="layout-pt-md layout-pb-md">
+      <section className="">
         <div className="container">
           <div className="row y-gap-20 justify-between items-end">
             <div className="col-auto">
               <div className="sectionTitle -md">
                 <h2 className="sectionTitle__title">Most Popular Tours</h2>
                 <p className=" sectionTitle__text mt-5 sm:mt-0">
-                  Interdum et malesuada fames ac ante ipsum
+                Explore Our Best Sellers: Unmatched Experiences in Every Journey
                 </p>
               </div>
             </div>
@@ -265,7 +264,7 @@ const Destinations = ({ params }) => {
       </section> */}
       {/* Popular Car Hire Sections */}
 
-      <section className="layout-pt-md layout-pb-md">
+      {/* <section className="layout-pt-md layout-pb-md">
         <div className="container">
           <div className="row justify-center text-center">
             <div className="col-auto">
@@ -279,14 +278,14 @@ const Destinations = ({ params }) => {
               </div>
             </div>
           </div>
-          {/* End .row  */}
+         
           <div className="row y-gap-30 pt-40">
             <Blog />
           </div>
-          {/* End .row */}
+         
         </div>
-        {/* End .container */}
-      </section>
+        
+      </section> */}
       {/* End blog Section */}
 
       <section className="layout-pt-md layout-pb-lg">

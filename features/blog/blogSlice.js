@@ -1,7 +1,7 @@
 import { createSlice } from "@reduxjs/toolkit";
 
 const initialState = {
-    currentCategory :  { id: 1, name: "Hajj", number: "92" }
+    currentCategory :  { id: 1, name: "Hajj", number: 0 }
 };
 
 export const blogSlice = createSlice({

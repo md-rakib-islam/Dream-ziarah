@@ -514,28 +514,28 @@ export const slightContent = {
   items : [
     {
       id: 1,
-      img: "/img/backgrounds/1.png",
+      img: "/img/destinations/jeddah/historical jidda.webp",
       title: "Historical Jeddah (Al-Balad)",
       text: `Explore Al-Balad, the historic district of Jeddah, which preserves traditional architecture and offers a glimpse into the city's past. The area reflects the historical Islamic influence on Jeddah's development as a trading port.`,
       delayAnimation: "100",
     },
     {
       id: 2,
-      img: "/img/backgrounds/2.png",
+      img: "/img/destinations/jeddah/king fahd.webp",
       title: "King Fahd Fountain",
       text: `While not directly tied to Islamic history, the King Fahd Fountain is an iconic landmark in Jeddah. It provides a captivating view of the Red Sea and serves as a symbol of the city's development under Islamic principles.`,
       delayAnimation: "200",
     },
     {
       id: 3,
-      img: "/img/backgrounds/3.png",
+      img: "/img/destinations/jeddah/oldcoral.webp",
       title: "Old Coral Houses",
       text: `Discover the old coral houses in Jeddah, showcasing traditional Saudi architecture. These historic residences, adorned with intricate designs, reflect the cultural and architectural heritage of the region`,
       delayAnimation: "300",
     },
     {
       id: 4,
-      img: "/img/backgrounds/4.png",
+      img: "/img/destinations/jeddah/quran gate.webp",
       title: "Quran Gate",
       text: `The Quran Gate is a modern structure that marks the entrance to Jeddah. While not an ancient site, it symbolizes the importance of the Quran in Saudi Arabia, aligning with the nation's Islamic principles.`,
       delayAnimation: "400",
@@ -573,35 +573,36 @@ export const slightContent = {
       content: `Yes, Souq Al Alawi in Jeddah is a bustling traditional market where visitors can explore local crafts, spices, and experience the vibrant Saudi culture.`,
     },
   ],
-  footerContent : `While Jeddah is more renowned for its contemporary development, these locations provide glimpses into the historical and cultural aspects influenced by Islamic traditions.`
+  footerContent : `While Jeddah is more renowned for its contemporary development, these locations provide glimpses into the historical and cultural aspects influenced by Islamic traditions.`,
+  location : `https://www.google.com/maps/embed?pb=!1m18!1m12!1m3!1d475325.03137566603!2d38.881491443934955!3d21.44980016391344!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x15c3d01fb1137e59%3A0xe059579737b118db!2sJeddah%20Saudi%20Arabia!5e0!3m2!1sen!2sbd!4v1701336590500!5m2!1sen!2sbd`,
 },
 makkah : {
   title : `Makkah, the holiest city in Islam, is home to numerous significant sites related to Islamic history. Here are four of the most important:`,
 items : [
   {
     id: 1,
-    img: "/img/backgrounds/1.png",
+    img: "/img/destinations/makkah/The Kaaba (Al-Kaaba) 946 X 826.webp",
     title: "The Kaaba (Al-Kaaba)",
     text: `The Kaaba, located within the Masjid al-Haram, is the holiest site in Islam. Muslims around the world face the Kaaba during their prayers. It holds immense religious and historical significance as the House of Allah.`,
     delayAnimation: "100",
   },
   {
     id: 2,
-    img: "/img/backgrounds/2.png",
+    img: "/img/destinations/makkah/Masjid al-Haram 946 X 826.webp",
     title: "Masjid al-Haram",
     text: `Masjid al-Haram, the Grand Mosque, surrounds the Kaaba and is one of the largest mosques globally. It accommodates millions of worshippers during Hajj and Umrah. The Black Stone and the Maqam Ibrahim are also within its premises.`,
     delayAnimation: "200",
   },
   {
     id: 3,
-    img: "/img/backgrounds/3.png",
+    img: "/img/destinations/makkah/Jabal al-Noor (Mountain of Light) 946 X 826.webp",
     title: "Jabal al-Noor (Mountain of Light)",
     text: `Jabal al-Noor is the mountain that houses the Cave Hira, where Prophet Muhammad received the first revelation from Allah through the angel Gabriel. The climb to the cave offers a spiritual journey and a connection to the beginnings of Islam.`,
     delayAnimation: "300",
   },
   {
     id: 4,
-    img: "/img/backgrounds/4.png",
+    img: "/img/destinations/makkah/Jamarat 946 X 826.webp",
     title: "Jamarat",
     text: `The Jamarat in Mina is the site where pilgrims perform the symbolic Stoning of the Devil during the Hajj pilgrimage. This ritual commemorates the actions of Prophet Ibrahim (Abraham) during his encounter with Satan.`,
     delayAnimation: "400",
@@ -639,35 +640,36 @@ faqContent : [
     content: `Makkah is approximately 450 kilometers (280 miles) from Medina, making it a significant distance covered by pilgrims during the Hajj pilgrimage.`,
   },
 ],
-footerContent : `These sights in Makkah are integral to Islamic history, representing the core of the faith and serving as focal points for millions of Muslims around the world.`
+footerContent : `These sights in Makkah are integral to Islamic history, representing the core of the faith and serving as focal points for millions of Muslims around the world.`,
+location : `https://www.google.com/maps/embed?pb=!1m18!1m12!1m3!1d237684.58518226293!2d39.681731277513904!3d21.43625437209811!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x15c21b4ced818775%3A0x98ab2469cf70c9ce!2sMakkah%20Saudi%20Arabia!5e0!3m2!1sen!2sbd!4v1701348201552!5m2!1sen!2sbd`,
 },
 medina : {
   title : `Medina, the second holiest city in Islam, is rich in Islamic history. Here are four significant sights in Medina related to Islamic history:`,
 items : [
   {
     id: 1,
-    img: "/img/backgrounds/1.png",
+    img: "/img/destinations/medina/Al-Masjid an-Nabawi.webp",
     title: "Prophet's Mosque (Al-Masjid an-Nabawi)",
     text: `The Prophet's Mosque, built by Prophet Muhammad, is a central place of worship for Muslims worldwide. It houses the Prophet's tomb and remains a symbol of Islamic history and spirituality.`,
     delayAnimation: "100",
   },
   {
     id: 2,
-    img: "/img/backgrounds/2.png",
+    img: "/img/destinations/medina/Untitled-Quba Mosque.webp",
     title: "Quba Mosque",
     text: `Quba Mosque is the first mosque built by Prophet Muhammad upon his arrival in Medina. It holds immense historical significance as a place where the Prophet laid the foundation for Islamic worship.`,
     delayAnimation: "200",
   },
   {
     id: 3,
-    img: "/img/backgrounds/3.png",
+    img: "/img/destinations/medina/Qiblatain Mosque.webp",
     title: "Qiblatain Mosque",
     text: `Qiblatain Mosque marks the site where the Qibla (direction of prayer) was changed from Jerusalem to Mecca. It is a historical and religious landmark, reminding visitors of a crucial event in Islamic history.`,
     delayAnimation: "300",
   },
   {
     id: 4,
-    img: "/img/backgrounds/4.png",
+    img: "/img/destinations/medina/Uhud Mountain and Battlefield.webp",
     title: "Uhud Mountain and Battlefield",
     text: `Mount Uhud and its surrounding area witnessed the Battle of Uhud, a significant event in early Islamic history. The mountain serves as a reminder of the trials faced by the early Muslim community.`,
     delayAnimation: "400",
@@ -705,35 +707,36 @@ faqContent : [
     content: `Uhud Mountain and its battlefield are associated with the Battle of Uhud, a crucial event in Islamic history. The mountain serves as a reminder of early Muslim struggles.`,
   },
 ],
-footerContent : `These sights in Medina are integral to Islamic history and offer visitors a profound connection to the foundations of the Islamic faith.`
+footerContent : `These sights in Medina are integral to Islamic history and offer visitors a profound connection to the foundations of the Islamic faith.`,
+location : `https://www.google.com/maps/embed?pb=!1m18!1m12!1m3!1d232410.1505581963!2d39.45274259705306!3d24.47129554590948!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x15bdbe5197d220d5%3A0x2e54514fea3b08d9!2sMadinah%20Saudi%20Arabia!5e0!3m2!1sen!2sbd!4v1701348141987!5m2!1sen!2sbd`,
 },
 taif : {
   title : `Taif, a city with a rich history, has several places of significance related to Islamic history. Here are four sights in Taif that have ties to Islamic heritage:`,
 items : [
   {
     id: 1,
-    img: "/img/backgrounds/1.png",
+    img: "/img/destinations/taif/Shubra-Palace.webp",
     title: "Shubra Palace",
     text: `Shubra Palace is a historical site that served as a residence for Saudi kings, including King Abdulaziz. While not directly tied to early Islamic history, it reflects the more recent history of the Kingdom and its leaders.`,
     delayAnimation: "100",
   },
   {
     id: 2,
-    img: "/img/backgrounds/2.png",
+    img: "/img/destinations/taif/Hada-Archaeological-Site.webp",
     title: "Hada Archaeological Site",
     text: `The Hada Archaeological Site in Taif provides a glimpse into ancient civilizations in the region, including pre-Islamic times. Explore the ruins and artifacts that tell the story of the area's historical evolution.`,
     delayAnimation: "200",
   },
   {
     id: 3,
-    img: "/img/backgrounds/3.png",
+    img: "/img/destinations/taif/Quba-Mosque-in-Taif.webp",
     title: "Quba Mosque in Taif",
     text: `Quba Mosque in Taif, like its namesake in Medina, holds significance in Islamic history. It is a place for prayer and reflection, contributing to the religious and cultural fabric of the city.`,
     delayAnimation: "300",
   },
   {
     id: 4,
-    img: "/img/backgrounds/4.png",
+    img: "/img/destinations/taif/Al-Mathna-Souq-_Souq-Okaz_.webp",
     title: "Al-Mathna Souq (Souq Okaz)",
     text: `Al-Mathna Souq, historically known as Souq Okaz, was a major pre-Islamic trade center. While its primary historical context predates Islam, it played a role in the cultural and economic interactions of the Arabian Peninsula.`,
     delayAnimation: "400",
@@ -771,35 +774,36 @@ faqContent : [
     content: `Absolutely, Taif hosts various cultural events, with the Taif Season offering diverse entertainment, shopping, and culinary experiences for visitors.`,
   },
 ],
-footerContent : `While Taif may not have as many well-known Islamic historical sites as some other cities, these locations offer a blend of historical insights, cultural context, and architectural heritage.`
+footerContent : `While Taif may not have as many well-known Islamic historical sites as some other cities, these locations offer a blend of historical insights, cultural context, and architectural heritage.`,
+location : `https://www.google.com/maps/embed?pb=!1m18!1m12!1m3!1d475532.17769237614!2d40.246259861094124!3d21.386158289377786!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x15e98eccb0a33f2f%3A0xfa3fe5e1341fa2a7!2sTaif%20Saudi%20Arabia!5e0!3m2!1sen!2sbd!4v1701347978289!5m2!1sen!2sbd`,
 },
 tabuk : {
   title : `While Tabuk is known for its historical significance, particularly from the pre-Islamic era, it's important to note that it might not have as many prominent Islamic historical sites as some other cities in Saudi Arabia. However, here are four places in Tabuk that have ties to Islamic history:`,
 items : [
   {
     id: 1,
-    img: "/img/backgrounds/1.png",
+    img: "/img/destinations/tabuk/Al-Bida Well.webp",
     title: "Al-Bida Well",
     text: `Although ancient and primarily associated with the pre-Islamic era, Al-Bida Well holds historical importance. Its location as a key stop on trade routes predates Islam, offering insights into the region's early history.`,
     delayAnimation: "100",
   },
   {
     id: 2,
-    img: "/img/backgrounds/2.png",
+    img: "/img/destinations/tabuk/Tabuk Castle (Qasr Al-Ablaq).webp",
     title: "Tabuk Castle (Qasr Al-Ablaq)",
     text: `Tabuk Castle, built during the Ottoman era, stands as a testament to more recent history. While not directly tied to Islamic events, it reflects the architectural influence of the Ottomans in the region.`,
     delayAnimation: "200",
   },
   {
     id: 3,
-    img: "/img/backgrounds/3.png",
+    img: "/img/destinations/tabuk/Quba Mosque in Tabuk.webp",
     title: "Quba Mosque in Tabuk",
     text: `Quba Mosque in Tabuk, while not as famous as the Quba Mosque in Medina, holds religious significance. Visitors can engage in prayers and contemplation in this mosque, fostering a connection with Islamic heritage.`,
     delayAnimation: "300",
   },
   {
     id: 4,
-    img: "/img/backgrounds/4.png",
+    img: "/img/destinations/tabuk/Tabuk-Museum.webp",
     title: "Tabuk Museum",
     text: `The Tabuk Museum may have exhibits related to the region's history, including artifacts that offer insights into the cultural and historical context of the area during different periods, including Islamic times.`,
     delayAnimation: "400",
@@ -837,6 +841,7 @@ faqContent : [
     content: `Yes, Tabuk is well-connected, with a proximity of about 5 hours to Medina and a 10-hour drive to Riyadh, making it accessible for travelers exploring the region.`,
   },
 ],
-footerContent : `Please note that the prominence of Islamic historical sites in Tabuk may not be as pronounced as in other cities, but these locations provide some connection to Islamic history and culture in the region.`
+footerContent : `Please note that the prominence of Islamic historical sites in Tabuk may not be as pronounced as in other cities, but these locations provide some connection to Islamic history and culture in the region.`,
+location : `https://www.google.com/maps/embed?pb=!1m18!1m12!1m3!1d112309.66068687938!2d36.48350016077856!3d28.39882532163859!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x15a9ad0594132365%3A0x6f40e3c6b6139acf!2sTabuk%20Saudi%20Arabia!5e0!3m2!1sen!2sbd!4v1701348042976!5m2!1sen!2sbd`,
 }
 };

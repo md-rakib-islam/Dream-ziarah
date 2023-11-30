@@ -7,13 +7,13 @@ import { useDispatch } from "react-redux";
 const Categories = () => {
   const dipatch = useDispatch();
   const catContent = [
-    { id: 1, name: "Hajj", number: "92" },
-    { id: 2, name: "Umrah", number: "55" },
-    { id: 3, name: "Destinations", number: "75" },
-    { id: 4, name: "Travel Tips", number: "62" },
-    { id: 5, name: "Budget Travel", number: "34" },
-    { id: 5, name: "Travel Planning", number: "34" },
-    { id: 5, name: "Local Insights", number: "34" },
+    { id: 1, name: "Hajj", number: 0 },
+    { id: 2, name: "Umrah", number: 0  },
+    { id: 3, name: "Destinations", number: 0  },
+    { id: 4, name: "Travel Tips", number: 0  },
+    { id: 5, name: "Budget Travel", number: 0  },
+    { id: 5, name: "Travel Planning", number: 0  },
+    { id: 5, name: "Local Insights", number: 0  },
   ];
   const [currentCategory, setCurrnetCategory] = useState( { id: 1, name: "Hajj", number: "92" });
   return (

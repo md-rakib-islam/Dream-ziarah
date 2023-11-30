@@ -6,6 +6,7 @@ import Link from "next/link";
 import Loading from "@/app/loading";
 import { BASE_URL } from "@/constant/constants";
 import { useGetLogoUrlQuery } from "@/features/site-setting/siteSettingApi";
+
 import { usePathname, useRouter } from "next/navigation";
 import { useEffect, useState } from "react";
 import {
@@ -36,7 +37,7 @@ const MobileMenu = () => {
   const {data, isSuccess, isLoading} = useGetLogoUrlQuery(null);
   
   const filteredMenus = menuItems?.filter((item) => {
-    if(item.name ==="About" || item.name === "Contact") {
+    if(item.name ==="About" || item.name === "Contact" || item.name === "Tour") {
       return false;
     };
     return true;
@@ -64,7 +65,6 @@ const MobileMenu = () => {
  }
 
  const currentPathName = pathname.split('/')[1] === 'destinations' ? '/destinations' : pathname.split('/')[1] === 'blog-details' ? "/blog": pathname;
-
 
    useEffect(() => {
 
@@ -118,6 +118,7 @@ const MobileMenu = () => {
                 if(menu?.children.length === 0){
                   return (<MenuItem
                     onClick={()=>router.push(menu?.routePath)}
+                    data-bs-dismiss="offcanvas"
                     className={
                      pathname === menu?.routePath
                        ? "menu-active-link"
@@ -131,6 +132,7 @@ const MobileMenu = () => {
                   return (<SubMenu label={menu?.name} className={ menu?.children?.some((item=>item.routePath?.split('/')[1] == currentPathName.split("/")[1])) ? "menu-active-link":''}>
                   {menu?.children?.map((item, i) => (
                     <MenuItem
+                      data-bs-dismiss="offcanvas"
                       key={i}
                       onClick={()=>router.push(item.routePath)}
                       className={
@@ -255,6 +257,7 @@ const MobileMenu = () => {
             {/* End  All Dashboard Menu */}
 
             <MenuItem
+             data-bs-dismiss="offcanvas"
              onClick={()=>router.push("/contact")}
              className={
               pathname === "/contact" ? "menu-active-link" : ""
@@ -279,14 +282,14 @@ const MobileMenu = () => {
             <Social />
           </div>
         </div>
-        <div className="mt-20">
+        {/* <div className="mt-20">
           <Link
             className=" button -dark-1 px-30 fw-400 text-14 bg-blue-1 h-50 text-white"
             href="/login"
           >
             Become An Expert
           </Link>
-        </div>
+        </div> */}
       </div>
       {/* End pro-footer */}
     </>

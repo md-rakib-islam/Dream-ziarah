@@ -1,4 +1,5 @@
 "use client";
+import { slightContent } from "@/data/desinations";
 import { useGetAllContentQuery } from "@/features/content/contentApi";
 import { Interweave } from "interweave";
 import { useSelector } from "react-redux";
@@ -11,7 +12,7 @@ const IntroTown = ({slug}) => {
   let value = "";
   if(isSuccess){
     value = data[0]?.value;
-    console.log(data[0]?.value);
+    // console.log(data[0]?.value);
   }
 
   return (
@@ -53,11 +54,13 @@ const IntroTown = ({slug}) => {
 
       <div className="col-xl-4">
         <div className="relative d-flex ml-35 xl:ml-0">
-          <img
+          {/* <img
             src="/img/pages/destinations/map.png"
             alt="image"
             className="col-12 rounded-4"
-          />
+          /> */}
+          <iframe src={slightContent[slug].location} height={300}></iframe>
+       
           <div className="absolute d-flex justify-center items-end col-12 h-full z-1 px-35 py-20">
             <button className="button h-50 px-25 -blue-1 bg-white text-dark-1 text-14 fw-500 col-12">
               <i className="icon-eye text-18 mr-10" />
@@ -66,6 +69,7 @@ const IntroTown = ({slug}) => {
           </div>
         </div>
       </div>
+      {/* <iframe src="https://www.google.com/maps/d/embed?mid=1rS8xTdrRnu4chLKEAmp5INGf8sA&hl=en&ehbc=2E312F" width="640" height="480"></iframe> */}
     </>
   );
 };

@@ -27,11 +27,12 @@ const Tours = () => {
       console.log("ccc",contentItems)
 
       let tours = contentItems.filter((item) => {
-      if(item.name === "Title" || item.name ==="Our Tour" || item.name ==="Our Tour Image" || item.name === "About" || item.name === "Companies") return false;
+      if(item.name === "makkah" || item.name ==="medina" || item.name ==="jedda" || item.name === "tabuk" || item.name === "taif") return false;
       return true;
     }).map((tour) => ({
       id: tour.id,
-      tag:  tour.id === 10 ? "top rated": tour.id === 9 ? "best seller" : "LIKELY TO SELL OUT*",
+      // tag:  tour.id === 10 ? "top rated": tour.id === 9 ? "best seller" : "LIKELY TO SELL OUT*",
+      tag : "",
       slideImg: [`${BASE_URL}/media/${data.content_images[tour.name]}`],
       title: tour.name,
       location: "Mecca, Saudi Arabia",
@@ -201,7 +202,7 @@ const Tours = () => {
                   </div>
                   {/* <div className="size-3 bg-light-1 rounded-full ml-10 mr-10" /> */}
                   <div className="ml-10 mr-10" />
-                  <div className="text-14 text-light-1">{item?.tourType}</div>
+                  {/* <div className="text-14 text-light-1">{item?.tourType}</div> */}
                 </div>
                 <h4 className="tourCard__title text-dark-1 text-18 lh-16 fw-500">
                   <span>{item?.title}</span>

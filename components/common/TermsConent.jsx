@@ -60,7 +60,7 @@ const TermsConent = () => {
               <h1 className="text-30 fw-600 mb-15">Terms and Conditions of Use</h1>
               <h2 className="text-16 fw-500">1. Terms</h2>
               <p className="text-15 text-justify text-dark-1 mt-5">
-              By accessing this Website, accessible from <a className="text-primary" href='https://dreamziarah.com' target="_blank">https://dreamziarah.com</a>, you are agreeing to be bound by these Website Terms and Conditions of Use and agree that you are responsible for the agreement with any applicable local laws. If you disagree with any of these terms, you are prohibited from accessing this site. The materials contained in this Website are protected by copyright and trade mark law.
+              By accessing this Website, accessible from <a className="text-primary" href='https://dreamziarah.com' target="_blank">https://dreamziarah.com/</a>, you are agreeing to be bound by these Website Terms and Conditions of Use and agree that you are responsible for the agreement with any applicable local laws. If you disagree with any of these terms, you are prohibited from accessing this site. The materials contained in this Website are protected by copyright and trade mark law.
               </p>
               <h2 className="text-16 fw-500 mt-35">
                 2. Use License
@@ -129,9 +129,9 @@ const TermsConent = () => {
               <h1 className="text-30 fw-600 mb-15"> PRIVACY POLICY</h1>
               <div className="mb-20">
               <div>
-                <p className="text-15 text-dark-1 mt-5">This privacy notice for Dream Muslim Ziarah ('we', 'us', or 'our'), describes how and why we might collect,store, use, and/or share ('process') your information when you use our services ('Services'), such as when you: </p>
+                <p className="text-15 text-dark-1 mt-5">This privacy notice for Dream Ziarah ('we', 'us', or 'our'), describes how and why we might collect,store, use, and/or share ('process') your information when you use our services ('Services'), such as when you: </p>
                 <ul className="mt-5 pl-80 mt-5 pl-80 listStyle">
-                  <li >Visit our website at <a className='text-primary' href='https://ziarah.dreamtourism.co.uk/'>https://ziarah.dreamtourism.co.uk/</a>, or any website of ours that links to this privacy notice</li>
+                  <li >Visit our website at <a className='text-primary' href='https://dreamziarah.com'>https://dreamziarah.com/</a>, or any website of ours that links to this privacy notice</li>
                   <li>Engage with us in other related ways, including any sales, marketing, or events</li>
                 </ul>
                 <p className="text-15 text-dark-1 mt-5">Questions or concerns? Reading this privacy notice will help you understand your privacy rights and choices. If you do not agree with our policies and practices, please do not use our Services.</p>
@@ -344,10 +344,9 @@ const TermsConent = () => {
                 </p>
                 <div className="row">
                   <div className="col-md-3">
-                    <h6>Dream Muslim Ziarah</h6>
-                    <hr style={{width : "50%", height:"2px"}}/>
-                    <hr style={{width : "50%", height:"2px"}}/>
-                    <span>Saudi Arabia</span>
+                    <h6 className='pb-10'>Dream Ziarah</h6>
+                    <h6>Address: </h6>
+                    <span>3893 Ibrahim Al Khalil, Ash Shubaikah 6428, Mecca 24231, Saudi Arabia.</span>
                   </div>
                 </div>
               </div>

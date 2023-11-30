@@ -1,6 +1,8 @@
 
 'use client'
 
+import { BASE_URL } from "@/constant/constants";
+import { useGetImagesByMenuIdQuery } from "@/features/image/imageApi";
 import Image from "next/image";
 import Link from "next/link";
 import { useSelector } from "react-redux";
@@ -10,13 +12,19 @@ import { Swiper, SwiperSlide } from "swiper/react";
 
 const TopDestinations2 = ({slug}) => {
   const {menuItems} = useSelector(state => state.menus);
-  const destinations = menuItems.find((item) => item.name === "Destinations")?.children?.filter((subItem) => subItem.name.toLowerCase() !==slug)?.map((item) => ( {
-    id: item.id,
-    img: "/img/destinations/3/1.png",
-    location: item.name,
-    properties: "4,090",
-    delayAnimation: "0",
-  }));
+  const ziarahId = menuItems.find((item) => item.name === "Ziarah")?.id;
+  const {isSuccess, data, isLoading} = useGetImagesByMenuIdQuery(ziarahId);
+  
+  let destinations = [];
+  if(isSuccess){
+      destinations = menuItems.find((item) => item.name === "Destinations")?.children?.filter((subItem) => subItem.name.toLowerCase() !==slug)?.map((item) => ( {
+      id: item.id,
+      img: `${BASE_URL}/media/${data?.content_images[item?.name?.toLowerCase()]}`,
+      location: item.name,
+      properties: "4,090",
+      delayAnimation: "0",
+    }));
+  }
 
   
   return (
@@ -49,7 +57,7 @@ const TopDestinations2 = ({slug}) => {
         {destinations?.map((item) => (
           <SwiperSlide key={item.id}>
             <Link
-              href="#"
+              href={`/destinations/${item?.location?.toLowerCase()}`}
               className="citiesCard -type-2"
               data-aos="fade"
               data-aos-delay={item.delayAnimation}
@@ -67,9 +75,9 @@ const TopDestinations2 = ({slug}) => {
                 <h4 className="text-18 lh-13 fw-500 text-dark-1 text-capitalize">
                   {item.location}
                 </h4>
-                <div className="text-14 text-light-1">
+                {/* <div className="text-14 text-light-1">
                   {item.properties} properties
-                </div>
+                </div> */}
               </div>
             </Link>
           </SwiperSlide>

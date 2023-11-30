@@ -20,7 +20,7 @@ const MainMenu = ({ style = "" }) => {
   // const [isActiveParent, setIsActiveParent] = useState(false);
   const {menuItems} = useSelector(state => state.menus);
   const filteredMenus = menuItems?.filter((item) => {
-    if(item.name ==="About" || item.name === "Contact") {
+    if(item.name ==="About" || item.name === "Contact" || item.name === "Tour") {
       return false;
     };
     return true;

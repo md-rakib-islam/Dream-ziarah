@@ -5,16 +5,14 @@ import dynamic from "next/dynamic";
 import "photoswipe/dist/photoswipe.css";
 // import Header11 from "@/components/header/header-11";
 import CallToActions from "@/components/common/CallToActions";
-import Faq from "@/components/faq/Faq";
 // import DefaultFooter from "@/components/footer/default";
 // import Header3 from "@/components/header/header-3";
 import ImportantInfo from "@/components/tour-single/ImportantInfo";
-import ReplyForm from "@/components/tour-single/ReplyForm";
-import ReplyFormReview2 from "@/components/tour-single/ReplyFormReview2";
 // import TopBreadCrumb from "@/components/tour-single/TopBreadCrumb";
 import TourGallery from "@/components/tour-single/TourGallery";
-import DetailsReview2 from "@/components/tour-single/guest-reviews/DetailsReview2";
-import ReviewProgress2 from "@/components/tour-single/guest-reviews/ReviewProgress2";
+// import DetailsReview2 from "@/components/tour-single/guest-reviews/DetailsReview2";
+// import ReviewProgress2 from "@/components/tour-single/guest-reviews/ReviewProgress2";
+import ReviewProgress2 from "@/components/activity-single/guest-reviews/ReviewProgress2";
 import Itinerary from "@/components/tour-single/itinerary";
 import Tours from "@/components/tours/Tours";
 import { BASE_URL } from "@/constant/constants";
@@ -32,11 +30,11 @@ const TourSingleV1Dynamic = ({ params }) => {
   const dispatch = useDispatch();
   const id = params.id;
   const {menuItems} = useSelector(state => state.menus);
-  const ziarahId = menuItems.find((item) => item.name === "Ziarah")?.id;
+  const tourId = menuItems.find((item) => item.name === "Tour")?.id;
   // const tour = toursData.find((item) => item.id == id) || toursData[0];
   const {data, isSuccess} = useGetContentsByMenuContentIdQuery(id);
   const {data : itenarayItems, isSuccess: isItenariesSuccess} = useGetItenariesByMenuContentIdQuery(id);
-  const {data : imageContents, isSuccess: isImageContentsSuccess} = useGetImagesByMenuIdQuery(ziarahId);
+  const {data : imageContents, isSuccess: isImageContentsSuccess} = useGetImagesByMenuIdQuery(tourId);
 
   if(isItenariesSuccess){
     // console.log("Itenaries", itenarayItems);
@@ -180,7 +178,7 @@ const TourSingleV1Dynamic = ({ params }) => {
       </section>
       {/* End Itinerary */}
 
-      <section className="mt-40">
+      {/* <section className="mt-40">
         <div className="container ">
           <div className="pt-40 border-top-light">
             <div className="row y-gap-20">
@@ -190,7 +188,7 @@ const TourSingleV1Dynamic = ({ params }) => {
                   <br /> The Crown Hotel
                 </h2>
               </div>
-              {/* End .row */}
+              
 
               <div className="col-lg-8">
                 <div
@@ -200,14 +198,14 @@ const TourSingleV1Dynamic = ({ params }) => {
                   <Faq />
                 </div>
               </div>
-              {/* End .col */}
+              
             </div>
-            {/* End .row */}
+           
           </div>
-          {/* End .pt-40 */}
+         
         </div>
-        {/* End .container */}
-      </section>
+     
+      </section> */}
       {/* End Faq about sections */}
 
       <section className="mt-40 border-top-light pt-40">
@@ -216,23 +214,23 @@ const TourSingleV1Dynamic = ({ params }) => {
             <div className="col-xl-3">
               <h3 className="text-22 fw-500">Guest reviews</h3>
               <ReviewProgress2 />
-              {/* End review with progress */}
+             
             </div>
-            {/* End col-xl-3 */}
+        
 
-            <div className="col-xl-8">
+            {/* <div className="col-xl-8">
               <DetailsReview2 />
-            </div>
-            {/* End col-xl-8 */}
+            </div> */}
+           
           </div>
-          {/* End .row */}
+
         </div>
-        {/* End .container */}
-        {/* End container */}
+
+
       </section>
       {/* End Review section */}
 
-      <section className="mt-40 border-top-light pt-40">
+      {/* <section className="mt-40 border-top-light pt-40">
         <div className="container">
           <div className="row y-gap-30 justify-between">
             <div className="col-xl-3">
@@ -244,22 +242,22 @@ const TourSingleV1Dynamic = ({ params }) => {
                   </p>
                 </div>
               </div>
-              {/* End .row */}
+          
 
               <ReplyFormReview2 />
-              {/* End ReplyFormReview */}
+          
             </div>
-            {/* End .col-xl-3 */}
+         
 
             <div className="col-xl-8">
               <ReplyForm />
             </div>
-            {/* End .col-xl-8 */}
+      
           </div>
-          {/* End .row */}
+        
         </div>
-        {/* End .container */}
-      </section>
+   
+      </section> */}
       {/* End Reply Comment box section */}
 
       <section className="layout-pt-lg layout-pb-lg mt-50 border-top-light">
@@ -269,7 +267,7 @@ const TourSingleV1Dynamic = ({ params }) => {
               <div className="sectionTitle -md">
                 <h2 className="sectionTitle__title">Most Popular Tours</h2>
                 <p className=" sectionTitle__text mt-5 sm:mt-0">
-                  Interdum et malesuada fames ac ante ipsum
+                Explore Our Best Sellers: Unmatched Experiences in Every Journey
                 </p>
               </div>
             </div>
