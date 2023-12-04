@@ -20,6 +20,7 @@ import { useGetImagesByMenuIdQuery } from "@/features/image/imageApi";
 import { addItenarayItems, addtourItem } from "@/features/tour/tourSlice";
 import Link from "next/link";
 import { useDispatch, useSelector } from "react-redux";
+import { EmailIcon, EmailShareButton, FacebookIcon, FacebookMessengerIcon, FacebookMessengerShareButton, FacebookShareButton, LinkedinIcon, LinkedinShareButton, WhatsappIcon, WhatsappShareButton } from "react-share";
 
 // export const metadata = {
 //   title: "Tour Single || GoTrip - Travel & Tour React NextJS Template",
@@ -27,6 +28,7 @@ import { useDispatch, useSelector } from "react-redux";
 // };
 
 const TourSingleV1Dynamic = ({ params }) => {
+  // useWeather()
   const dispatch = useDispatch();
   const id = params.id;
   const {menuItems} = useSelector(state => state.menus);
@@ -126,11 +128,30 @@ const TourSingleV1Dynamic = ({ params }) => {
 
             <div className="col-auto">
               <div className="row x-gap-10 y-gap-10">
-                <div className="col-auto">
-                  <button className="button px-15 py-10 -blue-1">
+                <div className="col-auto btn-group dropup">
+                  <button type="button" data-bs-toggle="dropdown" aria-expanded="false" className="button px-15 py-10 -blue-1 ">
                     <i className="icon-share mr-10"></i>
                     Share
                   </button>
+                  <ul className="dropdown-menu">
+                    <li className="d-flex my-2">
+                      <FacebookShareButton className="me-2" url={`https://dreamziarah.com/tour-single/${tour.id}`}>
+                        <FacebookIcon size={32} round={true}/>
+                      </FacebookShareButton>
+                      <FacebookMessengerShareButton className="me-2" url={`https://dreamziarah.com/tour-single/${tour.id}`}>
+                        <FacebookMessengerIcon size={32} round={true}/>
+                      </FacebookMessengerShareButton>
+                      <WhatsappShareButton className="me-2" url={`https://dreamziarah.com/tour-single/${tour.id}`}>
+                        <WhatsappIcon size={32} round={true}/>
+                      </WhatsappShareButton>
+                      <EmailShareButton className="me-2" url={`https://dreamziarah.com/tour-single/${tour.id}`}>
+                        <EmailIcon size={32} round={true}/>
+                      </EmailShareButton>
+                      <LinkedinShareButton url={`https://dreamziarah.com/tour-single/${tour.id}`}>
+                        <LinkedinIcon size={32} round={true}/>
+                      </LinkedinShareButton>
+                    </li>
+                  </ul>
                 </div>
 
                 <div className="col-auto">

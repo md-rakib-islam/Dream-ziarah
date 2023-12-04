@@ -12,23 +12,30 @@ import { useEffect, useState } from "react";
 import { useDispatch } from "react-redux";
 import CurrenctyMegaMenu from "../CurrenctyMegaMenu";
 import HeaderSearch from "../HeaderSearch";
-// import LanguageMegaMenu from "../LanguageMegaMenu";
 import MainMenu from "../MainMenu";
 import MobileMenu from "../MobileMenu";
 
 
 const Header1 = () => {
+
   const dispatch = useDispatch();
   const [navbar, setNavbar] = useState(false);
+  
   const {data, isSuccess, isLoading} = useGetLogoUrlQuery(null);
   const {data : menuData, isSuccess: isMenuSuccess, isLoading:isMenuLoading} = useGetAllMenuQuery(null)
+
   let logoUrl = "";
+
  if(isSuccess){
-  // console.log(data);
+
   logoUrl = `${BASE_URL}/${data?.general_settings[0].favicon}`
+
  }
+
  if(isMenuSuccess){
+
   dispatch(addMenuItems(menuData?.menus))
+
  }
 
   const changeBackground = () => {
@@ -54,8 +61,6 @@ const Header1 = () => {
             <div className="col-auto">
               <div className="d-flex items-center">
                 <Link href="/" className="header-logo mr-20">
-                  {/* <img src="/img/general/logo-dark.svg" alt="logo icon" />
-                  <img src="/img/general/logo-dark.svg" alt="logo icon" /> */}
                   {
                     isLoading ? (<Loading/>) : (<Image style={{width : "60px", height:"60px"}} src={logoUrl} width={128} height={128} alt="logo"/>)
                   }
@@ -89,22 +94,8 @@ const Header1 = () => {
                     <div className="w-1 h-20 bg-white-20" />
                   </div>
                   {/* End vertical devider*/}
-
-                  {/* <LanguageMegaMenu textClass="text-dark-1" /> */}
-                  {/* End Megamenu for Language */}
                 </div>
                 {/* End language and currency selector */}
-
-                {/* Start btn-group */}
-                {/* <div className="d-flex items-center ml-20 is-menu-opened-hide md:d-none">
-                  <Link
-                    href="/signup"
-                    className="button px-30 fw-400 text-14 -blue-1 bg-blue-1 h-50 text-white"
-                  >
-                    Sign In / Register
-                  </Link>
-                </div> */}
-                {/* End btn-group */}
 
                 {/* Start mobile menu icon */}
                 <div className="d-none xl:d-flex x-gap-20 items-center pl-30 text-dark-1">

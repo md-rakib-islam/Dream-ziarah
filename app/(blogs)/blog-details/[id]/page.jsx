@@ -12,7 +12,7 @@ import TopComment from "@/components/blog/blog-details/TopComment";
 import LocationTopBar from "@/components/common/LocationTopBar";
 import { BASE_URL } from "@/constant/constants";
 import blogsData from "@/data/blogs";
-import { useGetAllBlogContentsQuery } from "@/features/content/contentApi";
+import { useGetAllBlogContentsQuery, useGetAllContentQuery } from "@/features/content/contentApi";
 import { useGetImagesByMenuIdQuery } from "@/features/image/imageApi";
 import { Interweave } from "interweave";
 import { useSelector } from "react-redux";
@@ -29,12 +29,21 @@ const BlogSingleDynamic = ({ params }) => {
   const blogId = menuItems.find((item) => item.name === "Blog")?.id;
   const {isSuccess, data, isLoading} = useGetImagesByMenuIdQuery(blogId);
   const {isSuccess: isBlogDetailSuccess, data : blogDetails, isLoading: isBlogDetailsLoading} = useGetAllBlogContentsQuery(id);
+  const {isSuccess: isContentSuccess, data : contentItems, isLoading: isBlogContentLoading} = useGetAllContentQuery(blogId)
+
+  let relatedPosts = [];
+  if(isContentSuccess){
+    relatedPosts = contentItems?.filter((item) => item.category === blogDetails?.category);
+    relatedPosts = relatedPosts?.filter((item) => item.id != id);
+    console.log("related", relatedPosts);
+  }
 
   const blog = blogsData.find((item) => item.id == id) || blogsData[0];
 
   let blogItem = {};
  
   if(isSuccess && isBlogDetailSuccess){
+    
      blogItem = {
       id: blogDetails.id,
       img: data.content_images[blogDetails.name],
@@ -141,7 +150,7 @@ const BlogSingleDynamic = ({ params }) => {
           {/* End .row */}
 
           <div className="row y-gap-30 pt-40">
-            <RelatedBlog />
+            <RelatedBlog relatedPosts={relatedPosts}/>
           </div>
           {/* End .row */}
         </div>

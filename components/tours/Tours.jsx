@@ -1,74 +1,18 @@
 
 'use client'
 
-import { BASE_URL } from "@/constant/constants";
-import { useGetAllContentQuery } from "@/features/content/contentApi";
-import { useGetImagesByMenuIdQuery } from "@/features/image/imageApi";
-import convertCurrency from "@/utils/currency";
+import useTours from "@/hooks/useTours";
 import Image from "next/image";
 import Link from "next/link";
-import { useEffect, useState } from "react";
 import { useSelector } from "react-redux";
 import Slider from "react-slick";
 import isTextMatched from "../../utils/isTextMatched";
-// import toursData from "../../data/tours";
+
 
 const Tours = () => {
-  const [tourItems, setTourItems] = useState([]);
-  const {menuItems} = useSelector(state => state.menus);
-  const {currentCurrency, exchangeRates} = useSelector(state => state.currency);
-  const ziarahId = menuItems.find((item) => item.name === "Ziarah")?.id;
-  const {isSuccess, data, isLoading} = useGetImagesByMenuIdQuery(ziarahId);
-  const {isSuccess: isContentSuccess, data : contentItems, isLoading: isContentLoading} = useGetAllContentQuery(ziarahId);
+  const tourItems = useTours()
+  const {currentCurrency} = useSelector(state => state.currency);
   
-  
-  useEffect(() => {
-    if(isSuccess && isContentSuccess){
-      console.log("ccc",contentItems)
-
-      let tours = contentItems.filter((item) => {
-      if(item.name === "makkah" || item.name ==="medina" || item.name ==="jedda" || item.name === "tabuk" || item.name === "taif") return false;
-      return true;
-    }).map((tour) => ({
-      id: tour.id,
-      // tag:  tour.id === 10 ? "top rated": tour.id === 9 ? "best seller" : "LIKELY TO SELL OUT*",
-      tag : "",
-      slideImg: [`${BASE_URL}/media/${data.content_images[tour.name]}`],
-      title: tour.name,
-      location: "Mecca, Saudi Arabia",
-      duration: "3",
-      numberOfReviews: tour.id === 10 ? "57": tour.id === 9 ? "51" : "61",
-      price: convertCurrency(parseInt(tour?.price), "USD", currentCurrency?.currency, exchangeRates),
-      tourType: "Full-day Tours",
-      delayAnimation: "100",
-    }));
-
-    setTourItems(tours);
-
-    // if(currentCurrency?.currency !== "USD"){
-    //   if(currentCurrency?.currency === "SAR"){
-    //     const items = tours?.map((tour) => ({
-    //       ...tour,
-    //       price : (3.75 * tour.price).toFixed(2)
-    //     }));
-    //     // console.log("items", items)
-    //     setTourItems(items);
-    //   }else{
-    //     const main = async() => {
-    //       const result = await generateToursForCurrentCurrency(tours, "USD", currentCurrency?.currency);
-    //       setTourItems(result)
-         
-    //   };
-      
-    //   main();
-    //   }
-    // }
-    
-  }
-
-  }, [isSuccess, isContentSuccess, currentCurrency])
-  
- 
   var settings = {
     dots: true,
     infinite: true,

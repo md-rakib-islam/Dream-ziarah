@@ -12,11 +12,12 @@ import { Swiper, SwiperSlide } from "swiper/react";
 
 const TopDestinations2 = ({slug}) => {
   const {menuItems} = useSelector(state => state.menus);
-  const ziarahId = menuItems.find((item) => item.name === "Ziarah")?.id;
+  const ziarahId = menuItems.find((item) => item.name === "Destinations")?.id;
   const {isSuccess, data, isLoading} = useGetImagesByMenuIdQuery(ziarahId);
   
   let destinations = [];
   if(isSuccess){
+    console.log(data.content_images);
       destinations = menuItems.find((item) => item.name === "Destinations")?.children?.filter((subItem) => subItem.name.toLowerCase() !==slug)?.map((item) => ( {
       id: item.id,
       img: `${BASE_URL}/media/${data?.content_images[item?.name?.toLowerCase()]}`,

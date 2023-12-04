@@ -1,7 +1,8 @@
 import { createSlice } from "@reduxjs/toolkit";
 
 const initialState = {
-    currentCategory :  { id: 1, name: "Hajj", number: 0 }
+    currentCategory :  { id: 1, name: "Hajj", number: 0 },
+    searchTerm : "",
 };
 
 export const blogSlice = createSlice({
@@ -10,9 +11,12 @@ export const blogSlice = createSlice({
     reducers : {
         addCategory : (state, action) => {
             state.currentCategory = action.payload
+        },
+        addSearchTerm : (state, action) => {
+            state.searchTerm = action.payload
         }
     }
 });
 
-export const {addCategory} = blogSlice.actions;
+export const {addCategory, addSearchTerm} = blogSlice.actions;
 export default blogSlice.reducer;

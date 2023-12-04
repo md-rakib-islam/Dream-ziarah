@@ -3,13 +3,13 @@ const ContactInfo = () => {
     {
       id: 1,
       title: "Customer Care",
-      action: "tel:+(1) 123 456 7890",
+      action: "tel:+(966) 54 803 7409",
       text: "+966 54 803 7409",
     },
     {
       id: 2,
       title: "Need live support?",
-      action: "mailto:xyz@abc.com",
+      action: "mailto:sales@dreamziarah.com",
       text: "sales@dreamziarah.com",
     },
   ];

@@ -9,26 +9,33 @@ import { useDispatch, useSelector } from "react-redux";
 import Loading from "@/app/loading";
 import { BASE_URL } from "@/constant/constants";
 import { setTotalItem } from "@/features/pagination/paginationSlice";
+import getMonthDayYear from "@/utils/date";
 
 
 const Blog2 = () => {
   const dispatch = useDispatch();
   const {menuItems} = useSelector(state => state.menus);
   const {currentPage, PageSize} = useSelector(state => state.pagination);
+  const {currentCategory, searchTerm} = useSelector(state => state.blog);
   const blogId = menuItems.find((item) => item.name === "Blog")?.id;
   const {isSuccess, data, isLoading} = useGetImagesByMenuIdQuery(blogId);
   const {isSuccess: isContentSuccess, data : contentItems, isLoading: isBlogContentLoading} = useGetAllContentQuery(blogId)
 
   const firstPageIndex = (currentPage - 1) * PageSize;
   const lastPageIndex = firstPageIndex + PageSize;
+
+  console.log(searchTerm);
  
   let blogItems = [];
   if(isContentSuccess && isSuccess){
-    blogItems = contentItems.map((item) => ( {
+    // console.log(contentItems);
+    blogItems = contentItems?.filter((item) => item.category === currentCategory?.name.toLowerCase())?.filter((item) => {
+      if(item?.name.toLowerCase().includes(searchTerm.toLowerCase()) || item?.value.toLowerCase().includes(searchTerm.toLowerCase())) return true;
+    })?.map((item) => ( {
       id: item.id,
       img: data.content_images[item.name],
       title: item.name,
-      date: "Jan 06, 2023",
+      date: getMonthDayYear(item?.created_at),
       delayAnimation: "100",
       details: item.value,
       tag: "art",
@@ -38,7 +45,7 @@ const Blog2 = () => {
     dispatch(setTotalItem(blogItems.length))
   }
   
- 
+
   return (
     isLoading && isBlogContentLoading ? (<div style={{width:"700px", display:"flex", justifyContent:"center"}}><Loading/></div>) :(<>
       {blogItems.slice(firstPageIndex, lastPageIndex).map((item) => (

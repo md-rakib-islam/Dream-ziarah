@@ -572,7 +572,7 @@ export const CREATE_CONTENT = `${BASE_URL}/cms_menu_content/api/v1/cms_menu_cont
 
 export const DELETE_CONTENT = `${BASE_URL}/cms_menu_content/api/v1/cms_menu_content/delete/`;
 
-export const GET_CONTENTS = `${BASE_URL}/cms_menu_content/api/v1/cms_menu_content/`;
+export const GET_CONTENTS = `${BASE_URL}/cms_menu_content/api/v1/cms_menu_content`;
 
 export const UPDATE_CONTENT = `${BASE_URL}/cms_menu_content/api/v1/cms_menu_content/update/`;
 
@@ -990,8 +990,11 @@ export const GET_BEST_SELLER_AMOUNT = `${BASE_URL}/dashboard/api/v1/get_best_sel
 // Get Best seller Quantity
 export const GET_BEST_SELLER_QUANTITY = `${BASE_URL}/dashboard/api/v1/get_best_seller_by_quantity/`;
 
+// email and newsletter
 export const CREATE_NEWS_LETTER = `${BASE_URL}/email/api/store-and-send-email/`;
+export const CREATE_SUBSCRIPTION_WITH_EMAIL = `${BASE_URL}/send-email/api/send-email/`;
 
+// exchange rates api
 export const GET_LATEST_EXCHANGE_RATE = `https://v6.exchangerate-api.com/v6/81dd55f0d406c9a2f17b5298/latest/USD`;
 
 // get itenaries

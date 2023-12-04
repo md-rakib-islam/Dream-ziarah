@@ -1,10 +1,33 @@
+"use client";
+import { BASE_URL } from "@/constant/constants";
+import { useGetImagesByMenuIdQuery } from "@/features/image/imageApi";
 import Image from "next/image";
-import blogsData from "../../../data/blogs";
+import { useSelector } from "react-redux";
+// import blogsData from "../../../data/blogs";
 
-const RelatedBlog = () => {
+const RelatedBlog = ({relatedPosts}) => {
+  const {menuItems} = useSelector(state => state.menus);
+  const blogId = menuItems.find((item) => item.name === "Blog")?.id;
+  const {isSuccess, data, isLoading} = useGetImagesByMenuIdQuery(blogId);
+  
+  let relatedBlogs = [];
+  if(isSuccess){
+    
+      relatedBlogs = relatedPosts?.map((item) => ({
+      id: item.id,
+      img: data?.content_images[item.name],
+      title: item.name,
+      date: "Jan 06, 2023",
+      delayAnimation: "100",
+      details: item.value,
+      tag: "art",
+      tags: ["adventure_travel", "food_drink"],
+    }))
+  }
+ 
   return (
     <>
-      {blogsData.slice(0, 4).map((item) => (
+      {relatedBlogs?.map((item) => (
         <div className="col-lg-3 col-sm-6" key={item.id}>
           <a
             href={`/blog-details/${item.id}`}
@@ -16,7 +39,7 @@ const RelatedBlog = () => {
                   width={400}
                   height={300}
                   className="cover w-100 img-fluid"
-                  src={item.img}
+                  src={`${BASE_URL}/media/${item.img}`}
                   alt="image"
                 />
               </div>

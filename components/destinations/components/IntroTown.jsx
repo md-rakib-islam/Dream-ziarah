@@ -69,7 +69,7 @@ const IntroTown = ({slug}) => {
           </div>
         </div>
       </div>
-      {/* <iframe src="https://www.google.com/maps/d/embed?mid=1rS8xTdrRnu4chLKEAmp5INGf8sA&hl=en&ehbc=2E312F" width="640" height="480"></iframe> */}
+   
     </>
   );
 };

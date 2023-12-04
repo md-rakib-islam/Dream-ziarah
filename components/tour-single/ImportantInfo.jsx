@@ -62,9 +62,9 @@ const ImportantInfo = () => {
           <li>
           <span className="text-dark fw-500">Weather Consideration:</span> Weather-dependent experience. In case of poor weather, you'll be offered an alternative date or a full refund.
           </li>
-          <li>
+          {/* <li>
           <span className="text-dark fw-500">Private Experience:</span> This is a private tour/activity. Your group will be the sole participants.
-          </li>
+          </li> */}
           <li>
           <span className="text-dark fw-500">Refund Window:</span> To receive a full refund, please cancel at least 24 hours before the experience start date.
           </li>

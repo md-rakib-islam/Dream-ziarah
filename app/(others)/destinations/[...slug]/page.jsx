@@ -75,7 +75,7 @@ const Destinations = ({ params }) => {
             </div>
             {/* End. col-12 */}
 
-            <Weather />
+            <Weather slug={slug}/>
           </div>
           {/* End local weather */}
 

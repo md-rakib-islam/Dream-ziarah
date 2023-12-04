@@ -1,28 +1,33 @@
-const Weather = () => {
+'use client';
+import useWeather from "@/hooks/useWeather";
+
+const Weather = ({slug}) => {
+  const temperature = useWeather(slug);
+  console.log("Hello",temperature);
   const weatherContent = [
     {
       id: 1,
       month: "DEC - FEB",
-      highestTemperature: "7°",
-      lowestTemperature: "3°",
+      highestTemperature: (temperature?.main?.temp_max - 273).toFixed(2) + "°",
+      lowestTemperature: (temperature?.main?.temp_min - 273).toFixed(2) + "°",
     },
     {
       id: 2,
       month: "MAR - MAY",
-      highestTemperature: " 17°",
-      lowestTemperature: "3°",
+      highestTemperature: (temperature?.main?.temp_max - 273).toFixed(2) + "°",
+      lowestTemperature: (temperature?.main?.temp_min - 273).toFixed(2) + "°",
     },
     {
       id: 3,
       month: "JUN - AUG",
-      highestTemperature: " 27°",
-      lowestTemperature: "3°",
+      highestTemperature: (temperature?.main?.temp_max - 273).toFixed(2) + "°",
+      lowestTemperature: (temperature?.main?.temp_min - 273).toFixed(2) + "°",
     },
     {
       id: 4,
       month: "SEP - NOV",
-      highestTemperature: "7°",
-      lowestTemperature: "3°",
+      highestTemperature: (temperature?.main?.temp_max - 273).toFixed(2) + "°",
+      lowestTemperature: (temperature?.main?.temp_min - 273).toFixed(2) + "°",
     },
   ];
 

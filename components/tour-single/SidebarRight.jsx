@@ -2,13 +2,14 @@
 import { useEffect } from "react";
 import { useSelector } from "react-redux";
 
+
 const SidebarRight = ({ tour }) => {
   const {tourItem} = useSelector(state => state.tour);
   console.log("Tour", tourItem)
   useEffect(() => {
     const script = document.createElement("script");
     script.src =
-      "https://widgets.bokun.io/assets/javascripts/apps/build/BokunWidgetsLoader.js?bookingChannelUUID=faecaf2b-1ddf-4405-9855-a551ba97e6a3";
+      "https://widgets.bokun.io/assets/javascripts/apps/build/BokunWidgetsLoader.js?bookingChannelUUID=aa4c5059-8d0b-43dc-8bd3-bac143537416";
     script.async = true;
     document.body.appendChild(script);
 

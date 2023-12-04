@@ -14,7 +14,7 @@ const Address = ({saudi}) => {
       title: "Customer Care",
       content: (
         <>
-          <a href="tel:+4733378901">+966 54 803 7409</a>
+          <a href="tel:+966 54 803 7409">+966 54 803 7409</a>
         </>
       ),
     },
@@ -25,7 +25,7 @@ const Address = ({saudi}) => {
       content: (
         <>
           {" "}
-          <a href="mailto:i@gotrip.com">sales@dreamziarah.com</a>
+          <a href="mailto:sales@dreamziarah.com">sales@dreamziarah.com</a>
         </>
       ),
     },
@@ -47,7 +47,7 @@ const Address = ({saudi}) => {
       title: "Customer Care",
       content: (
         <>
-          <a href="tel:+4733378901">+39 388 774 8015</a>
+          <a href="tel:+39 388 774 8015">+39 388 774 8015</a>
         </>
       ),
     },

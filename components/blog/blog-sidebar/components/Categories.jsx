@@ -1,19 +1,26 @@
 "use client";
 import { addCategory } from "@/features/blog/blogSlice";
+import { useGetAllContentQuery } from "@/features/content/contentApi";
 import Link from "next/link";
 import { useState } from "react";
-import { useDispatch } from "react-redux";
+import { useDispatch, useSelector } from "react-redux";
 
 const Categories = () => {
   const dipatch = useDispatch();
+  const {menuItems} = useSelector(state => state.menus);
+  const blogId = menuItems.find((item) => item.name === "Blog")?.id;
+  const {isSuccess: isContentSuccess, data : contentItems, isLoading: isBlogContentLoading} = useGetAllContentQuery(blogId)
+  // if(isContentSuccess){
+  //   console.log("contents", contentItems);
+  // }
   const catContent = [
-    { id: 1, name: "Hajj", number: 0 },
-    { id: 2, name: "Umrah", number: 0  },
-    { id: 3, name: "Destinations", number: 0  },
-    { id: 4, name: "Travel Tips", number: 0  },
-    { id: 5, name: "Budget Travel", number: 0  },
-    { id: 5, name: "Travel Planning", number: 0  },
-    { id: 5, name: "Local Insights", number: 0  },
+    { id: 1, name: "Hajj", number: contentItems?.filter((item) => item?.category ==="hajj")?.length },
+    { id: 2, name: "Umrah", number: contentItems?.filter((item) => item?.category ==="umrah")?.length },
+    { id: 3, name: "Destinations", number: contentItems?.filter((item) => item?.category ==="destinations")?.length },
+    { id: 4, name: "Travel Tips", number: contentItems?.filter((item) => item?.category ==="travel tips")?.length  },
+    { id: 5, name: "Budget Travel", number: contentItems?.filter((item) => item?.category ==="budget travel")?.length },
+    { id: 5, name: "Travel Planning", number: contentItems?.filter((item) => item?.category ==="travel planning")?.length },
+    { id: 5, name: "Local Insights", number: contentItems?.filter((item) => item?.category ==="local insights")?.length },
   ];
   const [currentCategory, setCurrnetCategory] = useState( { id: 1, name: "Hajj", number: "92" });
   return (

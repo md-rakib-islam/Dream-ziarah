@@ -5,7 +5,7 @@ import { useCreateNewsLetterMutation } from "@/features/newsLetter/newsLetterSli
 import { useState } from "react";
 
 const initialState = {
-  fullName : "",
+  full_name : "",
   email : "",
   subject : "",
   message : "",
@@ -38,7 +38,7 @@ const ContactForm = () => {
     <form className="row y-gap-20 pt-20" onSubmit={handleSubmit}>
       <div className="col-12">
         <div className="form-input">
-          <input onChange={handleChange} value={formState.fullName} type="text" name="fullName" id="name" required />
+          <input onChange={handleChange} value={formState.fullName} type="text" name="full_name" id="name" required />
           <label htmlFor="name" className="lh-1 text-16 text-light-1">
             Full Name
           </label>

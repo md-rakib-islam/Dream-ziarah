@@ -12,6 +12,7 @@ const Banner = ({slug}) => {
   let bannerUrl = "";
   if(isSuccess){
     
+    
     bannerUrl = `${BASE_URL}/media/${data?.content_images[slug.charAt(0).toUpperCase()
       + slug.slice(1)]}`;
   }

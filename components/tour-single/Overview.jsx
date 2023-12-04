@@ -73,7 +73,7 @@ const Overview = () => {
             date of the experience. */}
             <ul className="list-disc">
               <li>We will charge a cancellation fee of 100% if booking is cancelled 1 day or less before the event</li>
-              <li>We will charge a cancellation fee of 0% if booking is cancelled 1000 days or less before the event</li>
+              {/* <li>We will charge a cancellation fee of 0% if booking is cancelled 1000 days or less before the event</li> */}
             </ul>
           </div>
         </div>
