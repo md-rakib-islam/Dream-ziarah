@@ -84,7 +84,7 @@ const Tours = () => {
             data-aos-delay={item?.delayAnimation}
           >
             <Link
-              href={`/tour-single/${item?.title?.split(" ")?.join("_")}/${item?.id}`}
+              href={`/tours/${item?.title?.split(" ")?.join("_")}/${item?.id}`}
               className="tourCard -type-1 rounded-4 hover-inside-slider"
             >
               <div className="tourCard__image position-relative">

@@ -1,5 +1,6 @@
 import Wrapper from "@/components/layout/Wrapper";
-import MainHome from "../app/(homes)/home_3/page";
+// import MainHome from "../app/(homes)/home_3/page";
+import MainHome from "@/components/home/MainHome";
 
 export const metadata = {
   title: "Ziarah Packages for Spiritual Exploration - Dream Ziarah",
