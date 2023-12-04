@@ -7,12 +7,12 @@ import WhyChoose from "@/components/block/BlockGuide";
 import Brand from "@/components/brand/Brand";
 import Counter from "@/components/counter/Counter";
 import Counter2 from "@/components/counter/Counter2";
-import Team1 from "@/components/team/Team1";
+// import Team1 from "@/components/team/Team1";
 import Testimonial from "@/components/testimonial/Testimonial";
 
 export const metadata = {
-  title: "About || GoTrip - Travel & Tour React NextJS Template",
-  description: "GoTrip - Travel & Tour React NextJS Template",
+  title: "About DreamZiarah - Crafting Spiritual Journeys for Hajj, Umrah, and Ziarah",
+  description: "Welcome to DreamZiarah, where we specialize in tailoring exceptional travel experiences for Muslims. Explore our commitment to crafting spiritual journeys, with a focus on Hajj, Umrah, and Ziarah tours. Join us on a pilgrimage of faith, culture, and unforgettable exploration.",
 };
 
 const About = () => {
@@ -74,7 +74,7 @@ const About = () => {
       </section>
       {/* End counter Section */}
 
-      <section className="layout-pt-lg layout-pb-lg">
+      {/* <section className="layout-pt-lg layout-pb-lg">
         <div className="container">
           <div className="row y-gap-20 justify-between items-end">
             <div className="col-auto">
@@ -86,17 +86,17 @@ const About = () => {
               </div>
             </div>
           </div>
-          {/* End .row */}
+        
 
-          <div className=" pt-40 js-section-slider">
+       <div className=" pt-40 js-section-slider">
             <div className="item_gap-x30">
               <Team1 />
             </div>
-          </div>
-          {/* End  js-section-slider */}
+          </div> 
+       
         </div>
-        {/* End container */}
-      </section>
+      
+      </section> */}
       {/* End team section */}
 
       <section className="section-bg layout-pt-lg layout-pb-lg">

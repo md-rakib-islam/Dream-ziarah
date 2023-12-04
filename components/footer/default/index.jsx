@@ -1,6 +1,6 @@
 // import AppButton from "./AppButton";
 "use client";
-import { useCreateNewsLetterMutation } from "@/features/newsLetter/newsLetterSlice";
+import { useCreateNewsLetterJustEmailMutation } from "@/features/newsLetter/newsLetterSlice";
 import { useState } from "react";
 import ContactInfo from "./ContactInfo";
 import Copyright from "./Copyright";
@@ -8,10 +8,10 @@ import FooterContent from "./FooterContent";
 
 const index = () => {
   const [email, setEmail] = useState("");
-  const [createNewsLetter, {isLoading, isSuccess}] = useCreateNewsLetterMutation();
+  const [createNewsLetterJustEmail, {isLoading, isSuccess}] = useCreateNewsLetterJustEmailMutation();
 
   const handleSubmit = async() => {
-    const res = await createNewsLetter({email});
+    const res = await createNewsLetterJustEmail({email});
     if(res.data){
       alert("subcription added! thank you");
       setEmail("");

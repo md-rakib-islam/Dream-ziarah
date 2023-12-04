@@ -14,13 +14,13 @@ const Categories = () => {
   //   console.log("contents", contentItems);
   // }
   const catContent = [
-    { id: 1, name: "Hajj", number: contentItems?.filter((item) => item?.category ==="hajj")?.length },
-    { id: 2, name: "Umrah", number: contentItems?.filter((item) => item?.category ==="umrah")?.length },
-    { id: 3, name: "Destinations", number: contentItems?.filter((item) => item?.category ==="destinations")?.length },
-    { id: 4, name: "Travel Tips", number: contentItems?.filter((item) => item?.category ==="travel tips")?.length  },
-    { id: 5, name: "Budget Travel", number: contentItems?.filter((item) => item?.category ==="budget travel")?.length },
-    { id: 5, name: "Travel Planning", number: contentItems?.filter((item) => item?.category ==="travel planning")?.length },
-    { id: 5, name: "Local Insights", number: contentItems?.filter((item) => item?.category ==="local insights")?.length },
+    { id: 1, name: "Hajj", number: contentItems?.filter((item) => item?.category.toLowerCase() ==="hajj")?.length },
+    { id: 2, name: "Umrah", number: contentItems?.filter((item) => item?.category.toLowerCase() ==="umrah")?.length },
+    { id: 3, name: "Destinations", number: contentItems?.filter((item) => item?.category.toLowerCase() ==="destinations")?.length },
+    { id: 4, name: "Travel Tips", number: contentItems?.filter((item) => item?.category.toLowerCase() ==="travel tips")?.length  },
+    { id: 5, name: "Budget Travel", number: contentItems?.filter((item) => item?.category.toLowerCase() ==="budget travel")?.length },
+    { id: 5, name: "Travel Planning", number: contentItems?.filter((item) => item?.category.toLowerCase() ==="travel planning")?.length },
+    { id: 5, name: "Local Insights", number: contentItems?.filter((item) => item?.category.toLowerCase() ==="local insights")?.length },
   ];
   const [currentCategory, setCurrnetCategory] = useState( { id: 1, name: "Hajj", number: "92" });
   return (

@@ -9,8 +9,8 @@ import ContactForm from "@/components/common/ContactForm";
 import Social from "@/components/common/social/Social";
 
 export const metadata = {
-  title: "Contact || GoTrip - Travel & Tour React NextJS Template",
-  description: "GoTrip - Travel & Tour React NextJS Template",
+  title: "Connect with DreamZiarah - Your Gateway to Tailored Muslim Tours",
+  description: "Ready to embark on a spiritual journey? Connect with DreamZiarah for personalized assistance on our Hajj, Umrah, and Ziarah tours. Our team is here to guide you through a seamless experience. Reach out today, and let's start planning your meaningful pilgrimage.",
 };
 
 const Contact = () => {

@@ -45,7 +45,6 @@ export default function TourGallery({tour}) {
                         priority
                         src={slide}
                         alt="image"
-                        style={{ height: "501px" }}
                         className="rounded-4 col-12 cover object-cover"
                       />
                     </SwiperSlide>

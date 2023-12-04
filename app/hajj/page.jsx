@@ -5,8 +5,8 @@ import dynamic from "next/dynamic";
 import UnderConstraction from "@/components/common/UnderConstraction";
 
 export const metadata = {
-  title: "Hajj Page || GoTrip - Travel & Tour React NextJS Template",
-  description: "GoTrip - Travel & Tour React NextJS Template",
+  title: "Hajj Packages: Pilgrimage of a Lifetime - Dream Ziarah",
+  description: "Embark on the sacred journey of Hajj with DreamZiarah.com. Our Hajj packages are designed to facilitate your pilgrimage, providing a seamless and spiritually enriching experience as you fulfill this sacred obligation.",
 };
 
 const index = () => {

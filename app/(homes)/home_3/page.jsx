@@ -6,10 +6,10 @@ import Tours from "@/components/tours/Tours";
 import dynamic from "next/dynamic";
 import Link from "next/link";
 
-export const metadata = {
-  title: "Home-3 || GoTrip - Travel & Tour React NextJS Template",
-  description: "GoTrip - Travel & Tour React NextJS Template",
-};
+// export const metadata = {
+//   title: "Home-3 || GoTrip - Travel & Tour React NextJS Template",
+//   description: "GoTrip - Travel & Tour React NextJS Template",
+// };
 
 const home_3 = () => {
   

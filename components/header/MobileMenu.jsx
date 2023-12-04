@@ -9,16 +9,12 @@ import { useGetLogoUrlQuery } from "@/features/site-setting/siteSettingApi";
 
 import useMenus from "@/hooks/useMenus";
 import { usePathname, useRouter } from "next/navigation";
-import { useEffect } from "react";
 import {
   Menu,
   MenuItem,
   Sidebar,
   SubMenu,
 } from "react-pro-sidebar";
-import {
-  categorieMegaMenuItems
-} from "../../data/mainMenuData";
 import {
   isActiveLink,
 } from "../../utils/linkActiveChecker";
@@ -40,25 +36,25 @@ const MobileMenu = () => {
 
  const currentPathName = pathname.split('/')[1] === 'destinations' ? '/destinations' : pathname.split('/')[1] === 'blog-details' ? "/blog": pathname;
 
-   useEffect(() => {
+//    useEffect(() => {
 
-    categorieMegaMenuItems.map((megaMenu=>{
-    megaMenu?.menuCol?.map((megaCol=>{
-      megaCol?.menuItems?.map((item=>{   
-        item?.menuList?.map((list)=>{
-          if (list.routePath?.split('/')[1] == pathname.split('/')[1]) {
-            setIsActiveParent(true)
-            setisActiveNestedParentTwo(item?.title)
-            setisActiveNestedParent(megaMenu?.id)           
-          }        
-        })
-      }))
-    }))
-  }))
+//     categorieMegaMenuItems.map((megaMenu=>{
+//     megaMenu?.menuCol?.map((megaCol=>{
+//       megaCol?.menuItems?.map((item=>{   
+//         item?.menuList?.map((list)=>{
+//           if (list.routePath?.split('/')[1] == pathname.split('/')[1]) {
+//             setIsActiveParent(true)
+//             setisActiveNestedParentTwo(item?.title)
+//             setisActiveNestedParent(megaMenu?.id)           
+//           }        
+//         })
+//       }))
+//     }))
+//   }))
 
 
    
- }, [])
+//  }, [])
 
 
   return (

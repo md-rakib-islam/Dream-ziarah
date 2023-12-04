@@ -2,11 +2,11 @@ import Wrapper from "@/components/layout/Wrapper";
 import MainHome from "../app/(homes)/home_3/page";
 
 export const metadata = {
-  title: "Home-1 || GoTrip - Travel & Tour React NextJS Template",
-  description: "GoTrip - Travel & Tour React NextJS Template",
+  title: "Ziarah Packages for Spiritual Exploration - Dream Ziarah",
+  description:  "Embark on a soul-stirring Ziarah journey with DreamZiarah.com. Discover sacred destinations and enrich your spiritual experience with our meticulously curated Ziarah packages.",
 };
 
-export default async function Home() {
+export default function Home() {
   
   return (
     <>

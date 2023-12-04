@@ -28,9 +28,10 @@ import { EmailIcon, EmailShareButton, FacebookIcon, FacebookMessengerIcon, Faceb
 // };
 
 const TourSingleV1Dynamic = ({ params }) => {
+  // console.log("params", params);
   // useWeather()
   const dispatch = useDispatch();
-  const id = params.id;
+  const id = params?.slug[1];
   const {menuItems} = useSelector(state => state.menus);
   const tourId = menuItems.find((item) => item.name === "Tour")?.id;
   // const tour = toursData.find((item) => item.id == id) || toursData[0];
@@ -135,19 +136,19 @@ const TourSingleV1Dynamic = ({ params }) => {
                   </button>
                   <ul className="dropdown-menu">
                     <li className="d-flex my-2">
-                      <FacebookShareButton className="me-2" url={`https://dreamziarah.com/tour-single/${tour.id}`}>
+                      <FacebookShareButton className="me-2" url={`https://dreamziarah.com/tour-single/${tour?.title?.split(" ")?.join("_")}/${tour.id}`}>
                         <FacebookIcon size={32} round={true}/>
                       </FacebookShareButton>
-                      <FacebookMessengerShareButton className="me-2" url={`https://dreamziarah.com/tour-single/${tour.id}`}>
+                      <FacebookMessengerShareButton className="me-2" url={`https://dreamziarah.com/tour-single/${tour?.title?.split(" ")?.join("_")}/${tour.id}`}>
                         <FacebookMessengerIcon size={32} round={true}/>
                       </FacebookMessengerShareButton>
-                      <WhatsappShareButton className="me-2" url={`https://dreamziarah.com/tour-single/${tour.id}`}>
+                      <WhatsappShareButton className="me-2" url={`https://dreamziarah.com/tour-single/${tour?.title?.split(" ")?.join("_")}/${tour.id}`}>
                         <WhatsappIcon size={32} round={true}/>
                       </WhatsappShareButton>
-                      <EmailShareButton className="me-2" url={`https://dreamziarah.com/tour-single/${tour.id}`}>
+                      <EmailShareButton className="me-2" url={`https://dreamziarah.com/tour-single/${tour?.title?.split(" ")?.join("_")}/${tour.id}`}>
                         <EmailIcon size={32} round={true}/>
                       </EmailShareButton>
-                      <LinkedinShareButton url={`https://dreamziarah.com/tour-single/${tour.id}`}>
+                      <LinkedinShareButton url={`https://dreamziarah.com/tour-single/${tour?.title?.split(" ")?.join("_")}/${tour.id}`}>
                         <LinkedinIcon size={32} round={true}/>
                       </LinkedinShareButton>
                     </li>

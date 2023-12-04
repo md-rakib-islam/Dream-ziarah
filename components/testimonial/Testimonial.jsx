@@ -42,13 +42,13 @@ const Testimonial = () => {
       <Slider {...settings}>
         {testimonial1.slice(0, 6).map((item) => (
           <div
-            className="testimonials h-75 -type-1 bg-white rounded-4 pt-40 pb-30 px-40"
+            className="testimonials  -type-1 bg-white rounded-4 pt-40 pb-30 px-40"
             key={item.id}
             data-aos="fade"
             data-aos-delay={item.dealyAnimation}
           >
             <h4 className="text-16 fw-500 text-blue-1 mb-20">{item.meta}</h4>
-            <p className="testimonials__text lh-18 fw-500 text-dark-1">
+            <p style={{height: "140px"}} className="testimonials__text lh-18 fw-500 text-dark-1">
               {item.text}
             </p>
             <div className="pt-20 mt-28 border-top-light">

@@ -9,8 +9,8 @@ import BlogSidebar from "@/components/blog/blog-sidebar";
 
 
 export const metadata = {
-  title: "Blog List V2 || GoTrip - Travel & Tour React NextJS Template",
-  description: "GoTrip - Travel & Tour React NextJS Template",
+  title: "Explore Our Insights: Travel, Faith, and Culture - Dream Ziarah Blog",
+  description: "Dive into a world of inspiration with DreamZiarah's blog. Discover travel tips, cultural insights, and spiritual reflections. Join us on a virtual exploration that goes beyond destinations, offering a unique perspective on the intersection of travel, faith, and culture.",
 };
 
 const BlogListV2 = () => {

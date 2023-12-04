@@ -1,5 +1,5 @@
 
-import { CREATE_NEWS_LETTER } from "@/constant/constants";
+import { CREATE_NEWS_LETTER, CREATE_SUBSCRIPTION_WITH_EMAIL } from "@/constant/constants";
 import { apiSlice } from "../api/apiSlice";
 
 export const newsLetterApi = apiSlice.injectEndpoints({
@@ -10,8 +10,15 @@ export const newsLetterApi = apiSlice.injectEndpoints({
                 method : 'POST',
                 body : data
             })
+        }),
+        createNewsLetterJustEmail : builder.mutation({
+            query : (data) => ({
+                url : CREATE_SUBSCRIPTION_WITH_EMAIL,
+                method : 'POST',
+                body : data
+            })
         })
     })
 });
 
-export const {useCreateNewsLetterMutation} = newsLetterApi;
+export const {useCreateNewsLetterMutation, useCreateNewsLetterJustEmailMutation} = newsLetterApi;
