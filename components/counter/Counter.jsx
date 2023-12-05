@@ -18,7 +18,7 @@ const Counter = () => {
       id: 3,
       number: "100",
       meta: "Happy customers",
-      hasUnit: "k+",
+      hasUnit: "K+",
       delayAnim: "300",
     },
     // {

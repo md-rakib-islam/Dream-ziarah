@@ -2,7 +2,7 @@ const Counter2 = () => {
   return (
     <div className="row y-gap-30 text-dark-1">
       <div className="col-sm-5 col-6">
-        <div className="text-30 lh-15 fw-600">1300+</div>
+        <div className="text-30 lh-15 fw-600">100K+</div>
         <div className="lh-15">Happy People</div>
       </div>
       {/* End .col */}

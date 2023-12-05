@@ -50,7 +50,7 @@ const destinationsMetadatas = {
 // };
 
 export async function generateMetadata({ params, searchParams }, parent) {
-  const slug = params.slug[0]
+  const slug = params.slug;
  
   return {
     title: destinationsMetadatas[slug]?.title,
@@ -59,7 +59,7 @@ export async function generateMetadata({ params, searchParams }, parent) {
 }
 
 const Destinations = ({ params }) => {
-  const slug = params.slug[0];
+  const slug = params.slug;
   
   return (
     <>

@@ -1,14 +1,15 @@
 "use client";
-import Image from "next/image";
+// import Image from "next/image";
+import { Interweave } from "interweave";
 import { useSelector } from "react-redux";
 
 const ItineraryContent = () => {
   const {itenarayItems} = useSelector(state => state.tour);
-  console.log("itenaray",itenarayItems)
+  // console.log("itenaray",itenarayItems)
   
   const modifiedItenarayItem = itenarayItems?.map((item, indx) => ({
     id: item.id,
-    targetCollapse: "item_1",
+    targetCollapse: `item_${indx + 1}`,
     itemNo: indx + 1,
     title: item.title,
     img: "/img/tours/list.png",
@@ -77,14 +78,21 @@ const ItineraryContent = () => {
                   data-bs-parent="#itineraryContent"
                 >
                   <div className="pt-15 pb-15">
-                    <Image
+                    {/* <Image
                       width={350}
                       height={160}
                       src={item.img}
                       alt="image"
                       className="rounded-4 mt-15"
-                    />
-                    <div className="text-14 lh-17 mt-15">{item.content}</div>
+                    /> */}
+                    <div className="text-14 lh-17 mt-15">
+                      <Interweave
+                        allowAttributes
+                        allowElements
+                        disableLineBreaks={true}
+                        content={item.content}
+                      />
+                    </div>
                   </div>
                 </div>
                 {/* End accordion conent */}
@@ -95,7 +103,8 @@ const ItineraryContent = () => {
                   data-bs-target={`#${item.targetCollapse}`}
                 >
                   <button className="d-block lh-15 text-14 text-blue-1 underline fw-500 mt-5">
-                    See details &amp; photo
+                    {/* See details &amp; photo */}
+                    See details
                   </button>
                 </div>
                 {/* End accordion button */}
