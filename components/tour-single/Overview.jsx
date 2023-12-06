@@ -61,7 +61,7 @@ const Overview = () => {
         <div className="text-15 mt-10">
           {/* German, Chinese, Portuguese, Japanese, English, Italian, Chinese,
           French, Spanish */}
-          Bengali, Hindi
+          Bengali, English, Hindi, Urdu, Malay, Indonesian.
         </div>
       </div>)
        }

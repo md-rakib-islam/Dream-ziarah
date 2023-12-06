@@ -4,10 +4,8 @@ import { usePathname } from "next/navigation";
 import { isActiveLink } from "../../utils/linkActiveChecker";
 
 const MainMenu = ({ style = "" }) => {
-
   const pathname = usePathname();
   const menuItems = useMenus();
-
 
  const currentPathName = pathname.split('/')[1] === 'destinations' ? '/destinations' : pathname.split('/')[1] === 'blog-details' ? "/blog": pathname;
 
@@ -48,6 +46,7 @@ const MainMenu = ({ style = "" }) => {
       
     }
       </ul>
+   
     </nav>
   );
 };

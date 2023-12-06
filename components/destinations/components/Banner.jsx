@@ -1,6 +1,7 @@
 "use client";
 import { BASE_URL } from "@/constant/constants";
 import { useGetImagesByMenuIdQuery } from "@/features/image/imageApi";
+import Image from 'next/image';
 import { useSelector } from "react-redux";
 
 
@@ -19,11 +20,13 @@ const Banner = ({slug}) => {
   return (
     <div className="col-12">
       <div className="relative d-flex">
-        <img
+        <Image
           src={bannerUrl}
           alt="image"
           className="col-12 rounded-4"
-          style={{ minHeight: " 300px" }}
+          height={860}
+          width={1920}
+          style={{maxHeight: "420px", maxWidth:"1120px"}}
         />
         <div className="absolute z-2 px-50 py-60 md:py-20 md:px-30">
           <h1 className="text-50 fw-600 text-white lg:text-40 md:text-30">

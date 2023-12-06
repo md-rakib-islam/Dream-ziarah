@@ -1,9 +1,11 @@
-'use client';
-import useWeather from "@/hooks/useWeather";
+// 'use client';
+// import useWeather from "@/hooks/useWeather";
+import getTemperatureByLocation from "@/services/weatherService";
 
-const Weather = ({slug}) => {
-  const temperature = useWeather(slug);
-  console.log("Hello",temperature);
+const Weather = async ({slug}) => {
+  // const temperature = useWeather(slug);
+  const temperature = await getTemperatureByLocation(slug);
+
   const weatherContent = [
     {
       id: 1,

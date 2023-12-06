@@ -12,9 +12,9 @@ const HeaderSearch = () => {
   const router = useRouter();
   const handleSubmit = () => {
     if(searchText){
-      const isLocation = destinations.find((item) => item.name.toLowerCase() === searchText);
+      const isLocation = destinations.find((item) => item.name.toLowerCase().includes(searchText));
       if(isLocation){
-        router.push(`/destinations/${searchText}`)
+        router.push(`/destinations/${isLocation?.name?.toLowerCase()}`)
       }else{
         alert("Your Location is not found!")
       }

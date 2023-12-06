@@ -59,7 +59,7 @@ const IntroTown = ({slug}) => {
             alt="image"
             className="col-12 rounded-4"
           /> */}
-          <iframe src={slightContent[slug].location} width="100%" height={300}></iframe>
+          <iframe src={slightContent[slug]?.location} width="100%" height={300}></iframe>
        
           <div className="absolute d-flex justify-center items-end col-12 h-full z-1 px-35 py-20">
             <button className="button h-50 px-25 -blue-1 bg-white text-dark-1 text-14 fw-500 col-12">
