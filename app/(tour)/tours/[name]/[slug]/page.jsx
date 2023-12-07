@@ -1,4 +1,6 @@
 import Wrapper from "@/components/layout/Wrapper";
+import getAllContentByMenuId from "@/services/contentService";
+import getAllMenuItem from "@/services/menuService";
 import TourSingle from "./TourSingle";
 
 const tourMetadatas = {
@@ -21,9 +23,25 @@ const tourMetadatas = {
 //   description:  "Embark on a soul-stirring Ziarah journey with DreamZiarah.com. Discover sacred destinations and enrich your spiritual experience with our meticulously curated Ziarah packages.",
 // };
 
+export async function generateStaticParams() {
+  const data = await getAllMenuItem();
+  const ziarahId = data?.menus?.find((item) => item.name === "Ziarah")?.id;
+  
+  const tourContents = await getAllContentByMenuId(ziarahId);
+ 
+  const modifiedContents =  tourContents?.filter((item) => {
+    if(item.name === "makkah" || item.name ==="medina" || item.name ==="jedda" || item.name === "tabuk" || item.name === "taif") return false;
+    return true;
+    })
+    // console.log("fdf", modifiedContents);
+    return modifiedContents?.map((item) => ({
+      name : item?.name,
+      slug : item?.id?.toString()
+    }));
+}
 
 export async function generateMetadata({ params, searchParams }, parent) {
-    const slug = params?.slug[0];
+    const {name, slug} = params;
    
     return {
       title: tourMetadatas[slug]?.title,

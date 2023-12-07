@@ -23,7 +23,7 @@ import { useSelector } from "react-redux";
 // };
 
 const BlogSingleDynamic = ({ params }) => {
-  const id = params.id;
+  const id = params.slug;
   const {menuItems} = useSelector(state => state.menus);
   const {currentPage, PageSize} = useSelector(state => state.pagination);
   const blogId = menuItems.find((item) => item.name === "Blog")?.id;

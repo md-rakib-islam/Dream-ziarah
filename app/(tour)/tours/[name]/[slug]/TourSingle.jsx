@@ -31,7 +31,7 @@ const TourSingleV1Dynamic = ({ params }) => {
   // console.log("params", params);
   // useWeather()
   const dispatch = useDispatch();
-  const id = params?.slug[1];
+  const id = params?.slug;
   const {menuItems} = useSelector(state => state.menus);
   const tourId = menuItems.find((item) => item.name === "Tour")?.id;
   // const tour = toursData.find((item) => item.id == id) || toursData[0];
@@ -53,7 +53,7 @@ const TourSingleV1Dynamic = ({ params }) => {
       title: data?.name,
       location: "Mecca, Saudi Arabia",
       duration: data?.duration,
-      numberOfReviews: "50",
+      numberOfReviews: tour.id === 10 ? "57": tour.id === 9 ? "51" : "61",
       price: data?.price,
       tourType: "Attractions & Museums",
       delayAnimation: "200",

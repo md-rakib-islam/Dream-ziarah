@@ -58,7 +58,8 @@ const Header1 = () => {
       <header className={`header bg-white ${navbar ? "is-sticky" : ""}`}>
         <div className="header__container px-30 sm:px-20">
           <div className="row justify-between items-center">
-            <div className="col-auto">
+          
+           <div style={{marginLeft : "84px"}} className="col-auto">
               <div className="d-flex items-center">
                 <Link href="/" className="header-logo mr-20">
                   {
@@ -80,6 +81,7 @@ const Header1 = () => {
               </div>
               {/* End d-flex */}
             </div>
+        
             {/* End col */}
 
             <div className="col-auto">

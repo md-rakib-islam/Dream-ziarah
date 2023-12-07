@@ -26,7 +26,7 @@ const useTours = () => {
         slideImg: [`${BASE_URL}/media/${data.content_images[tour.name]}`],
         title: tour.name,
         location: "Mecca, Saudi Arabia",
-        duration: "3",
+        duration: tour?.duration,
         numberOfReviews: tour.id === 10 ? "57": tour.id === 9 ? "51" : "61",
         price: convertCurrency(parseInt(tour?.price), "USD", currentCurrency?.currency, exchangeRates),
         tourType: "Full-day Tours",

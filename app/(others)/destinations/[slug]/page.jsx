@@ -19,6 +19,7 @@ import TestimonialLeftCol from "@/components/home/home-1/TestimonialLeftCol";
 // import Rentals from "@/components/rentals/Rentals";
 import Tours from "@/components/tours/Tours";
 import { slightContent } from "@/data/desinations";
+import getAllMenuItem from "@/services/menuService";
 import Link from "next/link";
 
 const destinationsMetadatas = {
@@ -48,6 +49,15 @@ const destinationsMetadatas = {
 //   title: "Destinations || GoTrip - Travel & Tour React NextJS Template",
 //   description: "GoTrip - Travel & Tour React NextJS Template",
 // };
+
+export async function generateStaticParams() {
+  const data = await getAllMenuItem();
+  // console.log(menus);
+ 
+  return data?.menus.find((item) => item.name === "Destinations")?.children?.map((item) => ({
+    slug: item.name,
+  }))
+}
 
 export async function generateMetadata({ params, searchParams }, parent) {
   const slug = params.slug;

@@ -20,7 +20,7 @@ const TourSnapShot = () => {
           <i className="icon-customer text-22 text-blue-1 mr-10"></i>
           <div className="text-15 lh-15">
             Group size:
-            <br /> {tourItem.id == 10 ? "1-50"  : "3-15"}
+            <br /> {tourItem.id == 10 || tourItem.id == 32 || tourItem.id == 34  ? "1-50"  : "3-15"}
           </div>
         </div>
       </div>
