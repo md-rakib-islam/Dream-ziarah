@@ -103,7 +103,7 @@ export default function TourGallery({tour}) {
             {/* End .col-xl-8 */}
 
             <div className="col-xl-4">
-              <SidebarRight tour={tour} />
+              <SidebarRight />
             </div>
             {/* End .col-xl-4 */}
           </div>

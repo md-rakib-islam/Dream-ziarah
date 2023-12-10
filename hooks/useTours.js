@@ -5,6 +5,40 @@ import convertCurrency from "@/utils/currency";
 import { useEffect, useState } from "react";
 import { useSelector } from "react-redux";
 
+
+export const singleTourInfo = {
+    "Day Trip from Makkah to Taif" : {
+        location : "Taif, Saudi Arabia",
+        numberOfReviews : "63",
+        languages : "Bengali, English, Hindi, Urdu, Malay, Indonesian.",
+        groupSize : "1-50",
+    },
+    "Day Trip from Makkah to Jeddah": {
+        location : "Jeddah, Saudi Arabia",
+        numberOfReviews : "57",
+        languages : "Bengali, English, Hindi, Urdu, Malay, Indonesian.",
+        groupSize : "1-50",
+    },
+    "Makkah City Ziarah Vehicle Sharing With Guide" : {
+        location : "Mecca, Saudi Arabia",
+        numberOfReviews : "55",
+        languages : "Bengali, English, Hindi, Urdu, Malay, Indonesian.",
+        groupSize : "1-50",
+    },
+    "Makkah City Ziarah Luxury Private Vehicle With Guide" : {
+        location : "Mecca, Saudi Arabia",
+        numberOfReviews : "67",
+        languages : "Bengali, English, Hindi, Urdu, Malay, Indonesian.",
+        groupSize : "3-15",
+    },
+    "Makkah City Ziarah Luxury Private Vehicle Without Guide" : {
+        location : "Mecca, Saudi Arabia",
+        numberOfReviews : "65",
+        languages : "",
+        groupSize : "3-15",
+    }
+}
+
 const useTours = () => {
     const [tourItems, setTourItems] = useState([]);
     const {menuItems} = useSelector(state => state.menus);
@@ -25,9 +59,9 @@ const useTours = () => {
         tag : "",
         slideImg: [`${BASE_URL}/media/${data.content_images[tour.name]}`],
         title: tour.name,
-        location: "Mecca, Saudi Arabia",
+        location: singleTourInfo[tour?.name]?.location,
         duration: tour?.duration,
-        numberOfReviews: tour.id === 10 ? "57": tour.id === 9 ? "51" : "61",
+        numberOfReviews: singleTourInfo[tour?.name]?.numberOfReviews,
         price: convertCurrency(parseInt(tour?.price), "USD", currentCurrency?.currency, exchangeRates),
         tourType: "Full-day Tours",
         delayAnimation: "100",

@@ -17,7 +17,7 @@ const Tours = () => {
     dots: true,
     infinite: true,
     speed: 500,
-    slidesToShow: 3,
+    slidesToShow: tourItems?.length,
     slidesToScroll: 1,
     responsive: [
       {

@@ -1,7 +1,9 @@
+import { singleTourInfo } from "@/hooks/useTours";
 import { Interweave } from "interweave";
 import { useSelector } from "react-redux";
 const Overview = () => {
   const {tourItem} = useSelector(state => state.tour);
+
   return (
     <>
       <div className="row x-gap-40 y-gap-40">
@@ -55,13 +57,20 @@ const Overview = () => {
           </a> */}
         </div>
 
-       {
+       {/* {
         tourItem?.id === 1 ? "": ( <div className="col-md-6">
         <h5 className="text-16 fw-500">Available languages</h5>
         <div className="text-15 mt-10">
-          {/* German, Chinese, Portuguese, Japanese, English, Italian, Chinese,
-          French, Spanish */}
+          
           Bengali, English, Hindi, Urdu, Malay, Indonesian.
+        </div>
+      </div>)
+       } */}
+       {
+        singleTourInfo[tourItem?.name]?.languages && (<div className="col-md-6">
+        <h5 className="text-16 fw-500">Available languages</h5>
+        <div className="text-15 mt-10">
+          {singleTourInfo[tourItem?.name]?.languages}
         </div>
       </div>)
        }

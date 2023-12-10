@@ -18,6 +18,7 @@ import Tours from "@/components/tours/Tours";
 import { BASE_URL } from "@/constant/constants";
 import { useGetImagesByMenuIdQuery } from "@/features/image/imageApi";
 import { addItenarayItems, addtourItem } from "@/features/tour/tourSlice";
+import { singleTourInfo } from "@/hooks/useTours";
 import Link from "next/link";
 import { useDispatch, useSelector } from "react-redux";
 import { EmailIcon, EmailShareButton, FacebookIcon, FacebookMessengerIcon, FacebookMessengerShareButton, FacebookShareButton, LinkedinIcon, LinkedinShareButton, WhatsappIcon, WhatsappShareButton } from "react-share";
@@ -51,12 +52,13 @@ const TourSingleV1Dynamic = ({ params }) => {
       tag: "",
       slideImg: [`${BASE_URL}/media/${imageContents.content_images[data?.name]}`],
       title: data?.name,
-      location: "Mecca, Saudi Arabia",
+      location: singleTourInfo[data?.name]?.location,
       duration: data?.duration,
-      numberOfReviews: tour.id === 10 ? "57": tour.id === 9 ? "51" : "61",
+      numberOfReviews: singleTourInfo[data?.name]?.numberOfReviews,
       price: data?.price,
       tourType: "Attractions & Museums",
       delayAnimation: "200",
+      languages : singleTourInfo[data?.name]?.languages
     }
     // console.log("Hele", data);
     dispatch(addtourItem(data));

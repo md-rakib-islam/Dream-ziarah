@@ -1,5 +1,6 @@
 import AccordionContent from "./ItineraryContent";
 import MapPropertyFinder from "./MapPropertyFinder";
+// import SimpleMap from "@/components/map/SimpleMap";
 
 const index = () => {
   return (
@@ -17,6 +18,7 @@ const index = () => {
       <div className="col-lg-8">
         <div className="map rounded-4 overflow-hidden">
           <MapPropertyFinder />
+          {/* <SimpleMap/> */}
         </div>
       </div>
       {/* End col-lg-8 */}

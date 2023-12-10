@@ -5,7 +5,7 @@ import { BASE_URL } from "@/constant/constants";
 import { addExchangeRates } from "@/features/currency/currencySlice";
 import { useGetSliderImagesQuery } from "@/features/image/imageApi";
 import useCurrencyExchangeRates from "@/hooks/currency";
-import { Interweave } from "interweave";
+// import { Interweave } from "interweave";
 import { useDispatch } from "react-redux";
 import { Autoplay, Navigation, Pagination } from "swiper";
 import { Swiper, SwiperSlide } from "swiper/react";
@@ -54,7 +54,7 @@ const index = () => {
                       <div className="masthead__bg">
                         <img src={item.image} alt="image" />
                       </div>
-                      <h1
+                      {/* <h1
                       className="text-45 lg:text-40 md:text-30 text-white"
                       data-aos="fade-up"
                       data-aos-delay="300"
@@ -65,14 +65,14 @@ const index = () => {
                         disableLineBreaks={false}
                         content={item.title}
                       />
-                    </h1>
-                      <div
+                    </h1> */}
+                      {/* <div
                         className="text-white text-30"
                         data-aos="fade-up"
                         data-aos-delay="100"
                       >
                         {item.subtitle}
-                      </div>
+                      </div> */}
                     </div>
                   </div>
                 </div>
