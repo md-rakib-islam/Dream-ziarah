@@ -55,11 +55,12 @@ const Header1 = () => {
 
   return (
     <>
+      
       <header className={`header bg-white ${navbar ? "is-sticky" : ""}`}>
         <div className="header__container px-30 sm:px-20">
           <div className="row justify-between items-center">
           
-           <div style={{marginLeft : "84px"}} className="col-auto">
+           <div className="col-auto header_logo_left_space">
               <div className="d-flex items-center">
                 <Link href="/" className="header-logo mr-20">
                   {

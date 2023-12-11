@@ -135,14 +135,14 @@ const index = () => {
             </SwiperSlide> */}
           </Swiper>
 
-          <div className="masthead-slider__nav -prev js-prev">
+          <div className="masthead-slider__nav -prev js-prev hero_slider_button">
             <button className="button -outline-white size-50 flex-center text-white rounded-full hero7-prev-active">
               <i className="icon-arrow-left" />
             </button>
           </div>
           {/* End prev navigation */}
 
-          <div className="masthead-slider__nav -next js-next">
+          <div className="masthead-slider__nav -next js-next hero_slider_button">
             <button className="button -outline-white size-50 flex-center text-white rounded-full hero7-next-active">
               <i className="icon-arrow-right" />
             </button>

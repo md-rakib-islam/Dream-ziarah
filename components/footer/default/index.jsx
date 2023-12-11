@@ -2,25 +2,79 @@
 "use client";
 import { useCreateNewsLetterJustEmailMutation } from "@/features/newsLetter/newsLetterSlice";
 import { useState } from "react";
+import { ToastContainer, toast } from 'react-toastify';
 import ContactInfo from "./ContactInfo";
 import Copyright from "./Copyright";
 import FooterContent from "./FooterContent";
+
+import 'react-toastify/dist/ReactToastify.css';
 
 const index = () => {
   const [email, setEmail] = useState("");
   const [createNewsLetterJustEmail, {isLoading, isSuccess}] = useCreateNewsLetterJustEmailMutation();
 
   const handleSubmit = async() => {
-    const res = await createNewsLetterJustEmail({email});
+    
+    try{
+      const res = await createNewsLetterJustEmail({email});
+      console.log(res?.error?.data?.email[0]);
     if(res.data){
-      alert("subcription added! thank you");
+      // alert("subcription added! thank you");
+      toast.success('Your subscription confirms your seat on a journey designed for Muslim travelers.', {
+        position: "top-center",
+        autoClose: 5000,
+        hideProgressBar: false,
+        closeOnClick: true,
+        pauseOnHover: true,
+        draggable: true,
+        progress: undefined,
+        theme: "dark",
+        });
       setEmail("");
+    }
+    if(res?.error){
+      // alert("subcription added! thank you");
+      toast.error(res?.error?.data?.email[0], {
+        position: "top-center",
+        autoClose: 5000,
+        hideProgressBar: false,
+        closeOnClick: true,
+        pauseOnHover: true,
+        draggable: true,
+        progress: undefined,
+        theme: "dark",
+        });
+     
+    }
+    }catch(err){
+      toast.error('Something went wrong!', {
+        position: "top-center",
+        autoClose: 5000,
+        hideProgressBar: false,
+        closeOnClick: true,
+        pauseOnHover: true,
+        draggable: true,
+        progress: undefined,
+        theme: "dark",
+        });
     }
   }
 
   return (
     <footer className="footer -type-1">
       <div className="container">
+      <ToastContainer
+        position="top-center"
+        autoClose={5000}
+        hideProgressBar={false}
+        newestOnTop={false}
+        closeOnClick
+        rtl={false}
+        pauseOnFocusLoss
+        draggable
+        pauseOnHover
+        theme="dark"
+        />
         <div className="pt-60 pb-60">
           <div className="row y-gap-40 justify-between xl:justify-start">
             <div className="col-xl-2 col-lg-4 col-sm-6">

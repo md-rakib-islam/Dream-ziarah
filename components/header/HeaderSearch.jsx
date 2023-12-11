@@ -3,6 +3,9 @@
 import { useRouter } from "next/navigation";
 import { useState } from "react";
 import { useSelector } from 'react-redux';
+import { ToastContainer, toast } from 'react-toastify';
+
+import 'react-toastify/dist/ReactToastify.css';
 
 const HeaderSearch = () => {
   const [searchText, setSearchText] = useState("");
@@ -16,7 +19,17 @@ const HeaderSearch = () => {
       if(isLocation){
         router.push(`/destinations/${isLocation?.name?.toLowerCase()}`)
       }else{
-        alert("Your Location is not found!")
+        // alert("Your Location is not found!")
+        toast('Your Location is not found!', {
+          position: "top-center",
+          autoClose: 4000,
+          hideProgressBar: false,
+          closeOnClick: true,
+          pauseOnHover: true,
+          draggable: true,
+          progress: undefined,
+          theme: "dark",
+          });
       }
       
     }
@@ -58,6 +71,18 @@ const HeaderSearch = () => {
   // };
   return (
     <div className="single-field relative d-flex items-center xl:d-none mr-20">
+       <ToastContainer
+        position="top-center"
+        autoClose={4000}
+        hideProgressBar={false}
+        newestOnTop={false}
+        closeOnClick
+        rtl={false}
+        pauseOnFocusLoss
+        draggable
+        pauseOnHover
+        theme="dark"
+        />
       <input
         value={searchText}
         onKeyDown={(e) => {if(e.key === "Enter"){
@@ -72,7 +97,9 @@ const HeaderSearch = () => {
       <button onClick={handleSubmit} type="submit" className="absolute d-flex items-center h-full">
         <i className="icon-search text-20 px-15 text-dark-1" />
       </button>
+     
     </div>
+    
 
     // <>
     //   <div className="searchMenu-loc px-30 lg:py-20 lg:px-0 js-form-dd js-liverSearch">

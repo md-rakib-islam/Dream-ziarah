@@ -1,20 +1,73 @@
 "use client";
 import { useCreateNewsLetterJustEmailMutation } from "@/features/newsLetter/newsLetterSlice";
 import { useState } from "react";
+import { ToastContainer, toast } from 'react-toastify';
+
+import 'react-toastify/dist/ReactToastify.css';
 
 const CallToActions = () => {
   const [email, setEmail] = useState("");
   const [createNewsLetterJustEmail, {isLoading, isSuccess}] = useCreateNewsLetterJustEmailMutation();
 
   const handleSubmit = async() => {
-    const res = await createNewsLetterJustEmail({email});
+    try{
+      const res = await createNewsLetterJustEmail({email});
+      console.log(res?.error?.data?.email[0]);
     if(res.data){
-      alert("subcription added! thank you");
+      // alert("subcription added! thank you");
+      toast.success('Your subscription confirms your seat on a journey designed for Muslim travelers.', {
+        position: "top-center",
+        autoClose: 5000,
+        hideProgressBar: false,
+        closeOnClick: true,
+        pauseOnHover: true,
+        draggable: true,
+        progress: undefined,
+        theme: "dark",
+        });
       setEmail("");
+    }
+    if(res?.error){
+      // alert("subcription added! thank you");
+      toast.error(res?.error?.data?.email[0], {
+        position: "top-center",
+        autoClose: 5000,
+        hideProgressBar: false,
+        closeOnClick: true,
+        pauseOnHover: true,
+        draggable: true,
+        progress: undefined,
+        theme: "dark",
+        });
+     
+    }
+    }catch(err){
+      toast.error('Something went wrong!', {
+        position: "top-center",
+        autoClose: 5000,
+        hideProgressBar: false,
+        closeOnClick: true,
+        pauseOnHover: true,
+        draggable: true,
+        progress: undefined,
+        theme: "dark",
+        });
     }
   }
   return (
     <section className="layout-pt-md layout-pb-md bg-dark-2">
+       <ToastContainer
+        position="top-center"
+        autoClose={5000}
+        hideProgressBar={false}
+        newestOnTop={false}
+        closeOnClick
+        rtl={false}
+        pauseOnFocusLoss
+        draggable
+        pauseOnHover
+        theme="dark"
+        />
       <div className="container">
         <div className="row y-gap-30 justify-between items-center">
           <div className="col-auto">

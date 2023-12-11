@@ -19,7 +19,7 @@ const Block1 = () => {
         <Image
           width={400}
           height={400}
-          src="/img/pages/about/2.png"
+          src="/img/pages/about/about1.webp"
           alt="image"
           className="rounded-4 w-100"
         />

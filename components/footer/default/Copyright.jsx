@@ -9,7 +9,7 @@ const Copyright = () => {
             <div className="d-flex items-center">
               Copyright © 2023
               <a
-                href="https://themeforest.net/user/ib-themes"
+                href="https://dreamziarah.com"
                 className="mx-2"
                 target="_blank"
                 rel="noopener noreferrer"

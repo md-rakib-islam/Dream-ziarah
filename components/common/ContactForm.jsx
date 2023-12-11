@@ -3,6 +3,9 @@
 
 import { useCreateNewsLetterMutation } from "@/features/newsLetter/newsLetterSlice";
 import { useState } from "react";
+import { ToastContainer, toast } from 'react-toastify';
+
+import 'react-toastify/dist/ReactToastify.css';
 
 const initialState = {
   full_name : "",
@@ -17,13 +20,35 @@ const ContactForm = () => {
   
   const handleSubmit = async(event) => {
     event.preventDefault();
-    const res = await createNewsLetter(formState);
-    if(res.data){
-      alert("thanks for contact with us!");
-      setFormState(initialState);
+    try{
+      const res = await createNewsLetter(formState);
+      if(res.data){
+        // alert("thanks for contact with us!");
+        toast.success('Thanks for contact with us!', {
+          position: "top-center",
+          autoClose: 4000,
+          hideProgressBar: false,
+          closeOnClick: true,
+          pauseOnHover: true,
+          draggable: true,
+          progress: undefined,
+          theme: "dark",
+          });
+        setFormState(initialState);
+      }
+
+    }catch(err){
+      toast.error('Something went wrong!', {
+        position: "top-center",
+        autoClose: 4000,
+        hideProgressBar: false,
+        closeOnClick: true,
+        pauseOnHover: true,
+        draggable: true,
+        progress: undefined,
+        theme: "dark",
+        });
     }
-    
-    
   };
 
   const handleChange = (event) => {
@@ -36,9 +61,21 @@ const ContactForm = () => {
 
   return (
     <form className="row y-gap-20 pt-20" onSubmit={handleSubmit}>
+        <ToastContainer
+        position="top-center"
+        autoClose={4000}
+        hideProgressBar={false}
+        newestOnTop={false}
+        closeOnClick
+        rtl={false}
+        pauseOnFocusLoss
+        draggable
+        pauseOnHover
+        theme="dark"
+        />
       <div className="col-12">
         <div className="form-input">
-          <input onChange={handleChange} value={formState.fullName} type="text" name="full_name" id="name" required />
+          <input onChange={handleChange} value={formState.full_name} type="text" name="full_name" id="name" required />
           <label htmlFor="name" className="lh-1 text-16 text-light-1">
             Full Name
           </label>
