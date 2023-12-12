@@ -1,0 +1,18 @@
+version: "3.8"
+services:
+  dreamziarah:
+    build: .
+    container_name: ziarahapp
+    restart: always
+    ports:
+      - 3003:3000
+    networks:
+      - ziarahnet
+    volumes:
+      - ziarahapp_data:/usr/share/ziarahapp/data
+
+networks:
+  ziarahnet:
+    driver: bridge
+volumes:
+  ziarahapp_data:
