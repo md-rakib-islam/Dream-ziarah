@@ -41,8 +41,8 @@ export const singleTourInfo = {
 
 const useTours = () => {
     const [tourItems, setTourItems] = useState([]);
-    const {menuItems} = useSelector(state => state.menus);
-    const {currentCurrency, exchangeRates} = useSelector(state => state.currency);
+    const {menuItems} = useSelector(state => state?.menus);
+    const {currentCurrency, exchangeRates} = useSelector(state => state?.currency);
     const ziarahId = menuItems.find((item) => item.name === "Ziarah")?.id;
     const {isSuccess, data, isLoading} = useGetImagesByMenuIdQuery(ziarahId);
     const {isSuccess: isContentSuccess, data : contentItems, isLoading: isContentLoading} = useGetAllContentQuery(ziarahId);

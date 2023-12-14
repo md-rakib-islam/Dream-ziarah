@@ -132,7 +132,7 @@ const Tours = () => {
                           : ""
                       }`}
                     >
-                      {item.tag}
+                      {item?.tag}
                     </div>
                   </div>
                 </div>

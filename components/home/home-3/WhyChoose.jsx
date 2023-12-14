@@ -26,7 +26,7 @@ const WhyChoose = () => {
   ];
   return (
     <>
-      {blockContent.map((item) => (
+      {blockContent?.map((item) => (
         <div
           className="col-lg-3 col-sm-6"
           key={item.id}
