@@ -1,5 +1,5 @@
 import Image from "next/image";
-
+import aboutImg from "../../public/img/pages/about/about.webp";
 const Block1 = () => {
   return (
     <>
@@ -19,7 +19,7 @@ const Block1 = () => {
         <Image
           width={400}
           height={400}
-          src="/img/pages/about/about.webp"
+          src={aboutImg}
           alt="image"
           className="rounded-4 w-100"
         />

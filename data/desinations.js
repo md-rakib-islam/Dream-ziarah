@@ -1,3 +1,7 @@
+import historical_jeddah from "../public/img/destinations/jeddah/historical_jidda.webp";
+import king_fahd from "../public/img/destinations/jeddah/king_fahd.webp";
+import oldcoral from "../public/img/destinations/jeddah/oldcoral.webp";
+import quran_gate from "../public/img/destinations/jeddah/quran_gate.webp";
 export const destinations1 = [
   { id: 1, city: "Hawai", properties: "12,683",region:'north_america' },
   { id: 2, city: "Istanbul", properties: "12,683",region:'europe' },
@@ -514,28 +518,28 @@ export const slightContent = {
   items : [
     {
       id: 1,
-      img: "/img/destinations/jeddah/historical jidda.webp",
+      img: historical_jeddah,
       title: "Historical Jeddah (Al-Balad)",
       text: `Explore Al-Balad, the historic district of Jeddah, which preserves traditional architecture and offers a glimpse into the city's past. The area reflects the historical Islamic influence on Jeddah's development as a trading port.`,
       delayAnimation: "100",
     },
     {
       id: 2,
-      img: "/img/destinations/jeddah/king fahd.webp",
+      img: king_fahd,
       title: "King Fahd Fountain",
       text: `While not directly tied to Islamic history, the King Fahd Fountain is an iconic landmark in Jeddah. It provides a captivating view of the Red Sea and serves as a symbol of the city's development under Islamic principles.`,
       delayAnimation: "200",
     },
     {
       id: 3,
-      img: "/img/destinations/jeddah/oldcoral.webp",
+      img: oldcoral,
       title: "Old Coral Houses",
       text: `Discover the old coral houses in Jeddah, showcasing traditional Saudi architecture. These historic residences, adorned with intricate designs, reflect the cultural and architectural heritage of the region`,
       delayAnimation: "300",
     },
     {
       id: 4,
-      img: "/img/destinations/jeddah/quran gate.webp",
+      img: quran_gate,
       title: "Quran Gate",
       text: `The Quran Gate is a modern structure that marks the entrance to Jeddah. While not an ancient site, it symbolizes the importance of the Quran in Saudi Arabia, aligning with the nation's Islamic principles.`,
       delayAnimation: "400",
