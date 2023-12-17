@@ -1,5 +1,5 @@
+import aboutImg from "@/public/img/pages/about/about.webp";
 import Image from "next/image";
-import aboutImg from "../../public/img/pages/about/about.webp";
 const Block1 = () => {
   return (
     <>
