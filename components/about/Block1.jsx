@@ -1,4 +1,4 @@
-import aboutImg from "@/public/img/pages/about/about.webp";
+// import aboutImg from "@/public/img/pages/about/about.webp";
 import Image from "next/image";
 const Block1 = () => {
   return (
@@ -19,7 +19,7 @@ const Block1 = () => {
         <Image
           width={400}
           height={400}
-          src={aboutImg}
+          src="/img/pages/about/about.webp"
           alt="image"
           className="rounded-4 w-100"
         />

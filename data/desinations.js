@@ -1,23 +1,23 @@
-import historical_jeddah from "@/public/img/destinations/jeddah/historicalJidda.webp";
-import king_fahd from "@/public/img/destinations/jeddah/kingFahd.webp";
-import oldcoral from "@/public/img/destinations/jeddah/oldCoral.webp";
-import quran_gate from "@/public/img/destinations/jeddah/quranGate.webp";
-import al_kaaba from "@/public/img/destinations/makkah/alKaaba.webp";
-import jabal_al_noor from "@/public/img/destinations/makkah/jabalAlNoor.webp";
-import jamarat from "@/public/img/destinations/makkah/jamarat.webp";
-import Masjid_al_Haram from "@/public/img/destinations/makkah/masjidAlHaram.webp";
-import Al_Masjid_an_Nabawi from "@/public/img/destinations/medina/alMasjidAnNabawi.webp";
-import Qiblatain_Mosque from "@/public/img/destinations/medina/qiblatainMosque.webp";
-import Untitled_Quba_Mosque from "@/public/img/destinations/medina/qubaMosque.webp";
-import Uhud_Mountain_and_Battlefield from "@/public/img/destinations/medina/uhudMountainAndBattlefield.webp";
-import Al_Bida_Well from "@/public/img/destinations/tabuk/alBidaWell.webp";
-import Quba_Mosque_in_Tabuk from "@/public/img/destinations/tabuk/qubaMosqueInTabuk.webp";
-import Tabuk_Castle from "@/public/img/destinations/tabuk/tabukCastle.webp";
-import Tabuk_Museum from "@/public/img/destinations/tabuk/tabukMuseum.webp";
-import Al_Mathna_Souq from "@/public/img/destinations/taif/alMathnaSouq.webp";
-import Hada_Archaeological_Site from "@/public/img/destinations/taif/hadaArchaeologicalSite.webp";
-import Quba_Mosque_in_Taif from "@/public/img/destinations/taif/qubaMosqueInTaif.webp";
-import Shubra_Palace from "@/public/img/destinations/taif/shubraPalace.webp";
+// import historical_jeddah from "@/public/img/destinations/jeddah/historicalJidda.webp";
+// import king_fahd from "@/public/img/destinations/jeddah/kingFahd.webp";
+// import oldcoral from "@/public/img/destinations/jeddah/oldCoral.webp";
+// import quran_gate from "@/public/img/destinations/jeddah/quranGate.webp";
+// import al_kaaba from "@/public/img/destinations/makkah/alKaaba.webp";
+// import jabal_al_noor from "@/public/img/destinations/makkah/jabalAlNoor.webp";
+// import jamarat from "@/public/img/destinations/makkah/jamarat.webp";
+// import Masjid_al_Haram from "@/public/img/destinations/makkah/masjidAlHaram.webp";
+// import Al_Masjid_an_Nabawi from "@/public/img/destinations/medina/alMasjidAnNabawi.webp";
+// import Qiblatain_Mosque from "@/public/img/destinations/medina/qiblatainMosque.webp";
+// import Untitled_Quba_Mosque from "@/public/img/destinations/medina/qubaMosque.webp";
+// import Uhud_Mountain_and_Battlefield from "@/public/img/destinations/medina/uhudMountainAndBattlefield.webp";
+// import Al_Bida_Well from "@/public/img/destinations/tabuk/alBidaWell.webp";
+// import Quba_Mosque_in_Tabuk from "@/public/img/destinations/tabuk/qubaMosqueInTabuk.webp";
+// import Tabuk_Castle from "@/public/img/destinations/tabuk/tabukCastle.webp";
+// import Tabuk_Museum from "@/public/img/destinations/tabuk/tabukMuseum.webp";
+// import Al_Mathna_Souq from "@/public/img/destinations/taif/alMathnaSouq.webp";
+// import Hada_Archaeological_Site from "@/public/img/destinations/taif/hadaArchaeologicalSite.webp";
+// import Quba_Mosque_in_Taif from "@/public/img/destinations/taif/qubaMosqueInTaif.webp";
+// import Shubra_Palace from "@/public/img/destinations/taif/shubraPalace.webp";
 
 export const destinations1 = [
   { id: 1, city: "Hawai", properties: "12,683",region:'north_america' },
@@ -535,28 +535,28 @@ export const slightContent = {
   items : [
     {
       id: 1,
-      img: historical_jeddah,
+      img: "/img/destinations/jeddah/historicalJidda.webp",
       title: "Historical Jeddah (Al-Balad)",
       text: `Explore Al-Balad, the historic district of Jeddah, which preserves traditional architecture and offers a glimpse into the city's past. The area reflects the historical Islamic influence on Jeddah's development as a trading port.`,
       delayAnimation: "100",
     },
     {
       id: 2,
-      img: king_fahd,
+      img: "/img/destinations/jeddah/kingFahd.webp",
       title: "King Fahd Fountain",
       text: `While not directly tied to Islamic history, the King Fahd Fountain is an iconic landmark in Jeddah. It provides a captivating view of the Red Sea and serves as a symbol of the city's development under Islamic principles.`,
       delayAnimation: "200",
     },
     {
       id: 3,
-      img: oldcoral,
+      img: "/img/destinations/jeddah/oldCoral.webp",
       title: "Old Coral Houses",
       text: `Discover the old coral houses in Jeddah, showcasing traditional Saudi architecture. These historic residences, adorned with intricate designs, reflect the cultural and architectural heritage of the region`,
       delayAnimation: "300",
     },
     {
       id: 4,
-      img: quran_gate,
+      img: "/img/destinations/jeddah/quranGate.webp",
       title: "Quran Gate",
       text: `The Quran Gate is a modern structure that marks the entrance to Jeddah. While not an ancient site, it symbolizes the importance of the Quran in Saudi Arabia, aligning with the nation's Islamic principles.`,
       delayAnimation: "400",
@@ -602,28 +602,28 @@ makkah : {
 items : [
   {
     id: 1,
-    img: al_kaaba,
+    img: "/img/destinations/makkah/alKaaba.webp",
     title: "The Kaaba (Al-Kaaba)",
     text: `The Kaaba, located within the Masjid al-Haram, is the holiest site in Islam. Muslims around the world face the Kaaba during their prayers. It holds immense religious and historical significance as the House of Allah.`,
     delayAnimation: "100",
   },
   {
     id: 2,
-    img: Masjid_al_Haram,
+    img: "/img/destinations/makkah/masjidAlHaram.webp",
     title: "Masjid al-Haram",
     text: `Masjid al-Haram, the Grand Mosque, surrounds the Kaaba and is one of the largest mosques globally. It accommodates millions of worshippers during Hajj and Umrah. The Black Stone and the Maqam Ibrahim are also within its premises.`,
     delayAnimation: "200",
   },
   {
     id: 3,
-    img: jabal_al_noor,
+    img: "/img/destinations/makkah/jabalAlNoor.webp",
     title: "Jabal al-Noor (Mountain of Light)",
     text: `Jabal al-Noor is the mountain that houses the Cave Hira, where Prophet Muhammad received the first revelation from Allah through the angel Gabriel. The climb to the cave offers a spiritual journey and a connection to the beginnings of Islam.`,
     delayAnimation: "300",
   },
   {
     id: 4,
-    img: jamarat,
+    img: "/img/destinations/makkah/jamarat.webp",
     title: "Jamarat",
     text: `The Jamarat in Mina is the site where pilgrims perform the symbolic Stoning of the Devil during the Hajj pilgrimage. This ritual commemorates the actions of Prophet Ibrahim (Abraham) during his encounter with Satan.`,
     delayAnimation: "400",
@@ -669,28 +669,28 @@ medina : {
 items : [
   {
     id: 1,
-    img: Al_Masjid_an_Nabawi,
+    img: "/img/destinations/medina/alMasjidAnNabawi.webp",
     title: "Prophet's Mosque (Al-Masjid an-Nabawi)",
     text: `The Prophet's Mosque, built by Prophet Muhammad, is a central place of worship for Muslims worldwide. It houses the Prophet's tomb and remains a symbol of Islamic history and spirituality.`,
     delayAnimation: "100",
   },
   {
     id: 2,
-    img: Untitled_Quba_Mosque,
+    img: "/img/destinations/medina/qubaMosque.webp",
     title: "Quba Mosque",
     text: `Quba Mosque is the first mosque built by Prophet Muhammad upon his arrival in Medina. It holds immense historical significance as a place where the Prophet laid the foundation for Islamic worship.`,
     delayAnimation: "200",
   },
   {
     id: 3,
-    img: Qiblatain_Mosque,
+    img: "/img/destinations/medina/qiblatainMosque.webp",
     title: "Qiblatain Mosque",
     text: `Qiblatain Mosque marks the site where the Qibla (direction of prayer) was changed from Jerusalem to Mecca. It is a historical and religious landmark, reminding visitors of a crucial event in Islamic history.`,
     delayAnimation: "300",
   },
   {
     id: 4,
-    img: Uhud_Mountain_and_Battlefield,
+    img: "/img/destinations/medina/uhudMountainAndBattlefield.webp",
     title: "Uhud Mountain and Battlefield",
     text: `Mount Uhud and its surrounding area witnessed the Battle of Uhud, a significant event in early Islamic history. The mountain serves as a reminder of the trials faced by the early Muslim community.`,
     delayAnimation: "400",
@@ -736,28 +736,28 @@ taif : {
 items : [
   {
     id: 1,
-    img: Shubra_Palace,
+    img: "/img/destinations/taif/shubraPalace.webp",
     title: "Shubra Palace",
     text: `Shubra Palace is a historical site that served as a residence for Saudi kings, including King Abdulaziz. While not directly tied to early Islamic history, it reflects the more recent history of the Kingdom and its leaders.`,
     delayAnimation: "100",
   },
   {
     id: 2,
-    img: Hada_Archaeological_Site,
+    img: "/img/destinations/taif/hadaArchaeologicalSite.webp",
     title: "Hada Archaeological Site",
     text: `The Hada Archaeological Site in Taif provides a glimpse into ancient civilizations in the region, including pre-Islamic times. Explore the ruins and artifacts that tell the story of the area's historical evolution.`,
     delayAnimation: "200",
   },
   {
     id: 3,
-    img: Quba_Mosque_in_Taif,
+    img: "/img/destinations/taif/qubaMosqueInTaif.webp",
     title: "Quba Mosque in Taif",
     text: `Quba Mosque in Taif, like its namesake in Medina, holds significance in Islamic history. It is a place for prayer and reflection, contributing to the religious and cultural fabric of the city.`,
     delayAnimation: "300",
   },
   {
     id: 4,
-    img: Al_Mathna_Souq,
+    img: "/img/destinations/taif/alMathnaSouq.webp",
     title: "Al-Mathna Souq (Souq Okaz)",
     text: `Al-Mathna Souq, historically known as Souq Okaz, was a major pre-Islamic trade center. While its primary historical context predates Islam, it played a role in the cultural and economic interactions of the Arabian Peninsula.`,
     delayAnimation: "400",
@@ -803,28 +803,28 @@ tabuk : {
 items : [
   {
     id: 1,
-    img: Al_Bida_Well,
+    img: "/img/destinations/tabuk/alBidaWell.webp",
     title: "Al-Bida Well",
     text: `Although ancient and primarily associated with the pre-Islamic era, Al-Bida Well holds historical importance. Its location as a key stop on trade routes predates Islam, offering insights into the region's early history.`,
     delayAnimation: "100",
   },
   {
     id: 2,
-    img: Tabuk_Castle,
+    img: "/img/destinations/tabuk/tabukCastle.webp",
     title: "Tabuk Castle (Qasr Al-Ablaq)",
     text: `Tabuk Castle, built during the Ottoman era, stands as a testament to more recent history. While not directly tied to Islamic events, it reflects the architectural influence of the Ottomans in the region.`,
     delayAnimation: "200",
   },
   {
     id: 3,
-    img: Quba_Mosque_in_Tabuk,
+    img: "/img/destinations/tabuk/qubaMosqueInTabuk.webp",
     title: "Quba Mosque in Tabuk",
     text: `Quba Mosque in Tabuk, while not as famous as the Quba Mosque in Medina, holds religious significance. Visitors can engage in prayers and contemplation in this mosque, fostering a connection with Islamic heritage.`,
     delayAnimation: "300",
   },
   {
     id: 4,
-    img: Tabuk_Museum,
+    img: "/img/destinations/tabuk/tabukMuseum.webp",
     title: "Tabuk Museum",
     text: `The Tabuk Museum may have exhibits related to the region's history, including artifacts that offer insights into the cultural and historical context of the area during different periods, including Islamic times.`,
     delayAnimation: "400",
