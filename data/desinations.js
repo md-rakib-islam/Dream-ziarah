@@ -1,23 +1,24 @@
-import historical_jeddah from "../public/img/destinations/jeddah/historical_jidda.webp";
-import king_fahd from "../public/img/destinations/jeddah/king_fahd.webp";
-import oldcoral from "../public/img/destinations/jeddah/oldcoral.webp";
-import quran_gate from "../public/img/destinations/jeddah/quran_gate.webp";
-import al_kaaba from "../public/img/destinations/makkah/Al-Kaaba.webp";
-import jabal_al_noor from "../public/img/destinations/makkah/Jabal_al_Noor.webp";
-import jamarat from "../public/img/destinations/makkah/Jamarat.webp";
-import Masjid_al_Haram from "../public/img/destinations/makkah/Masjid_al_Haram.webp";
-import Al_Masjid_an_Nabawi from "../public/img/destinations/medina/Al_Masjid_an_Nabawi.webp";
-import Qiblatain_Mosque from "../public/img/destinations/medina/Qiblatain_Mosque.webp";
-import Uhud_Mountain_and_Battlefield from "../public/img/destinations/medina/Uhud_Mountain_and_Battlefield.webp";
-import Untitled_Quba_Mosque from "../public/img/destinations/medina/Untitled_Quba_Mosque.webp";
-import Al_Bida_Well from "../public/img/destinations/tabuk/Al-Bida-Well.webp";
-import Quba_Mosque_in_Tabuk from "../public/img/destinations/tabuk/Quba-Mosque-in-Tabuk.webp";
-import Tabuk_Castle from "../public/img/destinations/tabuk/Tabuk-Castle.webp";
-import Tabuk_Museum from "../public/img/destinations/tabuk/Tabuk-Museum.webp";
-import Al_Mathna_Souq from "../public/img/destinations/taif/Al-Mathna-Souq.webp";
-import Hada_Archaeological_Site from "../public/img/destinations/taif/Hada-Archaeological-Site.webp";
-import Quba_Mosque_in_Taif from "../public/img/destinations/taif/Quba-Mosque-in-Taif.webp";
-import Shubra_Palace from "../public/img/destinations/taif/Shubra-Palace.webp";
+import historical_jeddah from "../public/img/destinations/jeddah/historicalJidda.webp";
+import king_fahd from "../public/img/destinations/jeddah/kingFahd.webp";
+import oldcoral from "../public/img/destinations/jeddah/oldCoral.webp";
+import quran_gate from "../public/img/destinations/jeddah/quranGate.webp";
+import al_kaaba from "../public/img/destinations/makkah/alKaaba.webp";
+import jabal_al_noor from "../public/img/destinations/makkah/jabalAlNoor.webp";
+import jamarat from "../public/img/destinations/makkah/jamarat.webp";
+import Masjid_al_Haram from "../public/img/destinations/makkah/masjidAlHaram.webp";
+import Al_Masjid_an_Nabawi from "../public/img/destinations/medina/alMasjidAnNabawi.webp";
+import Qiblatain_Mosque from "../public/img/destinations/medina/qiblatainMosque.webp";
+import Untitled_Quba_Mosque from "../public/img/destinations/medina/qubaMosque.webp";
+import Uhud_Mountain_and_Battlefield from "../public/img/destinations/medina/uhudMountainAndBattlefield.webp";
+import Al_Bida_Well from "../public/img/destinations/tabuk/alBidaWell.webp";
+import Quba_Mosque_in_Tabuk from "../public/img/destinations/tabuk/qubaMosqueInTabuk.webp";
+import Tabuk_Castle from "../public/img/destinations/tabuk/tabukCastle.webp";
+import Tabuk_Museum from "../public/img/destinations/tabuk/tabukMuseum.webp";
+import Al_Mathna_Souq from "../public/img/destinations/taif/alMathnaSouq.webp";
+import Hada_Archaeological_Site from "../public/img/destinations/taif/hadaArchaeologicalSite.webp";
+import Quba_Mosque_in_Taif from "../public/img/destinations/taif/qubaMosqueInTaif.webp";
+import Shubra_Palace from "../public/img/destinations/taif/shubraPalace.webp";
+
 export const destinations1 = [
   { id: 1, city: "Hawai", properties: "12,683",region:'north_america' },
   { id: 2, city: "Istanbul", properties: "12,683",region:'europe' },

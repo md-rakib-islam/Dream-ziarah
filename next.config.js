@@ -20,9 +20,8 @@ const nextConfig = {
          
         ],
         imageSizes: [16, 32, 48, 64, 96, 128, 256, 384],
-        formats: ['image/avif', 'image/webp'],
+        formats: ['image/webp','image/avif'],
         // minimumCacheTTL: 60,
-        domains: ['ziarahapi.dreamtourism.co.uk'],
       },
     // output: 'standalone',  
 }

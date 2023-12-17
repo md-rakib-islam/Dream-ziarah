@@ -1,11 +1,12 @@
 "use client";
+import { useGetContentsByMenuContentIdQuery } from '@/features/content/contentApi';
+import { useParams } from 'next/navigation';
 import { useEffect } from "react";
-import { useSelector } from "react-redux";
 
 
 const SidebarRight = () => {
-  const {tourItem} = useSelector(state => state.tour);
-  console.log("Tour", tourItem)
+  const params = useParams()
+  const {data, isSuccess} = useGetContentsByMenuContentIdQuery(params.slug);
   useEffect(() => {
     const script = document.createElement("script");
     script.src =
@@ -17,10 +18,13 @@ const SidebarRight = () => {
       document.body.removeChild(script);
     };
   }, []);
+
   return (
     <div className="d-flex justify-end js-pin-content">
       <div className="w-360 lg:w-full d-flex flex-column items-center">
-      <div class="bokunWidget" data-src={tourItem?.url}></div>
+      {
+        isSuccess && (<div class="bokunWidget" data-src={data?.url}></div>)
+      }
         {/* <div className="px-30 py-30 rounded-4 border-light bg-white shadow-4">
           <div className="text-14 text-light-1">
             From{" "}
