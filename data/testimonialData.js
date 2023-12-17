@@ -1,7 +1,10 @@
+import female_icon_01 from "../public/img/avatars/testimonials/female_icon-01.webp";
+import female_icon_02 from "../public/img/avatars/testimonials/female_icon-02.webp";
+import male_icon from "../public/img/avatars/testimonials/male_icon.webp";
 export const testimonial1 = [
   {
     id: 1,
-    avatar: "/img/avatars/testimonials/female_icon-02.webp",
+    avatar: female_icon_02,
     name: "Sara Ahmad",
     designation: "UX / UI Designer",
     text: `Dream Ziarah made my Umrah unforgettable. The seamless arrangements and spiritual guidance exceeded my expectations. Grateful for a journey filled with peace and reflection.`,
@@ -9,7 +12,7 @@ export const testimonial1 = [
   },
   {
     id: 2,
-    avatar: "/img/avatars/testimonials/male_icon.webp",
+    avatar: male_icon,
     name: "Amin Khan",
     designation: "UX / UI Designer",
     text: `Hajj with Dream Ziarah was an incredible experience. Their attention to detail, friendly staff, and a sense of community made my pilgrimage truly special.`,
@@ -17,7 +20,7 @@ export const testimonial1 = [
   },
   {
     id: 3,
-    avatar: "/img/avatars/testimonials/female_icon-01.webp",
+    avatar: female_icon_01,
     name: "Farida Rahman",
     designation: "UX / UI Designer",
     text: `Dream Ziarah turned my Ziarah journey into a spiritual retreat. The warmth of their team and the carefully curated experience made it a cherished memory.`,
@@ -25,7 +28,7 @@ export const testimonial1 = [
   },
   {
     id: 4,
-    avatar: "/img/avatars/testimonials/male_icon.webp",
+    avatar: male_icon,
     name: "Rizwan Ali",
     designation: "UX / UI Designer",
     text: `Umrah with Dream Ziarah was serene and hassle-free. Their dedication to service and spiritual depth added a unique layer to my sacred journey.`,
@@ -33,7 +36,7 @@ export const testimonial1 = [
   },
   {
     id: 5,
-    avatar: "/img/avatars/testimonials/female_icon-02.webp",
+    avatar: female_icon_02,
     name: "Zainab Malik",
     designation: "UX / UI Designer",
     text: `Dream Ziarah made my Hajj experience seamless and profound. Their commitment to excellence and spiritual support created lasting memories. Highly recommended!`,
@@ -41,7 +44,7 @@ export const testimonial1 = [
   },
   {
     id: 6,
-    avatar: "/img/avatars/testimonials/male_icon.webp",
+    avatar: male_icon,
     name: "Mustafa Ahmed",
     designation: "UX / UI Designer",
     text: `Dream Ziarah is more than a service; it's a spiritual companion. From accommodations to guidance, they ensured my Hajj journey was smooth and spiritually enriching.`,
@@ -49,7 +52,7 @@ export const testimonial1 = [
   },
   {
     id: 7,
-    avatar: "/img/avatars/testimonials/female_icon-01.webp",
+    avatar: female_icon_01,
     name: "Aisha Rahman",
     designation: "UX / UI Designer",
     text: `My family and I had an amazing Ziarah experience with Dream Ziarah. The thoughtful planning and warm hospitality made it a memorable and spiritually uplifting journey.`,
@@ -57,7 +60,7 @@ export const testimonial1 = [
   },
   {
     id: 8,
-    avatar: "/img/avatars/testimonials/male_icon.webp",
+    avatar: male_icon,
     name: "Ali Abbas",
     designation: "UX / UI Designer",
     text: `Hajj with Dream Ziarah was a transformative experience. The genuine care, meticulous planning, and a focus on spirituality made it a journey of a lifetime.`,
@@ -65,7 +68,7 @@ export const testimonial1 = [
   },
   {
     id: 9,
-    avatar: "/img/avatars/testimonials/female_icon-02.webp",
+    avatar: female_icon_02,
     name: "Nadia Hussain",
     designation: "UX / UI Designer",
     text: `Umrah with Dream Ziarah exceeded expectations. The personalized service and spiritual depth added a meaningful layer to my pilgrimage. Grateful for this enriching journey.`,
@@ -73,7 +76,7 @@ export const testimonial1 = [
   },
   {
     id: 10,
-    avatar: "/img/avatars/testimonials/male_icon.webp",
+    avatar: male_icon,
     name: "Ahmed Malik",
     designation: "UX / UI Designer",
     text: `Dream Ziarah crafted a unique Hajj experience for us. Their dedication to service, spiritual insight, and community atmosphere made our pilgrimage truly special.`,
@@ -81,7 +84,7 @@ export const testimonial1 = [
   },
   {
     id: 11,
-    avatar: "/img/avatars/testimonials/female_icon-01.webp",
+    avatar: female_icon_01,
     name: "Sofia Khan",
     designation: "UX / UI Designer",
     text: `Dream Ziarah made my Umrah journey unforgettable. The attention to detail, warm hospitality, and spiritual guidance turned it into a deeply enriching experience.`,
@@ -89,7 +92,7 @@ export const testimonial1 = [
   },
   {
     id: 12,
-    avatar: "/img/avatars/testimonials/male_icon.webp",
+    avatar: male_icon,
     name: "Imran Ahmed",
     designation: "UX / UI Designer",
     text: `Hajj with Dream Ziarah was a dream come true. The team's meticulous planning and genuine care made the pilgrimage a seamless and spiritually uplifting adventure.`,
@@ -97,7 +100,7 @@ export const testimonial1 = [
   },
   {
     id: 13,
-    avatar: "/img/avatars/testimonials/female_icon-02.webp",
+    avatar: female_icon_02,
     name: "Ayesha Ali",
     designation: "UX / UI Designer",
     text: `Dream Ziarah created a spiritual haven during my Ziarah. The personalized touch, insightful guidance, and a sense of community transformed it into a sacred retreat.`,
@@ -105,7 +108,7 @@ export const testimonial1 = [
   },
   {
     id: 14,
-    avatar: "/img/avatars/testimonials/male_icon.webp",
+    avatar: male_icon,
     name: "Haris Rahman",
     designation: "UX / UI Designer",
     text: `My family and I had an incredible Hajj experience with Dream Ziarah. The dedicated team, seamless logistics, and spiritual depth made our pilgrimage truly special.`,
@@ -113,7 +116,7 @@ export const testimonial1 = [
   },
   {
     id: 15,
-    avatar: "/img/avatars/testimonials/female_icon-01.webp",
+    avatar: female_icon_01,
     name: "Naima Patel",
     designation: "UX / UI Designer",
     text: `Umrah with Dream Ziarah was an amazing journey. Their attention to detail, friendly staff, and focus on spirituality created a peaceful and memorable pilgrimage.`,

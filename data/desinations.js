@@ -2,6 +2,22 @@ import historical_jeddah from "../public/img/destinations/jeddah/historical_jidd
 import king_fahd from "../public/img/destinations/jeddah/king_fahd.webp";
 import oldcoral from "../public/img/destinations/jeddah/oldcoral.webp";
 import quran_gate from "../public/img/destinations/jeddah/quran_gate.webp";
+import al_kaaba from "../public/img/destinations/makkah/Al-Kaaba.webp";
+import jabal_al_noor from "../public/img/destinations/makkah/Jabal_al_Noor.webp";
+import jamarat from "../public/img/destinations/makkah/Jamarat.webp";
+import Masjid_al_Haram from "../public/img/destinations/makkah/Masjid_al_Haram.webp";
+import Al_Masjid_an_Nabawi from "../public/img/destinations/medina/Al_Masjid_an_Nabawi.webp";
+import Qiblatain_Mosque from "../public/img/destinations/medina/Qiblatain_Mosque.webp";
+import Uhud_Mountain_and_Battlefield from "../public/img/destinations/medina/Uhud_Mountain_and_Battlefield.webp";
+import Untitled_Quba_Mosque from "../public/img/destinations/medina/Untitled_Quba_Mosque.webp";
+import Al_Bida_Well from "../public/img/destinations/tabuk/Al-Bida-Well.webp";
+import Quba_Mosque_in_Tabuk from "../public/img/destinations/tabuk/Quba-Mosque-in-Tabuk.webp";
+import Tabuk_Castle from "../public/img/destinations/tabuk/Tabuk-Castle.webp";
+import Tabuk_Museum from "../public/img/destinations/tabuk/Tabuk-Museum.webp";
+import Al_Mathna_Souq from "../public/img/destinations/taif/Al-Mathna-Souq.webp";
+import Hada_Archaeological_Site from "../public/img/destinations/taif/Hada-Archaeological-Site.webp";
+import Quba_Mosque_in_Taif from "../public/img/destinations/taif/Quba-Mosque-in-Taif.webp";
+import Shubra_Palace from "../public/img/destinations/taif/Shubra-Palace.webp";
 export const destinations1 = [
   { id: 1, city: "Hawai", properties: "12,683",region:'north_america' },
   { id: 2, city: "Istanbul", properties: "12,683",region:'europe' },
@@ -585,28 +601,28 @@ makkah : {
 items : [
   {
     id: 1,
-    img: "/img/destinations/makkah/The Kaaba (Al-Kaaba) 946 X 826.webp",
+    img: al_kaaba,
     title: "The Kaaba (Al-Kaaba)",
     text: `The Kaaba, located within the Masjid al-Haram, is the holiest site in Islam. Muslims around the world face the Kaaba during their prayers. It holds immense religious and historical significance as the House of Allah.`,
     delayAnimation: "100",
   },
   {
     id: 2,
-    img: "/img/destinations/makkah/Masjid al-Haram 946 X 826.webp",
+    img: Masjid_al_Haram,
     title: "Masjid al-Haram",
     text: `Masjid al-Haram, the Grand Mosque, surrounds the Kaaba and is one of the largest mosques globally. It accommodates millions of worshippers during Hajj and Umrah. The Black Stone and the Maqam Ibrahim are also within its premises.`,
     delayAnimation: "200",
   },
   {
     id: 3,
-    img: "/img/destinations/makkah/Jabal al-Noor (Mountain of Light) 946 X 826.webp",
+    img: jabal_al_noor,
     title: "Jabal al-Noor (Mountain of Light)",
     text: `Jabal al-Noor is the mountain that houses the Cave Hira, where Prophet Muhammad received the first revelation from Allah through the angel Gabriel. The climb to the cave offers a spiritual journey and a connection to the beginnings of Islam.`,
     delayAnimation: "300",
   },
   {
     id: 4,
-    img: "/img/destinations/makkah/Jamarat 946 X 826.webp",
+    img: jamarat,
     title: "Jamarat",
     text: `The Jamarat in Mina is the site where pilgrims perform the symbolic Stoning of the Devil during the Hajj pilgrimage. This ritual commemorates the actions of Prophet Ibrahim (Abraham) during his encounter with Satan.`,
     delayAnimation: "400",
@@ -652,28 +668,28 @@ medina : {
 items : [
   {
     id: 1,
-    img: "/img/destinations/medina/Al-Masjid an-Nabawi.webp",
+    img: Al_Masjid_an_Nabawi,
     title: "Prophet's Mosque (Al-Masjid an-Nabawi)",
     text: `The Prophet's Mosque, built by Prophet Muhammad, is a central place of worship for Muslims worldwide. It houses the Prophet's tomb and remains a symbol of Islamic history and spirituality.`,
     delayAnimation: "100",
   },
   {
     id: 2,
-    img: "/img/destinations/medina/Untitled-Quba Mosque.webp",
+    img: Untitled_Quba_Mosque,
     title: "Quba Mosque",
     text: `Quba Mosque is the first mosque built by Prophet Muhammad upon his arrival in Medina. It holds immense historical significance as a place where the Prophet laid the foundation for Islamic worship.`,
     delayAnimation: "200",
   },
   {
     id: 3,
-    img: "/img/destinations/medina/Qiblatain Mosque.webp",
+    img: Qiblatain_Mosque,
     title: "Qiblatain Mosque",
     text: `Qiblatain Mosque marks the site where the Qibla (direction of prayer) was changed from Jerusalem to Mecca. It is a historical and religious landmark, reminding visitors of a crucial event in Islamic history.`,
     delayAnimation: "300",
   },
   {
     id: 4,
-    img: "/img/destinations/medina/Uhud Mountain and Battlefield.webp",
+    img: Uhud_Mountain_and_Battlefield,
     title: "Uhud Mountain and Battlefield",
     text: `Mount Uhud and its surrounding area witnessed the Battle of Uhud, a significant event in early Islamic history. The mountain serves as a reminder of the trials faced by the early Muslim community.`,
     delayAnimation: "400",
@@ -719,28 +735,28 @@ taif : {
 items : [
   {
     id: 1,
-    img: "/img/destinations/taif/Shubra-Palace.webp",
+    img: Shubra_Palace,
     title: "Shubra Palace",
     text: `Shubra Palace is a historical site that served as a residence for Saudi kings, including King Abdulaziz. While not directly tied to early Islamic history, it reflects the more recent history of the Kingdom and its leaders.`,
     delayAnimation: "100",
   },
   {
     id: 2,
-    img: "/img/destinations/taif/Hada-Archaeological-Site.webp",
+    img: Hada_Archaeological_Site,
     title: "Hada Archaeological Site",
     text: `The Hada Archaeological Site in Taif provides a glimpse into ancient civilizations in the region, including pre-Islamic times. Explore the ruins and artifacts that tell the story of the area's historical evolution.`,
     delayAnimation: "200",
   },
   {
     id: 3,
-    img: "/img/destinations/taif/Quba-Mosque-in-Taif.webp",
+    img: Quba_Mosque_in_Taif,
     title: "Quba Mosque in Taif",
     text: `Quba Mosque in Taif, like its namesake in Medina, holds significance in Islamic history. It is a place for prayer and reflection, contributing to the religious and cultural fabric of the city.`,
     delayAnimation: "300",
   },
   {
     id: 4,
-    img: "/img/destinations/taif/Al-Mathna-Souq-_Souq-Okaz_.webp",
+    img: Al_Mathna_Souq,
     title: "Al-Mathna Souq (Souq Okaz)",
     text: `Al-Mathna Souq, historically known as Souq Okaz, was a major pre-Islamic trade center. While its primary historical context predates Islam, it played a role in the cultural and economic interactions of the Arabian Peninsula.`,
     delayAnimation: "400",
@@ -786,28 +802,28 @@ tabuk : {
 items : [
   {
     id: 1,
-    img: "/img/destinations/tabuk/Al-Bida Well.webp",
+    img: Al_Bida_Well,
     title: "Al-Bida Well",
     text: `Although ancient and primarily associated with the pre-Islamic era, Al-Bida Well holds historical importance. Its location as a key stop on trade routes predates Islam, offering insights into the region's early history.`,
     delayAnimation: "100",
   },
   {
     id: 2,
-    img: "/img/destinations/tabuk/Tabuk Castle (Qasr Al-Ablaq).webp",
+    img: Tabuk_Castle,
     title: "Tabuk Castle (Qasr Al-Ablaq)",
     text: `Tabuk Castle, built during the Ottoman era, stands as a testament to more recent history. While not directly tied to Islamic events, it reflects the architectural influence of the Ottomans in the region.`,
     delayAnimation: "200",
   },
   {
     id: 3,
-    img: "/img/destinations/tabuk/Quba Mosque in Tabuk.webp",
+    img: Quba_Mosque_in_Tabuk,
     title: "Quba Mosque in Tabuk",
     text: `Quba Mosque in Tabuk, while not as famous as the Quba Mosque in Medina, holds religious significance. Visitors can engage in prayers and contemplation in this mosque, fostering a connection with Islamic heritage.`,
     delayAnimation: "300",
   },
   {
     id: 4,
-    img: "/img/destinations/tabuk/Tabuk-Museum.webp",
+    img: Tabuk_Museum,
     title: "Tabuk Museum",
     text: `The Tabuk Museum may have exhibits related to the region's history, including artifacts that offer insights into the cultural and historical context of the area during different periods, including Islamic times.`,
     delayAnimation: "400",
