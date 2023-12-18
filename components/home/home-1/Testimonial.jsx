@@ -27,6 +27,7 @@ const Testimonial = () => {
             <div className="row items-center x-gap-15 y-gap-20">
               <div className="col-auto">
                 <Image
+                  unoptimized
                   width={80}
                   height={80}
                   src={item.avatar}

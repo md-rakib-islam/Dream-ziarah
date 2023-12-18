@@ -17,6 +17,7 @@ const Block1 = () => {
 
       <div className="col-lg-6">
         <Image
+          unoptimized
           width={400}
           height={400}
           src="/img/pages/about/about.webp"

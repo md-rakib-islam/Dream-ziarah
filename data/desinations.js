@@ -549,7 +549,7 @@ export const slightContent = {
     },
     {
       id: 3,
-      img: "/img/destinations/jeddah/oldCoral.webp",
+      img: "/img/destinations/jeddah/oldcoral.webp",
       title: "Old Coral Houses",
       text: `Discover the old coral houses in Jeddah, showcasing traditional Saudi architecture. These historic residences, adorned with intricate designs, reflect the cultural and architectural heritage of the region`,
       delayAnimation: "300",
@@ -623,7 +623,7 @@ items : [
   },
   {
     id: 4,
-    img: "/img/destinations/makkah/jamarat.webp",
+    img: "/img/destinations/makkah/Jamarat.webp",
     title: "Jamarat",
     text: `The Jamarat in Mina is the site where pilgrims perform the symbolic Stoning of the Devil during the Hajj pilgrimage. This ritual commemorates the actions of Prophet Ibrahim (Abraham) during his encounter with Satan.`,
     delayAnimation: "400",
