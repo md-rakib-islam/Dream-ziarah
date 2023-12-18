@@ -47,7 +47,7 @@ const index = () => {
             }}
           >
             {
-              sliderImageItems?.map((item) => (<SwiperSlide>
+              sliderImageItems?.map((item) => (<SwiperSlide key={item.id}>
                 <div className="row justify-center text-center">
                   <div className="col-auto">
                     <div className="masthead__content">

@@ -86,6 +86,7 @@ const MobileMenu = () => {
               menuItems?.map((menu) => {
                 if(menu?.children.length === 0){
                   return (<MenuItem
+                    key={menu.id}
                     onClick={()=>router.push(menu?.routePath)}
                     data-bs-dismiss="offcanvas"
                     className={
@@ -98,11 +99,11 @@ const MobileMenu = () => {
                      {menu.name}
                    </MenuItem>)
                 }else{
-                  return (<SubMenu label={menu?.name} className={ menu?.children?.some((item=>item.routePath?.split('/')[1] == currentPathName.split("/")[1])) ? "menu-active-link":''}>
+                  return (<SubMenu key={menu.id} label={menu?.name} className={ menu?.children?.some((item=>item.routePath?.split('/')[1] == currentPathName.split("/")[1])) ? "menu-active-link":''}>
                   {menu?.children?.map((item, i) => (
                     <MenuItem
                       data-bs-dismiss="offcanvas"
-                      key={i}
+                      key={item.id}
                       onClick={()=>router.push(item.routePath)}
                       className={
                         isActiveLink(item.routePath, pathname)

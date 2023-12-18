@@ -20,13 +20,16 @@ if (typeof window !== "undefined") {
   require("bootstrap/dist/js/bootstrap");
 }
 
+
 export default function RootLayout({ children }) {
+
   useEffect(() => {
     Aos.init({
       duration: 1200,
       once: true,
     });
   }, []);
+ 
   return (
     <html lang="en">
       <head>
@@ -45,7 +48,7 @@ export default function RootLayout({ children }) {
       <body>
         <main>
           <Provider store={store}>
-          <Header3/>
+          <Header3 />
             {children}
             <DefaultFooter/>
             <SrollTop />

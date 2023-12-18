@@ -13,6 +13,7 @@ import { useDispatch } from "react-redux";
 import CurrenctyMegaMenu from "../CurrenctyMegaMenu";
 import HeaderSearch from "../HeaderSearch";
 import MainMenu from "../MainMenu";
+import MobileCurrencyMenu from "../MobileCurrencyMenu";
 import MobileMenu from "../MobileMenu";
 
 
@@ -108,6 +109,9 @@ const Header1 = () => {
                       className="d-flex items-center icon-user text-inherit text-22"
                     />
                   </div> */}
+                  <div>
+                    <MobileCurrencyMenu/>
+                  </div>
                   <div>
                     <button
                       className="d-flex items-center icon-menu text-inherit text-20"

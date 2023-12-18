@@ -1,7 +1,7 @@
 import { createSlice } from "@reduxjs/toolkit";
 
 const initialState = {
-    currentCurrency : { id: 1, name: "United States dollar", currency: "USD", symbol: "$" },
+    currentCurrency : { id: 100, name: "United States dollar", currency: "USD", symbol: "$" },
     exchangeRates : {},
 };
 
