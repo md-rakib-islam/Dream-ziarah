@@ -61,14 +61,21 @@ const MobileCurrencyMenu = () => {
   dispatch(addCurrency(selectedCurrency));
   return (
     <div className="dropdown">
-  <button className="btn btn-secondary dropdown-toggle" type="button" id="dropdownMenuButton1" data-bs-toggle="dropdown" aria-expanded="false">
-    {selectedCurrency.currency}
-  </button>
-  <ul className="dropdown-menu" aria-labelledby="dropdownMenuButton1">
-    {
-        currencyContent?.map((item) => (<li key={item.id} onClick={() => handleItemClick(item)} className="dropdown-item">{item.currency} {item.symbol}</li>))
-    }
-  </ul>
+      <button
+          className={`d-flex items-center text-14 text-dark-1`}
+          type="button" id="dropdownMenuButton1" data-bs-toggle="dropdown" aria-expanded="false"
+        >
+          <span style={{color: "black", fontSize: "13px"}} className="js-currencyMenu-mainTitle">
+            {selectedCurrency.currency}
+          </span>
+          <i className="icon-chevron-sm-down text-7 ml-10" />
+        </button>
+
+      <ul className="dropdown-menu" aria-labelledby="dropdownMenuButton1">
+        {
+            currencyContent?.map((item) => (<li style={{color: "black", fontSize: "13px"}} key={item.id} onClick={() => handleItemClick(item)} className="dropdown-item">{item.currency} {item.symbol}</li>))
+        }
+      </ul>
 </div>
   )
 }
