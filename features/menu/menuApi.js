@@ -7,7 +7,8 @@ export const menuApi = apiSlice.injectEndpoints({
             query : () => ({
                 url : GET_MENUS_ALL_NESTED,
                 method : 'GET'
-            })
+            }),
+            keepUnusedDataFor : 120
         })
     })
 });

@@ -15,7 +15,15 @@ const tourMetadatas = {
     Makkah_City_Ziarah_Luxury_Private_Vehicle_With_Guide : {
         title : "Guided Luxury Ziarah - Makkah City | DreamZiarah.com",
         description : "Elevate your Makkah City Ziarah experience with our Luxury Private Vehicle and Expert Guide. Immerse yourself in the spiritual ambiance as our knowledgeable guide leads you through sacred landmarks. Revel in the comfort of luxury travel with a personalized touch."
-    }
+    },
+    Day_Trip_from_Makkah_to_Taif : {
+      title : "Guided Luxury Taif Tour - Taif City | DreamZiarah.com",
+      description : "Elevate your Makkah City Ziarah experience with our Luxury Private Vehicle and Expert Guide. Immerse yourself in the spiritual ambiance as our knowledgeable guide leads you through sacred landmarks. Revel in the comfort of luxury travel with a personalized touch."
+  },
+  Day_Trip_from_Makkah_to_Jeddah : {
+    title : "Guided Luxury Jeddah Tour - Jeddah City | DreamZiarah.com",
+    description : "Elevate your Makkah City Ziarah experience with our Luxury Private Vehicle and Expert Guide. Immerse yourself in the spiritual ambiance as our knowledgeable guide leads you through sacred landmarks. Revel in the comfort of luxury travel with a personalized touch."
+}
 }
 
 // export const metadata = {
@@ -44,8 +52,8 @@ export async function generateMetadata({ params, searchParams }, parent) {
     const {name, slug} = params;
    
     return {
-      title: tourMetadatas[slug]?.title,
-      description : tourMetadatas[slug]?.description
+      title: tourMetadatas[name]?.title,
+      description : tourMetadatas[name]?.description
     }
   }
 

@@ -3,6 +3,7 @@ import { configureStore } from "@reduxjs/toolkit";
 import blogReducer from "../features/blog/blogSlice";
 import currencyReducer from "../features/currency/currencySlice";
 import findPlaceSlice from "../features/hero/findPlaceSlice";
+import locationReducer from "../features/location/locationSlice";
 import menuReducer from "../features/menu/menuSlice";
 import paginatonReducer from "../features/pagination/paginationSlice";
 import siteSettingReducer from "../features/site-setting/siteSettingSlice";
@@ -18,6 +19,7 @@ export const store = configureStore({
         currency : currencyReducer,
         siteSettings : siteSettingReducer,
         pagination : paginatonReducer,
+        location : locationReducer,
     },
     middleware: (getDefaultMiddleware) =>
     getDefaultMiddleware().concat(apiSlice.middleware),

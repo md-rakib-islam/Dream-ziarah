@@ -7,13 +7,15 @@ export const imageApi = apiSlice.injectEndpoints({
             query : (menuId) => ({
                 url : `${GET_IMAGE_BY_MENU_ID}/${menuId}`,
                 method : 'GET'
-            })
+            }),
+            keepUnusedDataFor : 120
         }),
         getSliderImages : builder.query({
             query : () => ({
                 url : GET_SLIDERSETTINGS,
                 method : 'GET'
-            })
+            }),
+            keepUnusedDataFor : 120
         })
     })
 });

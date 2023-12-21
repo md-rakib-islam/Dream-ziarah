@@ -1,6 +1,7 @@
 
 import TopDestinations from "@/components/destinations/TopDestinations";
-import Hero7 from "@/components/hero/hero-7";
+// import Hero7 from "@/components/hero/hero-7";
+import Hero3 from "@/components/hero/hero-3";
 import WhyChoose from "@/components/home/home-3/WhyChoose";
 import Tours from "@/components/tours/Tours";
 import dynamic from "next/dynamic";
@@ -15,7 +16,9 @@ const home_3 = () => {
   
   return (
     <>
-      <Hero7/>
+      {/* <Hero7/> */}
+      <div className="header-margin"></div>
+      <Hero3/>
       {/* End Hero 3 */}
       
       <section className="layout-pt-md layout-pb-md">

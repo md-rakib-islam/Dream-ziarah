@@ -999,3 +999,6 @@ export const GET_LATEST_EXCHANGE_RATE = `https://v6.exchangerate-api.com/v6/81dd
 
 // get itenaries
 export const GET_ITENARIES_BY_CONTENT_ID = `${BASE_URL}/cms_itinerary/api/v1/Itinerary/get_Itinerary_by_cms_content_id`;
+
+// get Customer location
+export const GET_LOCATION_BY_COORDS = `https://api.opencagedata.com/geocode/v1/json`;

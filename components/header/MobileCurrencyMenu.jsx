@@ -1,5 +1,6 @@
 'use client'
 
+import { useGetCurrencyByLocationQuery } from "@/features/currency/currencyApi";
 import { addCurrency } from "@/features/currency/currencySlice";
 import { useEffect, useState } from "react";
 import { useDispatch } from "react-redux";
@@ -32,24 +33,24 @@ const MobileCurrencyMenu = () => {
   ];
 
   const [selectedCurrency, setSelectedCurrency] = useState(currencyContent[0]);
+  const [coords, setCoords] = useState({});
+  const {data, isSuccess} = useGetCurrencyByLocationQuery(coords);       
+
 
   const handleItemClick = (item) => {
     setSelectedCurrency(item);
     dispatch(addCurrency(item));
     // setClick(false);
   };
+ 
   
   useEffect(() => {
     if (typeof window !== "undefined") {
       const successfulLookup = position => {
         const { latitude, longitude } = position.coords;
-        // let latitude = 55;
-        // let longitude = -3;
-        fetch(`https://api.opencagedata.com/geocode/v1/json?q=${latitude}+${longitude}&key=4c6d199989144fd1b8d3f6adbcf3b9ac`)
-          .then(response => response.json())
-          .then((data) => setSelectedCurrency({id : 300, name : data?.results[0]?.annotations?.currency?.name, currency: data?.results[0]?.annotations?.currency?.iso_code, symbol : data?.results[0]?.annotations?.currency?.symbol }))
-      }    
-    
+        setCoords({latitude, longitude});
+        
+      }
       if(window.navigator.geolocation){
         navigator.geolocation
         .getCurrentPosition(successfulLookup, console.log);
@@ -58,7 +59,14 @@ const MobileCurrencyMenu = () => {
     
   }, []);
 
+  useEffect(() => {
+    if(isSuccess){
+      setSelectedCurrency({id : 300, name : data?.results[0]?.annotations?.currency?.name, currency: data?.results[0]?.annotations?.currency?.iso_code, symbol : data?.results[0]?.annotations?.currency?.symbol })
+    }
+  }, [isSuccess])
+
   dispatch(addCurrency(selectedCurrency));
+
   return (
     <div className="dropdown">
       <button

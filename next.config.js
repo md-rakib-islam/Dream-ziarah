@@ -21,9 +21,9 @@ const nextConfig = {
         ],
         imageSizes: [16, 32, 48, 64, 96, 128, 256, 384],
         formats: ['image/webp','image/avif'],
-        // minimumCacheTTL: 60,
+        minimumCacheTTL: 60,
       },
-    // output: 'standalone',  
+    output: 'standalone',  
 }
 
 module.exports = nextConfig

@@ -15,7 +15,6 @@ import SrollTop from "../components/common/ScrollTop";
 import { store } from "../store/store";
 import "../styles/index.scss";
 
-
 if (typeof window !== "undefined") {
   require("bootstrap/dist/js/bootstrap");
 }
@@ -29,6 +28,8 @@ export default function RootLayout({ children }) {
       once: true,
     });
   }, []);
+
+
  
   return (
     <html lang="en">

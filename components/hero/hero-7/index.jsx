@@ -15,7 +15,6 @@ const index = () => {
   const dispatch = useDispatch();
   const exchangeRates = useCurrencyExchangeRates();
   dispatch(addExchangeRates(exchangeRates));
-  // console.log("exchageRates", exchangeRates);
   const {isSuccess, data} = useGetSliderImagesQuery();
   let sliderImageItems = []
   if(isSuccess){
