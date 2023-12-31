@@ -37,6 +37,8 @@ const Testimonial = () => {
     ],
   };
 
+  localStorage.clear();
+
   return (
     <>
       <Slider {...settings}>

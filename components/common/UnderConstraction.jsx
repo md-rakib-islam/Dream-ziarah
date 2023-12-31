@@ -1,6 +1,9 @@
+"use client";
 import Link from "next/link";
 
 const UnderConstraction = () => {
+  localStorage.clear();
+
   const data = {
     imageSrc: "/img/general/404.svg",
     title: "Something amazing is on the way!",

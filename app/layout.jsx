@@ -4,7 +4,7 @@ import DefaultFooter from "@/components/footer/default";
 import Header3 from "@/components/header/header-3";
 import Aos from "aos";
 import "aos/dist/aos.css";
-import Script from 'next/script';
+// import Script from 'next/script';
 import { useEffect } from "react";
 import { Provider } from "react-redux";
 import "swiper/css";
@@ -55,10 +55,7 @@ export default function RootLayout({ children }) {
             <DefaultFooter/>
             <SrollTop />
           </Provider>
-        </main>
-        
-        <Script type="text/javascript" src="https://widgets.bokun.io/assets/javascripts/apps/build/BokunWidgetsLoader.js?bookingChannelUUID=d894d0d4-5eab-4e15-821d-6770f0186810" async={true}/>
-       
+        </main>   
         {/* <Script type="text/javascript" src="https://widgets.bokun.io/assets/javascripts/apps/build/BokunWidgetsLoader.js?bookingChannelUUID=d894d0d4-5eab-4e15-821d-6770f0186810" async={true}/>
         <Script type="text/javascript" src="https://widgets.bokun.io/assets/javascripts/apps/build/BokunWidgetsLoader.js?bookingChannelUUID=aa4c5059-8d0b-43dc-8bd3-bac143537416" async={true}/> */}
       </body>

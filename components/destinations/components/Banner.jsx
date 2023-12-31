@@ -17,6 +17,7 @@ const Banner = ({slug}) => {
     bannerUrl = `${BASE_URL}/media/${data?.content_images[slug.charAt(0).toUpperCase()
       + slug.slice(1)]}`;
   }
+  localStorage.clear();
   return (
     <div className="col-12">
       <div className="relative d-flex">

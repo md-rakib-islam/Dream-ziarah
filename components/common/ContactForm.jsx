@@ -51,6 +51,8 @@ const ContactForm = () => {
     }
   };
 
+  localStorage.clear();
+
   const handleChange = (event) => {
     setFormState((prev) => ({
       ...prev,

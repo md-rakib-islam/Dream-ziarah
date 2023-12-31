@@ -54,6 +54,8 @@ const CallToActions = () => {
         });
     }
   }
+
+
   return (
     <section className="layout-pt-md layout-pb-md bg-dark-2">
        <ToastContainer

@@ -1,7 +1,7 @@
 "use client";
 import { useGetContentsByMenuContentIdQuery } from '@/features/content/contentApi';
 import { useParams } from 'next/navigation';
-// import Script from 'next/script';
+import Script from 'next/script';
 import { useSelector } from "react-redux";
 
 const SidebarRight = () => {
@@ -20,7 +20,7 @@ const SidebarRight = () => {
       }
         
       </div>
-      {/* <Script type="text/javascript" src="https://widgets.bokun.io/assets/javascripts/apps/build/BokunWidgetsLoader.js?bookingChannelUUID=aa4c5059-8d0b-43dc-8bd3-bac143537416" async={true}/> */}
+      <Script type="text/javascript" src="https://widgets.bokun.io/assets/javascripts/apps/build/BokunWidgetsLoader.js?bookingChannelUUID=aa4c5059-8d0b-43dc-8bd3-bac143537416" async={true}/>
     </div>
    
      

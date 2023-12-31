@@ -21,6 +21,7 @@ import { useGetImagesByMenuIdQuery } from "@/features/image/imageApi";
 import { addItenarayItems, addtourItem } from "@/features/tour/tourSlice";
 import { singleTourInfo } from "@/hooks/useTours";
 import Link from "next/link";
+import { useEffect } from "react";
 import { useDispatch, useSelector } from "react-redux";
 import { EmailIcon, EmailShareButton, FacebookIcon, FacebookMessengerIcon, FacebookMessengerShareButton, FacebookShareButton, LinkedinIcon, LinkedinShareButton, WhatsappIcon, WhatsappShareButton } from "react-share";
 
@@ -69,6 +70,18 @@ const TourSingleV1Dynamic = ({ params}) => {
 
   dispatch(addCurrentPageUrl("tour"));
 
+  useEffect(() => {
+    const hasReloaded = localStorage.getItem('tourHasReloaded');
+
+    if (!hasReloaded) {
+      localStorage.setItem('tourHasReloaded', 'true');
+      window.location.reload();
+    }
+  }, []);
+  
+  if(localStorage.getItem('hasReloaded')){
+    localStorage.removeItem('hasReloaded');
+  }
 
   return (
     <>

@@ -21,6 +21,7 @@ import { useGetImagesByMenuIdQuery } from "@/features/image/imageApi";
 import { addItenarayItems, addtourItem } from "@/features/tour/tourSlice";
 import { singleTourInfo } from "@/hooks/useTours";
 import Link from "next/link";
+import { useEffect } from "react";
 import { useDispatch, useSelector } from "react-redux";
 import { EmailIcon, EmailShareButton, FacebookIcon, FacebookMessengerIcon, FacebookMessengerShareButton, FacebookShareButton, LinkedinIcon, LinkedinShareButton, WhatsappIcon, WhatsappShareButton } from "react-share";
 
@@ -61,6 +62,17 @@ const Hajj = () => {
   dispatch(addBokunScriptUrl("https://widgets.bokun.io/assets/javascripts/apps/build/BokunWidgetsLoader.js?bookingChannelUUID=d894d0d4-5eab-4e15-821d-6770f0186810"));
  
   dispatch(addCurrentPageUrl("hajj"));
+
+  useEffect(() => {
+    const hasReloaded = localStorage.getItem('hasReloaded');
+
+    if (!hasReloaded) {
+      localStorage.setItem('hasReloaded', 'true');
+      window.location.reload();
+    }
+  }, []);
+
+  localStorage.removeItem('tourHasReloaded');
 
   return (
     <>
