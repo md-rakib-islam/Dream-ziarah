@@ -1,7 +1,7 @@
 import { singleTourInfo } from "@/hooks/useTours";
 import { Interweave } from "interweave";
 import { useSelector } from "react-redux";
-const Overview = () => {
+const Overview = ({hajj}) => {
   const {tourItem} = useSelector(state => state.tour);
 
   return (
@@ -81,8 +81,10 @@ const Overview = () => {
             {/* For a full refund, cancel at least 24 hours in advance of the start
             date of the experience. */}
             <ul className="list-disc">
-              <li>We will charge a cancellation fee of 100% if booking is cancelled 1 day or less before the event</li>
-              {/* <li>We will charge a cancellation fee of 0% if booking is cancelled 1000 days or less before the event</li> */}
+              {
+                hajj ? (<><li>Last date for cancellation: 12th April.</li><li>Cancellation fee: €200, with the remainder refunded.</li></>):(<li>We will charge a cancellation fee of 100% if booking is cancelled 1 day or less before the event</li>)
+              }
+              
             </ul>
           </div>
         </div>

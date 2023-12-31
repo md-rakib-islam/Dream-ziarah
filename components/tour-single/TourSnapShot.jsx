@@ -1,6 +1,6 @@
 import { singleTourInfo } from "@/hooks/useTours";
 import { useSelector } from "react-redux";
-const TourSnapShot = () => {
+const TourSnapShot = ({hajj}) => {
   const {tourItem} = useSelector(state => state.tour);
  
   return (
@@ -9,8 +9,12 @@ const TourSnapShot = () => {
         <div className="d-flex">
           <i className="icon-clock text-22 text-blue-1 mr-10"></i>
           <div className="text-15 lh-15">
-            Duration:
-            <br /> {tourItem?.duration}h
+            {
+              hajj ? (<span>Performance Duration: <br /> {tourItem?.duration}</span>):<span>Duration:
+              <br /> {tourItem?.duration}h</span>
+            }
+            {/* Duration:
+            <br /> {tourItem?.duration}h */}
           </div>
         </div>
       </div>
@@ -20,8 +24,12 @@ const TourSnapShot = () => {
         <div className="d-flex">
           <i className="icon-customer text-22 text-blue-1 mr-10"></i>
           <div className="text-15 lh-15">
-            Group size:
-            <br /> {singleTourInfo[tourItem?.name]?.groupSize}
+            {
+              hajj ? (<span> Group size: {singleTourInfo["Hajj 2024: Embrace the Divine"]?.groupSize}</span>) : (<span> Group size:
+            <br /> {singleTourInfo[tourItem?.name]?.groupSize}</span>)
+            }
+            {/* Group size:
+            <br /> {singleTourInfo[tourItem?.name]?.groupSize} */}
           </div>
         </div>
       </div>
@@ -31,8 +39,11 @@ const TourSnapShot = () => {
         <div className="d-flex">
           <i className="icon-route text-22 text-blue-1 mr-10"></i>
           <div className="text-15 lh-15">
-            Near public
-            <br /> transportation
+          {
+            hajj ? <>24-day or
+            <br />14-day options</> : <> Near public
+            <br /> transportation</>
+          }
           </div>
         </div>
       </div>
@@ -42,10 +53,11 @@ const TourSnapShot = () => {
         <div className="d-flex">
           <i className="icon-access-denied text-22 text-blue-1 mr-10"></i>
           <div className="text-15 lh-15">
-            Free cancellation <br />
-            <a href="#" className="text-blue-1 underline">
+          Free cancellation 
+          <br />{hajj ? "until April 12th" : ""}
+            {/* <a href="#" className="text-blue-1 underline">
               Learn more
-            </a>
+            </a> */}
           </div>
         </div>
       </div>

@@ -1,8 +1,7 @@
 'use client'
 
-import { useGetCurrencyByLocationQuery } from "@/features/currency/currencyApi";
 import { addCurrency } from "@/features/currency/currencySlice";
-import { useEffect, useState } from "react";
+import { useState } from "react";
 import { useDispatch } from "react-redux";
 
 
@@ -33,8 +32,8 @@ const MobileCurrencyMenu = () => {
   ];
 
   const [selectedCurrency, setSelectedCurrency] = useState(currencyContent[0]);
-  const [coords, setCoords] = useState({});
-  const {data, isSuccess} = useGetCurrencyByLocationQuery(coords);       
+  // const [coords, setCoords] = useState({});
+  // const {data, isSuccess} = useGetCurrencyByLocationQuery(coords);       
 
 
   const handleItemClick = (item) => {
@@ -44,28 +43,28 @@ const MobileCurrencyMenu = () => {
   };
  
   
-  useEffect(() => {
-    if (typeof window !== "undefined") {
-      const successfulLookup = position => {
-        const { latitude, longitude } = position.coords;
-        setCoords({latitude, longitude});
+  // useEffect(() => {
+  //   if (typeof window !== "undefined") {
+  //     const successfulLookup = position => {
+  //       const { latitude, longitude } = position.coords;
+  //       setCoords({latitude, longitude});
         
-      }
-      if(window.navigator.geolocation){
-        navigator.geolocation
-        .getCurrentPosition(successfulLookup, console.log);
-      }
-    }
+  //     }
+  //     if(window.navigator.geolocation){
+  //       navigator.geolocation
+  //       .getCurrentPosition(successfulLookup, console.log);
+  //     }
+  //   }
     
-  }, []);
+  // }, []);
 
-  useEffect(() => {
-    if(isSuccess){
-      setSelectedCurrency({id : 300, name : data?.results[0]?.annotations?.currency?.name, currency: data?.results[0]?.annotations?.currency?.iso_code, symbol : data?.results[0]?.annotations?.currency?.symbol })
-    }
-  }, [isSuccess])
+  // useEffect(() => {
+  //   if(isSuccess){
+  //     setSelectedCurrency({id : 300, name : data?.results[0]?.annotations?.currency?.name, currency: data?.results[0]?.annotations?.currency?.iso_code, symbol : data?.results[0]?.annotations?.currency?.symbol })
+  //   }
+  // }, [isSuccess])
 
-  dispatch(addCurrency(selectedCurrency));
+  // dispatch(addCurrency(selectedCurrency));
 
   return (
     <div className="dropdown">

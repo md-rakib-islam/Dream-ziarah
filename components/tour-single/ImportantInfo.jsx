@@ -1,7 +1,7 @@
 import { Interweave } from "interweave";
 import { useSelector } from "react-redux";
 
-const ImportantInfo = () => {
+const ImportantInfo = ({hajj}) => {
   const {tourItem} = useSelector(state => state.tour);
   return (
     <div className="row x-gap-40 y-gap-40 justify-between pt-20">
@@ -24,7 +24,32 @@ const ImportantInfo = () => {
       <div className="col-lg-4 col-md-6">
         <div className="fw-500 mb-10">Departure details</div>
         <div className="text-15">
-        Our service includes convenient traveler pickup within the Makkah City area, within a distance not exceeding 9 kilometers from your hotel. We are pleased to offer pickup services for all tourists and Umrah pilgrims from their respective hotels. We ensure a timely and efficient pickup process to make your journey as smooth as possible. Please be ready for pickup at your hotel within the specified distance limit in the Makkah City area.
+          {
+            hajj ? <>Package Duration Options:
+
+            Select from two distinctive packages: a comprehensive 24-day journey or a condensed 14-day option.
+            Performance of Hajj rituals focused on the pivotal 6th day.
+            
+            Booking Deadline:
+            
+            Secure your reservation by booking before 30th January.
+            
+            Departure Calendar Dates:
+            
+            For the 24-day package, choose departure on 4th June.
+            For the 14-day package, select departure on 10th June.
+            
+            Departure Airports:
+            
+            Departure options available from Milano, Rome, and Venice.
+            
+            Cancellation Policy:
+            
+            Last date for cancellation: 12th April.
+            Cancellation fee: €200, with the remainder promptly refunded.
+            
+            Experience this sacred pilgrimage with confidence, ensuring a seamless departure tailored to your chosen package and schedule.</> : <>    Our service includes convenient traveler pickup within the Makkah City area, within a distance not exceeding 9 kilometers from your hotel. We are pleased to offer pickup services for all tourists and Umrah pilgrims from their respective hotels. We ensure a timely and efficient pickup process to make your journey as smooth as possible. Please be ready for pickup at your hotel within the specified distance limit in the Makkah City area.</>
+          }
         </div>
       </div>
 
@@ -66,7 +91,7 @@ const ImportantInfo = () => {
           <span className="text-dark fw-500">Private Experience:</span> This is a private tour/activity. Your group will be the sole participants.
           </li> */}
           <li>
-          <span className="text-dark fw-500">Refund Window:</span> To receive a full refund, please cancel at least 24 hours before the experience start date.
+          <span className="text-dark fw-500">Refund Window:</span> {hajj ? <>To receive a full refund, please cancel it before 12th April.</> : <>To receive a full refund, please cancel at least 24 hours before the experience start date.</>} 
           </li>
         </ul>
       </div>

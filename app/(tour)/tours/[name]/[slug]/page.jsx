@@ -1,7 +1,7 @@
 import Wrapper from "@/components/layout/Wrapper";
+import TourSingle from "@/components/tour-single/TourSingle";
 import getAllContentByMenuId from "@/services/contentService";
 import getAllMenuItem from "@/services/menuService";
-import TourSingle from "./TourSingle";
 
 const tourMetadatas = {
     Makkah_City_Ziarah_Vehicle_Sharing_With_Guide : {

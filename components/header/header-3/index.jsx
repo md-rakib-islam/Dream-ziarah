@@ -21,6 +21,7 @@ const Header1 = () => {
 
   const dispatch = useDispatch();
   const [navbar, setNavbar] = useState(false);
+
   
   const {data, isSuccess, isLoading} = useGetLogoUrlQuery(null);
   const {data : menuData, isSuccess: isMenuSuccess, isLoading:isMenuLoading} = useGetAllMenuQuery(null)
@@ -142,6 +143,7 @@ const Header1 = () => {
         {/* End header_container */}
       </header>
       {/* End Header */}
+     
     </>
   );
 };

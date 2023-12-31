@@ -11,9 +11,11 @@ import ModalVideo from "react-modal-video";
 import { Gallery, Item } from "react-photoswipe-gallery";
 import { Navigation } from "swiper";
 import { Swiper, SwiperSlide } from "swiper/react";
+import HajjSidebarRight from "../hajj/HajjSidebarRight";
 
-export default function TourGallery({tour}) {
+export default function TourGallery({tour, hajj}) {
     const [isOpen, setOpen] = useState(false);
+   
   return (
     <>
      <ModalVideo
@@ -93,17 +95,19 @@ export default function TourGallery({tour}) {
               {/* slider gallery */}
 
               <h3 className="text-22 fw-500 mt-40">Tour snapshot</h3>
-              <TourSnapShot />
+              <TourSnapShot hajj={hajj}/>
               {/* End toursnapshot */}
               <div className="border-top-light mt-40 mb-40"></div>
 
-              <Overview />
+              <Overview hajj={hajj}/>
               {/* End  Overview */}
             </div>
             {/* End .col-xl-8 */}
 
             <div className="col-xl-4">
-              <SidebarRight />
+              {
+                hajj ? (<HajjSidebarRight/>) : (<SidebarRight />)
+              }
             </div>
             {/* End .col-xl-4 */}
           </div>

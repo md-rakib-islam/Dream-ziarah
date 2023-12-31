@@ -13,9 +13,21 @@ export const singleTourInfo = {
         languages : "Bengali, English, Hindi, Urdu, Malay, Indonesian.",
         groupSize : "1-50",
     },
+    "Day Trip from Makkah to Taif Luxury Private Vehicle" : {
+        location : "Taif, Saudi Arabia",
+        numberOfReviews : "53",
+        languages : "Bengali, English, Hindi, Urdu, Malay, Indonesian.",
+        groupSize : "1-50",
+    },
     "Day Trip from Makkah to Jeddah": {
         location : "Jeddah, Saudi Arabia",
         numberOfReviews : "57",
+        languages : "Bengali, English, Hindi, Urdu, Malay, Indonesian.",
+        groupSize : "1-50",
+    },
+    "Day Trip from Makkah to Jeddah Luxury Private Vehicle": {
+        location : "Jeddah, Saudi Arabia",
+        numberOfReviews : "61",
         languages : "Bengali, English, Hindi, Urdu, Malay, Indonesian.",
         groupSize : "1-50",
     },
@@ -36,6 +48,12 @@ export const singleTourInfo = {
         numberOfReviews : "65",
         languages : "",
         groupSize : "3-15",
+    },
+    "Hajj 2024: Embrace the Divine" : {
+        location : "Mecca, Saudi Arabia",
+        numberOfReviews : "65",
+        languages : "",
+        groupSize : "1-42",
     }
 }
 

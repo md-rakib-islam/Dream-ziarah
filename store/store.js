@@ -1,6 +1,7 @@
 import { apiSlice } from "@/features/api/apiSlice";
 import { configureStore } from "@reduxjs/toolkit";
 import blogReducer from "../features/blog/blogSlice";
+import bokunReducer from "../features/bokun/bokunSlice";
 import currencyReducer from "../features/currency/currencySlice";
 import findPlaceSlice from "../features/hero/findPlaceSlice";
 import locationReducer from "../features/location/locationSlice";
@@ -20,6 +21,7 @@ export const store = configureStore({
         siteSettings : siteSettingReducer,
         pagination : paginatonReducer,
         location : locationReducer,
+        bokun : bokunReducer,
     },
     middleware: (getDefaultMiddleware) =>
     getDefaultMiddleware().concat(apiSlice.middleware),
