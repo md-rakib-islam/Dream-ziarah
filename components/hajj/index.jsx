@@ -16,7 +16,6 @@ import ReviewProgress2 from "@/components/activity-single/guest-reviews/ReviewPr
 import Itinerary from "@/components/tour-single/itinerary";
 import Tours from "@/components/tours/Tours";
 import { BASE_URL } from "@/constant/constants";
-import { addBokunScriptUrl, addCurrentPageUrl } from "@/features/bokun/bokunSlice";
 import { useGetImagesByMenuIdQuery } from "@/features/image/imageApi";
 import { addItenarayItems, addtourItem } from "@/features/tour/tourSlice";
 import { singleTourInfo } from "@/hooks/useTours";
@@ -59,9 +58,7 @@ const Hajj = () => {
     dispatch(addtourItem(data));
   }
 
-  dispatch(addBokunScriptUrl("https://widgets.bokun.io/assets/javascripts/apps/build/BokunWidgetsLoader.js?bookingChannelUUID=d894d0d4-5eab-4e15-821d-6770f0186810"));
- 
-  dispatch(addCurrentPageUrl("hajj"));
+  
 
   useEffect(() => {
     const hasReloaded = localStorage.getItem('hasReloaded');

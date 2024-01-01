@@ -16,7 +16,6 @@ import ReviewProgress2 from "@/components/activity-single/guest-reviews/ReviewPr
 import Itinerary from "@/components/tour-single/itinerary";
 import Tours from "@/components/tours/Tours";
 import { BASE_URL } from "@/constant/constants";
-import { addBokunScriptUrl, addCurrentPageUrl } from "@/features/bokun/bokunSlice";
 import { useGetImagesByMenuIdQuery } from "@/features/image/imageApi";
 import { addItenarayItems, addtourItem } from "@/features/tour/tourSlice";
 import { singleTourInfo } from "@/hooks/useTours";
@@ -66,9 +65,7 @@ const TourSingleV1Dynamic = ({ params}) => {
     dispatch(addtourItem(data));
   }
 
-  dispatch(addBokunScriptUrl("https://widgets.bokun.io/assets/javascripts/apps/build/BokunWidgetsLoader.js?bookingChannelUUID=aa4c5059-8d0b-43dc-8bd3-bac143537416"))
-
-  dispatch(addCurrentPageUrl("tour"));
+  
 
   useEffect(() => {
     const hasReloaded = localStorage.getItem('tourHasReloaded');

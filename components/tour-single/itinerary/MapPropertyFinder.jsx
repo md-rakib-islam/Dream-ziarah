@@ -18,7 +18,7 @@ export default function MapPropertyFinder() {
     // Important! Alwys set the container height explicitlya
 
     <GoogleMapReact
-      bootstrapURLKeys={{ key: "" }}
+      bootstrapURLKeys={{ key: "AIzaSyC0TXPj6mGQhHldhYkkhI8x960kMrowxgg" }}
       defaultCenter={defaultProps.center}
       defaultZoom={defaultProps.zoom}
     >

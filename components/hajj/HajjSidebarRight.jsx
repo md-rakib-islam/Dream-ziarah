@@ -4,14 +4,10 @@
 // import { useGetContentsByMenuContentIdQuery } from '@/features/content/contentApi';
 // import { useParams } from 'next/navigation';
 import Script from 'next/script';
-import { useState } from 'react';
-import { useSelector } from "react-redux";
 
 const HajjSidebarRight = () => {
 //   const {data, isSuccess} = useGetContentsByMenuContentIdQuery(params.slug);
-  const [initialRender, setInitailRender] = useState(true);
-  const {bokunScriptUrl} = useSelector(state => state.bokun);
-
+  
   return (
 
     <div  className="d-flex justify-end js-pin-content">
