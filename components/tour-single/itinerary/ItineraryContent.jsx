@@ -17,44 +17,6 @@ const ItineraryContent = () => {
     classShowHide: "",
     location : item.location
   }))
-  const itineraryContent = [
-    {
-      id: 1,
-      targetCollapse: "item_1",
-      itemNo: "1",
-      title: "Windsor Castle",
-      img: "/img/tours/list.png",
-      content: `Our first stop is Windsor Castle, the ancestral home of the British Royal family for more than 900 years and the largest, continuously occupied castle in Europe.`,
-      classShowHide: "",
-    },
-    {
-      id: 2,
-      targetCollapse: "item_2",
-      itemNo: "2",
-      title: "St. George's Chapel",
-      img: "/img/tours/list.png",
-      content: `Our first stop is Windsor Castle, the ancestral home of the British Royal family for more than 900 years and the largest, continuously occupied castle in Europe.`,
-      classShowHide: "show",
-    },
-    {
-      id: 3,
-      targetCollapse: "item_3",
-      itemNo: "3",
-      title: "The Roman Baths",
-      img: "/img/tours/list.png",
-      content: `Our first stop is Windsor Castle, the ancestral home of the British Royal family for more than 900 years and the largest, continuously occupied castle in Europe.`,
-      classShowHide: "",
-    },
-    {
-      id: 4,
-      targetCollapse: "item_4",
-      itemNo: "4",
-      title: "Stonehenge",
-      img: "/img/tours/list.png",
-      content: `Our first stop is Windsor Castle, the ancestral home of the British Royal family for more than 900 years and the largest, continuously occupied castle in Europe.`,
-      classShowHide: "",
-    },
-  ];
 
   return (
     <>

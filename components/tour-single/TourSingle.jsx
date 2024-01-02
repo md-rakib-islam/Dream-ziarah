@@ -30,7 +30,7 @@ import { EmailIcon, EmailShareButton, FacebookIcon, FacebookMessengerIcon, Faceb
 // };
 
 const TourSingleV1Dynamic = ({ params}) => {
-  // console.log("params", params);
+  // console.log("params", params?.name);
   // useWeather()
   const dispatch = useDispatch();
   const id = params?.slug;
