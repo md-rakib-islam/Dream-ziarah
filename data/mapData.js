@@ -78,6 +78,38 @@ export const itenaryPlaces = {
           "Arrival in Mecca" : {
             "lat": 21.432099860245206,
             "lng": 39.81082030317928
+          },
+          "Day 1: Arrival in Makkah" : {
+            "lat": 21.432099860245206,
+            "lng": 39.81082030317928
+          },
+          "Day 2: Makkah" : {
+            "lat": 21.432099860245206,
+            "lng": 39.81082030317928
+          },
+          "Day 3: Makkah - Ziarah and Umrah" : {
+            "lat": 21.432099860245206,
+            "lng": 39.81082030317928
+          },
+          "Day 4: Makkah" : {
+            "lat": 21.432099860245206,
+            "lng": 39.81082030317928
+          },
+          "Day 5: Makkah - Taif City Sightseeing and Umrah" : {
+            "lat": 21.432099860245206,
+            "lng": 39.81082030317928
+          },
+          "Day 6: Check Out from Hotel in Makkah - Travel to Madinah" : {
+            "lat": 21.432099860245206,
+            "lng": 39.81082030317928
+          },
+          "Day 7: Madinah - Visit Rawza Mubarak" : {
+            "lat": 21.432099860245206,
+            "lng": 39.81082030317928
+          },
+          "Day 8: Check Out from Madinah - Departure to Italy" : {
+            "lat": 21.432099860245206,
+            "lng": 39.81082030317928
           }
     }
 

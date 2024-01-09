@@ -60,7 +60,6 @@ export default function SimpleMap({children, ...props}){
   };
  
   return (
-    // Important! Always set the container height explicitly
     <div style={{ height: '76vh', width: '100%' }}>
       <GoogleMapReact
          bootstrapURLKeys={{ key: "AIzaSyC0TXPj6mGQhHldhYkkhI8x960kMrowxgg" }}
@@ -69,13 +68,9 @@ export default function SimpleMap({children, ...props}){
          yesIWantToUseGoogleMapApiInternals
         {...props}
       >
-        {/* <AnyReactComponent
-          lat={59.955413}
-          lng={30.337844}
-          text="My Marker"
-        /> */}
         {children}
       </GoogleMapReact>
+      
     </div>
   );
 }

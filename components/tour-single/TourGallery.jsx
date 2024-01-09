@@ -12,8 +12,9 @@ import { Gallery, Item } from "react-photoswipe-gallery";
 import { Navigation } from "swiper";
 import { Swiper, SwiperSlide } from "swiper/react";
 import HajjSidebarRight from "../hajj/HajjSidebarRight";
+import UmrahSidebarRight from "../umrah/UmrahSidebarRight";
 
-export default function TourGallery({tour, hajj}) {
+export default function TourGallery({tour, hajj, umrah}) {
     const [isOpen, setOpen] = useState(false);
    
   return (
@@ -95,7 +96,7 @@ export default function TourGallery({tour, hajj}) {
               {/* slider gallery */}
 
               <h3 className="text-22 fw-500 mt-40">Tour snapshot</h3>
-              <TourSnapShot hajj={hajj}/>
+              <TourSnapShot hajj={hajj} umrah={umrah}/>
               {/* End toursnapshot */}
               <div className="border-top-light mt-40 mb-40"></div>
 
@@ -106,7 +107,7 @@ export default function TourGallery({tour, hajj}) {
 
             <div className="col-xl-4">
               {
-                hajj ? (<HajjSidebarRight/>) : (<SidebarRight />)
+                hajj ? (<HajjSidebarRight/>) : umrah ? <UmrahSidebarRight/> : (<SidebarRight />)
               }
             </div>
             {/* End .col-xl-4 */}

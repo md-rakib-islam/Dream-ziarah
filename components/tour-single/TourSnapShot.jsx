@@ -1,6 +1,6 @@
 import { singleTourInfo } from "@/hooks/useTours";
 import { useSelector } from "react-redux";
-const TourSnapShot = ({hajj}) => {
+const TourSnapShot = ({hajj, umrah}) => {
   const {tourItem} = useSelector(state => state.tour);
  
   return (
@@ -10,7 +10,7 @@ const TourSnapShot = ({hajj}) => {
           <i className="icon-clock text-22 text-blue-1 mr-10"></i>
           <div className="text-15 lh-15">
             {
-              hajj ? (<span>Performance Duration: <br /> {tourItem?.duration}</span>):<span>Duration:
+              hajj || umrah ? (<span>Performance Duration: <br /> {tourItem?.duration}</span>):<span>Duration:
               <br /> {tourItem?.duration}h</span>
             }
             {/* Duration:
@@ -54,7 +54,7 @@ const TourSnapShot = ({hajj}) => {
           <i className="icon-access-denied text-22 text-blue-1 mr-10"></i>
           <div className="text-15 lh-15">
           Free cancellation 
-          <br />{hajj ? "until April 12th" : ""}
+          <br />{hajj ? "until March 30th" : ""}
             {/* <a href="#" className="text-blue-1 underline">
               Learn more
             </a> */}

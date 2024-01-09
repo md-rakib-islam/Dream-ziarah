@@ -82,7 +82,7 @@ const Overview = ({hajj}) => {
             date of the experience. */}
             <ul className="list-disc">
               {
-                hajj ? (<><li>Last date for cancellation: 12th April.</li><li>Cancellation fee: €200, with the remainder refunded.</li></>):(<li>We will charge a cancellation fee of 100% if booking is cancelled 1 day or less before the event</li>)
+                hajj ? (<><li>Last date for cancellation: 30th March.</li><li>Cancellation fee: €200, with the remainder refunded.</li></>):(<li>We will charge a cancellation fee of 100% if booking is cancelled 1 day or less before the event</li>)
               }
               
             </ul>

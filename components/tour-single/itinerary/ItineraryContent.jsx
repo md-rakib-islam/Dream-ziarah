@@ -18,14 +18,16 @@ const ItineraryContent = () => {
     location : item.location
   }))
 
+  modifiedItenarayItem.reverse();
+
   return (
     <>
-      {modifiedItenarayItem.map((item) => (
+      {modifiedItenarayItem.map((item, index) => (
         <div className="col-12" key={item.id}>
           <div className="accordion__item ">
             <div className="d-flex">
               <div className="accordion__icon size-40 flex-center bg-blue-2 text-blue-1 rounded-full">
-                <div className="text-14 fw-500">{item.itemNo}</div>
+                <div className="text-14 fw-500">{index + 1}</div>
               </div>
               {/* End item number */}
 

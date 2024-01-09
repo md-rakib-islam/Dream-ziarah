@@ -54,6 +54,12 @@ export const singleTourInfo = {
         numberOfReviews : "65",
         languages : "",
         groupSize : "1-42",
+    },
+    "Umrah" : {
+        location : "Mecca, Saudi Arabia",
+        numberOfReviews : "57",
+        languages : "",
+        groupSize : "3-8",
     }
 }
 

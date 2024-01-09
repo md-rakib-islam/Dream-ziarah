@@ -1,7 +1,7 @@
 import { Interweave } from "interweave";
 import { useSelector } from "react-redux";
 
-const ImportantInfo = ({hajj}) => {
+const ImportantInfo = ({hajj, umrah}) => {
   const {tourItem} = useSelector(state => state.tour);
   return (
     <div className="row x-gap-40 y-gap-40 justify-between pt-20">
@@ -45,10 +45,10 @@ const ImportantInfo = ({hajj}) => {
             
             Cancellation Policy:
             
-            Last date for cancellation: 12th April.
+            Last date for cancellation: 30th March.
             Cancellation fee: €200, with the remainder promptly refunded.
             
-            Experience this sacred pilgrimage with confidence, ensuring a seamless departure tailored to your chosen package and schedule.</> : <>    Our service includes convenient traveler pickup within the Makkah City area, within a distance not exceeding 9 kilometers from your hotel. We are pleased to offer pickup services for all tourists and Umrah pilgrims from their respective hotels. We ensure a timely and efficient pickup process to make your journey as smooth as possible. Please be ready for pickup at your hotel within the specified distance limit in the Makkah City area.</>
+            Experience this sacred pilgrimage with confidence, ensuring a seamless departure tailored to your chosen package and schedule.</> : umrah ? <>Check-out: Complete the check-out process from your respective hotel on the last day of the tour.Transfer to Airport: Enjoy a comfortable transfer from your accommodation to the airport for your departure.Flight Information: Board your scheduled flight, reaching your destination with the memories of a spiritually fulfilling journey.Farewell: Bid farewell to the sacred cities of Makkah and Madinah, carrying the essence of this pilgrimage with you.</> : <>    Our service includes convenient traveler pickup within the Makkah City area, within a distance not exceeding 9 kilometers from your hotel. We are pleased to offer pickup services for all tourists and Umrah pilgrims from their respective hotels. We ensure a timely and efficient pickup process to make your journey as smooth as possible. Please be ready for pickup at your hotel within the specified distance limit in the Makkah City area.</>
           }
         </div>
       </div>
@@ -91,7 +91,7 @@ const ImportantInfo = ({hajj}) => {
           <span className="text-dark fw-500">Private Experience:</span> This is a private tour/activity. Your group will be the sole participants.
           </li> */}
           <li>
-          <span className="text-dark fw-500">Refund Window:</span> {hajj ? <>To receive a full refund, please cancel it before 12th April.</> : <>To receive a full refund, please cancel at least 24 hours before the experience start date.</>} 
+          <span className="text-dark fw-500">Refund Window:</span> {hajj ? <>To receive a full refund, please cancel it before 30th March.</> : umrah ? <>To receive a full refund, please cancel it before 7 days before the tour.</> : <>To receive a full refund, please cancel at least 24 hours before the experience start date.</>} 
           </li>
         </ul>
       </div>
