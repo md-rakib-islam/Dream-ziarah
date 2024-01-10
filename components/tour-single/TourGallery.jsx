@@ -43,8 +43,8 @@ export default function TourGallery({tour, hajj, umrah}) {
                   {tour?.slideImg?.map((slide, i) => (
                     <SwiperSlide key={i}>
                       <Image
-                        width={451}
-                        height={450}
+                        width={1281}
+                        height={751}
                         priority
                         src={slide}
                         alt="image"
@@ -63,8 +63,8 @@ export default function TourGallery({tour, hajj, umrah}) {
                       <Item
                         original={slide}
                         thumbnail={slide}
-                        width={451}
-                        height={450}
+                        width={1280}
+                        height={750}
                       >
                         {({ ref, open }) => (
                           <div

@@ -31,7 +31,7 @@ const handleApiLoaded = (map, maps, places) => {
     
   const markers = [];
   const infowindows = [];
-
+  
   places.forEach((place) => {
     markers.push(new maps.Marker({
       position: {
@@ -39,7 +39,6 @@ const handleApiLoaded = (map, maps, places) => {
         lng: place.geometry.location.lng,
       },
       map,
-      
     }));
 
     infowindows.push(new maps.InfoWindow({
@@ -53,6 +52,7 @@ const handleApiLoaded = (map, maps, places) => {
     });
     
   });
+
 };
 
 const MarkerInfoWindow = () => {
