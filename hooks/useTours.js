@@ -12,7 +12,7 @@ export const singleTourInfo = {
         numberOfReviews : "63",
         languages : "Bengali, English, Hindi, Urdu, Malay, Indonesian.",
         groupSize : "1-50",
-        itinerarySrc : "https://www.google.com/maps/d/u/1/embed?mid=1XdwewvF4NOyYwvTRAKEt2s3elk0Jc6U&ehbc=2E312F&z=10"
+        itinerarySrc : "https://www.google.com/maps/d/u/1/embed?mid=1XdwewvF4NOyYwvTRAKEt2s3elk0Jc6U&ehbc=2E312F&z=9"
     },
     "Day Trip from Makkah to Taif Luxury Private Vehicle" : {
         location : "Taif, Saudi Arabia",
@@ -71,6 +71,8 @@ export const singleTourInfo = {
         itinerarySrc : "https://www.google.com/maps/d/u/1/embed?mid=1CM8PjQjW7zWc_PpHMpNHHHRYlZU1-cw&ehbc=2E312F&z=7"
     }
 }
+
+
 
 const useTours = () => {
     const [tourItems, setTourItems] = useState([]);

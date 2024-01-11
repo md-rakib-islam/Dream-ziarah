@@ -1,6 +1,5 @@
 import { singleTourInfo } from "@/hooks/useTours";
 import AccordionContent from "./ItineraryContent";
-// import MapPropertyFinder from "./MapPropertyFinder";
 // import MarkerInfoWindow from "@/components/map/MarkerInfoWindow";
 import { useSelector } from "react-redux";
 
@@ -19,14 +18,13 @@ const index = () => {
       {/* End col-lg-4 */}
 
       <div className="col-lg-8">
-        <div className="map rounded-4" id="itineraryContent">
-          {/* <MapPropertyFinder /> */}
+        <div className="map rounded-4 position-relative overflow-hidden" id="itineraryContent">
           {/* <MarkerInfoWindow /> */}
-
-          <iframe style={{ height: '100%', width: '100%' }} src={singleTourInfo[tourItem?.name]?.itinerarySrc}></iframe>
+          <iframe style={{marginTop : "-60px"}} className="position-absolute top-0 bottom-0" width="100%" height="119%" src={singleTourInfo[tourItem?.name]?.itinerarySrc}></iframe>
         </div>
       </div>
       {/* End col-lg-8 */}
+      
     </div>
   );
 };
