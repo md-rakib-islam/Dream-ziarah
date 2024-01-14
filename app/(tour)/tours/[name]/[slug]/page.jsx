@@ -1,4 +1,5 @@
 import Wrapper from "@/components/layout/Wrapper";
+import TourHeading from "@/components/tour-single/TourHeading";
 import TourSingle from "@/components/tour-single/TourSingle";
 import getAllContentByMenuId from "@/services/contentService";
 import getAllMenuItem from "@/services/menuService";
@@ -62,7 +63,9 @@ export default function Tour({ params }) {
   return (
     <>
       <Wrapper>
-        <TourSingle params={params}/>
+        <TourSingle params={params}>
+          <TourHeading params={params}/>
+        </TourSingle>
       </Wrapper>
     </>
   );

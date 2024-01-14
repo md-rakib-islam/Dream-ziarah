@@ -1,5 +1,4 @@
 import CallToActions from "@/components/common/CallToActions";
-import dynamic from "next/dynamic";
 // import DefaultHeader from "@/components/header/default-header";
 // import DefaultFooter from "@/components/footer/default";
 // import Activity from "@/components/activity/Activity";
@@ -136,37 +135,6 @@ const Destinations = ({ params }) => {
       </section>
       {/* End Top Banner,categorie,intro,weather, generic info section */}
 
-      {/* <section className="layout-pt-md layout-pb-md">
-        <div className="container">
-          <div className="row y-gap-20 justify-between items-end">
-            <div className="col-auto">
-              <div className="sectionTitle -md">
-                <h2 className="sectionTitle__title">Recommended Hotels</h2>
-                <p className=" sectionTitle__text mt-5 sm:mt-0">
-                  Interdum et malesuada fames ac ante ipsum
-                </p>
-              </div>
-            </div> */}
-            {/* End .col */}
-
-            {/* <div className="col-auto">
-              <Link
-                href="#"
-                className="button -md -blue-1 bg-blue-1-05 text-blue-1"
-              >
-                More <div className="icon-arrow-top-right ml-15" />
-              </Link>
-            </div>
-          </div> */}
-          {/* End .row */}
-
-          {/* <div className="row y-gap-30 pt-40 sm:pt-20 item_gap-x30">
-            <Hotels />
-          </div> */}
-          {/* End relative */}
-        {/* </div>
-      </section> */}
-      {/* End  Hotel sections */}
 
       <section className="">
         <div className="container">
@@ -201,133 +169,6 @@ const Destinations = ({ params }) => {
         {/* End .container */}
       </section>
       {/* End Tours Sections */}
-
-      {/* <section className="layout-pt-md layout-pb-md">
-        <div className="container">
-          <div className="row y-gap-20 justify-between items-end">
-            <div className="col-auto">
-              <div className="sectionTitle -md">
-                <h2 className="sectionTitle__title">Trending Activity</h2>
-                <p className=" sectionTitle__text mt-5 sm:mt-0">
-                  Interdum et malesuada fames ac ante ipsum
-                </p>
-              </div>
-            </div>
-          
-
-            <div className="col-auto">
-              <Link
-                href="#"
-                className="button -md -blue-1 bg-blue-1-05 text-blue-1"
-              >
-                More <div className="icon-arrow-top-right ml-15" />
-              </Link>
-            </div>
-           
-          </div>
-          
-
-          <div className="row y-gap-30 pt-40 sm:pt-20 item_gap-x30">
-            <Activity />
-          </div>
-         
-        </div>
-      </section> */}
-      {/* Trending Activity Sections */}
-
-      {/* <section className="layout-pt-md layout-pb-md">
-        <div className="container">
-          <div className="row y-gap-20 justify-between items-end">
-            <div className="col-auto">
-              <div className="sectionTitle -md">
-                <h2 className="sectionTitle__title">
-                  Featured Holiday Rentals
-                </h2>
-                <p className=" sectionTitle__text mt-5 sm:mt-0">
-                  Interdum et malesuada fames ac ante ipsum
-                </p>
-              </div>
-            </div>
-           
-
-            <div className="col-auto">
-              <Link
-                href="#"
-                className="button -md -blue-1 bg-blue-1-05 text-blue-1"
-              >
-                More <div className="icon-arrow-top-right ml-15" />
-              </Link>
-            </div>
-            
-          </div>
-        
-
-          <div className="y-gap-30 pt-40 sm:pt-20 item_gap-x30">
-            <Rentals />
-          </div>
-         
-        </div>
-       
-      </section> */}
-      {/* Featured Rentals Sections */}
-
-      {/* <section className="layout-pt-md layout-pb-md">
-        <div className="container">
-          <div className="row y-gap-20 justify-between items-end">
-            <div className="col-auto">
-              <div className="sectionTitle -md">
-                <h2 className="sectionTitle__title">Popular Car Hire</h2>
-                <p className=" sectionTitle__text mt-5 sm:mt-0">
-                  Interdum et malesuada fames ac ante ipsum
-                </p>
-              </div>
-            </div>
-           
-
-            <div className="col-auto">
-              <Link
-                href="#"
-                className="button -md -blue-1 bg-blue-1-05 text-blue-1"
-              >
-                More <div className="icon-arrow-top-right ml-15" />
-              </Link>
-            </div>
-            
-          </div>
-        
-
-          <div className="row y-gap-30 pt-40 sm:pt-20 item_gap-x30">
-            <Cars />
-          </div>
-         
-        </div>
-      
-      </section> */}
-      {/* Popular Car Hire Sections */}
-
-      {/* <section className="layout-pt-md layout-pb-md">
-        <div className="container">
-          <div className="row justify-center text-center">
-            <div className="col-auto">
-              <div className="sectionTitle -md">
-                <h2 className="sectionTitle__title">
-                  Get inspiration for your next trip
-                </h2>
-                <p className=" sectionTitle__text mt-5 sm:mt-0">
-                  Interdum et malesuada fames
-                </p>
-              </div>
-            </div>
-          </div>
-         
-          <div className="row y-gap-30 pt-40">
-            <Blog />
-          </div>
-         
-        </div>
-        
-      </section> */}
-      {/* End blog Section */}
 
       <section className="layout-pt-md layout-pb-lg">
         <div className="container">
@@ -459,4 +300,5 @@ const Destinations = ({ params }) => {
   );
 };
 
-export default dynamic(() => Promise.resolve(Destinations), { ssr: false });
+// export default dynamic(() => Promise.resolve(Destinations), { ssr: false });
+export default Destinations;

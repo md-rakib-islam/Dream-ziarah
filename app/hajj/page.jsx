@@ -27,6 +27,7 @@
 
 
 import Hajj from "@/components/hajj";
+import HajjHeading from "@/components/hajj/HajjHeading";
 import Wrapper from "@/components/layout/Wrapper";
 
 
@@ -40,7 +41,9 @@ export default function HajjPage() {
   return (
     <>
       <Wrapper>
-        <Hajj/>
+        <Hajj>
+          <HajjHeading/>
+        </Hajj>
       </Wrapper>
     </>
   );

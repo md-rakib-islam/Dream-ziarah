@@ -1,0 +1,17 @@
+.itinerary_map {
+  width: 100%;
+  height: 120%;
+  margin-top: -60px;
+}
+
+.map_height {
+  min-height: 250px;
+}
+
+.itinerary_map {
+  @media (max-width: 767px) {
+    width: 100%;
+    height: 160%;
+    margin-top: -60px;
+  }
+}

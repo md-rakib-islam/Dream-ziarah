@@ -21,6 +21,7 @@ const TermsConent = () => {
       setTabIndex(1);
     }
 
+    localStorage.clear();
   }, []);
   
   useEffect(() => {
@@ -31,7 +32,7 @@ const TermsConent = () => {
       router.push("/terms?type=privacy_policy")
     }
   }, [tabIndex])
-  localStorage.clear();
+
   return (
     <Tabs selectedIndex={tabIndex} onSelect={(index) => setTabIndex(index)}>
       <div className="row y-gap-30">

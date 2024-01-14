@@ -4,7 +4,7 @@ import TopDestinations from "@/components/destinations/TopDestinations";
 import Hero3 from "@/components/hero/hero-3";
 import WhyChoose from "@/components/home/home-3/WhyChoose";
 import Tours from "@/components/tours/Tours";
-import dynamic from "next/dynamic";
+// import dynamic from "next/dynamic";
 import Link from "next/link";
 
 // export const metadata = {
@@ -104,4 +104,5 @@ const home_3 = () => {
   );
 };
 
-export default dynamic(() => Promise.resolve(home_3), { ssr: false });
+// export default dynamic(() => Promise.resolve(home_3), { ssr: false });
+export default home_3;

@@ -17,10 +17,10 @@ const index = () => {
       </div>
       {/* End col-lg-4 */}
 
-      <div className="col-lg-8">
-        <div className="map rounded-4 position-relative overflow-hidden" id="itineraryContent">
+      <div className="col-lg-8 map_height">
+        <div className="map rounded-4 overflow-hidden" id="itineraryContent">
           {/* <MarkerInfoWindow /> */}
-          <iframe style={{marginTop : "-60px"}} className="position-absolute top-0 bottom-0" width="100%" height="119%" src={singleTourInfo[tourItem?.name]?.itinerarySrc}></iframe>
+          <iframe className="itinerary_map" src={singleTourInfo[tourItem?.name]?.itinerarySrc}></iframe>
         </div>
       </div>
       {/* End col-lg-8 */}

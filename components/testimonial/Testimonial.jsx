@@ -2,6 +2,7 @@
 'use client'
 
 import Image from "next/image";
+import { useEffect } from "react";
 import Slider from "react-slick";
 import { testimonial1 } from "../../data/testimonialData";
 
@@ -37,7 +38,9 @@ const Testimonial = () => {
     ],
   };
 
-  localStorage.clear();
+  useEffect(() => {
+    localStorage.clear();
+  }, [])
 
   return (
     <>

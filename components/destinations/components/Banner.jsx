@@ -2,6 +2,7 @@
 import { BASE_URL } from "@/constant/constants";
 import { useGetImagesByMenuIdQuery } from "@/features/image/imageApi";
 import Image from 'next/image';
+import { useEffect } from "react";
 import { useSelector } from "react-redux";
 
 
@@ -17,7 +18,10 @@ const Banner = ({slug}) => {
     bannerUrl = `${BASE_URL}/media/${data?.content_images[slug.charAt(0).toUpperCase()
       + slug.slice(1)]}`;
   }
-  localStorage.clear();
+  useEffect(() => {
+    localStorage.clear();
+  }, []);
+  
   return (
     <div className="col-12">
       <div className="relative d-flex">

@@ -22,7 +22,7 @@ const index = () => {
     }))
     
   }
-  localStorage.clear();
+  // localStorage.clear();
   return (
     <div className="row justify-center text-center">
     <div className="col-auto">

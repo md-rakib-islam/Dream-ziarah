@@ -37,6 +37,7 @@
 
 import Wrapper from "@/components/layout/Wrapper";
 import Umrah from "@/components/umrah";
+import UmrahHeading from "@/components/umrah/UmrahHeading";
 
 
 export const metadata = {
@@ -49,7 +50,9 @@ export default function UmrahPage() {
   return (
     <>
       <Wrapper>
-        <Umrah/>
+        <Umrah>
+          <UmrahHeading/>
+        </Umrah>
       </Wrapper>
     </>
   );

@@ -1,5 +1,4 @@
 import CallToActions from "@/components/common/CallToActions";
-import dynamic from "next/dynamic";
 // import DefaultHeader from "@/components/header/default-header";
 // import DefaultFooter from "@/components/footer/default";
 import Block1 from "@/components/about/Block1";
@@ -174,4 +173,5 @@ const About = () => {
   );
 };
 
-export default dynamic(() => Promise.resolve(About), { ssr: false });
+// export default dynamic(() => Promise.resolve(About), { ssr: false });
+export default About;

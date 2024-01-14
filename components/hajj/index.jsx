@@ -1,7 +1,6 @@
 "use client";
 // import toursData from "@/data/tours";
 import { useGetContentsByMenuContentIdQuery, useGetItenariesByMenuContentIdQuery } from "@/features/content/contentApi";
-import dynamic from "next/dynamic";
 import "photoswipe/dist/photoswipe.css";
 // import Header11 from "@/components/header/header-11";
 import CallToActions from "@/components/common/CallToActions";
@@ -25,7 +24,7 @@ import { useDispatch, useSelector } from "react-redux";
 import { EmailIcon, EmailShareButton, FacebookIcon, FacebookMessengerIcon, FacebookMessengerShareButton, FacebookShareButton, LinkedinIcon, LinkedinShareButton, WhatsappIcon, WhatsappShareButton } from "react-share";
 
 
-const Hajj = () => {
+const Hajj = ({children}) => {
  
   const dispatch = useDispatch();
   const {menuItems} = useSelector(state => state.menus);
@@ -67,9 +66,10 @@ const Hajj = () => {
       localStorage.setItem('hasReloaded', 'true');
       window.location.reload();
     }
+    localStorage.removeItem('tourHasReloaded');
   }, []);
 
-  localStorage.removeItem('tourHasReloaded');
+  
 
   return (
     <>
@@ -89,7 +89,7 @@ const Hajj = () => {
       <section className="pt-40">
         <div className="container">
           <div className="row y-gap-20 justify-between items-end">
-            <div className="col-auto">
+            {/* <div className="col-auto">
               <h1 className="text-30 fw-600">{tour?.title}</h1>
               <div className="row x-gap-20 y-gap-20 items-center pt-10">
                 <div className="col-auto">
@@ -122,19 +122,11 @@ const Hajj = () => {
                         </div>
                       </div>
                     </div>
-
-                    {/* <div className="col-auto">
-                      <button
-                        data-x-click="mapFilter"
-                        className="text-blue-1 text-15 underline"
-                      >
-                        Show on map
-                      </button>
-                    </div> */}
                   </div>
                 </div>
               </div>
-            </div>
+            </div> */}
+            {children}
             {/* End .col */}
 
             <div className="col-auto">
@@ -335,6 +327,7 @@ const Hajj = () => {
   );
 };
 
-export default dynamic(() => Promise.resolve(Hajj), {
-  ssr: false,
-});
+// export default dynamic(() => Promise.resolve(Hajj), {
+//   ssr: false,
+// });
+export default Hajj;

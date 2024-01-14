@@ -1,5 +1,5 @@
 import CallToActions from "@/components/common/CallToActions";
-import dynamic from "next/dynamic";
+// import dynamic from "next/dynamic";
 // import DefaultHeader from "@/components/header/default-header";
 // import DefaultFooter from "@/components/footer/default";
 import TermsConent from "@/components/common/TermsConent";
@@ -38,4 +38,5 @@ const Terms = () => {
   );
 };
 
-export default dynamic(() => Promise.resolve(Terms), { ssr: false });
+// export default dynamic(() => Promise.resolve(Terms), { ssr: false });
+export default Terms;
