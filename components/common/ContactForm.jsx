@@ -2,7 +2,7 @@
 'use client'
 
 import { useCreateNewsLetterMutation } from "@/features/newsLetter/newsLetterSlice";
-import { useState } from "react";
+import { useEffect, useState } from "react";
 import { ToastContainer, toast } from 'react-toastify';
 
 import 'react-toastify/dist/ReactToastify.css';
@@ -51,7 +51,7 @@ const ContactForm = () => {
     }
   };
 
-  localStorage.clear();
+  
 
   const handleChange = (event) => {
     setFormState((prev) => ({
@@ -60,6 +60,10 @@ const ContactForm = () => {
     }));
 
   }
+
+  useEffect(() => {
+    localStorage.clear();
+  }, []);
 
   return (
     <form className="row y-gap-20 pt-20" onSubmit={handleSubmit}>
