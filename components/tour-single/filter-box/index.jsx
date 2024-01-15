@@ -1,19 +1,17 @@
 import GuestSearch from "./GuestSearch";
-import DateSearch from "./DateSearch";
-import Link from "next/link";
+// import DateSearch from "./DateSearch";
 
-const index = () => {
+const index = ({setIsShowBokun}) => {
   return (
     <>
-      <div className="col-12">
+      {/* <div className="col-12">
         <div className="searchMenu-date px-20 py-10 border-light rounded-4 -right js-form-dd js-calendar">
           <div>
             <h4 className="text-15 fw-500 ls-2 lh-16">Date</h4>
             <DateSearch />
           </div>
         </div>
-        {/* End check-in-out */}
-      </div>
+      </div> */}
       {/* End .col-12 */}
 
       <div className="col-12">
@@ -23,12 +21,12 @@ const index = () => {
       {/* End .col-12 */}
 
       <div className="col-12">
-        <Link
-          href="/booking-page"
+        <button
+          onClick={() => setIsShowBokun(false)}
           className="button -dark-1 py-15 px-35 h-60 col-12 rounded-4 bg-blue-1 text-white"
         >
           Book Now
-        </Link>
+        </button>
       </div>
       {/* End .col-12 */}
     </>

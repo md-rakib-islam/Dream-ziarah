@@ -84,7 +84,7 @@ const Tours = () => {
             data-aos-delay={item?.delayAnimation}
           >
             <Link
-              href={`/tours/${item?.title?.split(" ")?.join("_")}/${item?.id}`}
+              href={`/tours/${item?.title?.toLowerCase()?.split(" ")?.join("-")}/${item?.id}`}
               className="tourCard -type-1 rounded-4 hover-inside-slider"
             >
               <div className="tourCard__image position-relative">
@@ -140,13 +140,23 @@ const Tours = () => {
               {/* End .tourCard__image */}
 
               <div className="tourCard__content mt-10">
-                <div className="d-flex items-center lh-14 mb-5">
+                <div className="d-flex justify-content-between lh-14 mb-5">
                   <div className="text-14 text-light-1">
                     {item?.duration}+ hours
                   </div>
                   {/* <div className="size-3 bg-light-1 rounded-full ml-10 mr-10" /> */}
                   <div className="ml-10 mr-10" />
                   {/* <div className="text-14 text-light-1">{item?.tourType}</div> */}
+                  <div className="col-auto">
+                    <div className="text-14 text-dark-1 fw-bold">
+                      From {currentCurrency?.symbol} 
+                      <span className="text-16 fw-500 text-blue-1 fw-bold">
+                        {" "}
+                        
+                        {item.price}
+                      </span>
+                    </div>
+                  </div>
                 </div>
                 <h4 className="tourCard__title text-dark-1 text-18 lh-16 fw-500">
                   <span>{item?.title}</span>
@@ -172,7 +182,7 @@ const Tours = () => {
                       </div>
                     </div>
                   </div>
-                  <div className="col-auto">
+                  {/* <div className="col-auto">
                     <div className="text-14 text-light-1">
                       From {currentCurrency?.symbol} 
                       <span className="text-16 fw-500 text-dark-1">
@@ -181,7 +191,7 @@ const Tours = () => {
                         {item.price}
                       </span>
                     </div>
-                  </div>
+                  </div> */}
                 </div>
               </div>
             </Link>

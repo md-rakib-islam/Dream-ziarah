@@ -1,7 +1,6 @@
 
 'use client'
 
-import Loading from "@/app/loading";
 import { BASE_URL } from "@/constant/constants";
 import { useGetAllMenuQuery } from "@/features/menu/menuApi";
 import { addMenuItems } from "@/features/menu/menuSlice";
@@ -65,21 +64,29 @@ const Header1 = () => {
            <div className="col-auto header_logo_left_space">
               <div className="d-flex items-center">
                 <Link href="/" className="header-logo mr-20">
-                  {
+                  {/* {
                     isLoading ? (<Loading/>) : (<Image style={{width : "60px", height:"60px"}} src={logoUrl} width={128} height={128} alt="logo"/>)
+                  } */}
+                  {
+                    isLoading ? (<Image quality={100} style={{width : "60px", height:"60px"}} src="/img/logo_loading.webp" width={128} height={128}alt="logo"/>) :(<Image quality={100} style={{width : "60px", height:"60px"}} src={logoUrl} width={128} height={128}alt="logo"/>)
                   }
                 </Link>
                 {/* End logo */}
                 {/* <HeaderSearch /> */}
                 {/* End logo */}
 
-               {
+               {/* {
                 isMenuLoading ? (<div style={{width:"600px", display:"flex", justifyContent:"center"}}><Loading/></div>) : ( <div className="header-menu">
                 <div className="header-menu__content">
                 <MainMenu style="text-dark-1" />
                 </div>
               </div>)
-               }
+               } */}
+               <div className="header-menu">
+                <div className="header-menu__content">
+                <MainMenu style="text-dark-1" />
+                </div>
+              </div>
                 {/* End header-menu */}
               </div>
               {/* End d-flex */}

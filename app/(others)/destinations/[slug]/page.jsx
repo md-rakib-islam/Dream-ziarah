@@ -141,7 +141,7 @@ const Destinations = ({ params }) => {
           <div className="row y-gap-20 justify-between items-end">
             <div className="col-auto">
               <div className="sectionTitle -md">
-                <h2 className="sectionTitle__title">Most Popular Tours</h2>
+                <h1 className="sectionTitle__title">Most Popular Tours</h1>
                 <p className=" sectionTitle__text mt-5 sm:mt-0">
                 Explore Our Best Sellers: Unmatched Experiences in Every Journey
                 </p>

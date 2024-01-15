@@ -18,6 +18,7 @@ import { BASE_URL } from "@/constant/constants";
 import { useGetImagesByMenuIdQuery } from "@/features/image/imageApi";
 import { addItenarayItems, addtourItem } from "@/features/tour/tourSlice";
 import { singleTourInfo } from "@/hooks/useTours";
+// import dynamic from 'next/dynamic';
 import Link from "next/link";
 import { useEffect } from "react";
 import { useDispatch, useSelector } from "react-redux";
@@ -61,9 +62,6 @@ const TourSingleV1Dynamic = ({ params, children}) => {
     // console.log("Hele", data);
     dispatch(addtourItem(data));
   }
-
-  
-
   useEffect(() => {
     const hasReloaded = localStorage.getItem('tourHasReloaded');
 
