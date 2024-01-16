@@ -10,7 +10,7 @@ import FilterBox from "../../components/tour-single/filter-box";
 const SidebarRight = () => {
   const [isShowBokun, setIsShowBokun] = useState(true);
   const {tourItem} = useSelector(state => state.tour);
-  const {currentCurrency, exchangeRates} = useSelector(state => state?.currency);
+  const {currentCurrency} = useSelector(state => state?.currency);
   const params = useParams()
   const {data, isSuccess} = useGetContentsByMenuContentIdQuery(params.slug);
 
@@ -35,7 +35,7 @@ const SidebarRight = () => {
       <div className="text-14 text-light-1">
         From {currentCurrency?.symbol}
         <span className="text-20 fw-500 text-dark-1 ml-5">
-          {convertCurrency(parseInt(tourItem?.price), "USD", currentCurrency?.currency, exchangeRates)}
+          {convertCurrency(parseInt(tourItem?.price), "USD", currentCurrency?.currency)}
         </span>
       </div>
       {/* End div */}

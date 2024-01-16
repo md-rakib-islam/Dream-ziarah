@@ -1,6 +1,7 @@
 "use client";
 import { BASE_URL } from "@/constant/constants";
 import { useGetImagesByMenuIdQuery } from "@/features/image/imageApi";
+import Image from "next/image";
 import Link from "next/link";
 import { useSelector } from 'react-redux';
 // import { destinations5 } from "../../data/desinations";
@@ -39,7 +40,7 @@ const TopDestinations = () => {
             className="citiesCard -type-3 d-block h-full rounded-4 "
           >
             <div className="citiesCard__image ratio ratio-1:1">
-              <img className="col-12 js-lazy" src={item?.img} alt="image" />
+              <Image className="col-12 js-lazy" src={item?.img} width={800} height={600} quality={100} priority alt="image" />
             </div>
             <div className="citiesCard__content px-30 py-30">
               <h4 className="text-26 fw-600 text-white text-capitalize">

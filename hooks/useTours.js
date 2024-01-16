@@ -77,7 +77,7 @@ export const singleTourInfo = {
 const useTours = () => {
     const [tourItems, setTourItems] = useState([]);
     const {menuItems} = useSelector(state => state?.menus);
-    const {currentCurrency, exchangeRates} = useSelector(state => state?.currency);
+    const {currentCurrency} = useSelector(state => state?.currency);
     const ziarahId = menuItems.find((item) => item.name === "Ziarah")?.id;
     const {isSuccess, data, isLoading} = useGetImagesByMenuIdQuery(ziarahId);
     const {isSuccess: isContentSuccess, data : contentItems, isLoading: isContentLoading} = useGetAllContentQuery(ziarahId);
@@ -97,7 +97,7 @@ const useTours = () => {
         location: singleTourInfo[tour?.name]?.location,
         duration: tour?.duration,
         numberOfReviews: singleTourInfo[tour?.name]?.numberOfReviews,
-        price: convertCurrency(parseInt(tour?.price), "USD", currentCurrency?.currency, exchangeRates),
+        price: convertCurrency(parseInt(tour?.price), "USD", currentCurrency?.currency),
         tourType: "Full-day Tours",
         delayAnimation: "100",
         }));

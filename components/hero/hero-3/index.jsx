@@ -3,16 +3,13 @@
 'use client'
 import Loading from "@/app/loading";
 import { BASE_URL } from "@/constant/constants";
-import { addExchangeRates } from "@/features/currency/currencySlice";
 import { useGetSliderImagesQuery } from "@/features/image/imageApi";
-import useCurrencyExchangeRates from "@/hooks/currency";
 import Image from "next/image";
 // import { Interweave } from "interweave";
-import { useDispatch } from "react-redux";
 const index = () => {
-  const dispatch = useDispatch();
-  const exchangeRates = useCurrencyExchangeRates();
-  dispatch(addExchangeRates(exchangeRates));
+  // const dispatch = useDispatch();
+  // const exchangeRates = useCurrencyExchangeRates();
+  // dispatch(addExchangeRates(exchangeRates));
   const {isSuccess, isLoading, data} = useGetSliderImagesQuery();
   let sliderImageItems = []
   if(isSuccess){

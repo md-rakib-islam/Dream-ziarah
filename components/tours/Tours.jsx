@@ -101,6 +101,7 @@ const Tours = () => {
                           <Image
                             width={300}
                             height={300}
+                            priority
                             className="col-12 js-lazy"
                             src={slide}
                             alt="image"

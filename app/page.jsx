@@ -1,6 +1,10 @@
-import Wrapper from "@/components/layout/Wrapper";
+// import Wrapper from "@/components/layout/Wrapper";
+import dynamic from 'next/dynamic';
 // import MainHome from "../app/(homes)/home_3/page";
-import MainHome from "@/components/home/MainHome";
+// import MainHome from "@/components/home/MainHome";
+
+const MainHome = dynamic(() => import("@/components/home/MainHome"));
+const Wrapper = dynamic(() => import("@/components/layout/Wrapper"));
 
 export const metadata = {
   title: "Ziarah Packages for Spiritual Exploration - Dream Ziarah",

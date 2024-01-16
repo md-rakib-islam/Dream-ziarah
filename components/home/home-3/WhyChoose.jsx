@@ -38,6 +38,7 @@ const WhyChoose = () => {
               <Image
                 width={70}
                 height={70}
+                priority
                 src={item.icon}
                 alt="image"
                 className="js-lazy"

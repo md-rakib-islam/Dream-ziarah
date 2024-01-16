@@ -68,7 +68,7 @@ const Header1 = () => {
                     isLoading ? (<Loading/>) : (<Image style={{width : "60px", height:"60px"}} src={logoUrl} width={128} height={128} alt="logo"/>)
                   } */}
                   {
-                    isLoading ? (<Image quality={100} style={{width : "60px", height:"60px"}} src="/img/logo_loading.webp" width={128} height={128}alt="logo"/>) :(<Image quality={100} style={{width : "60px", height:"60px"}} src={logoUrl} width={128} height={128}alt="logo"/>)
+                    isLoading ? (<Image unoptimized quality={100} style={{width : "60px", height:"60px"}} src="/img/logo_loading.webp" width={128} height={128}alt="logo"/>) :(<Image quality={100} style={{width : "60px", height:"60px"}} src={logoUrl} width={128} height={128}alt="logo"/>)
                   }
                 </Link>
                 {/* End logo */}
