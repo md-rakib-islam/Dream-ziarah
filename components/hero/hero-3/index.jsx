@@ -27,7 +27,7 @@ const index = () => {
         <div className="masthead__bg">
           {/* <img src={sliderImageItems[0]?.image} alt="image" /> */}
           {
-            isLoading ? (<Loading></Loading>) : (<Image style={{height : "430px"}} src={sliderImageItems[0]?.image} width={1920} height={860} priority alt="image"/>)
+            isLoading ? (<Loading></Loading>) : (<Image src={sliderImageItems[0]?.image} width={1920} height={660} loading="lazy" alt="image"/>)
           }
         </div>
         {/* <h1

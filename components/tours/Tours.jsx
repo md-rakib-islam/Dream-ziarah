@@ -12,6 +12,7 @@ import isTextMatched from "../../utils/isTextMatched";
 const Tours = () => {
   const tourItems = useTours()
   const {currentCurrency} = useSelector(state => state.currency);
+
   
   var settings = {
     dots: true,
@@ -74,7 +75,7 @@ const Tours = () => {
     );
   }
 
-  return tourItems?.length === 0 ? (<h2 className="text-center">There is no tour</h2>) : (
+  return tourItems?.length === 0 ? (" ") : (
     <>
       <Slider {...settings}>
         {tourItems?.map((item) => (

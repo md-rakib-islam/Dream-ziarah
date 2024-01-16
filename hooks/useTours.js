@@ -7,7 +7,7 @@ import { useSelector } from "react-redux";
 
 
 export const singleTourInfo = {
-    "Day Trip from Makkah to Taif" : {
+    "Day Trip from Makkah to Taif Vehicle Sharing With Guide" : {
         location : "Taif, Saudi Arabia",
         numberOfReviews : "63",
         languages : "Bengali, English, Hindi, Urdu, Malay, Indonesian.",
@@ -21,7 +21,7 @@ export const singleTourInfo = {
         groupSize : "1-50",
         itinerarySrc : "https://www.google.com/maps/d/u/1/embed?mid=1rQuDRVLt4RMV0ojn7AtB5vhr9CgCt2Y&ehbc=2E312F&z=10"
     },
-    "Day Trip from Makkah to Jeddah": {
+    "Day Trip from Makkah to Jeddah Vehicle Sharing With Guide": {
         location : "Jeddah, Saudi Arabia",
         numberOfReviews : "57",
         languages : "Bengali, English, Hindi, Urdu, Malay, Indonesian.",
