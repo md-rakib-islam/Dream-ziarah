@@ -12,7 +12,6 @@ import isTextMatched from "../../utils/isTextMatched";
 const Tours = () => {
   const tourItems = useTours()
   const {currentCurrency} = useSelector(state => state.currency);
-
   
   var settings = {
     dots: true,

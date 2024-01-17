@@ -59,6 +59,30 @@ const home_3 = () => {
       </section>
       {/* End Tours Sections */}
 
+      
+      <section className="layout-pt-md layout-pb-md">
+        <div className="container">
+          <div className="row justify-center text-center">
+            <div className="col-auto">
+              <div className="sectionTitle -md">
+                <h2 className="sectionTitle__title">Why Book With Us</h2>
+                <p className=" sectionTitle__text mt-5 sm:mt-0">
+                Experience Quality and Excellence with DreamZiarah
+                </p>
+              </div>
+            </div>
+          </div>
+          {/* End .row */}
+
+          <div className="row y-gap-40 justify-between pt-50">
+            <WhyChoose />
+          </div>
+          {/* End row */}
+        </div>
+        {/* End .container */}
+      </section>
+      {/* End Why choose Section */}
+
       <section className="layout-pt-md layout-pb-md">
         <div className="container">
           <div className="row justify-center text-center">
@@ -73,7 +97,7 @@ const home_3 = () => {
           </div>
           {/* End .row */}
 
-          <div className="row y-gap-40 justify-between pt-40 sm:pt-20">
+          <div className="row y-gap-40 pt-40 sm:pt-20">
             <TopDestinations />
           </div>
           {/* End .row */}
@@ -82,24 +106,19 @@ const home_3 = () => {
       </section>
       {/* End Top Destinations Section */}
 
-      <section className="layout-pt-md layout-pb-md">
+      <section style={{backgroundColor : "#d3f6ee"}} className="layout-pt-md layout-pb-md">
         <div className="container">
           <div className="row justify-center text-center">
             <div className="col-auto">
               <div className="sectionTitle -md">
-                <h2 className="sectionTitle__title">Why Choose Us</h2>
+                <h2 className="sectionTitle__title">Free cancellation</h2>
                 <p className=" sectionTitle__text mt-5 sm:mt-0">
-                Experience Quality and Excellence with DreamZiarah
+                You'll receive a full refund if you cancel at least 24 hours in advance of most experiences.
                 </p>
               </div>
             </div>
           </div>
           {/* End .row */}
-
-          <div className="row y-gap-40 justify-between pt-50">
-            <WhyChoose />
-          </div>
-          {/* End row */}
         </div>
         {/* End .container */}
       </section>

@@ -7,14 +7,31 @@ import { useState } from 'react';
 import { useSelector } from "react-redux";
 import FilterBox from "../../components/tour-single/filter-box";
 
+const bokunUrls = {
+  "Makkah City Ziarah Luxury Private Vehicle With Guide" : {
+    "3" : "https://widgets.bokun.io/online-sales/aa4c5059-8d0b-43dc-8bd3-bac143537416/experience-calendar/820419",
+    "4" : "https://widgets.bokun.io/online-sales/aa4c5059-8d0b-43dc-8bd3-bac143537416/experience-calendar/834199",
+    "6" : "https://widgets.bokun.io/online-sales/aa4c5059-8d0b-43dc-8bd3-bac143537416/experience-calendar/834200",
+    "11" : "https://widgets.bokun.io/online-sales/aa4c5059-8d0b-43dc-8bd3-bac143537416/experience-calendar/834203",
+  }
+}
+
 const SidebarRight = () => {
   const [isShowBokun, setIsShowBokun] = useState(true);
+  const [bokunUrl, setBokunUrl] = useState("");
   const {tourItem} = useSelector(state => state.tour);
+  const { guests } = useSelector(state => state.bokun)
   const {currentCurrency} = useSelector(state => state?.currency);
   const params = useParams()
   const {data, isSuccess} = useGetContentsByMenuContentIdQuery(params.slug);
-
-  
+  // useEffect(() => {
+  //   if(guests.Adults === 3){
+  //     console.log(tourItem?.name)
+  //     console.log("fdf", bokunUrls[tourItem?.name])
+  //   }else if(guests.Adults === 4 || guests.Adults === 5){
+  //     setBokunUrl("https://widgets.bokun.io/online-sales/aa4c5059-8d0b-43dc-8bd3-bac143537416/experience-calendar/820419")
+  //   }
+  // }, [guests]);
 
   return  !isShowBokun ? (
    

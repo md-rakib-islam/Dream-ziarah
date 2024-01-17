@@ -3,6 +3,7 @@ import { createSlice } from "@reduxjs/toolkit";
 const initialState = {
     bokunScriptUrl : "",
     currentPageUrl : "",
+    guests : {}
 };
 
 export const bokunSlice = createSlice({
@@ -14,9 +15,12 @@ export const bokunSlice = createSlice({
         },
         addCurrentPageUrl : (state, action) => {
             state.currentPageUrl = action.payload
+        },
+        addGuests : (state, action) => {
+            state.guests = action.payload
         }
     }
 });
 
-export const {addBokunScriptUrl, addCurrentPageUrl} = bokunSlice.actions;
+export const {addBokunScriptUrl, addCurrentPageUrl, addGuests} = bokunSlice.actions;
 export default bokunSlice.reducer;

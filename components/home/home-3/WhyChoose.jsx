@@ -23,6 +23,13 @@ const WhyChoose = () => {
       text: `Around-the-Clock Support for Your Peace of Mind.`,
       delayAnimation: "300",
     },
+    {
+      id: 4,
+      icon: "/img/featureIcons/3/4.svg",
+      title: "Trusted reviews",
+      text: `4.3 stars from 140,000+ Trustpilot reviews.`,
+      delayAnimation: "300",
+    },
   ];
   return (
     <>
