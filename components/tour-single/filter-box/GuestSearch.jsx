@@ -12,8 +12,10 @@ const counters = [
 const Counter = ({ name, defaultValue, onCounterChange }) => {
   const [count, setCount] = useState(defaultValue);
   const incrementCount = () => {
-    setCount(count + 1);
-    onCounterChange(name, count + 1);
+    if(count < 15){
+      setCount(count + 1);
+      onCounterChange(name, count + 1);
+    }
   };
   const decrementCount = () => {
     if (count > 3) {

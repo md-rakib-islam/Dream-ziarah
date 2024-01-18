@@ -113,7 +113,7 @@ const home_3 = () => {
               <div className="sectionTitle -md">
                 <h2 className="sectionTitle__title">Free cancellation</h2>
                 <p className=" sectionTitle__text mt-5 sm:mt-0">
-                You'll receive a full refund if you cancel at least 24 hours in advance of most experiences.
+                You'll receive a full refund if you cancel at least 24 <br/> hours in advance of most experiences.
                 </p>
               </div>
             </div>

@@ -50,7 +50,7 @@ export async function generateStaticParams() {
 }
 
 export async function generateMetadata({ params, searchParams }, parent) {
-    const {name, slug} = params;
+    const {name} = params;
    
     return {
       title: tourMetadatas[name]?.title,
@@ -59,6 +59,7 @@ export async function generateMetadata({ params, searchParams }, parent) {
   }
 
 export default function Tour({ params }) {
+
   
   return (
     <>

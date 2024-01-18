@@ -19,6 +19,8 @@ import { useGetImagesByMenuIdQuery } from "@/features/image/imageApi";
 import { addItenarayItems, addtourItem } from "@/features/tour/tourSlice";
 import { singleTourInfo } from "@/hooks/useTours";
 // import dynamic from 'next/dynamic';
+import Loading from "@/app/loading";
+// import { capitalize } from "@/utils";
 import Link from "next/link";
 import { useEffect } from "react";
 import { useDispatch, useSelector } from "react-redux";
@@ -28,19 +30,22 @@ import { EmailIcon, EmailShareButton, FacebookIcon, FacebookMessengerIcon, Faceb
 //   title: "Tour Single || GoTrip - Travel & Tour React NextJS Template",
 //   description: "GoTrip - Travel & Tour React NextJS Template",
 // };
+// capitalize(params?.name)
 
 const TourSingleV1Dynamic = ({ params, children}) => {
   const dispatch = useDispatch();
   const id = params?.slug;
   const {menuItems} = useSelector(state => state.menus);
   const tourId = menuItems.find((item) => item.name === "Tour")?.id;
-  // const tour = toursData.find((item) => item.id == id) || toursData[0];
-  const {data, isSuccess} = useGetContentsByMenuContentIdQuery(id);
+  const {data, isSuccess, isFulfilled} = useGetContentsByMenuContentIdQuery(id);
+  
+  // const {data : itenarayItems, isSuccess: isItenariesSuccess} = useGetItenariesByMenuContentIdQuery(data?.id, { skip:  !isFulfilled });
+
   const {data : itenarayItems, isSuccess: isItenariesSuccess} = useGetItenariesByMenuContentIdQuery(id);
-  const {data : imageContents, isSuccess: isImageContentsSuccess} = useGetImagesByMenuIdQuery(tourId);
+
+  const {data : imageContents, isSuccess: isImageContentsSuccess, isLoading} = useGetImagesByMenuIdQuery(tourId);
 
   if(isItenariesSuccess){
-    // console.log("Itenaries", itenarayItems);
     dispatch(addItenarayItems(itenarayItems));
   }
   let tour = {};
@@ -175,7 +180,9 @@ const TourSingleV1Dynamic = ({ params, children}) => {
       </section>
       {/* End gallery grid wrapper */}
 
-      <TourGallery tour={tour} />
+      {
+        isLoading ? (<div className="col-12 h-50 text-center"><Loading/></div>) : (<TourGallery tour={tour} />)
+      }
 
       {/* End single page content */}
 
