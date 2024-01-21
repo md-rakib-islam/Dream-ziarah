@@ -3,7 +3,6 @@ import CallToActions from "@/components/common/CallToActions";
 // import DefaultHeader from "@/components/header/default-header";
 // import DefaultFooter from "@/components/footer/default";
 import Address from "@/components/block/Address";
-import WhyChoose from "@/components/block/BlockGuide";
 import ContactForm from "@/components/common/ContactForm";
 // import LocationTopBar from "@/components/common/LocationTopBar";
 import Social from "@/components/common/social/Social";
@@ -84,27 +83,24 @@ const Contact = () => {
       </section>
       {/* End Address Section */}
 
-      <section className="layout-pt-lg layout-pb-lg bg-blue-2">
+      
+      <section style={{backgroundColor : "#d3f6ee"}} className="layout-pt-md layout-pb-md">
         <div className="container">
           <div className="row justify-center text-center">
             <div className="col-auto">
               <div className="sectionTitle -md">
-                <h2 className="sectionTitle__title">Why Choose Us</h2>
+                <h2 className="sectionTitle__title">Free cancellation</h2>
                 <p className=" sectionTitle__text mt-5 sm:mt-0">
-                  Experience Quality and Excellence with DreamZiarah
+                You'll receive a full refund if you cancel at least 24 <br/> hours in advance of most experiences.
                 </p>
               </div>
             </div>
           </div>
           {/* End .row */}
-
-          <div className="row y-gap-40 justify-between pt-50">
-            <WhyChoose />
-          </div>
-          {/* End .row */}
         </div>
         {/* End .container */}
       </section>
+
       {/* End Why Choose Us section */}
 
       <CallToActions />

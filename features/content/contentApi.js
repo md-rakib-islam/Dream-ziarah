@@ -1,4 +1,4 @@
-import { GET_CONTENTS, GET_CONTENTS_BY_MENU_CONTENT_ID, GET_CONTENTS_WITH_URL_BY_MENU_ID, GET_ITENARIES_BY_CONTENT_ID } from "@/constant/constants";
+import { GET_CONTENTS, GET_CONTENTS_BY_MENU_CONTENT_ID, GET_CONTENTS_WITH_URL_BY_MENU_ID, GET_CONTENT_BY_TITLE, GET_ITENARIES_BY_CONTENT_ID } from "@/constant/constants";
 import { apiSlice } from "../api/apiSlice";
 
 export const contentApi = apiSlice.injectEndpoints({
@@ -23,6 +23,13 @@ export const contentApi = apiSlice.injectEndpoints({
             }),
             keepUnusedDataFor : 120
         }),
+        getContentsByMenuContentTitle : builder.query({
+            query : (menuContentTitle) => ({
+                url : `${GET_CONTENT_BY_TITLE}/${menuContentTitle}`,
+                method : 'GET'
+            }),
+            keepUnusedDataFor : 120
+        }),
         getItenariesByMenuContentId : builder.query({
             query : (menuContentId) => ({
                 url : `${GET_ITENARIES_BY_CONTENT_ID}/${menuContentId}`,
@@ -33,4 +40,4 @@ export const contentApi = apiSlice.injectEndpoints({
     })
 });
 
-export const {useGetAllContentQuery, useGetAllBlogContentsQuery, useGetContentsByMenuContentIdQuery, useGetItenariesByMenuContentIdQuery} = contentApi;
+export const {useGetAllContentQuery, useGetAllBlogContentsQuery, useGetContentsByMenuContentIdQuery, useGetItenariesByMenuContentIdQuery, useGetContentsByMenuContentTitleQuery} = contentApi;

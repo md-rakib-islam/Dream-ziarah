@@ -12,13 +12,15 @@ import isTextMatched from "../../utils/isTextMatched";
 const Tours = () => {
   const tourItems = useTours()
   const {currentCurrency} = useSelector(state => state.currency);
+
+console.log("fjkfj", tourItems)
   
   var settings = {
     dots: true,
     infinite: true,
     speed: 500,
     slidesToShow: 4,
-    slidesToScroll: 1,
+    slidesToScroll: 3,
     responsive: [
       {
         breakpoint: 992,
@@ -84,7 +86,7 @@ const Tours = () => {
             data-aos-delay={item?.delayAnimation}
           >
             <Link
-              href={`/tours/${item?.title?.toLowerCase()?.split(" ")?.join("-")}/${item?.id}`}
+              href={`/tours/${item?.title?.toLowerCase()?.split(" ")?.join("-")}`}
               className="tourCard -type-1 rounded-4 hover-inside-slider"
             >
               <div className="tourCard__image position-relative">

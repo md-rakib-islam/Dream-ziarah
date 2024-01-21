@@ -1,29 +1,30 @@
-import { GET_CONTENTS_BY_MENU_CONTENT_ID } from '@/constant/constants';
+import { GET_CONTENT_BY_TITLE } from '@/constant/constants';
+import { capitalize } from '@/utils';
 
 
 export const singleTourInfo = {
-    "Day Trip from Makkah to Taif Vehicle Sharing With Guide" : {
+    "Day Trip From Makkah To Taif Vehicle Sharing With Guide" : {
         location : "Taif, Saudi Arabia",
         numberOfReviews : "63",
         languages : "Bengali, English, Hindi, Urdu, Malay, Indonesian.",
         groupSize : "1-50",
         itinerarySrc : "https://www.google.com/maps/d/u/1/embed?mid=1XdwewvF4NOyYwvTRAKEt2s3elk0Jc6U&ehbc=2E312F&z=9"
     },
-    "Day Trip from Makkah to Taif Luxury Private Vehicle" : {
+    "Day Trip From Makkah To Taif Luxury Private Vehicle" : {
         location : "Taif, Saudi Arabia",
         numberOfReviews : "53",
         languages : "Bengali, English, Hindi, Urdu, Malay, Indonesian.",
         groupSize : "1-50",
         itinerarySrc : "https://www.google.com/maps/d/u/1/embed?mid=1rQuDRVLt4RMV0ojn7AtB5vhr9CgCt2Y&ehbc=2E312F&z=10"
     },
-    "Day Trip from Makkah to Jeddah Vehicle Sharing With Guide": {
+    "Day Trip From Makkah To Jeddah Vehicle Sharing With Guide": {
         location : "Jeddah, Saudi Arabia",
         numberOfReviews : "57",
         languages : "Bengali, English, Hindi, Urdu, Malay, Indonesian.",
         groupSize : "1-50",
         itinerarySrc : "https://www.google.com/maps/d/u/1/embed?mid=1ucOabmqQaTyhe91RypSigvaZl_5UG-E&ehbc=2E312F&z=10"
     },
-    "Day Trip from Makkah to Jeddah Luxury Private Vehicle": {
+    "Day Trip From Makkah To Jeddah Luxury Private Vehicle": {
         location : "Jeddah, Saudi Arabia",
         numberOfReviews : "61",
         languages : "Bengali, English, Hindi, Urdu, Malay, Indonesian.",
@@ -70,12 +71,14 @@ export const singleTourInfo = {
 
 
 const TourHeading = async({ params}) => {
-    const id = params?.slug;
-    const res = await fetch(`${GET_CONTENTS_BY_MENU_CONTENT_ID}/${id}`, { next: { revalidate: 3600 } });
+    // const name = params?.name;
+    
+    const res = await fetch(`${GET_CONTENT_BY_TITLE}/${capitalize(params?.name)}`, { next: { revalidate: 3600 } });
     let data;
     if(res.ok){
          data = await res.json();
     }
+   
 
   return (
     <div className="col-auto">

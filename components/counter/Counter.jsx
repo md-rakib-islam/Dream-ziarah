@@ -7,13 +7,6 @@ const Counter = () => {
       hasUnit: "",
       delayAnim: "100",
     },
-    // {
-    //   id: 2,
-    //   number: "2,869",
-    //   meta: "Total Properties",
-    //   hasUnit: "",
-    //   delayAnim: "200",
-    // },
     {
       id: 3,
       number: "100",
@@ -21,13 +14,6 @@ const Counter = () => {
       hasUnit: "K+",
       delayAnim: "300",
     },
-    // {
-    //   id: 4,
-    //   number: "574,974",
-    //   meta: "Our Volunteers",
-    //   hasUnit: "",
-    //   delayAnim: "400",
-    // },
   ];
   return (
     <>

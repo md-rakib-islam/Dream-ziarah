@@ -42,7 +42,8 @@ const SidebarRight = () => {
   const { guests } = useSelector(state => state.bokun)
   const {currentCurrency} = useSelector(state => state?.currency);
   const params = useParams()
-  const {data, isSuccess} = useGetContentsByMenuContentIdQuery(params.slug);
+  const {data, isSuccess} = useGetContentsByMenuContentIdQuery(tourItem?.id);
+
 
   useEffect(() => {
     if(guests.Adults === 3){

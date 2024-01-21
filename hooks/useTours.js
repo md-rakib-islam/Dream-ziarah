@@ -7,28 +7,28 @@ import { useSelector } from "react-redux";
 
 
 export const singleTourInfo = {
-    "Day Trip from Makkah to Taif Vehicle Sharing With Guide" : {
+    "Day Trip From Makkah To Taif Vehicle Sharing With Guide" : {
         location : "Taif, Saudi Arabia",
         numberOfReviews : "63",
         languages : "Bengali, English, Hindi, Urdu, Malay, Indonesian.",
         groupSize : "1-50",
         itinerarySrc : "https://www.google.com/maps/d/u/1/embed?mid=1XdwewvF4NOyYwvTRAKEt2s3elk0Jc6U&ehbc=2E312F&z=9"
     },
-    "Day Trip from Makkah to Taif Luxury Private Vehicle" : {
+    "Day Trip From Makkah To Taif Luxury Private Vehicle" : {
         location : "Taif, Saudi Arabia",
         numberOfReviews : "53",
         languages : "Bengali, English, Hindi, Urdu, Malay, Indonesian.",
         groupSize : "1-50",
         itinerarySrc : "https://www.google.com/maps/d/u/1/embed?mid=1rQuDRVLt4RMV0ojn7AtB5vhr9CgCt2Y&ehbc=2E312F&z=10"
     },
-    "Day Trip from Makkah to Jeddah Vehicle Sharing With Guide": {
+    "Day Trip From Makkah To Jeddah Vehicle Sharing With Guide": {
         location : "Jeddah, Saudi Arabia",
         numberOfReviews : "57",
         languages : "Bengali, English, Hindi, Urdu, Malay, Indonesian.",
         groupSize : "1-50",
         itinerarySrc : "https://www.google.com/maps/d/u/1/embed?mid=1ucOabmqQaTyhe91RypSigvaZl_5UG-E&ehbc=2E312F&z=10"
     },
-    "Day Trip from Makkah to Jeddah Luxury Private Vehicle": {
+    "Day Trip From Makkah To Jeddah Luxury Private Vehicle": {
         location : "Jeddah, Saudi Arabia",
         numberOfReviews : "61",
         languages : "Bengali, English, Hindi, Urdu, Malay, Indonesian.",
@@ -84,7 +84,7 @@ const useTours = () => {
   
     useEffect(() => {
         if(isSuccess && isContentSuccess){
-
+            console.log("fdfdkf", contentItems)
         let tours = contentItems.filter((item) => {
         if(item.name === "makkah" || item.name ==="medina" || item.name ==="jedda" || item.name === "tabuk" || item.name === "taif") return false;
         return true;
@@ -100,8 +100,9 @@ const useTours = () => {
         price: convertCurrency(parseInt(tour?.price), "USD", currentCurrency?.currency),
         tourType: "Full-day Tours",
         delayAnimation: "100",
+        position : tour?.position,
         }));
-
+        tours?.sort((a, b) => a.position - b.position);
         setTourItems(tours);
         
     }

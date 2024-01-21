@@ -588,6 +588,8 @@ export const GET_CONTENTS_WITHOUT_PAGINATION = `${BASE_URL}/cms_menu_content/api
 
 export const GET_CONTENTS_BY_MENU_CONTENT_ID = `${BASE_URL}/cms_menu_content/api/v1/cms_menu_content`;
 
+export const GET_CONTENT_BY_TITLE = `${BASE_URL}/cms_menu_content/api/v1/cms_menu_content`;
+
 // // menu content images
 // export const CREATE_CONTENT_IMAGE = `${BASE_URL}/cms_menu_content_image/api/v1/cms_menu_content_image/create/`;
 

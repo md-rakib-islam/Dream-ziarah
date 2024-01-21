@@ -1,6 +1,6 @@
 "use client";
 // import toursData from "@/data/tours";
-import { useGetContentsByMenuContentIdQuery, useGetItenariesByMenuContentIdQuery } from "@/features/content/contentApi";
+import { useGetContentsByMenuContentTitleQuery, useGetItenariesByMenuContentIdQuery } from "@/features/content/contentApi";
 import "photoswipe/dist/photoswipe.css";
 // import Header11 from "@/components/header/header-11";
 import CallToActions from "@/components/common/CallToActions";
@@ -21,6 +21,7 @@ import { singleTourInfo } from "@/hooks/useTours";
 // import dynamic from 'next/dynamic';
 import Loading from "@/app/loading";
 // import { capitalize } from "@/utils";
+import { capitalize } from "@/utils";
 import Link from "next/link";
 import { useEffect } from "react";
 import { useDispatch, useSelector } from "react-redux";
@@ -37,13 +38,14 @@ const TourSingleV1Dynamic = ({ params, children}) => {
   const id = params?.slug;
   const {menuItems} = useSelector(state => state.menus);
   const tourId = menuItems.find((item) => item.name === "Tour")?.id;
-  const {data, isSuccess, isFulfilled} = useGetContentsByMenuContentIdQuery(id);
-  
-  // const {data : itenarayItems, isSuccess: isItenariesSuccess} = useGetItenariesByMenuContentIdQuery(data?.id, { skip:  !isFulfilled });
+  // const {data, isSuccess, isFulfilled} = useGetContentsByMenuContentIdQuery(id);
+  const {data, isSuccess, isFulfilled} = useGetContentsByMenuContentTitleQuery(capitalize(params?.name))
 
-  const {data : itenarayItems, isSuccess: isItenariesSuccess} = useGetItenariesByMenuContentIdQuery(id);
+  // const {data : itenarayItems, isSuccess: isItenariesSuccess} = useGetItenariesByMenuContentIdQuery(id);
 
   const {data : imageContents, isSuccess: isImageContentsSuccess, isLoading} = useGetImagesByMenuIdQuery(tourId);
+
+  const {data : itenarayItems, isSuccess: isItenariesSuccess} = useGetItenariesByMenuContentIdQuery(data?.id);
 
   if(isItenariesSuccess){
     dispatch(addItenarayItems(itenarayItems));

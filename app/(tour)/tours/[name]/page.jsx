@@ -45,7 +45,7 @@ export async function generateStaticParams() {
     // console.log("fdf", modifiedContents);
     return modifiedContents?.map((item) => ({
       name : item?.name,
-      slug : item?.id?.toString()
+      // slug : item?.id?.toString()
     }));
 }
 
