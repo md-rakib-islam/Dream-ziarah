@@ -24,6 +24,14 @@ const tourMetadatas = {
  "day-trip-from-makkah-to-jeddah-vehicle-sharing-with-guide" : {
     title : "Guided Luxury Jeddah Tour - Jeddah City | DreamZiarah.com",
     description : "Elevate your Makkah City Ziarah experience with our Luxury Private Vehicle and Expert Guide. Immerse yourself in the spiritual ambiance as our knowledgeable guide leads you through sacred landmarks. Revel in the comfort of luxury travel with a personalized touch."
+},
+"day-trip-from-makkah-to-jeddah-luxury-private-vehicle" : {
+  title : "Guided Luxury Jeddah Tour - Jeddah City | DreamZiarah.com",
+  description : "Elevate your Makkah City Ziarah experience with our Luxury Private Vehicle and Expert Guide. Immerse yourself in the spiritual ambiance as our knowledgeable guide leads you through sacred landmarks. Revel in the comfort of luxury travel with a personalized touch."
+},
+"day-trip-from-makkah-to-taif-luxury-private-vehicle" : {
+  title : "Guided Luxury Taif Tour - Taif City | DreamZiarah.com",
+  description : "Elevate your Makkah City Ziarah experience with our Luxury Private Vehicle and Expert Guide. Immerse yourself in the spiritual ambiance as our knowledgeable guide leads you through sacred landmarks. Revel in the comfort of luxury travel with a personalized touch."
 }
 }
 

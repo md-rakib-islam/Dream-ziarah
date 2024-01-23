@@ -21,7 +21,7 @@ const Block1 = () => {
           width={400}
           height={400}
           src="/img/pages/about/about.webp"
-          alt="image"
+          alt="Hajj, Umrah and Ziarah"
           className="rounded-4 w-100"
         />
       </div>

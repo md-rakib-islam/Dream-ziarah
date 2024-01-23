@@ -21,8 +21,8 @@ const Slights = ({slug}) => {
                     unoptimized
                     width={200}
                     height={200}
-                    src={item.img}
-                    alt="image"
+                    src={item?.img}
+                    alt={item?.title}
                     className="mh-100 img-ratio"
                   />
                 </div>

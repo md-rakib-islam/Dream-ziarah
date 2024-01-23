@@ -64,7 +64,7 @@ const Testimonial = () => {
                     width={60}
                     height={60}
                     src={item.avatar}
-                    alt="image"
+                    alt={item?.text}
                     className="size-60"
                   />
                 </div>

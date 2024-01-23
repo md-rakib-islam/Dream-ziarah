@@ -69,7 +69,7 @@ const TopDestinations2 = ({slug}) => {
                   height={191}
                   className="img-ratio rounded-4 js-lazy"
                   src={item.img}
-                  alt="image"
+                  alt={item?.location}
                 />
               </div>
               <div className="citiesCard__content mt-10">

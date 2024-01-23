@@ -47,7 +47,7 @@ const WhyChoose = () => {
                 height={70}
                 priority
                 src={item.icon}
-                alt="image"
+                alt={item?.title}
                 className="js-lazy"
               />
             </div>

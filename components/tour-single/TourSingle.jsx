@@ -147,19 +147,19 @@ const TourSingleV1Dynamic = ({ params, children}) => {
                   </button>
                   <ul className="dropdown-menu">
                     <li className="d-flex my-2">
-                      <FacebookShareButton className="me-2" url={`https://dreamziarah.com/tours/${tour?.title?.split(" ")?.join("_")}/${tour.id}`}>
+                      <FacebookShareButton className="me-2" url={`https://dreamziarah.com/tours/${tour?.title?.toLowerCase()?.split(" ")?.join("-")}`}>
                         <FacebookIcon size={32} round={true}/>
                       </FacebookShareButton>
-                      <FacebookMessengerShareButton className="me-2" url={`https://dreamziarah.com/tours/${tour?.title?.split(" ")?.join("_")}/${tour.id}`}>
+                      <FacebookMessengerShareButton className="me-2" url={`https://dreamziarah.com/tours/${tour?.title?.toLowerCase()?.split(" ")?.join("-")}`}>
                         <FacebookMessengerIcon size={32} round={true}/>
                       </FacebookMessengerShareButton>
-                      <WhatsappShareButton className="me-2" url={`https://dreamziarah.com/tours/${tour?.title?.split(" ")?.join("_")}/${tour.id}`}>
+                      <WhatsappShareButton className="me-2" url={`https://dreamziarah.com/tours/${tour?.title?.toLowerCase()?.split(" ")?.join("-")}`}>
                         <WhatsappIcon size={32} round={true}/>
                       </WhatsappShareButton>
-                      <EmailShareButton className="me-2" url={`https://dreamziarah.com/tours/${tour?.title?.split(" ")?.join("_")}/${tour.id}`}>
+                      <EmailShareButton className="me-2" url={`https://dreamziarah.com/tours/${tour?.title?.toLowerCase()?.split(" ")?.join("-")}`}>
                         <EmailIcon size={32} round={true}/>
                       </EmailShareButton>
-                      <LinkedinShareButton url={`https://dreamziarah.com/tours/${tour?.title?.split(" ")?.join("_")}/${tour.id}`}>
+                      <LinkedinShareButton url={`https://dreamziarah.com/tours/${tour?.title?.toLowerCase()?.split(" ")?.join("-")}`}>
                         <LinkedinIcon size={32} round={true}/>
                       </LinkedinShareButton>
                     </li>

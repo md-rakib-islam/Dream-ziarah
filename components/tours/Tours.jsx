@@ -3,7 +3,7 @@
 
 import useTours from "@/hooks/useTours";
 import Image from "next/image";
-import Link from "next/link";
+import { useRouter } from 'next/navigation';
 import { useSelector } from "react-redux";
 import Slider from "react-slick";
 import isTextMatched from "../../utils/isTextMatched";
@@ -12,20 +12,23 @@ import isTextMatched from "../../utils/isTextMatched";
 const Tours = () => {
   const tourItems = useTours()
   const {currentCurrency} = useSelector(state => state.currency);
+  const router = useRouter();
 
-console.log("fjkfj", tourItems)
+  // href={`/tours/${item?.title?.toLowerCase()?.split(" ")?.join("-")}`}
+
   
   var settings = {
     dots: true,
     infinite: true,
     speed: 500,
     slidesToShow: 4,
-    slidesToScroll: 3,
+    slidesToScroll: 4,
     responsive: [
       {
         breakpoint: 992,
         settings: {
           slidesToShow: 2,
+          slidesToScroll: 2,
         },
       },
 
@@ -33,12 +36,14 @@ console.log("fjkfj", tourItems)
         breakpoint: 768,
         settings: {
           slidesToShow: 2,
+          slidesToScroll: 2,
         },
       },
       {
         breakpoint: 520,
         settings: {
           slidesToShow: 1,
+          slidesToScroll: 1,
         },
       },
     ],
@@ -85,8 +90,9 @@ console.log("fjkfj", tourItems)
             data-aos="fade"
             data-aos-delay={item?.delayAnimation}
           >
-            <Link
-              href={`/tours/${item?.title?.toLowerCase()?.split(" ")?.join("-")}`}
+            <div
+            onClick={() => router.push(`/tours/${item?.title?.toLowerCase()?.split(" ")?.join("-")}`)}
+             style={{cursor : "pointer"}}
               className="tourCard -type-1 rounded-4 hover-inside-slider"
             >
               <div className="tourCard__image position-relative">
@@ -106,7 +112,7 @@ console.log("fjkfj", tourItems)
                             priority
                             className="col-12 js-lazy"
                             src={slide}
-                            alt="image"
+                            alt={item?.title}
                           />
                         </div>
                       </div>
@@ -197,7 +203,7 @@ console.log("fjkfj", tourItems)
                   </div> */}
                 </div>
               </div>
-            </Link>
+            </div>
           </div>
         ))}
       </Slider>

@@ -16,7 +16,7 @@ const index = ({setIsShowBokun}) => {
           onClick={() => setIsShowBokun(true)}
           className="button -dark-1 py-15 px-35 h-60 col-12 rounded-4 bg-blue-1 text-white"
         >
-          Processed
+          Proceed
         </button>
       </div>
       {/* End .col-12 */}

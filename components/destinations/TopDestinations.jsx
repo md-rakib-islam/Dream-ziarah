@@ -42,7 +42,7 @@ const TopDestinations = () => {
             className="citiesCard -type-3 d-block h-full rounded-4 "
           >
             <div className="citiesCard__image ratio ratio-3:2">
-              <Image className="col-12 js-lazy" src={item?.img} width={800} height={600} quality={100} priority alt="image" />
+              <Image className="col-12 js-lazy" src={item?.img} width={800} height={600} quality={100} priority alt={item?.name} />
             </div>
             <div className="citiesCard__content d-flex justify-content-center align-items-center">
               <h4 className="text-26 fw-600 text-white text-capitalize">

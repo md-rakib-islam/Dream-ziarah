@@ -62,7 +62,7 @@ const MobileMenu = () => {
       <div className="pro-header d-flex align-items-center justify-between border-bottom-light">
         <Link href="/">
           {
-                    isLoading ? (<Loading/>) : (<Image style={{width : "60px", height:"60px"}} src={logoUrl} width={128} height={128} alt="logo"/>)
+                    isLoading ? (<Loading/>) : (<Image style={{width : "60px", height:"60px"}} src={logoUrl} width={128} height={128} alt="Hajj, Umrah and Ziarah"/>)
                   }
         </Link>
         {/* End logo */}

@@ -4,8 +4,8 @@
 import Image from "next/image";
 
 // Import Swiper React components
-import { Swiper, SwiperSlide } from "swiper/react";
 import { Scrollbar } from "swiper";
+import { Swiper, SwiperSlide } from "swiper/react";
 import { testimonial1 } from "../../../data/testimonialData";
 
 const Testimonial = () => {
@@ -23,10 +23,11 @@ const Testimonial = () => {
             <div className="row items-center x-gap-15 y-gap-20">
               <div className="col-auto">
                 <Image
+                  unoptimized
                   width={80}
                   height={80}
                   src={item.avatar}
-                  alt="image"
+                  alt={item?.text}
                   className="js-lazy rounded-circle"
                 />
               </div>

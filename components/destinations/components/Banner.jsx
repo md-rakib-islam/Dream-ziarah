@@ -27,7 +27,7 @@ const Banner = ({slug}) => {
   <div className="relative d-flex">
     <Image
       src={bannerUrl}
-      alt="image"
+      alt={slug}
       className="col-12 rounded-4 destination_banner_img"
       loading="lazy"
       height={860}

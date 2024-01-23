@@ -39,7 +39,7 @@ export default function TourGallery({tour, hajj, umrah}) {
                         height={751}
                         priority
                         src={slide}
-                        alt="image"
+                        alt={tour?.title}
                         className="rounded-4 col-12 cover object-cover"
                       />
                     </SwiperSlide>

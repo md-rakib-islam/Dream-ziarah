@@ -5,8 +5,8 @@ import CallToActions from "@/components/common/CallToActions";
 import TermsConent from "@/components/common/TermsConent";
 
 export const metadata = {
-  title: "Terms & Conditions || GoTrip - Travel & Tour React NextJS Template",
-  description: "GoTrip - Travel & Tour React NextJS Template",
+  title: "Terms & Conditions || DreamZiarah - Hajj, Umrah And Ziarah",
+  description: "DreamZiarah - Hajj, Umrah And Ziarah",
 };
 
 const Terms = () => {
