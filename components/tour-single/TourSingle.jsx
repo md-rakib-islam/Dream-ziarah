@@ -1,13 +1,10 @@
 "use client";
-// import toursData from "@/data/tours";
+import CallToActions from "@/components/common/CallToActions";
 import { useGetContentsByMenuContentTitleQuery, useGetItenariesByMenuContentIdQuery } from "@/features/content/contentApi";
 import "photoswipe/dist/photoswipe.css";
-// import Header11 from "@/components/header/header-11";
-import CallToActions from "@/components/common/CallToActions";
 // import DefaultFooter from "@/components/footer/default";
 // import Header3 from "@/components/header/header-3";
 import ImportantInfo from "@/components/tour-single/ImportantInfo";
-// import TopBreadCrumb from "@/components/tour-single/TopBreadCrumb";
 import TourGallery from "@/components/tour-single/TourGallery";
 // import DetailsReview2 from "@/components/tour-single/guest-reviews/DetailsReview2";
 // import ReviewProgress2 from "@/components/tour-single/guest-reviews/ReviewProgress2";
@@ -20,18 +17,12 @@ import { addItenarayItems, addtourItem } from "@/features/tour/tourSlice";
 import { singleTourInfo } from "@/hooks/useTours";
 // import dynamic from 'next/dynamic';
 import Loading from "@/app/loading";
-// import { capitalize } from "@/utils";
 import { capitalize } from "@/utils";
 import Link from "next/link";
 import { useEffect } from "react";
 import { useDispatch, useSelector } from "react-redux";
 import { EmailIcon, EmailShareButton, FacebookIcon, FacebookMessengerIcon, FacebookMessengerShareButton, FacebookShareButton, LinkedinIcon, LinkedinShareButton, WhatsappIcon, WhatsappShareButton } from "react-share";
 
-// export const metadata = {
-//   title: "Tour Single || GoTrip - Travel & Tour React NextJS Template",
-//   description: "GoTrip - Travel & Tour React NextJS Template",
-// };
-// capitalize(params?.name)
 
 const TourSingleV1Dynamic = ({ params, children}) => {
   const dispatch = useDispatch();
@@ -70,30 +61,20 @@ const TourSingleV1Dynamic = ({ params, children}) => {
     dispatch(addtourItem(data));
   }
   useEffect(() => {
-    const hasReloaded = localStorage.getItem('tourHasReloaded');
+    const hasReloaded = localStorage.getItem('tourHasReloaded' || '');
 
     if (!hasReloaded) {
       localStorage.setItem('tourHasReloaded', 'true');
       window.location.reload();
     }
-    localStorage.removeItem('hasReloaded');
+    localStorage.removeItem('hasReloaded' || '');
   }, []);
   
 
   return (
     <>
-      
-      {/* End Page Title */}
-
       <div className="header-margin"></div>
       {/* header top margin */}
-
-      {/* <Header11 /> */}
-      {/* <Header3/> */}
-      {/* End Header 1 */}
-
-      {/* <TopBreadCrumb /> */}
-      {/* End top breadcrumb */}
 
       <section className="pt-40">
         <div className="container">
@@ -212,36 +193,6 @@ const TourSingleV1Dynamic = ({ params, children}) => {
         </div>
       </section>
       {/* End Itinerary */}
-
-      {/* <section className="mt-40">
-        <div className="container ">
-          <div className="pt-40 border-top-light">
-            <div className="row y-gap-20">
-              <div className="col-lg-4">
-                <h2 className="text-22 fw-500">
-                  FAQs about
-                  <br /> The Crown Hotel
-                </h2>
-              </div>
-              
-
-              <div className="col-lg-8">
-                <div
-                  className="accordion -simple row y-gap-20 js-accordion"
-                  id="Faq1"
-                >
-                  <Faq />
-                </div>
-              </div>
-              
-            </div>
-           
-          </div>
-         
-        </div>
-     
-      </section> */}
-      {/* End Faq about sections */}
 
       <section className="mt-40 border-top-light pt-40">
         <div className="container">

@@ -52,7 +52,7 @@ export async function generateStaticParams() {
     })
     // console.log("fdf", modifiedContents);
     return modifiedContents?.map((item) => ({
-      name : item?.name,
+      name : item?.name?.toLowerCase()?.split(" ")?.join("-"),
       // slug : item?.id?.toString()
     }));
 }

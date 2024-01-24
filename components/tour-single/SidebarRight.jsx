@@ -1,5 +1,6 @@
 "use client";
-import { useGetContentsByMenuContentIdQuery } from '@/features/content/contentApi';
+import { useGetContentsByMenuContentIdQuery, useGetContentsByMenuContentTitleQuery } from '@/features/content/contentApi';
+import { capitalize } from '@/utils';
 import convertCurrency from '@/utils/currency';
 import { useParams } from 'next/navigation';
 import Script from 'next/script';
@@ -7,7 +8,7 @@ import { useEffect, useState } from 'react';
 import { useSelector } from "react-redux";
 import FilterBox from "../../components/tour-single/filter-box";
 
-
+ 
 const bokunUrls = {
   "makkah-city-ziarah-luxury-private-vehicle-with-guide" : {
     "three" : "https://widgets.bokun.io/online-sales/aa4c5059-8d0b-43dc-8bd3-bac143537416/experience-calendar/820419",
@@ -38,11 +39,12 @@ const bokunUrls = {
 const SidebarRight = () => {
   const [isShowBokun, setIsShowBokun] = useState(false);
   const [bokunUrl, setBokunUrl] = useState("");
-  const {tourItem} = useSelector(state => state.tour);
+  // const {tourItem} = useSelector(state => state.tour);
   const { guests } = useSelector(state => state.bokun)
   const {currentCurrency} = useSelector(state => state?.currency);
   const params = useParams()
-  const {data, isSuccess} = useGetContentsByMenuContentIdQuery(tourItem?.id);
+  const {data : contentItem, isFulfilled} = useGetContentsByMenuContentTitleQuery(capitalize(params?.name))
+  const {data, isSuccess} = useGetContentsByMenuContentIdQuery(contentItem?.id);
 
 
   useEffect(() => {
@@ -64,7 +66,7 @@ const SidebarRight = () => {
       <div className="text-14 text-light-1">
         From {currentCurrency?.symbol}
         <span className="text-20 fw-500 text-dark-1 ml-5">
-          {convertCurrency(parseInt(tourItem?.price), "USD", currentCurrency?.currency)}
+          {convertCurrency(parseInt(contentItem?.price), "USD", currentCurrency?.currency)}
         </span>
       </div>
 
@@ -78,7 +80,6 @@ const SidebarRight = () => {
    
    <div className="d-flex justify-end js-pin-content">
      <div  className="w-360 lg:w-full d-flex flex-column items-center">
-      { console.log("jfjj")}
      <div className="bokunWidget" data-src={bokunUrl}></div>
      </div>
      <Script type="text/javascript" src="https://widgets.bokun.io/assets/javascripts/apps/build/BokunWidgetsLoader.js?bookingChannelUUID=aa4c5059-8d0b-43dc-8bd3-bac143537416" async={true}/>
