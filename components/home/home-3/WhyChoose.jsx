@@ -27,7 +27,7 @@ const WhyChoose = () => {
       id: 4,
       icon: "/img/featureIcons/3/4.svg",
       title: "Trusted reviews",
-      text: `4.3 stars from 140,000+ Trustpilot reviews.`,
+      text: `4.3 stars from 100,000+ reviews.`,
       delayAnimation: "300",
     },
   ];

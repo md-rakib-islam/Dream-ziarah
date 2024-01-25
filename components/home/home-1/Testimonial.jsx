@@ -33,9 +33,9 @@ const Testimonial = () => {
               </div>
               <div className="col-auto">
                 <h5 className="text-16 fw-500">{item.name}</h5>
-                <div className="text-15 text-light-1 lh-15">
+                {/* <div className="text-15 text-light-1 lh-15">
                   {item.designation}
-                </div>
+                </div> */}
               </div>
             </div>
             <p className="text-18 fw-500 text-dark-1 mt-30 sm:mt-20">
