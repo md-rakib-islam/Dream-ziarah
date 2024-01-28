@@ -4,6 +4,7 @@ import { useGetImagesByMenuIdQuery } from "@/features/image/imageApi";
 import Image from "next/image";
 import Link from "next/link";
 import { useSelector } from 'react-redux';
+import Slider from "react-slick";
 // import { destinations5 } from "../../data/desinations";
 
 const TopDestinations = () => {
@@ -26,12 +27,45 @@ const TopDestinations = () => {
     }))
   }
 
+  const settings = {
+    dots: true,
+    infinite: true,
+    speed: 500,
+    slidesToShow: 5,
+    slidesToScroll: 5,
+    responsive: [
+      {
+        breakpoint: 992,
+        settings: {
+          slidesToShow: 3,
+          slidesToScroll: 3,
+        },
+      },
+
+      {
+        breakpoint: 768,
+        settings: {
+          slidesToShow: 2,
+          slidesToScroll: 2,
+        },
+      },
+      {
+        breakpoint: 520,
+        settings: {
+          slidesToShow: 1,
+          slidesToScroll: 1,
+        },
+      },
+    ],
+  };
+
   
   return (
     <>
+      <Slider {...settings}>
       {modifiedDestinations?.map((item) => (
         <div
-          className={`${item.colClass} top_destination_width`}
+          className={`${item.colClass} top_destination_width px-5`}
           key={item.id}
           data-aos="fade"
           data-aos-delay={item.delayAnimation}
@@ -55,6 +89,7 @@ const TopDestinations = () => {
           </Link>
         </div>
       ))}
+      </Slider>
     </>
   );
 };

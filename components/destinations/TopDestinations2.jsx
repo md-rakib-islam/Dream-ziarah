@@ -86,12 +86,12 @@ const TopDestinations2 = ({slug}) => {
       </Swiper>
 
       {/* Start naviation button for next prev slide */}
-      <button className="section-slider-nav -prev flex-center bg-white text-dark-1 size-40 rounded-full shadow-1 sm:d-none  js-top-desti2-prev_active">
+      {/* <button className="section-slider-nav -prev flex-center bg-white text-dark-1 size-40 rounded-full shadow-1 sm:d-none  js-top-desti2-prev_active">
         <i className="icon icon-chevron-left text-12" />
       </button>
       <button className="section-slider-nav -next flex-center bg-white text-dark-1 size-40 rounded-full shadow-1 sm:d-none  js-top-desti2-next_active">
         <i className="icon icon-chevron-right text-12" />
-      </button>
+      </button> */}
       {/* End navigation button for next prev  slide */}
     </>
   );

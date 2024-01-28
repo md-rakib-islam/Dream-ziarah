@@ -7,7 +7,7 @@ import Slider from "react-slick";
 import { testimonial1 } from "../../data/testimonialData";
 
 const Testimonial = () => {
-  var settings = {
+  const settings = {
     dots: true,
     infinite: true,
     autoplay: true,

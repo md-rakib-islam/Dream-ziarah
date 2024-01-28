@@ -73,7 +73,7 @@ export const singleTourInfo = {
 const TourHeading = async({ params}) => {
     // const name = params?.name;
     
-    const res = await fetch(`${GET_CONTENT_BY_TITLE}/${capitalize(params?.name)}`, { next: { revalidate: 3600 } });
+    const res = await fetch(`${GET_CONTENT_BY_TITLE}/${capitalize(params?.name)}`);
     let data;
     if(res.ok){
          data = await res.json();

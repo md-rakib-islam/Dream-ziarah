@@ -106,13 +106,13 @@ const home_3 = () => {
       </section>
       {/* End Top Destinations Section */}
 
-      <section style={{backgroundColor : "#d3f6ee"}} className="layout-pt-md layout-pb-md">
+      <section style={{backgroundColor : "#EAFBF7"}} className="layout-pt-md layout-pb-md">
         <div className="container">
           <div className="row justify-center text-center">
             <div className="col-auto">
               <div className="sectionTitle -md">
                 <h2 className="sectionTitle__title">Free cancellation</h2>
-                <p className=" sectionTitle__text mt-5 sm:mt-0">
+                <p className="fw-bold text-dark mt-5 sm:mt-0">
                 You'll receive a full refund if you cancel at least 24 <br/> hours in advance of most experiences.
                 </p>
               </div>

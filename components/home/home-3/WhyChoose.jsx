@@ -1,4 +1,6 @@
+"use client";
 import Image from "next/image";
+import Slider from "react-slick";
 
 const WhyChoose = () => {
   const blockContent = [
@@ -31,8 +33,42 @@ const WhyChoose = () => {
       delayAnimation: "300",
     },
   ];
+
+  const settings = {
+    dots: true,
+    infinite: true,
+    speed: 500,
+    slidesToShow: 4,
+    slidesToScroll: 4,
+    responsive: [
+      {
+        breakpoint: 992,
+        settings: {
+          slidesToShow: 2,
+          slidesToScroll: 2,
+        },
+      },
+
+      {
+        breakpoint: 768,
+        settings: {
+          slidesToShow: 2,
+          slidesToScroll: 2,
+        },
+      },
+      {
+        breakpoint: 520,
+        settings: {
+          slidesToShow: 1,
+          slidesToScroll: 1,
+        },
+      },
+    ],
+  };
+
   return (
     <>
+      <Slider {...settings}>
       {blockContent?.map((item) => (
         <div
           className="col-lg-3 col-sm-6"
@@ -58,6 +94,7 @@ const WhyChoose = () => {
           </div>
         </div>
       ))}
+      </Slider>
     </>
   );
 };

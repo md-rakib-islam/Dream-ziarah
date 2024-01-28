@@ -3,6 +3,7 @@
 
 import useTours from "@/hooks/useTours";
 import Image from "next/image";
+import Link from "next/link";
 import { useSelector } from "react-redux";
 import Slider from "react-slick";
 import isTextMatched from "../../utils/isTextMatched";
@@ -15,7 +16,7 @@ const Tours = () => {
   // href={`/tours/${item?.title?.toLowerCase()?.split(" ")?.join("-")}`}
 
   
-  var settings = {
+  const settings = {
     dots: true,
     infinite: true,
     speed: 500,
@@ -88,7 +89,7 @@ const Tours = () => {
             data-aos="fade"
             data-aos-delay={item?.delayAnimation}
           >
-            <a
+            <Link
             href={`/tours/${item?.title?.toLowerCase()?.split(" ")?.join("-")}`}
             style={{cursor : "pointer"}}
             className="tourCard -type-1 rounded-4 hover-inside-slider"
@@ -201,7 +202,7 @@ const Tours = () => {
                   </div> */}
                 </div>
               </div>
-            </a>
+            </Link>
           </div>
         ))}
       </Slider>

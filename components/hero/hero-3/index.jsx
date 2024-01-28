@@ -25,9 +25,8 @@ const index = () => {
     <div className="col-auto">
       <div className="masthead__content">
         <div className="masthead__bg">
-          {/* <img src={sliderImageItems[0]?.image} alt="image" /> */}
           {
-            isLoading ? (<Loading></Loading>) : (<Image src={sliderImageItems[0]?.image} width={1920} height={660} loading="lazy" alt="Hajj, Umrah and Ziarah"/>)
+            isLoading ? (<Loading></Loading>) : (<Image className="bannar_height" src={sliderImageItems[0]?.image} width={1420} height={460} loading="lazy" alt="Hajj, Umrah and Ziarah"/>)
           }
         </div>
         {/* <h1
@@ -41,8 +40,8 @@ const index = () => {
           disableLineBreaks={false}
           content={item.title}
         />
-      </h1> */}
-        {/* <div
+      </h1>
+        <div
           className="text-white text-30"
           data-aos="fade-up"
           data-aos-delay="100"

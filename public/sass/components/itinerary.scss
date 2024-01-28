@@ -21,3 +21,15 @@
     width: 20%;
   }
 }
+
+.bannar_height {
+  @media (min-width: 767px) {
+    height: 388px;
+  }
+}
+
+.bannar_height {
+  @media (max-width: 767px) {
+    height: 300px;
+  }
+}
