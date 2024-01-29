@@ -112,7 +112,7 @@ const home_3 = () => {
             <div className="col-auto">
               <div className="sectionTitle -md">
                 <h2 className="sectionTitle__title">Free cancellation</h2>
-                <p className="fw-bold text-dark mt-5 sm:mt-0">
+                <p className="fw-bold text-dark mt-5 sm:mt-4">
                 You'll receive a full refund if you cancel at least 24 <br/> hours in advance of most experiences.
                 </p>
               </div>
@@ -123,6 +123,7 @@ const home_3 = () => {
         {/* End .container */}
       </section>
       {/* End Why choose Section */}
+
     </>
   );
 };
