@@ -22,7 +22,7 @@ const index = () => {
   // localStorage.clear();
   return (
     <>
-    <div className="row justify-center text-center bannar_mobile">
+    <div className="row justify-center text-center bannar_mobile overflow-hidden">
     <div className="col-auto">
       <div className="masthead__content position-relative">
         <div className="masthead__bg">
@@ -81,7 +81,7 @@ const index = () => {
   </div>
 
 
-  <div className="row justify-center text-center bannar_desktop">
+  <div className="row justify-center text-center bannar_desktop overflow-hidden">
     <div className="col-auto">
       <div className="masthead__content position-relative">
         <div className="masthead__bg">

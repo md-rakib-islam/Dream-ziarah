@@ -98,8 +98,8 @@ const Header1 = () => {
 
             <div className="col-auto">
               <div className="d-flex">
-              <a href="https://api.whatsapp.com/send/?phone=966548037409&amp;text=Hi DreamZiarah, I need assistance&amp;type=phone_number&amp;lang=en" target="_blank">
-              <Image style={{cursor : "pointer"}} className="whatsapp_icon" src="/img/whatsapp.svg" width={25} height={25}/>
+              <a className="btn-whatsapp-pulse whatsapp_icon" href="https://api.whatsapp.com/send/?phone=966548037409&amp;text=Hi DreamZiarah, I need assistance&amp;type=phone_number&amp;lang=en" target="_blank">
+              <Image style={{cursor : "pointer"}} src="/img/whatsapp.svg" width={30} height={30}/>
               </a>
               {/* <HeaderSearch /> */}
                 <div className="row x-gap-20 items-center xxl:d-none">
