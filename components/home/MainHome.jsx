@@ -112,10 +112,10 @@ const home_3 = () => {
             <div className="col-auto">
               <div className="sectionTitle -md">
                 <h2 className="sectionTitle__title">Free cancellation</h2>
-                <p className="fw-bold text-dark mt-5 sm:mt-4 bannar_mobile">
+                <p style={{color : "black"}} className="mt-5 sm:mt-4 bannar_mobile">
                 You'll receive a full refund if you cancel at least 24 <br/> hours in advance of most experiences.
                 </p>
-                <p className="fw-bold text-dark mt-5 sm:mt-4 bannar_desktop">
+                <p style={{color : "black"}} className="mt-5 sm:mt-4 bannar_desktop">
                 You'll receive a full refund if you cancel at least 24 hours in advance of most experiences.
                 </p>
               </div>

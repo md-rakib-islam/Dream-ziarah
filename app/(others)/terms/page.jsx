@@ -4,10 +4,30 @@ import CallToActions from "@/components/common/CallToActions";
 // import DefaultFooter from "@/components/footer/default";
 import TermsConent from "@/components/common/TermsConent";
 
-export const metadata = {
-  title: "Terms & Conditions || DreamZiarah - Hajj, Umrah And Ziarah",
-  description: "DreamZiarah - Hajj, Umrah And Ziarah",
-};
+// export const metadata = {
+//   title: "Terms & Conditions || DreamZiarah - Hajj, Umrah And Ziarah",
+//   description: "DreamZiarah - Hajj, Umrah And Ziarah",
+// };
+
+const metaDatas = {
+  "general_terms_of_use" : {
+    title : "Dream Ziarah - Terms and Conditions",
+    description : "Explore the terms and conditions that govern your experience with Dream Ziarah. Understand our commitment to quality, fairness, and your satisfaction.",
+  },
+  "privacy_policy" : {
+    title : "Dream Ziarah Privacy Policy - Your Privacy, Our Priority",
+    description : "Read Dream Ziarah's privacy policy to understand how we handle and protect your information. Your privacy is important to us, and we prioritize keeping your data secure.",
+  },
+}
+
+export async function generateMetadata({ params, searchParams }, parent) {
+  const {type} = searchParams;
+ 
+  return {
+    title: metaDatas[type]?.title,
+    description : metaDatas[type]?.description
+  }
+}
 
 const Terms = () => {
   return (
