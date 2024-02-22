@@ -1,6 +1,9 @@
 "use client";
 import CallToActions from "@/components/common/CallToActions";
-import { useGetContentsByMenuContentTitleQuery, useGetItenariesByMenuContentIdQuery } from "@/features/content/contentApi";
+import {
+  useGetContentsByMenuContentTitleQuery,
+  useGetItenariesByMenuContentIdQuery,
+} from "@/features/content/contentApi";
 import "photoswipe/dist/photoswipe.css";
 // import DefaultFooter from "@/components/footer/default";
 // import Header3 from "@/components/header/header-3";
@@ -21,33 +24,51 @@ import { capitalize } from "@/utils";
 import Link from "next/link";
 import { useEffect } from "react";
 import { useDispatch, useSelector } from "react-redux";
-import { EmailIcon, EmailShareButton, FacebookIcon, FacebookMessengerIcon, FacebookMessengerShareButton, FacebookShareButton, LinkedinIcon, LinkedinShareButton, WhatsappIcon, WhatsappShareButton } from "react-share";
+import {
+  EmailIcon,
+  EmailShareButton,
+  FacebookIcon,
+  FacebookMessengerIcon,
+  FacebookMessengerShareButton,
+  FacebookShareButton,
+  LinkedinIcon,
+  LinkedinShareButton,
+  WhatsappIcon,
+  WhatsappShareButton,
+} from "react-share";
 
-
-const TourSingleV1Dynamic = ({ params, children}) => {
+const TourSingleV1Dynamic = ({ params, children }) => {
   const dispatch = useDispatch();
   const id = params?.slug;
-  const {menuItems} = useSelector(state => state.menus);
+  const { menuItems } = useSelector((state) => state.menus);
   const tourId = menuItems.find((item) => item.name === "Tour")?.id;
   // const {data, isSuccess, isFulfilled} = useGetContentsByMenuContentIdQuery(id);
-  const {data, isSuccess, isFulfilled} = useGetContentsByMenuContentTitleQuery(capitalize(params?.name))
+  const { data, isSuccess, isFulfilled } =
+    useGetContentsByMenuContentTitleQuery(capitalize(params?.name));
 
   // const {data : itenarayItems, isSuccess: isItenariesSuccess} = useGetItenariesByMenuContentIdQuery(id);
 
-  const {data : imageContents, isSuccess: isImageContentsSuccess, isLoading} = useGetImagesByMenuIdQuery(tourId);
+  const {
+    data: imageContents,
+    isSuccess: isImageContentsSuccess,
+    isLoading,
+  } = useGetImagesByMenuIdQuery(tourId);
 
-  const {data : itenarayItems, isSuccess: isItenariesSuccess} = useGetItenariesByMenuContentIdQuery(data?.id);
+  const { data: itenarayItems, isSuccess: isItenariesSuccess } =
+    useGetItenariesByMenuContentIdQuery(data?.id);
 
-  if(isItenariesSuccess){
+  if (isItenariesSuccess) {
     dispatch(addItenarayItems(itenarayItems));
   }
   let tour = {};
-  if(isSuccess && isImageContentsSuccess){
+  if (isSuccess && isImageContentsSuccess) {
     // console.log("images", imageContents.content_images[data?.name]);
-    tour =   {
+    tour = {
       id: data?.id,
       tag: "",
-      slideImg: [`${BASE_URL}/media/${imageContents.content_images[data?.name]}`],
+      slideImg: [
+        `${BASE_URL}/media/${imageContents.content_images[data?.name]}`,
+      ],
       title: data?.name,
       location: singleTourInfo[data?.name]?.location,
       duration: data?.duration,
@@ -55,21 +76,20 @@ const TourSingleV1Dynamic = ({ params, children}) => {
       price: data?.price,
       tourType: "Attractions & Museums",
       delayAnimation: "200",
-      languages : singleTourInfo[data?.name]?.languages
-    }
+      languages: singleTourInfo[data?.name]?.languages,
+    };
     // console.log("Hele", data);
     dispatch(addtourItem(data));
   }
   useEffect(() => {
-    const hasReloaded = localStorage.getItem('tourHasReloaded' || '');
+    const hasReloaded = localStorage.getItem("tourHasReloaded" || "");
 
     if (!hasReloaded) {
-      localStorage.setItem('tourHasReloaded', 'true');
+      localStorage.setItem("tourHasReloaded", "true");
       window.location.reload();
     }
-    localStorage.removeItem('hasReloaded' || '');
+    localStorage.removeItem("hasReloaded" || "");
   }, []);
-  
 
   return (
     <>
@@ -122,26 +142,60 @@ const TourSingleV1Dynamic = ({ params, children}) => {
             <div className="col-auto">
               <div className="row x-gap-10 y-gap-10">
                 <div className="col-auto btn-group dropup">
-                  <button type="button" data-bs-toggle="dropdown" aria-expanded="false" className="button px-15 py-10 -blue-1 ">
+                  <button
+                    type="button"
+                    data-bs-toggle="dropdown"
+                    aria-expanded="false"
+                    className="button px-15 py-10 -blue-1 "
+                  >
                     <i className="icon-share mr-10"></i>
                     Share
                   </button>
                   <ul className="dropdown-menu">
                     <li className="d-flex my-2">
-                      <FacebookShareButton className="me-2" url={`https://dreamziarah.com/tours/${tour?.title?.toLowerCase()?.split(" ")?.join("-")}`}>
-                        <FacebookIcon size={32} round={true}/>
+                      <FacebookShareButton
+                        className="me-2"
+                        url={`https://dreamziarah.com/tours/${tour?.title
+                          ?.toLowerCase()
+                          ?.split(" ")
+                          ?.join("-")}`}
+                      >
+                        <FacebookIcon size={32} round={true} />
                       </FacebookShareButton>
-                      <FacebookMessengerShareButton className="me-2" url={`https://dreamziarah.com/tours/${tour?.title?.toLowerCase()?.split(" ")?.join("-")}`}>
-                        <FacebookMessengerIcon size={32} round={true}/>
+                      <FacebookMessengerShareButton
+                        className="me-2"
+                        url={`https://dreamziarah.com/tours/${tour?.title
+                          ?.toLowerCase()
+                          ?.split(" ")
+                          ?.join("-")}`}
+                      >
+                        <FacebookMessengerIcon size={32} round={true} />
                       </FacebookMessengerShareButton>
-                      <WhatsappShareButton className="me-2" url={`https://dreamziarah.com/tours/${tour?.title?.toLowerCase()?.split(" ")?.join("-")}`}>
-                        <WhatsappIcon size={32} round={true}/>
+                      <WhatsappShareButton
+                        className="me-2"
+                        url={`https://dreamziarah.com/tours/${tour?.title
+                          ?.toLowerCase()
+                          ?.split(" ")
+                          ?.join("-")}`}
+                      >
+                        <WhatsappIcon size={32} round={true} />
                       </WhatsappShareButton>
-                      <EmailShareButton className="me-2" url={`https://dreamziarah.com/tours/${tour?.title?.toLowerCase()?.split(" ")?.join("-")}`}>
-                        <EmailIcon size={32} round={true}/>
+                      <EmailShareButton
+                        className="me-2"
+                        url={`https://dreamziarah.com/tours/${tour?.title
+                          ?.toLowerCase()
+                          ?.split(" ")
+                          ?.join("-")}`}
+                      >
+                        <EmailIcon size={32} round={true} />
                       </EmailShareButton>
-                      <LinkedinShareButton url={`https://dreamziarah.com/tours/${tour?.title?.toLowerCase()?.split(" ")?.join("-")}`}>
-                        <LinkedinIcon size={32} round={true}/>
+                      <LinkedinShareButton
+                        url={`https://dreamziarah.com/tours/${tour?.title
+                          ?.toLowerCase()
+                          ?.split(" ")
+                          ?.join("-")}`}
+                      >
+                        <LinkedinIcon size={32} round={true} />
                       </LinkedinShareButton>
                     </li>
                   </ul>
@@ -163,9 +217,13 @@ const TourSingleV1Dynamic = ({ params, children}) => {
       </section>
       {/* End gallery grid wrapper */}
 
-      {
-        isLoading ? (<div className="col-12 h-50 text-center"><Loading/></div>) : (<TourGallery tour={tour} />)
-      }
+      {isLoading ? (
+        <div className="col-12 h-50 text-center">
+          <Loading />
+        </div>
+      ) : (
+        <TourGallery tour={tour} />
+      )}
 
       {/* End single page content */}
 
@@ -200,19 +258,13 @@ const TourSingleV1Dynamic = ({ params, children}) => {
             <div className="col-xl-3">
               <h3 className="text-22 fw-500">Guest reviews</h3>
               <ReviewProgress2 />
-             
             </div>
-        
 
             {/* <div className="col-xl-8">
               <DetailsReview2 />
             </div> */}
-           
           </div>
-
         </div>
-
-
       </section>
       {/* End Review section */}
 
@@ -253,7 +305,8 @@ const TourSingleV1Dynamic = ({ params, children}) => {
               <div className="sectionTitle -md">
                 <h2 className="sectionTitle__title">Most Popular Tours</h2>
                 <p className=" sectionTitle__text mt-5 sm:mt-0">
-                Explore Our Best Sellers: Unmatched Experiences in Every Journey
+                  Explore Our Best Sellers: Unmatched Experiences in Every
+                  Journey
                 </p>
               </div>
             </div>
@@ -284,7 +337,6 @@ const TourSingleV1Dynamic = ({ params, children}) => {
       {/* End Call To Actions Section */}
 
       {/* <DefaultFooter /> */}
-   
     </>
   );
 };

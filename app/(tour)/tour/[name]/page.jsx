@@ -47,6 +47,7 @@ export async function generateStaticParams() {
   const ziarahId = data?.menus?.find((item) => item.name === "Ziarah")?.id;
 
   const tourContents = await getAllContentByMenuId(ziarahId);
+  console.log("toursCOntent", tourContents);
 
   const modifiedContents = tourContents?.filter((item) => {
     if (
@@ -74,6 +75,7 @@ export async function generateStaticParams() {
 
 export async function generateMetadata({ params, searchParams }, parent) {
   const { name } = params;
+  console.log("tours name", name);
 
   return {
     title: tourMetadatas[name]?.title,

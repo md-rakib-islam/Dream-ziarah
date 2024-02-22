@@ -22,27 +22,32 @@ import getAllMenuItem from "@/services/menuService";
 import Link from "next/link";
 
 const destinationsMetadatas = {
-  jedda : {
-    title : "Jeddah: Gateway to Tranquil Beauty - Dream Ziarah",
-    description : "Explore the enchanting city of Jeddah with DreamZiarah.com. Immerse yourself in the blend of modernity and tradition, where vibrant culture meets serene coastal beauty. Plan your journey to Jeddah and create unforgettable memories."
+  jedda: {
+    title: "Jeddah: Gateway to Tranquil Beauty - Dream Ziarah",
+    description:
+      "Explore the enchanting city of Jeddah with DreamZiarah.com. Immerse yourself in the blend of modernity and tradition, where vibrant culture meets serene coastal beauty. Plan your journey to Jeddah and create unforgettable memories.",
   },
-  makkah : {
-    title : "Makkah: The Spiritual Heartbeat - Dream Ziarah",
-    description : "Embark on a sacred pilgrimage to Makkah with DreamZiarah.com. Discover the spiritual heartbeat of Islam, where the iconic Kaaba stands as a symbol of devotion. Explore our Makkah packages and embark on a journey of profound spiritual significance."
+  makkah: {
+    title: "Makkah: The Spiritual Heartbeat - Dream Ziarah",
+    description:
+      "Embark on a sacred pilgrimage to Makkah with DreamZiarah.com. Discover the spiritual heartbeat of Islam, where the iconic Kaaba stands as a symbol of devotion. Explore our Makkah packages and embark on a journey of profound spiritual significance.",
   },
-  medina : {
-    title : "Medina: Oasis of Peace and Spirituality - Dream Ziarah",
-    description : "Experience the tranquility of Medina with DreamZiarah.com. Immerse yourself in the peaceful surroundings of the Prophet's Mosque and explore the rich Islamic history. Plan your spiritual journey to Medina with our curated packages."
+  medina: {
+    title: "Medina: Oasis of Peace and Spirituality - Dream Ziarah",
+    description:
+      "Experience the tranquility of Medina with DreamZiarah.com. Immerse yourself in the peaceful surroundings of the Prophet's Mosque and explore the rich Islamic history. Plan your spiritual journey to Medina with our curated packages.",
   },
-  taif : {
-    title : "Taif: Mountain Retreat and Cultural Gem - Dream Ziarah",
-    description : "Discover the scenic beauty and cultural richness of Taif with DreamZiarah.com. Nestled in the mountains, Taif offers a refreshing escape with its lush landscapes and historical charm. Explore our Taif packages for a unique cultural experience."
+  taif: {
+    title: "Taif: Mountain Retreat and Cultural Gem - Dream Ziarah",
+    description:
+      "Discover the scenic beauty and cultural richness of Taif with DreamZiarah.com. Nestled in the mountains, Taif offers a refreshing escape with its lush landscapes and historical charm. Explore our Taif packages for a unique cultural experience.",
   },
-  tabuk : {
-    title : "Tabuk: Unveiling Historical Treasures - Dream Ziarah",
-    description : "Uncover the historical treasures of Tabuk with DreamZiarah.com. Immerse yourself in the rich heritage of this ancient city, known for its archaeological wonders and unique landscapes. Explore Tabuk with our thoughtfully designed travel packages."
-  }
-}
+  tabuk: {
+    title: "Tabuk: Unveiling Historical Treasures - Dream Ziarah",
+    description:
+      "Uncover the historical treasures of Tabuk with DreamZiarah.com. Immerse yourself in the rich heritage of this ancient city, known for its archaeological wonders and unique landscapes. Explore Tabuk with our thoughtfully designed travel packages.",
+  },
+};
 
 // export const metadata = {
 //   title: "Destinations || GoTrip - Travel & Tour React NextJS Template",
@@ -52,24 +57,28 @@ const destinationsMetadatas = {
 export async function generateStaticParams() {
   const data = await getAllMenuItem();
   // console.log(menus);
- 
-  return data?.menus.find((item) => item.name === "Destinations")?.children?.map((item) => ({
-    slug: item.name,
-  }))
+
+  return data?.menus
+    .find((item) => item.name === "Destinations")
+    ?.children?.map((item) => ({
+      slug: item.name,
+    }));
 }
 
 export async function generateMetadata({ params, searchParams }, parent) {
   const slug = params.slug;
- 
+
   return {
     title: destinationsMetadatas[slug]?.title,
-    description : destinationsMetadatas[slug]?.description
-  }
+    description: destinationsMetadatas[slug]?.description,
+  };
 }
 
 const Destinations = ({ params }) => {
   const slug = params.slug;
-  
+
+  console.log("slugItem", slug);
+
   return (
     <>
       {/* End Page Title */}
@@ -86,7 +95,7 @@ const Destinations = ({ params }) => {
       <section className="layout-pb-md">
         <div className="container">
           <div className="row">
-            <Banner slug ={slug}/>
+            <Banner slug={slug} />
           </div>
           {/* End .row */}
 
@@ -97,12 +106,14 @@ const Destinations = ({ params }) => {
 
           <div className="row y-gap-20 pt-40">
             <div className="col-auto">
-              <h2>What to know before visiting {slug.charAt(0).toUpperCase()
-      + slug.slice(1)}</h2>
+              <h2>
+                What to know before visiting{" "}
+                {slug.charAt(0).toUpperCase() + slug.slice(1)}
+              </h2>
             </div>
             {/* End .col-auto */}
 
-            <IntroTown slug={slug}/>
+            <IntroTown slug={slug} />
           </div>
           {/* End .row */}
 
@@ -115,7 +126,7 @@ const Destinations = ({ params }) => {
             </div>
             {/* End. col-12 */}
 
-            <Weather slug={slug}/>
+            <Weather slug={slug} />
           </div>
           {/* End local weather */}
 
@@ -127,14 +138,12 @@ const Destinations = ({ params }) => {
             
             <GeneralInfo />
           </div> */}
-         
+
           {/* <div className="mt-30 border-top-light" /> */}
-          
         </div>
         {/* End .container */}
       </section>
       {/* End Top Banner,categorie,intro,weather, generic info section */}
-
 
       <section className="">
         <div className="container">
@@ -143,7 +152,8 @@ const Destinations = ({ params }) => {
               <div className="sectionTitle -md">
                 <h1 className="sectionTitle__title">Most Popular Tours</h1>
                 <p className=" sectionTitle__text mt-5 sm:mt-0">
-                Explore Our Best Sellers: Unmatched Experiences in Every Journey
+                  Explore Our Best Sellers: Unmatched Experiences in Every
+                  Journey
                 </p>
               </div>
             </div>
@@ -175,8 +185,9 @@ const Destinations = ({ params }) => {
           <div className="row">
             <div className="col-auto">
               <div className="sectionTitle -md">
-                <h2 className="sectionTitle__title">Top sights in {slug.charAt(0).toUpperCase()
-      + slug.slice(1)}</h2>
+                <h2 className="sectionTitle__title">
+                  Top sights in {slug.charAt(0).toUpperCase() + slug.slice(1)}
+                </h2>
                 <p className=" sectionTitle__text mt-5 sm:mt-0">
                   {slightContent[slug]?.title}
                 </p>
@@ -186,7 +197,7 @@ const Destinations = ({ params }) => {
           {/* End .row */}
 
           <div className="row y-gap-30 pt-40">
-            <Slights slug={slug}/>
+            <Slights slug={slug} />
           </div>
           {/* End .row */}
 
@@ -247,15 +258,14 @@ const Destinations = ({ params }) => {
               <h2 className="text-30 fw-500">
                 FAQs about
                 <br />
-                {slug.charAt(0).toUpperCase()
-      + slug.slice(1)}
+                {slug.charAt(0).toUpperCase() + slug.slice(1)}
               </h2>
             </div>
             {/* End .col */}
 
             <div className="col-lg-8">
               <div className="accordion -simple row y-gap-20 js-accordion">
-                <Faq slug ={slug}/>
+                <Faq slug={slug} />
               </div>
             </div>
             {/* End .col-lg-8 */}
@@ -272,8 +282,8 @@ const Destinations = ({ params }) => {
             <div className="col-auto">
               <div className="sectionTitle -md">
                 <h2 className="sectionTitle__title">
-                  Destinations near {slug.charAt(0).toUpperCase()
-      + slug.slice(1)}
+                  Destinations near{" "}
+                  {slug.charAt(0).toUpperCase() + slug.slice(1)}
                 </h2>
                 <p className=" sectionTitle__text mt-5 sm:mt-0">
                   These popular destinations have a lot to offer

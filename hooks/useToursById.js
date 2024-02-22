@@ -80,7 +80,7 @@ export const singleTourInfo = {
   },
 };
 
-const useTours = () => {
+const useToursById = () => {
   const [tourItems, setTourItems] = useState([]);
   const { menuItems } = useSelector((state) => state?.menus);
   const { currentCurrency } = useSelector((state) => state?.currency);
@@ -133,4 +133,4 @@ const useTours = () => {
   return tourItems;
 };
 
-export default useTours;
+export default useToursById;

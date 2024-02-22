@@ -1,5 +1,4 @@
-
-'use client'
+"use client";
 
 import useTours from "@/hooks/useTours";
 import Image from "next/image";
@@ -9,13 +8,11 @@ import Slider from "react-slick";
 import isTextMatched from "../../utils/isTextMatched";
 
 const Tours = () => {
-  const tourItems = useTours()
-  const {currentCurrency} = useSelector(state => state.currency);
-
+  const tourItems = useTours();
+  const { currentCurrency } = useSelector((state) => state.currency);
 
   // href={`/tours/${item?.title?.toLowerCase()?.split(" ")?.join("-")}`}
 
-  
   const settings = {
     dots: true,
     infinite: true,
@@ -80,7 +77,9 @@ const Tours = () => {
     );
   }
 
-  return tourItems?.length === 0 ? (" ") : (
+  return tourItems?.length === 0 ? (
+    " "
+  ) : (
     <>
       <Slider {...settings}>
         {tourItems?.map((item) => (
@@ -90,9 +89,12 @@ const Tours = () => {
             data-aos-delay={item?.delayAnimation}
           >
             <Link
-            href={`/tours/${item?.title?.toLowerCase()?.split(" ")?.join("-")}`}
-            style={{cursor : "pointer"}}
-            className="tourCard -type-1 rounded-4 hover-inside-slider"
+              href={`/tours/${item?.title
+                ?.toLowerCase()
+                ?.split(" ")
+                ?.join("-")}`}
+              style={{ cursor: "pointer" }}
+              className="tourCard -type-1 rounded-4 hover-inside-slider"
             >
               <div className="tourCard__image position-relative">
                 <div className="inside-slider">
@@ -157,10 +159,9 @@ const Tours = () => {
                   {/* <div className="text-14 text-light-1">{item?.tourType}</div> */}
                   <div className="col-auto">
                     <div className="text-14 text-dark-1 fw-bold">
-                      From {currentCurrency?.symbol} 
+                      From {currentCurrency?.symbol}
                       <span className="text-16 fw-500 text-blue-1 fw-bold">
                         {" "}
-                        
                         {item.price}
                       </span>
                     </div>

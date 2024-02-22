@@ -77,7 +77,6 @@ const index = () => {
 
       <CallToActions />
       {/* End Call To Actions Section */}
-
     </>
   );
 };
