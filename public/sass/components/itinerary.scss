@@ -41,22 +41,31 @@
   @media (min-width: 767px) {
     top: 31%;
     right: 13%;
+    // width: 100%;
   }
   @media (max-width: 767px) {
     top: 70%;
-    right: 32%;
+    // right: 32%;
+    width: 100%;
   }
   @media (max-width: 567px) {
     top: 70%;
-    right: 19%;
+    // right: 13%;
+    width: 100%;
+  }
+  @media (max-width: 450px) {
+    top: 70%;
+    width: 100%;
   }
   @media (max-width: 348px) {
-    top: 68%;
-    right: 13%;
+    top: 65%;
+    // right: 5%;
+    width: 100%;
   }
   @media (max-width: 298px) {
     top: 70%;
-    right: 8%;
+    // right: 8%;
+    width: 100%;
   }
 }
 

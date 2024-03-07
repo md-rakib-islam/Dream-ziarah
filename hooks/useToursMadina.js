@@ -382,11 +382,14 @@ export const singleTourInfo = {
       "https://www.google.com/maps/d/u/1/embed?mid=1CM8PjQjW7zWc_PpHMpNHHHRYlZU1-cw&ehbc=2E312F&z=7",
   },
 };
-const useTours = () => {
+
+const useToursMadina = () => {
   const [tourItems, setTourItems] = useState([]);
   const { menuItems } = useSelector((state) => state?.menus);
   const { currentCurrency } = useSelector((state) => state?.currency);
-  const ziarahId = menuItems.find((item) => item.name === "Ziarah")?.id;
+  const ziarahId = menuItems
+    .find((item) => item.name === "Tours")
+    ?.children?.find((child) => child?.name == "Madina Tours")?.id;
   const { isSuccess, data, isLoading } = useGetImagesByMenuIdQuery(ziarahId);
   const {
     isSuccess: isContentSuccess,
@@ -414,7 +417,7 @@ const useTours = () => {
           id: tour.id,
           // tag:  tour.id === 10 ? "top rated": tour.id === 9 ? "best seller" : "LIKELY TO SELL OUT*",
           tag: "",
-          slideImg: [`${BASE_URL}/media/${data.content_images[tour.name]}`],
+          slideImg: [`${BASE_URL}/media/${data?.content_images[tour?.name]}`],
           title: tour.name,
           location: singleTourInfo[tour?.name]?.location,
           duration: tour?.duration,
@@ -436,4 +439,4 @@ const useTours = () => {
   return tourItems;
 };
 
-export default useTours;
+export default useToursMadina;

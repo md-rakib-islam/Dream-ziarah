@@ -53,16 +53,13 @@ const Hajj = ({ children }) => {
   }
   let tour = {};
   if (isSuccess && isImageContentsSuccess) {
-    // console.log("images", imageContents.content_images[data?.name]);
+    console.log("hajjimages", imageContents.content_images[data?.name]);
     tour = {
       id: data?.id,
       tag: "",
-      slideImg:
-        typeof imageContents?.content_images[data?.name] === "string"
-          ? [`${BASE_URL}/media/${imageContents.content_images[data?.name]}`]
-          : imageContents?.content_images[data?.name]?.map(
-              (imgSrc) => `${BASE_URL}/media/${imgSrc}`
-            ),
+      slideImg: Array.isArray(imageContents?.content_images[data?.name])
+        ? imageContents?.content_images[data?.name]
+        : [`${imageContents.content_images[data?.name]}`],
       title: data?.name,
       location: singleTourInfo[data?.name]?.location,
       duration: data?.duration,

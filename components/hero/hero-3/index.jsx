@@ -4,8 +4,6 @@
 import Loading from "@/app/loading";
 import { BASE_URL } from "@/constant/constants";
 import { useGetSliderImagesQuery } from "@/features/image/imageApi";
-import MainFilterSearchBox from "./MainFilterSearchBox";
-
 import Image from "next/image";
 // import { Interweave } from "interweave";
 const index = () => {
@@ -23,7 +21,7 @@ const index = () => {
   // localStorage.clear();
   return (
     <>
-      {/* <div className="row justify-center text-center bannar_mobile overflow-hidden">
+      <div className="row justify-center text-center bannar_mobile overflow-hidden">
         <div className="col-auto">
           <div className="masthead__content position-relative">
             <div className="masthead__bg">
@@ -40,10 +38,7 @@ const index = () => {
                 />
               )}
             </div>
-
             <div className="position-absolute bannar_content">
-              <h1>hello</h1>
-
               <h1
                 className="text-white fw-bold bannar_content_title"
                 data-aos="fade-up"
@@ -53,7 +48,7 @@ const index = () => {
               </h1>
               <p
                 // className="text-white mt-6 md:mt-10"
-                className="bannar_content_subtile"
+                className="bannar_content_subtile text-white"
                 data-aos="fade-up"
                 data-aos-delay="100"
               >
@@ -67,7 +62,25 @@ const index = () => {
               data-aos-delay="200"
             ></div>
 
-            
+            {/* <h1
+        className="text-45 lg:text-40 md:text-30 text-white"
+        data-aos="fade-up"
+        data-aos-delay="300"
+      >
+         <Interweave
+          allowAttributes
+          allowElements
+          disableLineBreaks={false}
+          content={item.title}
+        />
+      </h1>
+        <div
+          className="text-white text-30"
+          data-aos="fade-up"
+          data-aos-delay="100"
+        >
+          {item.subtitle}
+        </div> */}
           </div>
         </div>
       </div>
@@ -98,7 +111,7 @@ const index = () => {
               </h1>
               <p
                 // className="text-white mt-6 md:mt-10"
-                className="bannar_content_subtile"
+                className="bannar_content_subtile text-white"
                 data-aos="fade-up"
                 data-aos-delay="100"
               >
@@ -112,93 +125,65 @@ const index = () => {
               data-aos-delay="200"
             ></div>
 
-           
+            {/* <h1
+        className="text-45 lg:text-40 md:text-30 text-white"
+        data-aos="fade-up"
+        data-aos-delay="300"
+      >
+         <Interweave
+          allowAttributes
+          allowElements
+          disableLineBreaks={false}
+          content={item.title}
+        />
+      </h1>
+        <div
+          className="text-white text-30"
+          data-aos="fade-up"
+          data-aos-delay="100"
+        >
+          {item.subtitle}
+        </div> */}
           </div>
         </div>
-      </div> */}
-
-      <section className="masthead -type-6 bannar_mobile">
-        <div className="masthead__bg">
-          {isLoading ? (
-            <div className="d-flex justify-content-center align-items-center">
-              <Loading></Loading>
-            </div>
-          ) : (
-            <Image
-              src={sliderImageItems[1]?.image}
-              width={1420}
-              height={460}
-              alt="image"
-            />
-          )}
-        </div>
-
-        <div className="container search_container">
-          <div className="row justify-center">
-            <div className="col-xl-9 d-lg-flex flex-column justify-content-center align-items-center">
-              <div className="text-center">
-                <h1
-                  className="text-45 lg:text-40 md:text-30 text-white"
-                  data-aos="fade-up"
-                >
-                  Ziyarat in <br />
-                  Makkah & Madina
-                </h1>
-                <p
-                  className="text-white mt-5"
-                  data-aos="fade-up"
-                  data-aos-delay="100"
-                >
-                  Immerse in Spiritual Quests
-                </p>
-              </div>
-              {/* End hero title */}
-              <MainFilterSearchBox />
-            </div>
-          </div>
-        </div>
-      </section>
-      <section className="masthead -type-6 bannar_desktop">
-        <div className="masthead__bg">
-          {isLoading ? (
-            <div className="d-flex justify-content-center align-items-center">
-              <Loading></Loading>
-            </div>
-          ) : (
-            <Image
-              src={sliderImageItems[0]?.image}
-              width={1420}
-              height={460}
-              alt="image"
-            />
-          )}
-        </div>
-
-        <div className="container">
-          <div className="row justify-center">
-            <div className="col-xl-9 d-lg-flex flex-column justify-content-center align-items-center">
-              <div className="text-center">
-                <h1
-                  className="text-45 lg:text-40 md:text-30 text-white"
-                  data-aos="fade-up"
-                >
-                  Ziyarat in Makkah & Madina
-                </h1>
-                <p
-                  className="text-white mt-5"
-                  data-aos="fade-up"
-                  data-aos-delay="100"
-                >
-                  Immerse in Spiritual Quests
-                </p>
-              </div>
-              {/* End hero title */}
-              <MainFilterSearchBox />
-            </div>
-          </div>
-        </div>
-      </section>
+      </div>
     </>
+    // <section className="masthead -type-3 z-5">
+    //   <div className="">
+
+    //     <Image src={sliderImageItems[0]?.image} fill={true}  style={{objectFit: "contain"}} alt="image"/>
+    //   </div>
+    // <div className="container">
+    //   <div className="row justify-center">
+    //     <div className="col-auto">
+    //       <div className="text-center">
+    //         <h1
+    //           className="text-60 lg:text-40 md:text-30 text-white"
+    //           data-aos="fade-up"
+    //         >
+    //           Discover Your World
+    //         </h1>
+    //         <p
+    //           className="text-white mt-6 md:mt-10"
+    //           data-aos="fade-up"
+    //           data-aos-delay="100"
+    //         >
+    //           Discover amzaing places at exclusive deals
+    //         </p>
+    //       </div>
+
+    //       <div
+    //         className="masthead__tabs"
+    //         data-aos="fade-up"
+    //         data-aos-delay="200"
+    //       >
+
+    //       </div>
+
+    //     </div>
+    //   </div>
+    // </div>
+    // </section>
   );
 };
 

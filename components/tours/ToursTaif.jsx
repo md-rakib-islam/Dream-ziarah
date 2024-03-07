@@ -6,21 +6,20 @@ import Link from "next/link";
 import { useSelector } from "react-redux";
 import Slider from "react-slick";
 import isTextMatched from "../../utils/isTextMatched";
-import useToursMakka from "@/hooks/useToursMakka";
+import useToursTaif from "@/hooks/useToursTaif";
 import useWindowSize from "@/hooks/useWindowSize";
 
-const Tours = () => {
-  const tourItems = useToursMakka();
+const ToursTaif = () => {
+  const tourItems = useToursTaif();
   const { currentCurrency } = useSelector((state) => state.currency);
   const width = useWindowSize();
   const isMobile = width < 768;
   // href={`/tours/${item?.title?.toLowerCase()?.split(" ")?.join("-")}`}
-  console.log("tourItems", tourItems);
+
   const settings = {
     dots: true,
     infinite: true,
     speed: 500,
-
     slidesToShow: 4,
     slidesToScroll: 4,
     responsive: [
@@ -166,7 +165,10 @@ const Tours = () => {
 
               <div className="tourCard__content mt-10">
                 <div className="d-flex justify-content-between lh-14 mb-5">
-                  <div className="text-14 text-light-1">
+                  <div
+                    className="text-14 text-light-1"
+                    style={{ whiteSpace: "nowrap" }}
+                  >
                     {isMobile
                       ? `${item?.duration}+ hrs`
                       : `${item?.duration}+ hours`}
@@ -228,4 +230,4 @@ const Tours = () => {
   );
 };
 
-export default Tours;
+export default ToursTaif;

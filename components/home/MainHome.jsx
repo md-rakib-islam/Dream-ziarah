@@ -1,4 +1,6 @@
+"use client";
 import dynamic from "next/dynamic";
+
 // import TopDestinations from "@/components/destinations/TopDestinations";
 // import Hero7 from "@/components/hero/hero-7";
 // import Hero3 from "@/components/hero/hero-3";
@@ -12,6 +14,9 @@ const TopDestinations = dynamic(() =>
 const Hero3 = dynamic(() => import("@/components/hero/hero-3"));
 const WhyChoose = dynamic(() => import("@/components/home/home-3/WhyChoose"));
 const Tours = dynamic(() => import("@/components/tours/Tours"));
+const ToursMadina = dynamic(() => import("@/components/tours/ToursMadina"));
+const ToursJedda = dynamic(() => import("@/components/tours/ToursJedda"));
+const ToursTaif = dynamic(() => import("@/components/tours/ToursTaif"));
 
 // export const metadata = {
 //   title: "Home-3 || GoTrip - Travel & Tour React NextJS Template",
@@ -29,18 +34,54 @@ const home_3 = () => {
       <section className="layout-pt-md layout-pb-md">
         <div className="container">
           <div className="row y-gap-20 justify-between items-end">
-            <div className="col-auto">
+            <div className="col-8 col-lg-auto">
               <div className="sectionTitle -md">
-                <h1 className="sectionTitle__title">Most Popular Tours</h1>
+                <h1 className="sectionTitle__title">Ziyarat In Makkah</h1>
                 <p className=" sectionTitle__text mt-5 sm:mt-0">
-                  Explore Our Best Sellers: Unmatched Experiences in Every
-                  Journey
+                  Explore Sacred Ziyarat Places in Makkah
                 </p>
               </div>
             </div>
             {/* End .col */}
 
-            <div className="col-auto">
+            <div className="col-4 col-lg-auto">
+              <Link
+                href="#"
+                className="button -md -blue-1 bg-blue-1-05 text-blue-1"
+              >
+                More <div className="icon-arrow-top-right ml-15" />
+              </Link>
+            </div>
+            {/* End .col */}
+          </div>
+          {/* End .row */}
+
+          <div
+            className="row y-gap-30 pt-40 sm:pt-20 item_gap-x30"
+            // style={{ marginLeft: "15px" }}
+          >
+            <Tours />
+          </div>
+          {/* End .row */}
+        </div>
+        {/* End .container */}
+      </section>
+      {/* End Tours Sections */}
+
+      <section className="layout-pt-md layout-pb-md">
+        <div className="container">
+          <div className="row y-gap-20 justify-between items-end">
+            <div className="col-8 col-lg-auto ">
+              <div className="sectionTitle -md">
+                <h1 className="sectionTitle__title">Ziyarat In Madina</h1>
+                <p className=" sectionTitle__text mt-5 sm:mt-0">
+                  Explore Sacred Ziyarat Places in Madina
+                </p>
+              </div>
+            </div>
+            {/* End .col */}
+
+            <div className="col-4 col-lg-auto">
               <Link
                 href="#"
                 className="button -md -blue-1 bg-blue-1-05 text-blue-1"
@@ -53,7 +94,75 @@ const home_3 = () => {
           {/* End .row */}
 
           <div className="row y-gap-30 pt-40 sm:pt-20 item_gap-x30">
-            <Tours />
+            <ToursMadina />
+          </div>
+          {/* End .row */}
+        </div>
+        {/* End .container */}
+      </section>
+      {/* End Tours Sections */}
+
+      <section className="layout-pt-md layout-pb-md">
+        <div className="container">
+          <div className="row y-gap-20 justify-between items-end">
+            <div className="col-8 col-lg-auto">
+              <div className="sectionTitle -md">
+                <h1 className="sectionTitle__title">Ziyarat In Jeddah</h1>
+                <p className=" sectionTitle__text mt-5 sm:mt-0">
+                  Explore Sacred Ziyarat Places in Jeddah
+                </p>
+              </div>
+            </div>
+            {/* End .col */}
+
+            <div className="col-4 col-lg-auto">
+              <Link
+                href="#"
+                className="button -md -blue-1 bg-blue-1-05 text-blue-1"
+              >
+                More <div className="icon-arrow-top-right ml-15" />
+              </Link>
+            </div>
+            {/* End .col */}
+          </div>
+          {/* End .row */}
+
+          <div className="row y-gap-30 pt-40 sm:pt-20 item_gap-x30">
+            <ToursJedda />
+          </div>
+          {/* End .row */}
+        </div>
+        {/* End .container */}
+      </section>
+      {/* End Tours Sections */}
+
+      <section className="layout-pt-md layout-pb-md">
+        <div className="container">
+          <div className="row y-gap-20 justify-between items-end">
+            <div className="col-8 col-lg-auto">
+              <div className="sectionTitle -md">
+                <h1 className="sectionTitle__title">Ziyarat In Taif</h1>
+                <p className=" sectionTitle__text mt-5 sm:mt-0">
+                  Explore Sacred Ziyarat Places in Taif
+                </p>
+              </div>
+            </div>
+            {/* End .col */}
+
+            <div className="col-4 col-lg-auto">
+              <Link
+                href="#"
+                className="button -md -blue-1 bg-blue-1-05 text-blue-1"
+              >
+                More <div className="icon-arrow-top-right ml-15" />
+              </Link>
+            </div>
+            {/* End .col */}
+          </div>
+          {/* End .row */}
+
+          <div className="row y-gap-30 pt-40 sm:pt-20 item_gap-x30">
+            <ToursTaif />
           </div>
           {/* End .row */}
         </div>

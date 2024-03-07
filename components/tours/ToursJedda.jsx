@@ -6,21 +6,20 @@ import Link from "next/link";
 import { useSelector } from "react-redux";
 import Slider from "react-slick";
 import isTextMatched from "../../utils/isTextMatched";
-import useToursMakka from "@/hooks/useToursMakka";
+import useToursJedda from "@/hooks/useToursJedda";
 import useWindowSize from "@/hooks/useWindowSize";
 
-const Tours = () => {
-  const tourItems = useToursMakka();
+const ToursJedda = () => {
+  const tourItems = useToursJedda();
   const { currentCurrency } = useSelector((state) => state.currency);
   const width = useWindowSize();
   const isMobile = width < 768;
   // href={`/tours/${item?.title?.toLowerCase()?.split(" ")?.join("-")}`}
-  console.log("tourItems", tourItems);
+
   const settings = {
     dots: true,
     infinite: true,
     speed: 500,
-
     slidesToShow: 4,
     slidesToScroll: 4,
     responsive: [
@@ -228,4 +227,4 @@ const Tours = () => {
   );
 };
 
-export default Tours;
+export default ToursJedda;

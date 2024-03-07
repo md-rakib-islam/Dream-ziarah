@@ -20,7 +20,8 @@
         background-image: linear-gradient(transparent 24px, black 20px);
         background-size: 0;
         background-repeat: no-repeat;
-        transition: background-size 0.3s cubic-bezier(0.785, 0.135, 0.15, 0.86) 0s;
+        transition: background-size 0.3s cubic-bezier(0.785, 0.135, 0.15, 0.86)
+          0s;
       }
     }
   }
@@ -50,9 +51,9 @@
       border-radius: 4px;
 
       .cardImage__content .swiper-slide,
-      .cardImage__content > img {
-        transition: all 0.8s $easeOutQuart;
-      }
+      // .cardImage__content > img {
+      //   transition: all 0.8s $easeOutQuart;
+      // }
 
       .swiper-slide-active {
         position: relative;
@@ -65,7 +66,8 @@
         background-image: linear-gradient(transparent 24px, black 20px);
         background-size: 0;
         background-repeat: no-repeat;
-        transition: background-size 0.3s cubic-bezier(0.785, 0.135, 0.15, 0.86) 0s;
+        transition: background-size 0.3s cubic-bezier(0.785, 0.135, 0.15, 0.86)
+          0s;
       }
     }
   }
@@ -73,7 +75,7 @@
   &:hover {
     .tourCard {
       &__image {
-        .cardImage__content > img,
+        // .cardImage__content > img,
         .swiper-slide {
           transform: scale(1.15);
         }
@@ -110,7 +112,8 @@
         background-image: linear-gradient(transparent 24px, black 20px);
         background-size: 0;
         background-repeat: no-repeat;
-        transition: background-size 0.3s cubic-bezier(0.785, 0.135, 0.15, 0.86) 0s;
+        transition: background-size 0.3s cubic-bezier(0.785, 0.135, 0.15, 0.86)
+          0s;
       }
     }
   }
@@ -155,7 +158,8 @@
         background-image: linear-gradient(transparent 24px, black 20px);
         background-size: 0;
         background-repeat: no-repeat;
-        transition: background-size 0.3s cubic-bezier(0.785, 0.135, 0.15, 0.86) 0s;
+        transition: background-size 0.3s cubic-bezier(0.785, 0.135, 0.15, 0.86)
+          0s;
       }
     }
   }
@@ -200,7 +204,8 @@
         background-image: linear-gradient(transparent 24px, black 20px);
         background-size: 0;
         background-repeat: no-repeat;
-        transition: background-size 0.3s cubic-bezier(0.785, 0.135, 0.15, 0.86) 0s;
+        transition: background-size 0.3s cubic-bezier(0.785, 0.135, 0.15, 0.86)
+          0s;
       }
     }
   }
@@ -275,7 +280,8 @@
         background-image: linear-gradient(transparent 24px, black 20px);
         background-size: 0;
         background-repeat: no-repeat;
-        transition: background-size 0.3s cubic-bezier(0.785, 0.135, 0.15, 0.86) 0s;
+        transition: background-size 0.3s cubic-bezier(0.785, 0.135, 0.15, 0.86)
+          0s;
       }
     }
   }

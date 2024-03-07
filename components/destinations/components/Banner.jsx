@@ -20,6 +20,7 @@ const Banner = ({ slug }) => {
       data?.content_images[slug.charAt(0).toUpperCase() + slug.slice(1)]
     }`;
   }
+  console.log("skdfjsdfwer", slug);
   useEffect(() => {
     localStorage.clear();
   }, []);
@@ -42,11 +43,20 @@ const Banner = ({ slug }) => {
         />
         <div className="absolute z-2 px-50 py-60 md:py-20 md:px-30">
           <h1 className="text-50 fw-600 text-white lg:text-40 md:text-30">
-            Explore {slug.charAt(0).toUpperCase() + slug.slice(1)}
+            Explore{" "}
+            {slug == "medina"
+              ? "Madina"
+              : slug == "jedda"
+              ? "Jeddah"
+              : slug.charAt(0).toUpperCase() + slug.slice(1)}
           </h1>
           <div className="text-white">
             Explore deals, travel guides and things to do in{" "}
-            {slug.charAt(0).toUpperCase() + slug.slice(1)}
+            {slug == "medina"
+              ? "Madina"
+              : slug == "jedda"
+              ? "Jeddah"
+              : slug.charAt(0).toUpperCase() + slug.slice(1)}
           </div>
         </div>
         {/* <div className="absolute d-flex justify-end items-end col-12 h-full z-1 px-10 py-10">

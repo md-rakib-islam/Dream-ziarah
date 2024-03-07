@@ -17,9 +17,13 @@ import TestimonialLeftCol from "@/components/home/home-1/TestimonialLeftCol";
 // import Hotels from "@/components/hotels/Hotels2";
 // import Rentals from "@/components/rentals/Rentals";
 import Tours from "@/components/tours/Tours";
+import ToursMadina from "@/components/tours/ToursMadina";
+import ToursJedda from "@/components/tours/ToursJedda";
+import ToursTaif from "@/components/tours/ToursTaif";
 import { slightContent } from "@/data/desinations";
 import getAllMenuItem from "@/services/menuService";
 import Link from "next/link";
+// import { useEffect, useState } from "react";
 
 const destinationsMetadatas = {
   jedda: {
@@ -75,9 +79,29 @@ export async function generateMetadata({ params, searchParams }, parent) {
 }
 
 const Destinations = ({ params }) => {
+  // const [makka, setMakka] = useState(false);
+  // const [jedda, setJedda] = useState(false);
+  // const [madina, setMadina] = useState(false);
+  // const [taif, setTaif] = useState(false);
   const slug = params.slug;
 
-  console.log("slugItem", slug);
+  // useEffect(() => {
+  //   if (params?.slug && params?.slug.includes("makkah-city")) {
+  //     setMakka(true);
+  //   } else if (params?.slug && params?.slug.includes("madinah-city")) {
+  //     setMadina(true);
+  //   } else if (params?.slug && params?.slug.includes("taif")) {
+  //     setTaif(true);
+  //   } else if (params?.slug && params?.slug.includes("Jeddah")) {
+  //     setJedda(true);
+  //   } else {
+  //     setMakka(false);
+  //     setMadina(false);
+  //     setTaif(false);
+  //     setJedda(false);
+  //   }
+  // }, [params?.slug]);
+  // console.log("slug", params.slug);
 
   return (
     <>
@@ -108,7 +132,11 @@ const Destinations = ({ params }) => {
             <div className="col-auto">
               <h2>
                 What to know before visiting{" "}
-                {slug.charAt(0).toUpperCase() + slug.slice(1)}
+                {slug == "medina"
+                  ? "Madina"
+                  : slug == "jedda"
+                  ? "Jeddah"
+                  : slug.charAt(0).toUpperCase() + slug.slice(1)}
               </h2>
             </div>
             {/* End .col-auto */}
@@ -145,39 +173,155 @@ const Destinations = ({ params }) => {
       </section>
       {/* End Top Banner,categorie,intro,weather, generic info section */}
 
-      <section className="">
-        <div className="container">
-          <div className="row y-gap-20 justify-between items-end">
-            <div className="col-auto">
-              <div className="sectionTitle -md">
-                <h1 className="sectionTitle__title">Most Popular Tours</h1>
-                <p className=" sectionTitle__text mt-5 sm:mt-0">
-                  Explore Our Best Sellers: Unmatched Experiences in Every
-                  Journey
-                </p>
+      {params?.slug && params?.slug.includes("makkah") && (
+        <section className="layout-pt-lg layout-pb-lg mt-50 border-top-light">
+          <div className="container">
+            <div className="row y-gap-20 justify-between items-end">
+              <div className="col-auto">
+                <div className="sectionTitle -md">
+                  <h2 className="sectionTitle__title">
+                    Popular Tours In Makkah
+                  </h2>
+                  <p className=" sectionTitle__text mt-5 sm:mt-0">
+                    Find Your Perfect Makkah Tour: Private, Shared, and More
+                  </p>
+                </div>
               </div>
-            </div>
-            {/* End .col */}
+              {/* End .col */}
 
-            <div className="col-auto">
-              <Link
-                href="#"
-                className="button -md -blue-1 bg-blue-1-05 text-blue-1"
-              >
-                More <div className="icon-arrow-top-right ml-15" />
-              </Link>
+              <div className="col-auto">
+                <Link
+                  href="#"
+                  className="button -md -blue-1 bg-blue-1-05 text-blue-1"
+                >
+                  More <div className="icon-arrow-top-right ml-15" />
+                </Link>
+              </div>
+              {/* End .col */}
             </div>
-            {/* End .col */}
-          </div>
-          {/* End .row */}
+            {/* End .row */}
 
-          <div className="row y-gap-30 pt-40 sm:pt-20 item_gap-x30">
-            <Tours />
+            <div className="row y-gap-30 pt-40 sm:pt-20 item_gap-x30">
+              <Tours />
+            </div>
+            {/* End .row */}
           </div>
-          {/* End .row */}
-        </div>
-        {/* End .container */}
-      </section>
+          {/* End .container */}
+        </section>
+      )}
+
+      {/* End Tours Sections */}
+
+      {params?.slug && params?.slug.includes("medina") && (
+        <section className="layout-pt-lg layout-pb-lg mt-50 border-top-light">
+          <div className="container">
+            <div className="row y-gap-20 justify-between items-end">
+              <div className="col-auto">
+                <div className="sectionTitle -md">
+                  <h1 className="sectionTitle__title">
+                    Popular Tours In Madina
+                  </h1>
+                  <p className=" sectionTitle__text mt-5 sm:mt-0">
+                    Find Your Perfect Madina Tour: Private, Shared, and More
+                  </p>
+                </div>
+              </div>
+              {/* End .col */}
+
+              <div className="col-auto">
+                <Link
+                  href="#"
+                  className="button -md -blue-1 bg-blue-1-05 text-blue-1"
+                >
+                  More <div className="icon-arrow-top-right ml-15" />
+                </Link>
+              </div>
+              {/* End .col */}
+            </div>
+            {/* End .row */}
+
+            <div className="row y-gap-30 pt-40 sm:pt-20 item_gap-x30">
+              <ToursMadina />
+            </div>
+            {/* End .row */}
+          </div>
+          {/* End .container */}
+        </section>
+      )}
+      {/* End Tours Sections */}
+
+      {params?.slug && params?.slug.includes("jedda") && (
+        <section className="layout-pt-lg layout-pb-lg mt-50 border-top-light">
+          <div className="container">
+            <div className="row y-gap-20 justify-between items-end">
+              <div className="col-auto">
+                <div className="sectionTitle -md">
+                  <h1 className="sectionTitle__title">
+                    Popular Tours In Jeddah
+                  </h1>
+                  <p className=" sectionTitle__text mt-5 sm:mt-0">
+                    Find Your Perfect Jeddah Tour: Private, Shared, and More
+                  </p>
+                </div>
+              </div>
+              {/* End .col */}
+
+              <div className="col-auto">
+                <Link
+                  href="#"
+                  className="button -md -blue-1 bg-blue-1-05 text-blue-1"
+                >
+                  More <div className="icon-arrow-top-right ml-15" />
+                </Link>
+              </div>
+              {/* End .col */}
+            </div>
+            {/* End .row */}
+
+            <div className="row y-gap-30 pt-40 sm:pt-20 item_gap-x30">
+              <ToursJedda />
+            </div>
+            {/* End .row */}
+          </div>
+          {/* End .container */}
+        </section>
+      )}
+      {/* End Tours Sections */}
+
+      {params?.slug && params?.slug.includes("taif") && (
+        <section className="layout-pt-lg layout-pb-lg mt-50 border-top-light">
+          <div className="container">
+            <div className="row y-gap-20 justify-between items-end">
+              <div className="col-auto">
+                <div className="sectionTitle -md">
+                  <h1 className="sectionTitle__title">Popular Tours In Taif</h1>
+                  <p className=" sectionTitle__text mt-5 sm:mt-0">
+                    Find Your Perfect Taif Tour: Private, Shared, and More
+                  </p>
+                </div>
+              </div>
+              {/* End .col */}
+
+              <div className="col-auto">
+                <Link
+                  href="#"
+                  className="button -md -blue-1 bg-blue-1-05 text-blue-1"
+                >
+                  More <div className="icon-arrow-top-right ml-15" />
+                </Link>
+              </div>
+              {/* End .col */}
+            </div>
+            {/* End .row */}
+
+            <div className="row y-gap-30 pt-40 sm:pt-20 item_gap-x30">
+              <ToursTaif />
+            </div>
+            {/* End .row */}
+          </div>
+          {/* End .container */}
+        </section>
+      )}
       {/* End Tours Sections */}
 
       <section className="layout-pt-md layout-pb-lg">
@@ -186,7 +330,12 @@ const Destinations = ({ params }) => {
             <div className="col-auto">
               <div className="sectionTitle -md">
                 <h2 className="sectionTitle__title">
-                  Top sights in {slug.charAt(0).toUpperCase() + slug.slice(1)}
+                  Top sights in{" "}
+                  {slug == "medina"
+                    ? "Madina"
+                    : slug == "jedda"
+                    ? "Jeddah"
+                    : slug.charAt(0).toUpperCase() + slug.slice(1)}
                 </h2>
                 <p className=" sectionTitle__text mt-5 sm:mt-0">
                   {slightContent[slug]?.title}
@@ -258,7 +407,11 @@ const Destinations = ({ params }) => {
               <h2 className="text-30 fw-500">
                 FAQs about
                 <br />
-                {slug.charAt(0).toUpperCase() + slug.slice(1)}
+                {slug == "medina"
+                  ? "Madina"
+                  : slug == "jedda"
+                  ? "Jeddah"
+                  : slug.charAt(0).toUpperCase() + slug.slice(1)}
               </h2>
             </div>
             {/* End .col */}
@@ -283,7 +436,11 @@ const Destinations = ({ params }) => {
               <div className="sectionTitle -md">
                 <h2 className="sectionTitle__title">
                   Destinations near{" "}
-                  {slug.charAt(0).toUpperCase() + slug.slice(1)}
+                  {slug == "medina"
+                    ? "Madina"
+                    : slug == "jedda"
+                    ? "Jeddah"
+                    : slug.charAt(0).toUpperCase() + slug.slice(1)}
                 </h2>
                 <p className=" sectionTitle__text mt-5 sm:mt-0">
                   These popular destinations have a lot to offer

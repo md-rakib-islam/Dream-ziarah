@@ -1,5 +1,4 @@
-
-'use client'
+"use client";
 
 import { BASE_URL } from "@/constant/constants";
 import { useGetImagesByMenuIdQuery } from "@/features/image/imageApi";
@@ -10,24 +9,29 @@ import { Navigation } from "swiper";
 import { Swiper, SwiperSlide } from "swiper/react";
 // import { destinations4 } from "../../data/desinations";
 
-const TopDestinations2 = ({slug}) => {
-  const {menuItems} = useSelector(state => state.menus);
+const TopDestinations2 = ({ slug }) => {
+  const { menuItems } = useSelector((state) => state.menus);
   const ziarahId = menuItems.find((item) => item.name === "Destinations")?.id;
-  const {isSuccess, data, isLoading} = useGetImagesByMenuIdQuery(ziarahId);
-  
-  let destinations = [];
-  if(isSuccess){
-    console.log(data.content_images);
-      destinations = menuItems.find((item) => item.name === "Destinations")?.children?.filter((subItem) => subItem.name.toLowerCase() !==slug)?.map((item) => ( {
-      id: item.id,
-      img: `${BASE_URL}/media/${data?.content_images[item?.name?.toLowerCase()]}`,
-      location: item.name,
-      properties: "4,090",
-      delayAnimation: "0",
-    }));
-  }
+  const { isSuccess, data, isLoading } = useGetImagesByMenuIdQuery(ziarahId);
 
-  
+  let destinations = [];
+  if (isSuccess) {
+    console.log(data.content_images);
+    destinations = menuItems
+      .find((item) => item.name === "Destinations")
+      ?.children?.filter((subItem) => subItem.name.toLowerCase() !== slug)
+      ?.map((item) => ({
+        id: item.id,
+        img: `${BASE_URL}/media/${
+          data?.content_images[item?.name?.toLowerCase()]
+        }`,
+        location: item.name,
+        properties: "4,090",
+        delayAnimation: "0",
+      }));
+  }
+  console.log("destinations", destinations);
+
   return (
     <>
       <Swiper
@@ -74,7 +78,11 @@ const TopDestinations2 = ({slug}) => {
               </div>
               <div className="citiesCard__content mt-10">
                 <h4 className="text-18 lh-13 fw-500 text-dark-1 text-capitalize">
-                  {item.location}
+                  {item.location == "Medina"
+                    ? "Madina"
+                    : item.location == "Jedda"
+                    ? "Jeddah"
+                    : item.location}
                 </h4>
                 {/* <div className="text-14 text-light-1">
                   {item.properties} properties

@@ -1,29 +1,35 @@
-
-
-'use client'
+"use client";
 
 import Overview from "@/components/tour-single/Overview";
 import SidebarRight from "@/components/tour-single/SidebarRight";
 import TourSnapShot from "@/components/tour-single/TourSnapShot";
 import Image from "next/image";
-import { useState } from 'react';
+import { useState } from "react";
 import { Gallery, Item } from "react-photoswipe-gallery";
 import { Navigation } from "swiper";
 import { Swiper, SwiperSlide } from "swiper/react";
 import HajjSidebarRight from "../hajj/HajjSidebarRight";
 import UmrahSidebarRight from "../umrah/UmrahSidebarRight";
+import { BASE_URL } from "@/constant/constants";
+import useWindowSize from "@/hooks/useWindowSize";
+// import useWindowSize from "@/hooks/useWindowSize";
 
-export default function TourGallery({tour, hajj, umrah}) {
-    const [isOpen, setOpen] = useState(false);
-   
+export default function TourGallery({ tour, hajj, umrah }) {
+  const [isOpen, setOpen] = useState(false);
+  const width = useWindowSize();
+  const isMobile = width < 768;
+  console.log("tour?.slideImg", tour?.slideImg);
+
   return (
     <>
-    
-    <section className="pt-40 js-pin-container">
+      <section className="pt-40 js-pin-container">
         <div className="container">
           <div className="row y-gap-30">
             <div className="col-xl-8">
-              <div className="relative d-flex justify-center overflow-hidden js-section-slider">
+              <div
+                className="relative d-flex justify-center overflow-hidden js-section-slider"
+                // style={{ height: isMobile ? 300 : 400 }}
+              >
                 <Swiper
                   modules={[Navigation]}
                   loop={true}
@@ -36,9 +42,9 @@ export default function TourGallery({tour, hajj, umrah}) {
                     <SwiperSlide key={i}>
                       <Image
                         width={1281}
-                        height={751}
+                        height={400}
                         priority
-                        src={slide}
+                        src={`${BASE_URL}/media/${slide}`}
                         alt={tour?.title}
                         className="rounded-4 col-12 cover object-cover"
                       />
@@ -53,14 +59,16 @@ export default function TourGallery({tour, hajj, umrah}) {
                       key={i}
                     >
                       <Item
-                        original={slide}
-                        thumbnail={slide}
+                        original={`${BASE_URL}/media/${slide}`}
+                        thumbnail={`${BASE_URL}/media/${slide}`}
                         width={1280}
                         height={750}
                       >
                         {({ ref, open }) => (
                           <div
-                            className="button -blue-1 px-24 py-15 bg-white text-dark-1 js-gallery"
+                            className={`button -blue-1 ${
+                              isMobile ? "px-10 py-5" : "px-24 py-15"
+                            } bg-white text-dark-1 js-gallery`}
                             ref={ref}
                             onClick={open}
                             role="button"
@@ -88,19 +96,23 @@ export default function TourGallery({tour, hajj, umrah}) {
               {/* slider gallery */}
 
               <h3 className="text-22 fw-500 mt-40">Tour snapshot</h3>
-              <TourSnapShot hajj={hajj} umrah={umrah}/>
+              <TourSnapShot hajj={hajj} umrah={umrah} />
               {/* End toursnapshot */}
               <div className="border-top-light mt-40 mb-40"></div>
 
-              <Overview hajj={hajj}/>
+              <Overview hajj={hajj} />
               {/* End  Overview */}
             </div>
             {/* End .col-xl-8 */}
 
             <div className="col-xl-4">
-              {
-                hajj ? (<HajjSidebarRight/>) : umrah ? <UmrahSidebarRight/> : (<SidebarRight />)
-              }
+              {hajj ? (
+                <HajjSidebarRight />
+              ) : umrah ? (
+                <UmrahSidebarRight />
+              ) : (
+                <SidebarRight />
+              )}
             </div>
             {/* End .col-xl-4 */}
           </div>
@@ -109,5 +121,5 @@ export default function TourGallery({tour, hajj, umrah}) {
         {/* End container */}
       </section>
     </>
-  )
+  );
 }

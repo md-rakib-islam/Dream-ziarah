@@ -1,18 +1,20 @@
 import { Interweave } from "interweave";
 import { useSelector } from "react-redux";
 
-const ImportantInfo = ({hajj, umrah}) => {
-  const {tourItem} = useSelector(state => state.tour);
+const ImportantInfo = ({ hajj, umrah, departure }) => {
+  const { tourItem } = useSelector((state) => state.tour);
+
+  console.log("departure", departure);
   return (
     <div className="row x-gap-40 y-gap-40 justify-between pt-20">
       <div className="col-lg-4 col-md-6">
         <div className="fw-500 mb-10">Inclusions</div>
         <Interweave
-                allowAttributes
-                allowElements
-                disableLineBreaks={false}
-                content={tourItem?.inclution}
-              />
+          allowAttributes
+          allowElements
+          disableLineBreaks={false}
+          content={tourItem?.inclution}
+        />
         {/* <ul className="list-disc">
           <li>Superior Coach, Wi-Fi and USB Charging On-board</li>
           <li>Expert guide</li>
@@ -24,32 +26,35 @@ const ImportantInfo = ({hajj, umrah}) => {
       <div className="col-lg-4 col-md-6">
         <div className="fw-500 mb-10">Departure details</div>
         <div className="text-15">
-          {
-            hajj ? <>Package Duration Options:
-
-            Select from two distinctive packages: a comprehensive 24-day journey or a condensed 14-day option.
-            Performance of Hajj rituals focused on the pivotal 6th day.
-            
-            Booking Deadline:
-            
-            Secure your reservation by booking before 30th January.
-            
-            Departure Calendar Dates:
-            
-            For the 24-day package, choose departure on 4th June.
-            For the 14-day package, select departure on 10th June.
-            
-            Departure Airports:
-            
-            Departure options available from Milano, Rome, and Venice.
-            
-            Cancellation Policy:
-            
-            Last date for cancellation: 30th March.
-            Cancellation fee: €200, with the remainder promptly refunded.
-            
-            Experience this sacred pilgrimage with confidence, ensuring a seamless departure tailored to your chosen package and schedule.</> : umrah ? <>Check-out: Complete the check-out process from your respective hotel on the last day of the tour.Transfer to Airport: Enjoy a comfortable transfer from your accommodation to the airport for your departure.Flight Information: Board your scheduled flight, reaching your destination with the memories of a spiritually fulfilling journey.Farewell: Bid farewell to the sacred cities of Makkah and Madinah, carrying the essence of this pilgrimage with you.</> : <>    Our service includes convenient traveler pickup within the Makkah City area, within a distance not exceeding 9 kilometers from your hotel. We are pleased to offer pickup services for all tourists and Umrah pilgrims from their respective hotels. We ensure a timely and efficient pickup process to make your journey as smooth as possible. Please be ready for pickup at your hotel within the specified distance limit in the Makkah City area.</>
-          }
+          {hajj ? (
+            <>
+              Package Duration Options: Select from two distinctive packages: a
+              comprehensive 24-day journey or a condensed 14-day option.
+              Performance of Hajj rituals focused on the pivotal 6th day.
+              Booking Deadline: Secure your reservation by booking before 30th
+              January. Departure Calendar Dates: For the 24-day package, choose
+              departure on 4th June. For the 14-day package, select departure on
+              10th June. Departure Airports: Departure options available from
+              Milano, Rome, and Venice. Cancellation Policy: Last date for
+              cancellation: 30th March. Cancellation fee: €200, with the
+              remainder promptly refunded. Experience this sacred pilgrimage
+              with confidence, ensuring a seamless departure tailored to your
+              chosen package and schedule.
+            </>
+          ) : umrah ? (
+            <>
+              Check-out: Complete the check-out process from your respective
+              hotel on the last day of the tour.Transfer to Airport: Enjoy a
+              comfortable transfer from your accommodation to the airport for
+              your departure.Flight Information: Board your scheduled flight,
+              reaching your destination with the memories of a spiritually
+              fulfilling journey.Farewell: Bid farewell to the sacred cities of
+              Makkah and Madinah, carrying the essence of this pilgrimage with
+              you.
+            </>
+          ) : (
+            <>{departure?.departure}</>
+          )}
         </div>
       </div>
 
@@ -70,28 +75,47 @@ const ImportantInfo = ({hajj, umrah}) => {
           <li>Lunch</li>
         </ul> */}
         <Interweave
-                allowAttributes
-                allowElements
-                disableLineBreaks={false}
-                content={tourItem?.exclusion}
-              />
+          allowAttributes
+          allowElements
+          disableLineBreaks={false}
+          content={tourItem?.exclusion}
+        />
       </div>
 
       <div className="col-12">
         <div className="fw-500 mb-10">Additional information</div>
         <ul className="list-disc">
-          <li><span className="text-dark fw-500">Confirmation:</span> You will receive a confirmation at the time of booking.</li>
           <li>
-          <span className="text-dark fw-500">Participant Suitability:</span> Most travelers can participate.
+            <span className="text-dark fw-500">Confirmation:</span> You will
+            receive a confirmation at the time of booking.
           </li>
           <li>
-          <span className="text-dark fw-500">Weather Consideration:</span> Weather-dependent experience. In case of poor weather, you'll be offered an alternative date or a full refund.
+            <span className="text-dark fw-500">Participant Suitability:</span>{" "}
+            Most travelers can participate.
+          </li>
+          <li>
+            <span className="text-dark fw-500">Weather Consideration:</span>{" "}
+            Weather-dependent experience. In case of poor weather, you'll be
+            offered an alternative date or a full refund.
           </li>
           {/* <li>
           <span className="text-dark fw-500">Private Experience:</span> This is a private tour/activity. Your group will be the sole participants.
           </li> */}
           <li>
-          <span className="text-dark fw-500">Refund Window:</span> {hajj ? <>To receive a full refund, please cancel it before 30th March.</> : umrah ? <>To receive a full refund, please cancel it before 7 days before the tour.</> : <>To receive a full refund, please cancel at least 24 hours before the experience start date.</>} 
+            <span className="text-dark fw-500">Refund Window:</span>{" "}
+            {hajj ? (
+              <>To receive a full refund, please cancel it before 30th March.</>
+            ) : umrah ? (
+              <>
+                To receive a full refund, please cancel it before 7 days before
+                the tour.
+              </>
+            ) : (
+              <>
+                To receive a full refund, please cancel at least 24 hours before
+                the experience start date.
+              </>
+            )}
           </li>
         </ul>
       </div>

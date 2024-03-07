@@ -4,9 +4,9 @@ import { Interweave } from "interweave";
 import { useSelector } from "react-redux";
 
 const ItineraryContent = () => {
-  const {itenarayItems} = useSelector(state => state.tour);
-  // console.log("itenaray",itenarayItems)
-  
+  const { itenarayItems } = useSelector((state) => state.tour);
+  console.log("itenaray", itenarayItems);
+
   const modifiedItenarayItem = itenarayItems?.map((item, indx) => ({
     id: item.id,
     targetCollapse: `item_${indx + 1}`,
@@ -15,8 +15,8 @@ const ItineraryContent = () => {
     img: "/img/tours/list.png",
     content: item.description,
     classShowHide: "",
-    location : item.location
-  }))
+    location: item.location,
+  }));
 
   modifiedItenarayItem.reverse();
 

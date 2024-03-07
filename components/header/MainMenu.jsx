@@ -24,7 +24,7 @@ const MainMenu = ({ style = "" }) => {
               isActiveLink(menu?.routePath, currentPathName) ? "current" : ""
             } menu-item-has-children`}
           >
-            {menu?.children?.length > 0 && menu.name !== "Tours" ? (
+            {menu?.children?.length > 0 ? (
               <a href="#">
                 <span className="mr-10">{menu.name}</span>
                 <i className="icon icon-chevron-sm-down" />
@@ -34,19 +34,22 @@ const MainMenu = ({ style = "" }) => {
                 <span className="mr-10">{menu.name}</span>
               </Link>
             )}
-            {menu.children.length > 0 && menu.name !== "Tours" && (
+            {menu.children.length > 0 && (
               <ul className="subnav">
                 {menu.children.map((item) => (
                   <li
                     key={item.id}
                     className={`${
-                      isActiveLink(item.routePath, pathname) &&
-                      menu.name !== "Tours"
-                        ? "current"
-                        : ""
+                      isActiveLink(item.routePath, pathname) ? "current" : ""
                     } menu-item-has-children`}
                   >
-                    <Link href={item.routePath}>{item.name}</Link>
+                    <Link href={item.routePath}>
+                      {item.name == "Jedda"
+                        ? "Jeddah"
+                        : item.name == "Medina"
+                        ? "Madina"
+                        : item.name}
+                    </Link>
                   </li>
                 ))}
               </ul>

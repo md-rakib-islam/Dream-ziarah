@@ -14,7 +14,12 @@
 
 # production
 /build
-
+/ziarahOld03.0324.zip
+/ziarahOld-29-02.24.zip
+/ziarahOld-06-03.24.zip
+/ziarahOld-04.03.2024.zip
+/ziarahOld.zip
+/ziarahOld.rar
 # misc
 .DS_Store
 *.pem

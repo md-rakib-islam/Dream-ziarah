@@ -14,6 +14,9 @@ import TourGallery from "@/components/tour-single/TourGallery";
 import ReviewProgress2 from "@/components/activity-single/guest-reviews/ReviewProgress2";
 import Itinerary from "@/components/tour-single/itinerary";
 import Tours from "@/components/tours/Tours";
+import ToursMadina from "@/components/tours/ToursMadina";
+import ToursJedda from "@/components/tours/ToursJedda";
+import ToursTaif from "@/components/tours/ToursTaif";
 import { BASE_URL } from "@/constant/constants";
 import { useGetImagesByMenuIdQuery } from "@/features/image/imageApi";
 import { addItenarayItems, addtourItem } from "@/features/tour/tourSlice";
@@ -22,7 +25,7 @@ import { singleTourInfo } from "@/hooks/useTours";
 import Loading from "@/app/loading";
 import { capitalize } from "@/utils";
 import Link from "next/link";
-import { useEffect } from "react";
+import { useEffect, useState } from "react";
 import { useDispatch, useSelector } from "react-redux";
 import {
   EmailIcon,
@@ -39,9 +42,17 @@ import {
 
 const TourSingleV1Dynamic = ({ params, children }) => {
   const dispatch = useDispatch();
+  const [makka, setMakka] = useState(false);
+  const [jedda, setJedda] = useState(false);
+  const [madina, setMadina] = useState(false);
+  const [taif, setTaif] = useState(false);
   const id = params?.slug;
   const { menuItems } = useSelector((state) => state.menus);
   const tourId = menuItems.find((item) => item.name === "Tour")?.id;
+
+  // const ziarahId = menuItems
+  //   .find((item) => item.name === "Tours")
+  //   ?.children?.find((child) => child?.name == "Makka Tours")?.id;
   // const {data, isSuccess, isFulfilled} = useGetContentsByMenuContentIdQuery(id);
   const { data, isSuccess, isFulfilled } =
     useGetContentsByMenuContentTitleQuery(capitalize(params?.name));
@@ -66,9 +77,9 @@ const TourSingleV1Dynamic = ({ params, children }) => {
     tour = {
       id: data?.id,
       tag: "",
-      slideImg: [
-        `${BASE_URL}/media/${imageContents.content_images[data?.name]}`,
-      ],
+      slideImg: Array.isArray(imageContents?.content_images[data?.name])
+        ? imageContents?.content_images[data?.name]
+        : [`${imageContents.content_images[data?.name]}`],
       title: data?.name,
       location: singleTourInfo[data?.name]?.location,
       duration: data?.duration,
@@ -77,7 +88,9 @@ const TourSingleV1Dynamic = ({ params, children }) => {
       tourType: "Attractions & Museums",
       delayAnimation: "200",
       languages: singleTourInfo[data?.name]?.languages,
+      departure: singleTourInfo[data?.name]?.departure,
     };
+    // checkLocation(params?.name);
     // console.log("Hele", data);
     dispatch(addtourItem(data));
   }
@@ -87,9 +100,67 @@ const TourSingleV1Dynamic = ({ params, children }) => {
     if (!hasReloaded) {
       localStorage.setItem("tourHasReloaded", "true");
       window.location.reload();
+      checkLocation(params?.name);
     }
     localStorage.removeItem("hasReloaded" || "");
   }, []);
+  useEffect(() => {
+    if (params?.name && params?.name.includes("makkah-city")) {
+      setMakka(true);
+    } else if (params?.name && params?.name.includes("madinah-city")) {
+      setMadina(true);
+    } else if (params?.name && params?.name.includes("taif")) {
+      setTaif(true);
+    } else if (params?.name && params?.name.includes("jeddah")) {
+      setJedda(true);
+    } else {
+      setMakka(false);
+      setMadina(false);
+      setTaif(false);
+      setJedda(false);
+    }
+  }, [params?.name]);
+
+  console.log(
+    "imageContents",
+    // data?.name,
+    imageContents,
+
+    // capitalize(params?.name),
+    imageContents?.content_images[data?.name]
+  );
+
+  // function checkLocation(params) {
+  //   // Convert params.name to lowercase for case-insensitive comparison
+
+  //   // Check if params.name includes "makkah-city"
+  //   if (params.includes("makkah-city")) {
+  //     setMakka(true);
+  //   } else {
+  //     setTaif(false);
+  //   }
+
+  //   // Check if params.name includes "taif"
+  //   if (params.includes("taif")) {
+  //     setTaif(true);
+  //   } else {
+  //     setTaif(false);
+  //   }
+  //   // Check if params.name includes "makkah-city"
+  //   if (params.includes("madina-city")) {
+  //     setMadina(true);
+  //   } else {
+  //     setMadina(false);
+  //   }
+  //   // Check if params.name includes "jedda"
+  //   if (params.includes("jedda")) {
+  //     setJedda(true);
+  //   } else {
+  //     setJedda(false);
+  //   }
+
+  //   // Return the states
+  // }
 
   return (
     <>
@@ -236,7 +307,7 @@ const TourSingleV1Dynamic = ({ params, children }) => {
               </div>
             </div>
             {/* End row */}
-            <ImportantInfo />
+            <ImportantInfo departure={tour} />
           </div>
           {/* End pt-40 */}
         </div>
@@ -298,39 +369,155 @@ const TourSingleV1Dynamic = ({ params, children }) => {
       </section> */}
       {/* End Reply Comment box section */}
 
-      <section className="layout-pt-lg layout-pb-lg mt-50 border-top-light">
-        <div className="container">
-          <div className="row y-gap-20 justify-between items-end">
-            <div className="col-auto">
-              <div className="sectionTitle -md">
-                <h2 className="sectionTitle__title">Most Popular Tours</h2>
-                <p className=" sectionTitle__text mt-5 sm:mt-0">
-                  Explore Our Best Sellers: Unmatched Experiences in Every
-                  Journey
-                </p>
+      {makka && (
+        <section className="layout-pt-lg layout-pb-lg mt-50 border-top-light">
+          <div className="container">
+            <div className="row y-gap-20 justify-between items-end">
+              <div className="col-auto">
+                <div className="sectionTitle -md">
+                  <h2 className="sectionTitle__title">
+                    Popular Tours In Makkah
+                  </h2>
+                  <p className=" sectionTitle__text mt-5 sm:mt-0">
+                    Find Your Perfect Makkah Tour: Private, Shared, and More
+                  </p>
+                </div>
               </div>
-            </div>
-            {/* End .col */}
+              {/* End .col */}
 
-            <div className="col-auto">
-              <Link
-                href="#"
-                className="button -md -blue-1 bg-blue-1-05 text-blue-1"
-              >
-                More <div className="icon-arrow-top-right ml-15" />
-              </Link>
+              <div className="col-auto">
+                <Link
+                  href="#"
+                  className="button -md -blue-1 bg-blue-1-05 text-blue-1"
+                >
+                  More <div className="icon-arrow-top-right ml-15" />
+                </Link>
+              </div>
+              {/* End .col */}
             </div>
-            {/* End .col */}
-          </div>
-          {/* End .row */}
+            {/* End .row */}
 
-          <div className="row y-gap-30 pt-40 sm:pt-20 item_gap-x30">
-            <Tours />
+            <div className="row y-gap-30 pt-40 sm:pt-20 item_gap-x30">
+              <Tours />
+            </div>
+            {/* End .row */}
           </div>
-          {/* End .row */}
-        </div>
-        {/* End .container */}
-      </section>
+          {/* End .container */}
+        </section>
+      )}
+
+      {/* End Tours Sections */}
+
+      {madina && (
+        <section className="layout-pt-lg layout-pb-lg mt-50 border-top-light">
+          <div className="container">
+            <div className="row y-gap-20 justify-between items-end">
+              <div className="col-auto">
+                <div className="sectionTitle -md">
+                  <h1 className="sectionTitle__title">
+                    Popular Tours In Madina
+                  </h1>
+                  <p className=" sectionTitle__text mt-5 sm:mt-0">
+                    Find Your Perfect Madina Tour: Private, Shared, and More
+                  </p>
+                </div>
+              </div>
+              {/* End .col */}
+
+              <div className="col-auto">
+                <Link
+                  href="#"
+                  className="button -md -blue-1 bg-blue-1-05 text-blue-1"
+                >
+                  More <div className="icon-arrow-top-right ml-15" />
+                </Link>
+              </div>
+              {/* End .col */}
+            </div>
+            {/* End .row */}
+
+            <div className="row y-gap-30 pt-40 sm:pt-20 item_gap-x30">
+              <ToursMadina />
+            </div>
+            {/* End .row */}
+          </div>
+          {/* End .container */}
+        </section>
+      )}
+      {/* End Tours Sections */}
+
+      {jedda && (
+        <section className="layout-pt-lg layout-pb-lg mt-50 border-top-light">
+          <div className="container">
+            <div className="row y-gap-20 justify-between items-end">
+              <div className="col-auto">
+                <div className="sectionTitle -md">
+                  <h1 className="sectionTitle__title">
+                    Popular Tours In Jeddah
+                  </h1>
+                  <p className=" sectionTitle__text mt-5 sm:mt-0">
+                    Find Your Perfect Jeddah Tour: Private, Shared, and More
+                  </p>
+                </div>
+              </div>
+              {/* End .col */}
+
+              <div className="col-auto">
+                <Link
+                  href="#"
+                  className="button -md -blue-1 bg-blue-1-05 text-blue-1"
+                >
+                  More <div className="icon-arrow-top-right ml-15" />
+                </Link>
+              </div>
+              {/* End .col */}
+            </div>
+            {/* End .row */}
+
+            <div className="row y-gap-30 pt-40 sm:pt-20 item_gap-x30">
+              <ToursJedda />
+            </div>
+            {/* End .row */}
+          </div>
+          {/* End .container */}
+        </section>
+      )}
+      {/* End Tours Sections */}
+
+      {taif && (
+        <section className="layout-pt-lg layout-pb-lg mt-50 border-top-light">
+          <div className="container">
+            <div className="row y-gap-20 justify-between items-end">
+              <div className="col-auto">
+                <div className="sectionTitle -md">
+                  <h1 className="sectionTitle__title">Popular Tours In Taif</h1>
+                  <p className=" sectionTitle__text mt-5 sm:mt-0">
+                    Find Your Perfect Taif Tour: Private, Shared, and More
+                  </p>
+                </div>
+              </div>
+              {/* End .col */}
+
+              <div className="col-auto">
+                <Link
+                  href="#"
+                  className="button -md -blue-1 bg-blue-1-05 text-blue-1"
+                >
+                  More <div className="icon-arrow-top-right ml-15" />
+                </Link>
+              </div>
+              {/* End .col */}
+            </div>
+            {/* End .row */}
+
+            <div className="row y-gap-30 pt-40 sm:pt-20 item_gap-x30">
+              <ToursTaif />
+            </div>
+            {/* End .row */}
+          </div>
+          {/* End .container */}
+        </section>
+      )}
       {/* End Tours Sections */}
 
       <CallToActions />
