@@ -33,7 +33,7 @@ const home_3 = () => {
 
       <section className="layout-pt-md layout-pb-md">
         <div className="container">
-          <div className="row y-gap-20 justify-between items-end">
+          <div className="row y-gap-22 justify-between items-start">
             <div className="col-8 col-lg-auto">
               <div className="sectionTitle -md">
                 <h1 className="sectionTitle__title">Ziyarat In Makkah</h1>
@@ -70,7 +70,7 @@ const home_3 = () => {
 
       <section className="layout-pt-md layout-pb-md">
         <div className="container">
-          <div className="row y-gap-20 justify-between items-end">
+          <div className="row y-gap-22 justify-between items-start">
             <div className="col-8 col-lg-auto ">
               <div className="sectionTitle -md">
                 <h1 className="sectionTitle__title">Ziyarat In Madina</h1>
@@ -104,7 +104,7 @@ const home_3 = () => {
 
       <section className="layout-pt-md layout-pb-md">
         <div className="container">
-          <div className="row y-gap-20 justify-between items-end">
+          <div className="row y-gap-22 justify-between items-start">
             <div className="col-8 col-lg-auto">
               <div className="sectionTitle -md">
                 <h1 className="sectionTitle__title">Ziyarat In Jeddah</h1>
@@ -138,7 +138,7 @@ const home_3 = () => {
 
       <section className="layout-pt-md layout-pb-md">
         <div className="container">
-          <div className="row y-gap-20 justify-between items-end">
+          <div className="row y-gap-22 justify-between items-start">
             <div className="col-8 col-lg-auto">
               <div className="sectionTitle -md">
                 <h1 className="sectionTitle__title">Ziyarat In Taif</h1>

@@ -95,7 +95,12 @@ const ToursMadina = () => {
     " "
   ) : (
     <>
-      <Slider {...settings}>
+      <Slider
+        {...settings}
+        arrows={true}
+        nextArrow={<Arrow type="next" />}
+        prevArrow={<Arrow type="prev" />}
+      >
         {tourItems?.map((item) => (
           <div
             key={item?.id}

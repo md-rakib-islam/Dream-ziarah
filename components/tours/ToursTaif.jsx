@@ -71,8 +71,8 @@ const ToursTaif = () => {
   function Arrow(props) {
     let className =
       props.type === "next"
-        ? "slick_arrow-between slick_arrow -next arrow-md flex-center button -blue-1 bg-white shadow-1 size-30 rounded-full sm:d-none js-next"
-        : "slick_arrow-between slick_arrow -prev arrow-md flex-center button -blue-1 bg-white shadow-1 size-30 rounded-full sm:d-none js-prev";
+        ? "slick_arrow-between slick_arrow -next arrow-md flex-center button -blue-1 bg-white shadow-1 size-30 rounded-full js-next"
+        : "slick_arrow-between slick_arrow -prev arrow-md flex-center button -blue-1 bg-white shadow-1 size-30 rounded-full js-prev";
     className += " arrow";
     const char =
       props.type === "next" ? (
@@ -95,7 +95,12 @@ const ToursTaif = () => {
     " "
   ) : (
     <>
-      <Slider {...settings}>
+      <Slider
+        {...settings}
+        arrows={true}
+        nextArrow={<Arrow type="next" />}
+        prevArrow={<Arrow type="prev" />}
+      >
         {tourItems?.map((item) => (
           <div
             key={item?.id}
