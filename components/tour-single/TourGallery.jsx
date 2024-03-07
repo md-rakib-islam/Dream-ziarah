@@ -67,7 +67,7 @@ export default function TourGallery({ tour, hajj, umrah }) {
                         {({ ref, open }) => (
                           <div
                             className={`button -blue-1 ${
-                              isMobile ? "px-10 py-5" : "px-24 py-15"
+                              isMobile ? "px-10 py-5" : "px-20 py-10"
                             } bg-white text-dark-1 js-gallery`}
                             ref={ref}
                             onClick={open}
