@@ -12,6 +12,8 @@ import HajjSidebarRight from "../hajj/HajjSidebarRight";
 import UmrahSidebarRight from "../umrah/UmrahSidebarRight";
 import { BASE_URL } from "@/constant/constants";
 import useWindowSize from "@/hooks/useWindowSize";
+import "../../styles/weather.scss";
+
 // import useWindowSize from "@/hooks/useWindowSize";
 
 export default function TourGallery({ tour, hajj, umrah }) {
@@ -41,12 +43,14 @@ export default function TourGallery({ tour, hajj, umrah }) {
                   {tour?.slideImg?.map((slide, i) => (
                     <SwiperSlide key={i}>
                       <Image
-                        width={1281}
-                        height={400}
+                            className="col-12 rounded-4 destination_banner_img"
+                            height={860}
+                            width={1920}
+                            style={{ maxHeight: "448px" }}
                         priority
                         src={`${BASE_URL}/media/${slide}`}
                         alt={tour?.title}
-                        className="rounded-4 col-12 cover object-cover"
+                        // className="rounded-4 col-12 cover object-cover"
                       />
                     </SwiperSlide>
                   ))}
