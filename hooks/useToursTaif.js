@@ -383,7 +383,7 @@ export const singleTourInfo = {
   },
 };
 
-const useToursTaif = () => {
+const useToursTaif = (filterTour) => {
   const [tourItems, setTourItems] = useState([]);
   const { menuItems } = useSelector((state) => state?.menus);
   const { currentCurrency } = useSelector((state) => state?.currency);
@@ -408,7 +408,8 @@ const useToursTaif = () => {
             item.name === "jedda" ||
             item.name === "jeddah" ||
             item.name === "tabuk" ||
-            item.name === "taif"
+            item.name === "taif" ||
+            item.name == filterTour
           )
             return false;
           return true;

@@ -383,7 +383,7 @@ export const singleTourInfo = {
   },
 };
 
-const useToursMakka = () => {
+const useToursMakka = (filterTour) => {
   const [tourItems, setTourItems] = useState([]);
   const { menuItems } = useSelector((state) => state?.menus);
   const { currentCurrency } = useSelector((state) => state?.currency);
@@ -396,7 +396,7 @@ const useToursMakka = () => {
     data: contentItems,
     isLoading: isContentLoading,
   } = useGetAllContentQuery(ziarahId);
-
+  console.log("filterTourSlice", filterTour);
   useEffect(() => {
     if (isSuccess && isContentSuccess) {
       console.log("fdfdkf", contentItems);
@@ -408,7 +408,8 @@ const useToursMakka = () => {
             item.name === "jedda" ||
             item.name === "jeddah" ||
             item.name === "tabuk" ||
-            item.name === "taif"
+            item.name === "taif" ||
+            item.name == filterTour
           )
             return false;
           return true;

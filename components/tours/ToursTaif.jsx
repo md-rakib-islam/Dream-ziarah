@@ -9,8 +9,8 @@ import isTextMatched from "../../utils/isTextMatched";
 import useToursTaif from "@/hooks/useToursTaif";
 import useWindowSize from "@/hooks/useWindowSize";
 
-const ToursTaif = () => {
-  const tourItems = useToursTaif();
+const ToursTaif = ({ filterTour }) => {
+  const tourItems = useToursTaif(filterTour);
   const { currentCurrency } = useSelector((state) => state.currency);
   const width = useWindowSize();
   const isMobile = width < 768;

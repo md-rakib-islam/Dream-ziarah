@@ -9,8 +9,8 @@ import isTextMatched from "../../utils/isTextMatched";
 import useToursMadina from "@/hooks/useToursMadina";
 import useWindowSize from "@/hooks/useWindowSize";
 
-const ToursMadina = () => {
-  const tourItems = useToursMadina();
+const ToursMadina = ({ filterTour }) => {
+  const tourItems = useToursMadina(filterTour);
   const { currentCurrency } = useSelector((state) => state.currency);
   const width = useWindowSize();
   const isMobile = width < 768;

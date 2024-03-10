@@ -382,7 +382,7 @@ export const singleTourInfo = {
       "https://www.google.com/maps/d/u/1/embed?mid=1CM8PjQjW7zWc_PpHMpNHHHRYlZU1-cw&ehbc=2E312F&z=7",
   },
 };
-const useToursJedda = () => {
+const useToursJedda = (filterTour) => {
   const [tourItems, setTourItems] = useState([]);
   const { menuItems } = useSelector((state) => state?.menus);
   const { currentCurrency } = useSelector((state) => state?.currency);
@@ -407,7 +407,8 @@ const useToursJedda = () => {
             item.name === "jedda" ||
             item.name === "jeddah" ||
             item.name === "tabuk" ||
-            item.name === "taif"
+            item.name === "taif" ||
+            item.name == filterTour
           )
             return false;
           return true;

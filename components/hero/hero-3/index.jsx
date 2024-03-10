@@ -39,21 +39,31 @@ const index = () => {
               )}
             </div>
             <div className="position-absolute bannar_content">
-              <h1
-                className="text-white fw-bold bannar_content_title"
-                data-aos="fade-up"
-              >
-                Ziyarat in <br />
-                Makkah & Madina
-              </h1>
-              <p
-                // className="text-white mt-6 md:mt-10"
-                className="bannar_content_subtile text-white"
-                data-aos="fade-up"
-                data-aos-delay="100"
-              >
-                Immerse in Spiritual Quests
-              </p>
+              {sliderImageItems[1]?.image && (
+                <h1
+                  className="text-white fw-bold bannar_content_title"
+                  data-aos="fade-up"
+                  style={{
+                    textShadow: "1px 1px 2px rgba(0,0,0,0.5)",
+                  }}
+                >
+                  Ziyarat in <br />
+                  Makkah & Madina
+                </h1>
+              )}
+              {sliderImageItems[1]?.image && (
+                <p
+                  // className="text-white mt-6 md:mt-10"
+                  className="bannar_content_subtile text-white"
+                  data-aos="fade-up"
+                  data-aos-delay="100"
+                  style={{
+                    textShadow: "1px 1px 2px rgba(0,0,0,0.5)",
+                  }}
+                >
+                  Immerse in Spiritual Quests
+                </p>
+              )}
             </div>
 
             <div
@@ -103,20 +113,30 @@ const index = () => {
               )}
             </div>
             <div className="position-absolute bannar_content text-center">
-              <h1
-                className="text-white fw-bold bannar_content_title"
-                data-aos="fade-up"
-              >
-                Ziyarat in Makkah & Madina
-              </h1>
-              <p
-                // className="text-white mt-6 md:mt-10"
-                className="bannar_content_subtile text-white"
-                data-aos="fade-up"
-                data-aos-delay="100"
-              >
-                Immerse in Spiritual Quests
-              </p>
+              {sliderImageItems[0]?.image && (
+                <h1
+                  className="text-white fw-bold bannar_content_title"
+                  data-aos="fade-up"
+                  style={{
+                    textShadow: "2px 2px 4px rgba(0,0,0,0.5)",
+                  }}
+                >
+                  Ziyarat in Makkah & Madina
+                </h1>
+              )}
+              {sliderImageItems[0]?.image && (
+                <p
+                  // className="text-white mt-6 md:mt-10"
+                  className="bannar_content_subtile text-white"
+                  data-aos="fade-up"
+                  data-aos-delay="100"
+                  style={{
+                    textShadow: "2px 2px 4px rgba(0,0,0,0.5)",
+                  }}
+                >
+                  Immerse in Spiritual Quests
+                </p>
+              )}
             </div>
 
             <div

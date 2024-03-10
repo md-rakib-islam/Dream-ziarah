@@ -9,8 +9,8 @@ import isTextMatched from "../../utils/isTextMatched";
 import useToursJedda from "@/hooks/useToursJedda";
 import useWindowSize from "@/hooks/useWindowSize";
 
-const ToursJedda = () => {
-  const tourItems = useToursJedda();
+const ToursJedda = ({ filterTour }) => {
+  const tourItems = useToursJedda(filterTour);
   const { currentCurrency } = useSelector((state) => state.currency);
   const width = useWindowSize();
   const isMobile = width < 768;

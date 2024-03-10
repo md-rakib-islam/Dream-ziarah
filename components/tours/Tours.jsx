@@ -9,13 +9,18 @@ import isTextMatched from "../../utils/isTextMatched";
 import useToursMakka from "@/hooks/useToursMakka";
 import useWindowSize from "@/hooks/useWindowSize";
 
-const Tours = () => {
-  const tourItems = useToursMakka();
+const Tours = ({ filterTour }) => {
+  const tourItems = useToursMakka(filterTour);
+  const filterItem = tourItems.filter((item) => item.title !== filterTour);
   const { currentCurrency } = useSelector((state) => state.currency);
   const width = useWindowSize();
   const isMobile = width < 768;
   // href={`/tours/${item?.title?.toLowerCase()?.split(" ")?.join("-")}`}
-  console.log("tourItems", tourItems);
+  console.log(
+    "tourItemsFilter",
+    tourItems.filter((item) => item.title !== filterTour),
+    filterTour
+  );
   const settings = {
     dots: true,
     infinite: true,

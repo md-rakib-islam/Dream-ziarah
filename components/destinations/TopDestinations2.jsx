@@ -5,6 +5,7 @@ import { useGetImagesByMenuIdQuery } from "@/features/image/imageApi";
 import Image from "next/image";
 import Link from "next/link";
 import { useSelector } from "react-redux";
+import Slider from "react-slick";
 import { Navigation } from "swiper";
 import { Swiper, SwiperSlide } from "swiper/react";
 // import { destinations4 } from "../../data/desinations";
@@ -31,10 +32,40 @@ const TopDestinations2 = ({ slug }) => {
       }));
   }
   console.log("destinations", destinations);
+  const settings = {
+    dots: false,
+    infinite: true,
+    speed: 500,
+    slidesToShow: 3,
+    slidesToScroll: 3,
+    responsive: [
+      {
+        breakpoint: 992,
+        settings: {
+          slidesToShow: 3,
+          slidesToScroll: 3,
+        },
+      },
 
+      {
+        breakpoint: 768,
+        settings: {
+          slidesToShow: 2,
+          slidesToScroll: 2,
+        },
+      },
+      {
+        breakpoint: 520,
+        settings: {
+          slidesToShow: 2.09,
+          slidesToScroll: 1,
+        },
+      },
+    ],
+  };
   return (
     <>
-      <Swiper
+      {/* <Swiper
         spaceBetween={30}
         className="overflow-visible"
         modules={[Navigation]}
@@ -44,12 +75,12 @@ const TopDestinations2 = ({ slug }) => {
         }}
         breakpoints={{
           540: {
-            slidesPerView: 2,
-            spaceBetween: 20,
+            slidesPerView: 1.8,
+            // spaceBetween: 20,
           },
           768: {
             slidesPerView: 2,
-            spaceBetween: 22,
+            // spaceBetween: 22,
           },
           1024: {
             slidesPerView: 3,
@@ -63,35 +94,70 @@ const TopDestinations2 = ({ slug }) => {
           <SwiperSlide key={item.id}>
             <Link
               href={`/destinations/${item?.location?.toLowerCase()}`}
-              className="citiesCard -type-2"
+              className="citiesCard -type-2 h-full"
               data-aos="fade"
               data-aos-delay={item.delayAnimation}
             >
-              <div className="citiesCard__image rounded-4 ratio ratio-1:1">
+              <div className="citiesCard__image ratio ratio-3:2">
                 <Image
-                  width={191}
-                  height={191}
-                  className="img-ratio rounded-4 js-lazy"
-                  src={item.img}
-                  alt={item?.location}
+                  className="col-12 js-lazy"
+                  src={item?.img}
+                  width={800}
+                  height={600}
+                  quality={100}
+                  priority
+                  alt={item?.name}
                 />
               </div>
-              <div className="citiesCard__content mt-10">
-                <h4 className="text-18 lh-13 fw-500 text-dark-1 text-capitalize">
+              <div className="citiesCard__content d-flex justify-content-center align-items-center">
+                <h4 className="text-26 fw-600 text-white text-capitalize">
                   {item.location == "Medina"
                     ? "Madina"
                     : item.location == "Jedda"
                     ? "Jeddah"
                     : item.location}
                 </h4>
-                {/* <div className="text-14 text-light-1">
-                  {item.properties} properties
-                </div> */}
               </div>
             </Link>
           </SwiperSlide>
         ))}
-      </Swiper>
+      </Swiper> */}
+      <Slider {...settings}>
+        {destinations?.map((item) => (
+          <div
+            className={`${item.colClass} top_destination_width px-5`}
+            key={item.id}
+            data-aos="fade"
+            data-aos-delay={item.delayAnimation}
+          >
+            <Link
+              href={`/destinations/${item?.name?.toLowerCase()}`}
+              className="citiesCard -type-3 d-block h-full rounded-4 "
+            >
+              <div className="citiesCard__image ratio ratio-3:2">
+                <Image
+                  className="col-12 js-lazy"
+                  src={item?.img}
+                  width={800}
+                  height={600}
+                  quality={100}
+                  priority
+                  alt={item?.name}
+                />
+              </div>
+              <div className="citiesCard__content d-flex justify-content-center align-items-center">
+                <h4 className="text-26 fw-600 text-white text-capitalize">
+                  {item.location == "Medina"
+                    ? "Madina"
+                    : item.location == "Jedda"
+                    ? "Jeddah"
+                    : item.location}
+                </h4>
+              </div>
+            </Link>
+          </div>
+        ))}
+      </Slider>
 
       {/* Start naviation button for next prev slide */}
       {/* <button className="section-slider-nav -prev flex-center bg-white text-dark-1 size-40 rounded-full shadow-1 sm:d-none  js-top-desti2-prev_active">

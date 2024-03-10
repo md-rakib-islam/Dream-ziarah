@@ -125,7 +125,7 @@ const TourSingleV1Dynamic = ({ params, children }) => {
     "imageContents",
     // data?.name,
     imageContents,
-
+    data?.id,
     // capitalize(params?.name),
     imageContents?.content_images[data?.name]
   );
@@ -210,14 +210,14 @@ const TourSingleV1Dynamic = ({ params, children }) => {
             {children}
             {/* End .col */}
 
-            <div className="col-auto">
-              <div className="row x-gap-10 y-gap-10">
+            <div className="col-lg-4 col-sm-12">
+              <div className="row x-gap-10 y-gap-10 ">
                 <div className="col-auto btn-group dropup">
                   <button
                     type="button"
                     data-bs-toggle="dropdown"
                     aria-expanded="false"
-                    className="button px-15 py-10 -blue-1 "
+                    className="button px-10 py-10 -blue-1 "
                   >
                     <i className="icon-share mr-10"></i>
                     Share
@@ -273,7 +273,7 @@ const TourSingleV1Dynamic = ({ params, children }) => {
                 </div>
 
                 <div className="col-auto">
-                  <button className="button px-15 py-10 -blue-1 bg-light-2">
+                  <button className="button px-10 py-10 -blue-1 bg-light-2">
                     <i className="icon-heart mr-10"></i>
                     Save
                   </button>
@@ -369,7 +369,7 @@ const TourSingleV1Dynamic = ({ params, children }) => {
       </section> */}
       {/* End Reply Comment box section */}
 
-      {makka && (
+      {makka && data?.name && (
         <section className="layout-pt-lg layout-pb-lg mt-50 border-top-light">
           <div className="container">
             <div className="row y-gap-20 justify-between items-end">
@@ -398,7 +398,7 @@ const TourSingleV1Dynamic = ({ params, children }) => {
             {/* End .row */}
 
             <div className="row y-gap-30 pt-40 sm:pt-20 item_gap-x30">
-              <Tours />
+              <Tours filterTour={data?.name} />
             </div>
             {/* End .row */}
           </div>
@@ -408,7 +408,7 @@ const TourSingleV1Dynamic = ({ params, children }) => {
 
       {/* End Tours Sections */}
 
-      {madina && (
+      {madina && data?.name && (
         <section className="layout-pt-lg layout-pb-lg mt-50 border-top-light">
           <div className="container">
             <div className="row y-gap-20 justify-between items-end">
@@ -437,7 +437,7 @@ const TourSingleV1Dynamic = ({ params, children }) => {
             {/* End .row */}
 
             <div className="row y-gap-30 pt-40 sm:pt-20 item_gap-x30">
-              <ToursMadina />
+              <ToursMadina filterTour={data?.name} />
             </div>
             {/* End .row */}
           </div>
@@ -446,7 +446,7 @@ const TourSingleV1Dynamic = ({ params, children }) => {
       )}
       {/* End Tours Sections */}
 
-      {jedda && (
+      {jedda && data?.name && (
         <section className="layout-pt-lg layout-pb-lg mt-50 border-top-light">
           <div className="container">
             <div className="row y-gap-20 justify-between items-end">
@@ -475,7 +475,7 @@ const TourSingleV1Dynamic = ({ params, children }) => {
             {/* End .row */}
 
             <div className="row y-gap-30 pt-40 sm:pt-20 item_gap-x30">
-              <ToursJedda />
+              <ToursJedda filterTour={data?.name} />
             </div>
             {/* End .row */}
           </div>
@@ -484,7 +484,7 @@ const TourSingleV1Dynamic = ({ params, children }) => {
       )}
       {/* End Tours Sections */}
 
-      {taif && (
+      {taif && data?.name && (
         <section className="layout-pt-lg layout-pb-lg mt-50 border-top-light">
           <div className="container">
             <div className="row y-gap-20 justify-between items-end">
@@ -511,7 +511,7 @@ const TourSingleV1Dynamic = ({ params, children }) => {
             {/* End .row */}
 
             <div className="row y-gap-30 pt-40 sm:pt-20 item_gap-x30">
-              <ToursTaif />
+              <ToursTaif filterTour={data?.name} />
             </div>
             {/* End .row */}
           </div>

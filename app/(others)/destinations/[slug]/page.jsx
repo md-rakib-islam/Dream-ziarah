@@ -174,7 +174,7 @@ const Destinations = ({ params }) => {
       {/* End Top Banner,categorie,intro,weather, generic info section */}
 
       {params?.slug && params?.slug.includes("makkah") && (
-        <section className="layout-pt-lg layout-pb-lg mt-50 border-top-light">
+        <section className=" layout-pb-lg ">
           <div className="container">
             <div className="row y-gap-20 justify-between items-end">
               <div className="col-auto">
@@ -213,7 +213,7 @@ const Destinations = ({ params }) => {
       {/* End Tours Sections */}
 
       {params?.slug && params?.slug.includes("medina") && (
-        <section className="layout-pt-lg layout-pb-lg mt-50 border-top-light">
+        <section className=" layout-pb-lg ">
           <div className="container">
             <div className="row y-gap-20 justify-between items-end">
               <div className="col-auto">
@@ -251,7 +251,7 @@ const Destinations = ({ params }) => {
       {/* End Tours Sections */}
 
       {params?.slug && params?.slug.includes("jedda") && (
-        <section className="layout-pt-lg layout-pb-lg mt-50 border-top-light">
+        <section className=" layout-pb-lg ">
           <div className="container">
             <div className="row y-gap-20 justify-between items-end">
               <div className="col-auto">
@@ -289,7 +289,7 @@ const Destinations = ({ params }) => {
       {/* End Tours Sections */}
 
       {params?.slug && params?.slug.includes("taif") && (
-        <section className="layout-pt-lg layout-pb-lg mt-50 border-top-light">
+        <section className=" layout-pb-lg ">
           <div className="container">
             <div className="row y-gap-20 justify-between items-end">
               <div className="col-auto">
@@ -450,7 +450,12 @@ const Destinations = ({ params }) => {
           </div>
           {/* End .row */}
 
-          <div className="pt-40 relative">
+          <div
+            className="pt-40 relative"
+            style={{
+              width: "700px",
+            }}
+          >
             <TopDestinations2 slug={slug} />
           </div>
         </div>

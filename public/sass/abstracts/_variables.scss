@@ -1,11 +1,14 @@
 //new font
-:root {
-  --font-primary: "Aeonik", "Helvetica", "Arial", sans-serif;
-}
-//old font
 // :root {
-//   --font-primary: "Jost", sans-serif;
+//   --font-primary: "Aeonik", "Helvetica", "Arial", sans-serif;
 // }
+// :root {
+//   --font-primary: "Cabin", sans-serif;
+// }
+//old font
+:root {
+  --font-primary: "Jost", sans-serif;
+}
 
 $breakpoints: (
   xs: 480px,

@@ -20,9 +20,7 @@ if (typeof window !== "undefined") {
   require("bootstrap/dist/js/bootstrap");
 }
 
-
 export default function RootLayout({ children }) {
-
   useEffect(() => {
     Aos.init({
       duration: 1200,
@@ -30,37 +28,45 @@ export default function RootLayout({ children }) {
     });
   }, []);
 
-
- 
   return (
     <html lang="en">
       <head>
+        {/* old*/}
         <link rel="preconnect" href="https://fonts.googleapis.com" />
         <link
           rel="preconnect"
           href="https://fonts.gstatic.com"
           crossOrigin="true"
         />
+
         <link
           href="https://fonts.googleapis.com/css2?family=Jost:wght@400;500;600&display=swap"
           rel="stylesheet"
         />
+        {/* <link
+          href="https://fonts.googleapis.com/css2?family=Cabin:wght@400;500;600&display=swap"
+          rel="stylesheet"
+        /> */}
+
+        {/* end*/}
+        {/* <link
+          href="https://db.onlinewebfonts.com/c/8f2a9d487bbbc60974cd132fc3a63862?family=Aeonik+Regular"
+          rel="stylesheet"
+        /> */}
         <link rel="icon" href="./favicon.ico" />
       </head>
       <body>
         <main>
           <Provider store={store}>
-          <Header3 />
+            <Header3 />
             {children}
-            <DefaultFooter/>
+            <DefaultFooter />
             <SrollTop />
           </Provider>
-        </main>   
+        </main>
         {/* <Script type="text/javascript" src="https://widgets.bokun.io/assets/javascripts/apps/build/BokunWidgetsLoader.js?bookingChannelUUID=d894d0d4-5eab-4e15-821d-6770f0186810" async={true}/>
         <Script type="text/javascript" src="https://widgets.bokun.io/assets/javascripts/apps/build/BokunWidgetsLoader.js?bookingChannelUUID=aa4c5059-8d0b-43dc-8bd3-bac143537416" async={true}/> */}
       </body>
     </html>
   );
 }
-
- 

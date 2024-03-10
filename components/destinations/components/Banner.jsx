@@ -42,7 +42,12 @@ const Banner = ({ slug }) => {
           style={{ maxHeight: "448px" }}
         />
         <div className="absolute z-2 px-50 py-60 md:py-20 md:px-30">
-          <h1 className="text-50 fw-600 text-white lg:text-40 md:text-30">
+          <h1
+            className="text-50 fw-600 text-white lg:text-40 md:text-30"
+            style={{
+              textShadow: "2px 2px 4px rgba(0,0,0,0.5)",
+            }}
+          >
             Explore{" "}
             {slug == "medina"
               ? "Madina"
@@ -50,7 +55,12 @@ const Banner = ({ slug }) => {
               ? "Jeddah"
               : slug.charAt(0).toUpperCase() + slug.slice(1)}
           </h1>
-          <div className="text-white">
+          <div
+            className="text-white"
+            style={{
+              textShadow: "2px 2px 4px rgba(0,0,0,0.5)",
+            }}
+          >
             Explore deals, travel guides and things to do in{" "}
             {slug == "medina"
               ? "Madina"
