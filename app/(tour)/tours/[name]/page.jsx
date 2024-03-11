@@ -5,95 +5,194 @@ import getAllContentByMenuId from "@/services/contentService";
 import getAllMenuItem from "@/services/menuService";
 
 const tourMetadatas = {
+  //makka
   "makkah-city-ziarah-vehicle-sharing-with-guide": {
     title:
-      "Makkah City Ziarah - Vehicle Sharing with Expert Guide | DreamZiarah.com",
+      "Explore Ziyarat Places in Makkah with Dream Ziarah | Discover Holiness",
     description:
-      "Experience the spiritual journey of Makkah City Ziarah with our convenient Vehicle Sharing option. Join fellow travelers on this guided tour led by our expert guides. Explore sacred sites and deepen your connection to the holy city in the company of like-minded pilgrims.",
+      "Join on a spiritual journey to explore sacred Ziyarat places in Makkah with Dream Ziarah. Experience the essence of holiness in the heart of Saudi Arabia with our shared and guided tours.",
   },
-  "makkah-city-ziarah-luxury-private-vehicle-with-guide-(3-person-luxury)": {
+  "makkah-city-ziarah-luxury-private-vehicle-without-guide-(5-person-family)": {
     title:
-      "Makkah City Ziarah Luxury Private Vehicle With Guide (3 Person Luxury) | DreamZiarah.com",
+      "Explore Ziyarat Places in Makkah with Dream Ziarah | Discover Holiness",
     description:
-      "Experience the spiritual journey of Makkah City Ziarah with our convenient Vehicle Sharing option. Join fellow travelers on this guided tour led by our expert guides. Explore sacred sites and deepen your connection to the holy city in the company of like-minded pilgrims.",
+      "Join on a spiritual journey to explore sacred Ziyarat places in Makkah with Dream Ziarah. Experience the essence of holiness in the heart of Saudi Arabia with our shared and guided tours.",
   },
-  "makkah-city-ziarah-luxury-private-vehicle-with-guide-(5-person-family)": {
+  "makkah-city-ziarah-luxury-private-vehicle-without-guide-(15-person-large-group)":
+    {
+      title:
+        "Explore Ziyarat Places in Makkah with Dream Ziarah | Discover Holiness",
+      description:
+        "Join on a spiritual journey to explore sacred Ziyarat places in Makkah with Dream Ziarah. Experience the essence of holiness in the heart of Saudi Arabia with our shared and guided tours.",
+    },
+  "makkah-city-ziarah-luxury-private-vehicle-without-guide-(3-person-luxury)": {
     title:
-      "Makkah City Ziarah Luxury Private Vehicle With Guide (5 Person Family) | DreamZiarah.com",
+      "Explore Ziyarat Places in Makkah with Dream Ziarah | Discover Holiness",
     description:
-      "Experience the spiritual journey of Makkah City Ziarah with our convenient Vehicle Sharing option. Join fellow travelers on this guided tour led by our expert guides. Explore sacred sites and deepen your connection to the holy city in the company of like-minded pilgrims.",
+      "Join on a spiritual journey to explore sacred Ziyarat places in Makkah with Dream Ziarah. Experience the essence of holiness in the heart of Saudi Arabia with our shared and guided tours.",
+  },
+  "makkah-city-ziarah-luxury-private-vehicle-without-guide-(10-person-group)": {
+    title:
+      "Explore Ziyarat Places in Makkah with Dream Ziarah | Discover Holiness",
+    description:
+      "Join on a spiritual journey to explore sacred Ziyarat places in Makkah with Dream Ziarah. Experience the essence of holiness in the heart of Saudi Arabia with our shared and guided tours.",
   },
   "makkah-city-ziarah-luxury-private-vehicle-with-guide-(10-person-group)": {
     title:
-      "Makkah City Ziarah Luxury Private Vehicle With Guide (10 Person Group) | DreamZiarah.com",
+      "Explore Ziyarat Places in Makkah with Dream Ziarah | Discover Holiness",
     description:
-      "Experience the spiritual journey of Makkah City Ziarah with our convenient Vehicle Sharing option. Join fellow travelers on this guided tour led by our expert guides. Explore sacred sites and deepen your connection to the holy city in the company of like-minded pilgrims.",
+      "Join on a spiritual journey to explore sacred Ziyarat places in Makkah with Dream Ziarah. Experience the essence of holiness in the heart of Saudi Arabia with our shared and guided tours.",
+  },
+  "makkah-city-ziarah-luxury-private-vehicle-with-guide-(5-person-family)": {
+    title:
+      "Explore Ziyarat Places in Makkah with Dream Ziarah | Discover Holiness",
+    description:
+      "Join on a spiritual journey to explore sacred Ziyarat places in Makkah with Dream Ziarah. Experience the essence of holiness in the heart of Saudi Arabia with our shared and guided tours.",
+  },
+  "makkah-city-ziarah-luxury-private-vehicle-with-guide-(3-person-luxury)": {
+    title:
+      "Explore Ziyarat Places in Makkah with Dream Ziarah | Discover Holiness",
+    description:
+      "Join on a spiritual journey to explore sacred Ziyarat places in Makkah with Dream Ziarah. Experience the essence of holiness in the heart of Saudi Arabia with our shared and guided tours.",
+  },
+  "makkah-city-ziarah-luxury-private-vehicle-with-guide-(15-person-large-group)":
+    {
+      title:
+        "Explore Ziyarat Places in Makkah with Dream Ziarah | Discover Holiness",
+      description:
+        "Join on a spiritual journey to explore sacred Ziyarat places in Makkah with Dream Ziarah. Experience the essence of holiness in the heart of Saudi Arabia with our shared and guided tours.",
+    },
+
+  //end makkah
+
+  //madina
+  "madinah-city-ziarah-vehicle-sharing-with-guide": {
+    title:
+      "Discover Ziyarat Places in Madina with Dream Ziarah | Spiritual Journeys",
+    description:
+      "Join Dream Ziarah to discover the sacred Ziyarat places in Madina. Our tours offer a deep dive into the spiritual history of Islam, guiding you through Madina's most revered sites.",
+  },
+  "madinah-city-ziarah-luxury-private-vehicle-with-guide-(5-person-family)": {
+    title:
+      "Discover Ziyarat Places in Madina with Dream Ziarah | Spiritual Journeys",
+    description:
+      "Join Dream Ziarah to discover the sacred Ziyarat places in Madina. Our tours offer a deep dive into the spiritual history of Islam, guiding you through Madina's most revered sites.",
+  },
+  "madinah-city-ziarah-luxury-private-vehicle-with-guide-(3-person-luxury)": {
+    title:
+      "Discover Ziyarat Places in Madina with Dream Ziarah | Spiritual Journeys",
+    description:
+      "Join Dream Ziarah to discover the sacred Ziyarat places in Madina. Our tours offer a deep dive into the spiritual history of Islam, guiding you through Madina's most revered sites.",
+  },
+  "madinah-city-ziarah-luxury-private-vehicle-with-guide-(10-person-group)": {
+    title:
+      "Discover Ziyarat Places in Madina with Dream Ziarah | Spiritual Journeys",
+    description:
+      "Join Dream Ziarah to discover the sacred Ziyarat places in Madina. Our tours offer a deep dive into the spiritual history of Islam, guiding you through Madina's most revered sites.",
+  },
+  "madinah-city-ziarah-luxury-private-vehicle-without-guide-(5-person-family)":
+    {
+      title:
+        "Discover Ziyarat Places in Madina with Dream Ziarah | Spiritual Journeys",
+      description:
+        "Join Dream Ziarah to discover the sacred Ziyarat places in Madina. Our tours offer a deep dive into the spiritual history of Islam, guiding you through Madina's most revered sites.",
+    },
+  "madinah-city-ziarah-luxury-private-vehicle-without-guide-(3-person-luxury)":
+    {
+      title:
+        "Discover Ziyarat Places in Madina with Dream Ziarah | Spiritual Journeys",
+      description:
+        "Join Dream Ziarah to discover the sacred Ziyarat places in Madina. Our tours offer a deep dive into the spiritual history of Islam, guiding you through Madina's most revered sites.",
+    },
+  "madinah-city-ziarah-luxury-private-vehicle-with-guide-(15-person-large-group)":
+    {
+      title:
+        "Discover Ziyarat Places in Madina with Dream Ziarah | Spiritual Journeys",
+      description:
+        "Join Dream Ziarah to discover the sacred Ziyarat places in Madina. Our tours offer a deep dive into the spiritual history of Islam, guiding you through Madina's most revered sites.",
+    },
+  "madinah-city-ziarah-luxury-private-vehicle-without-guide-(15-person-large-group)":
+    {
+      title:
+        "Discover Ziyarat Places in Madina with Dream Ziarah | Spiritual Journeys",
+      description:
+        "Join Dream Ziarah to discover the sacred Ziyarat places in Madina. Our tours offer a deep dive into the spiritual history of Islam, guiding you through Madina's most revered sites.",
+    },
+  "madinah-city-ziarah-luxury-private-vehicle-without-guide-(10-person-group)":
+    {
+      title:
+        "Discover Ziyarat Places in Madina with Dream Ziarah | Spiritual Journeys",
+      description:
+        "Join Dream Ziarah to discover the sacred Ziyarat places in Madina. Our tours offer a deep dive into the spiritual history of Islam, guiding you through Madina's most revered sites.",
+    },
+  //end madina
+
+  // Jeddah
+  "day-trip-from-makkah-to-jeddah-vehicle-sharing-with-guide": {
+    title:
+      "Explore Ziyarat Places in Jeddah with Dream Ziarah | Spiritual Tours",
+    description:
+      "Experience Jeddah like never before with Dream Ziarah. Explore sacred Ziyarat places and uncover the spiritual and cultural heritage of this historic city.",
   },
   "day-trip-from-makkah-to-jeddah-luxury-private-vehicle-(3-person-luxury)": {
     title:
-      "Day Trip from Makkah to Jeddah Luxury Private Vehicle (3 Person Luxury) | DreamZiarah.com",
+      "Explore Ziyarat Places in Jeddah with Dream Ziarah | Spiritual Tours",
     description:
-      "Experience the spiritual journey of Makkah City Ziarah with our convenient Vehicle Sharing option. Join fellow travelers on this guided tour led by our expert guides. Explore sacred sites and deepen your connection to the holy city in the company of like-minded pilgrims.",
+      "Experience Jeddah like never before with Dream Ziarah. Explore sacred Ziyarat places and uncover the spiritual and cultural heritage of this historic city.",
   },
   "day-trip-from-makkah-to-jeddah-luxury-private-vehicle-(5-person-family)": {
     title:
-      "Day Trip from Makkah to Jeddah Luxury Private Vehicle (5 Person Family) | DreamZiarah.com",
+      "Explore Ziyarat Places in Jeddah with Dream Ziarah | Spiritual Tours",
     description:
-      "Experience the spiritual journey of Makkah City Ziarah with our convenient Vehicle Sharing option. Join fellow travelers on this guided tour led by our expert guides. Explore sacred sites and deepen your connection to the holy city in the company of like-minded pilgrims.",
+      "Experience Jeddah like never before with Dream Ziarah. Explore sacred Ziyarat places and uncover the spiritual and cultural heritage of this historic city.",
   },
   "day-trip-from-makkah-to-jeddah-luxury-private-vehicle-(10-person-group)": {
     title:
-      "Day Trip from Makkah to Jeddah Luxury Private Vehicle (10 Person Group) | DreamZiarah.com",
+      "Explore Ziyarat Places in Jeddah with Dream Ziarah | Spiritual Tours",
     description:
-      "Experience the spiritual journey of Makkah City Ziarah with our convenient Vehicle Sharing option. Join fellow travelers on this guided tour led by our expert guides. Explore sacred sites and deepen your connection to the holy city in the company of like-minded pilgrims.",
+      "Experience Jeddah like never before with Dream Ziarah. Explore sacred Ziyarat places and uncover the spiritual and cultural heritage of this historic city.",
   },
   "day-trip-from-makkah-to-jeddah-luxury-private-vehicle-(15-person-large-group)":
     {
       title:
-        "Day Trip from Makkah to Jeddah Luxury Private Vehicle (15 Person Large Group) | DreamZiarah.com",
+        "Explore Ziyarat Places in Jeddah with Dream Ziarah | Spiritual Tours",
       description:
-        "Experience the spiritual journey of Makkah City Ziarah with our convenient Vehicle Sharing option. Join fellow travelers on this guided tour led by our expert guides. Explore sacred sites and deepen your connection to the holy city in the company of like-minded pilgrims.",
+        "Experience Jeddah like never before with Dream Ziarah. Explore sacred Ziyarat places and uncover the spiritual and cultural heritage of this historic city.",
     },
-
-  "Makkah City Ziarah Luxury Private Vehicle With Guide (15 Person Large Group)":
-    {
-      location: "Mecca, Saudi Arabia",
-      numberOfReviews: "23",
-      languages: "Bengali, English, Hindi, Urdu, Malay, Indonesian.",
-      groupSize: "11-15",
-      itinerarySrc:
-        "https://www.google.com/maps/d/u/1/embed?mid=12hqGh2hTCmUqQIo60aGhSTOz3wqtpSQ&ehbc=2E312F&z=6",
-    },
-  "makkah-city-ziarah-luxury-private-vehicle-without-guide": {
-    title: "Luxury Private Vehicle Tour - Makkah City Ziarah | DreamZiarah.com",
-    description:
-      "Indulge in the epitome of comfort with our Luxury Private Vehicle Tour of Makkah City Ziarah. Enjoy the flexibility of a private journey, exploring sacred destinations at your pace. Immerse yourself in the spirituality of Makkah with the freedom of a private luxury vehicle.",
-  },
-  "makkah-city-ziarah-luxury-private-vehicle-with-guide": {
-    title: "Guided Luxury Ziarah - Makkah City | DreamZiarah.com",
-    description:
-      "Elevate your Makkah City Ziarah experience with our Luxury Private Vehicle and Expert Guide. Immerse yourself in the spiritual ambiance as our knowledgeable guide leads you through sacred landmarks. Revel in the comfort of luxury travel with a personalized touch.",
-  },
+  //end jeddah
+  // taif
   "day-trip-from-makkah-to-taif-vehicle-sharing-with-guide": {
-    title: "Guided Luxury Taif Tour - Taif City | DreamZiarah.com",
+    title:
+      "Ziyarat Places in Taif with Dream Ziarah | Serenity and Spirituality",
     description:
-      "Elevate your Makkah City Ziarah experience with our Luxury Private Vehicle and Expert Guide. Immerse yourself in the spiritual ambiance as our knowledgeable guide leads you through sacred landmarks. Revel in the comfort of luxury travel with a personalized touch.",
+      "With Dream Ziarah, explore the serene and sacred Ziyarat places in Taif. Our tours are tailored for those seeking peace and spiritual enrichment in the breathtaking landscapes of Taif.",
   },
-  "day-trip-from-makkah-to-jeddah-vehicle-sharing-with-guide": {
-    title: "Guided Luxury Jeddah Tour - Jeddah City | DreamZiarah.com",
+  "day-trip-from-makkah-to-taif-luxury-private-vehicle-(3-person-luxury)": {
+    title:
+      "Ziyarat Places in Taif with Dream Ziarah | Serenity and Spirituality",
     description:
-      "Elevate your Makkah City Ziarah experience with our Luxury Private Vehicle and Expert Guide. Immerse yourself in the spiritual ambiance as our knowledgeable guide leads you through sacred landmarks. Revel in the comfort of luxury travel with a personalized touch.",
+      "With Dream Ziarah, explore the serene and sacred Ziyarat places in Taif. Our tours are tailored for those seeking peace and spiritual enrichment in the breathtaking landscapes of Taif.",
   },
-  "day-trip-from-makkah-to-jeddah-luxury-private-vehicle": {
-    title: "Guided Luxury Jeddah Tour - Jeddah City | DreamZiarah.com",
+  "day-trip-from-makkah-to-taif-luxury-private-vehicle-(5-person-family)": {
+    title:
+      "Ziyarat Places in Taif with Dream Ziarah | Serenity and Spirituality",
     description:
-      "Elevate your Makkah City Ziarah experience with our Luxury Private Vehicle and Expert Guide. Immerse yourself in the spiritual ambiance as our knowledgeable guide leads you through sacred landmarks. Revel in the comfort of luxury travel with a personalized touch.",
+      "With Dream Ziarah, explore the serene and sacred Ziyarat places in Taif. Our tours are tailored for those seeking peace and spiritual enrichment in the breathtaking landscapes of Taif.",
   },
-  "day-trip-from-makkah-to-taif-luxury-private-vehicle": {
-    title: "Guided Luxury Taif Tour - Taif City | DreamZiarah.com",
+  "day-trip-from-makkah-to-taif-luxury-private-vehicle-(10-person-group)": {
+    title:
+      "Ziyarat Places in Taif with Dream Ziarah | Serenity and Spirituality",
     description:
-      "Elevate your Makkah City Ziarah experience with our Luxury Private Vehicle and Expert Guide. Immerse yourself in the spiritual ambiance as our knowledgeable guide leads you through sacred landmarks. Revel in the comfort of luxury travel with a personalized touch.",
+      "With Dream Ziarah, explore the serene and sacred Ziyarat places in Taif. Our tours are tailored for those seeking peace and spiritual enrichment in the breathtaking landscapes of Taif.",
   },
+  "day-trip-from-makkah-to-taif-luxury-private-vehicle-(15-person-large-group)":
+    {
+      title:
+        "Ziyarat Places in Taif with Dream Ziarah | Serenity and Spirituality",
+      description:
+        "With Dream Ziarah, explore the serene and sacred Ziyarat places in Taif. Our tours are tailored for those seeking peace and spiritual enrichment in the breathtaking landscapes of Taif.",
+    },
+  //end taif
 };
 
 // export const metadata = {
