@@ -16,7 +16,7 @@ const Banner = ({ slug }) => {
     useGetImagesByMenuIdQuery(destinationId);
   let bannerUrl = "";
   if (isSuccess) {
-    bannerUrl = `${BASE_URL}/media/${
+    bannerUrl = `${
       data?.content_images[slug.charAt(0).toUpperCase() + slug.slice(1)]
     }`;
   }

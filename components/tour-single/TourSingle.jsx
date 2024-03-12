@@ -323,7 +323,7 @@ const TourSingleV1Dynamic = ({ params, children }) => {
       </section>
       {/* End Itinerary */}
 
-      <section className="mt-40 border-top-light pt-40">
+      {/* <section className="mt-40 border-top-light pt-40">
         <div className="container">
           <div className="row y-gap-40 justify-between">
             <div className="col-xl-3">
@@ -331,12 +331,12 @@ const TourSingleV1Dynamic = ({ params, children }) => {
               <ReviewProgress2 />
             </div>
 
-            {/* <div className="col-xl-8">
+            <div className="col-xl-8">
               <DetailsReview2 />
-            </div> */}
+            </div>
           </div>
         </div>
-      </section>
+      </section> */}
       {/* End Review section */}
 
       {/* <section className="mt-40 border-top-light pt-40">

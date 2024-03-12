@@ -5,8 +5,9 @@ import Loading from "@/app/loading";
 import { BASE_URL } from "@/constant/constants";
 import { useGetSliderImagesQuery } from "@/features/image/imageApi";
 import Image from "next/image";
+import { useEffect } from "react";
 // import { Interweave } from "interweave";
-const index = () => {
+const index = ({ onDataAvailable }) => {
   // const dispatch = useDispatch();
   // const exchangeRates = useCurrencyExchangeRates();
   // dispatch(addExchangeRates(exchangeRates));
@@ -15,9 +16,14 @@ const index = () => {
   if (isSuccess) {
     sliderImageItems = data?.homepage_sliders?.map((item) => ({
       ...item,
-      image: `${BASE_URL}/${item.image}`,
+      image: `${item.image}`,
     }));
   }
+  useEffect(() => {
+    if (sliderImageItems !== 0) {
+      onDataAvailable(true);
+    }
+  }, [onDataAvailable, sliderImageItems]);
   // localStorage.clear();
   return (
     <>
@@ -25,18 +31,17 @@ const index = () => {
         <div className="col-auto">
           <div className="masthead__content position-relative">
             <div className="masthead__bg">
-              {isLoading ? (
+              {/* {isLoading ? (
                 <Loading></Loading>
-              ) : (
-                <Image
-                  className="bannar_height"
-                  src={sliderImageItems[1]?.image}
-                  width={1420}
-                  height={460}
-                  loading="lazy"
-                  alt="Hajj, Umrah and Ziarah"
-                />
-              )}
+              ) : ( */}
+              <Image
+                className="bannar_height"
+                src={sliderImageItems[1]?.cloudflare_image_url}
+                width={1420}
+                height={460}
+                loading="lazy"
+                alt="Hajj, Umrah and Ziarah"
+              />
             </div>
             <div className="position-absolute bannar_content">
               {sliderImageItems[1]?.image && (
@@ -104,7 +109,7 @@ const index = () => {
               ) : (
                 <Image
                   className="bannar_height"
-                  src={sliderImageItems[0]?.image}
+                  src={sliderImageItems[0]?.cloudflare_image_url}
                   width={1420}
                   height={460}
                   loading="lazy"

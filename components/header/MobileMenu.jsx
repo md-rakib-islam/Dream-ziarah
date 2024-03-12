@@ -24,7 +24,7 @@ const MobileMenu = () => {
   let logoUrl = "";
 
   if (isSuccess) {
-    logoUrl = `${BASE_URL}/${data?.general_settings[0].favicon}`;
+    logoUrl = `${data?.general_settings[0].cloudflare_favicon}`;
   }
 
   const currentPathName =

@@ -22,9 +22,7 @@ const TopDestinations = () => {
     modifiedDestinations = destinations?.map((item, indx) => ({
       id: item.id,
       colClass: "col-xl-auto col-md-4 col-sm-6",
-      img: `${BASE_URL}/media/${
-        data?.content_images[item?.name?.toLowerCase()]
-      }`,
+      img: `${data?.content_images[item?.name?.toLowerCase()]}`,
       name: item.name,
       numberOfProperties: "1714",
       delayAnimation: "200",

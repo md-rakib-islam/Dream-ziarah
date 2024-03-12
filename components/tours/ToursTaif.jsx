@@ -71,17 +71,17 @@ const ToursTaif = ({ filterTour }) => {
   function Arrow(props) {
     let className =
       props.type === "next"
-        ? "slick_arrow-between slick_arrow -next arrow-md flex-center button -blue-1 bg-white shadow-1 size-30 rounded-full js-next"
-        : "slick_arrow-between slick_arrow -prev arrow-md flex-center button -blue-1 bg-white shadow-1 size-30 rounded-full js-prev";
+        ? "slick_arrow-between slick_arrow -next arrow-md flex-center button -blue-1 bg-secondary shadow-1 size-30 rounded-full js-next"
+        : "slick_arrow-between slick_arrow -prev arrow-md flex-center button -blue-1 bg-secondary shadow-1 size-30 rounded-full js-prev";
     className += " arrow";
     const char =
       props.type === "next" ? (
         <>
-          <i className="icon icon-chevron-right text-12"></i>
+          <i className="icon icon-chevron-right text-12 text-light"></i>
         </>
       ) : (
         <>
-          <span className="icon icon-chevron-left text-12"></span>
+          <span className="icon icon-chevron-left text-12 text-light"></span>
         </>
       );
     return (

@@ -43,12 +43,12 @@ export default function TourGallery({ tour, hajj, umrah }) {
                   {tour?.slideImg?.map((slide, i) => (
                     <SwiperSlide key={i}>
                       <Image
-                            className="col-12 rounded-4 destination_banner_img"
-                            height={860}
-                            width={1920}
-                            style={{ maxHeight: "448px" }}
+                        className="col-12 rounded-4 destination_banner_img"
+                        height={860}
+                        width={1920}
+                        style={{ maxHeight: "448px" }}
                         priority
-                        src={`${BASE_URL}/media/${slide}`}
+                        src={`${slide}`}
                         alt={tour?.title}
                         // className="rounded-4 col-12 cover object-cover"
                       />
@@ -63,8 +63,8 @@ export default function TourGallery({ tour, hajj, umrah }) {
                       key={i}
                     >
                       <Item
-                        original={`${BASE_URL}/media/${slide}`}
-                        thumbnail={`${BASE_URL}/media/${slide}`}
+                        original={`${slide}`}
+                        thumbnail={`${slide}`}
                         width={1280}
                         height={750}
                       >

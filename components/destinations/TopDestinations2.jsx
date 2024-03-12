@@ -23,9 +23,7 @@ const TopDestinations2 = ({ slug }) => {
       ?.children?.filter((subItem) => subItem.name.toLowerCase() !== slug)
       ?.map((item) => ({
         id: item.id,
-        img: `${BASE_URL}/media/${
-          data?.content_images[item?.name?.toLowerCase()]
-        }`,
+        img: `${data?.content_images[item?.name?.toLowerCase()]}`,
         location: item.name,
         properties: "4,090",
         delayAnimation: "0",

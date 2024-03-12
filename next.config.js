@@ -21,7 +21,7 @@ const cloudFlareConfig = {
 
 const nextConfig = {
   images: {
-    remotePatterns: [prodConfig],
+    domains: ["imagedelivery.net"], // Add the hostname here
     imageSizes: [16, 32, 48, 64, 96, 128, 256, 384],
     formats: ["image/webp", "image/avif"],
     minimumCacheTTL: 60,
