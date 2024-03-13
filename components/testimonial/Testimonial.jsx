@@ -1,5 +1,4 @@
-
-'use client'
+"use client";
 
 import Image from "next/image";
 import { useEffect } from "react";
@@ -40,7 +39,7 @@ const Testimonial = () => {
 
   useEffect(() => {
     localStorage.clear();
-  }, [])
+  }, []);
 
   return (
     <>
@@ -52,8 +51,11 @@ const Testimonial = () => {
             data-aos="fade"
             data-aos-delay={item.dealyAnimation}
           >
-            <h4 className="text-16 fw-500 text-blue-1 mb-20">{item.meta}</h4>
-            <p style={{height: "140px"}} className="testimonials__text lh-18 fw-500 text-dark-1">
+            <h4 className="text-16 fw-600 text-blue-1 mb-20">{item.meta}</h4>
+            <p
+              style={{ height: "140px" }}
+              className="testimonials__text lh-18 fw-600 text-dark-1"
+            >
               {item.text}
             </p>
             <div className="pt-20 mt-28 border-top-light">
@@ -69,7 +71,7 @@ const Testimonial = () => {
                   />
                 </div>
                 <div className="col-auto">
-                  <div className="text-15 fw-500 lh-14">{item.name}</div>
+                  <div className="text-15 fw-600 lh-14">{item.name}</div>
                   {/* <div className="text-14 lh-14 text-light-1 mt-5">
                     {item.designation}
                   </div> */}

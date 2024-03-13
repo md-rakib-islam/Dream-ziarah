@@ -9,7 +9,8 @@ import Social from "@/components/common/social/Social";
 
 export const metadata = {
   title: "Connect with DreamZiarah - Your Gateway to Tailored Muslim Tours",
-  description: "Ready to embark on a spiritual journey? Connect with DreamZiarah for personalized assistance on our Hajj, Umrah, and Ziarah tours. Our team is here to guide you through a seamless experience. Reach out today, and let's start planning your meaningful pilgrimage.",
+  description:
+    "Ready to embark on a spiritual journey? Connect with DreamZiarah for personalized assistance on our Hajj, Umrah, and Ziarah tours. Our team is here to guide you through a seamless experience. Reach out today, and let's start planning your meaningful pilgrimage.",
 };
 
 const Contact = () => {
@@ -40,7 +41,7 @@ const Contact = () => {
         <div className="row justify-end">
           <div className="col-xl-5 col-lg-7">
             <div className="map-form px-40 pt-40 pb-50 lg:px-30 lg:py-30 md:px-24 md:py-24 bg-white rounded-4 shadow-4">
-              <div className="text-22 fw-500">Send a message</div>
+              <div className="text-22 fw-600">Send a message</div>
               <ContactForm />
             </div>
           </div>
@@ -56,7 +57,7 @@ const Contact = () => {
             </div>
             {/* End .col */}
 
-            <Address saudi = {true}/>
+            <Address saudi={true} />
             {/* End address com */}
 
             <div className="col-auto">
@@ -83,15 +84,18 @@ const Contact = () => {
       </section>
       {/* End Address Section */}
 
-      
-      <section style={{backgroundColor : "#d3f6ee"}} className="layout-pt-md layout-pb-md">
+      <section
+        style={{ backgroundColor: "#d3f6ee" }}
+        className="layout-pt-md layout-pb-md"
+      >
         <div className="container">
           <div className="row justify-center text-center">
             <div className="col-auto">
               <div className="sectionTitle -md">
                 <h2 className="sectionTitle__title">Free cancellation</h2>
                 <p className=" sectionTitle__text mt-5 sm:mt-0">
-                You'll receive a full refund if you cancel at least 24 <br/> hours in advance of most experiences.
+                  You'll receive a full refund if you cancel at least 24 <br />{" "}
+                  hours in advance of most experiences.
                 </p>
               </div>
             </div>

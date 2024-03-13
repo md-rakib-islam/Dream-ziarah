@@ -27,12 +27,12 @@ const ItineraryContent = () => {
           <div className="accordion__item ">
             <div className="d-flex">
               <div className="accordion__icon size-40 flex-center bg-blue-2 text-blue-1 rounded-full">
-                <div className="text-14 fw-500">{index + 1}</div>
+                <div className="text-14 fw-600">{index + 1}</div>
               </div>
               {/* End item number */}
 
               <div className="ml-20">
-                <div className="text-16 lh-15 fw-500">{item.title}</div>
+                <div className="text-16 lh-15 fw-600">{item.title}</div>
                 <div
                   className={`accordion-collapse collapse ${item.classShowHide}`}
                   id={item.targetCollapse}
@@ -63,7 +63,7 @@ const ItineraryContent = () => {
                   data-bs-toggle="collapse"
                   data-bs-target={`#${item.targetCollapse}`}
                 >
-                  <button className="d-block lh-15 text-14 text-blue-1 underline fw-500 mt-5">
+                  <button className="d-block lh-15 text-14 text-blue-1 underline fw-600 mt-5">
                     {/* See details &amp; photo */}
                     See details
                   </button>

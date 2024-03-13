@@ -222,7 +222,7 @@ const Umrah = ({ children }) => {
           <div className="pt-40 border-top-light">
             <div className="row x-gap-40 y-gap-40">
               <div className="col-auto">
-                <h3 className="text-22 fw-500">Important information</h3>
+                <h3 className="text-22 fw-600">Important information</h3>
               </div>
             </div>
             {/* End row */}
@@ -236,7 +236,7 @@ const Umrah = ({ children }) => {
 
       <section className="border-top-light  mt-40 pt-40">
         <div className="container">
-          <h3 className="text-22 fw-500 mb-20">Itinerary</h3>
+          <h3 className="text-22 fw-600 mb-20">Itinerary</h3>
           <Itinerary />
         </div>
       </section>
@@ -247,7 +247,7 @@ const Umrah = ({ children }) => {
           <div className="pt-40 border-top-light">
             <div className="row y-gap-20">
               <div className="col-lg-4">
-                <h2 className="text-22 fw-500">
+                <h2 className="text-22 fw-600">
                   FAQs about
                   <br /> The Crown Hotel
                 </h2>
@@ -276,7 +276,7 @@ const Umrah = ({ children }) => {
         <div className="container">
           <div className="row y-gap-40 justify-between">
             <div className="col-xl-3">
-              <h3 className="text-22 fw-500">Guest reviews</h3>
+              <h3 className="text-22 fw-600">Guest reviews</h3>
               <ReviewProgress2 />
             </div>
 
@@ -294,7 +294,7 @@ const Umrah = ({ children }) => {
             <div className="col-xl-3">
               <div className="row">
                 <div className="col-auto">
-                  <h3 className="text-22 fw-500">Leave a Reply</h3>
+                  <h3 className="text-22 fw-600">Leave a Reply</h3>
                   <p className="text-15 text-dark-1 mt-5">
                     Your email address will not be published.
                   </p>

@@ -147,7 +147,7 @@ const ToursJedda = ({ filterTour }) => {
 
                   <div className="cardImage__leftBadge">
                     <div
-                      className={`py-5 px-15 rounded-right-4 text-12 lh-16 fw-500 uppercase ${
+                      className={`py-5 px-15 rounded-right-4 text-12 lh-16 fw-600 uppercase ${
                         isTextMatched(item?.tag, "likely to sell out*")
                           ? "bg-dark-1 text-white"
                           : ""
@@ -181,14 +181,14 @@ const ToursJedda = ({ filterTour }) => {
                   <div className="col-auto">
                     <div className="text-14 text-dark-1 fw-bold">
                       From {currentCurrency?.symbol}
-                      <span className="text-16 fw-500 text-blue-1 fw-bold">
+                      <span className="text-16 fw-600 text-blue-1 fw-bold">
                         {" "}
                         {item.price}
                       </span>
                     </div>
                   </div>
                 </div>
-                <h4 className="tourCard__title text-dark-1 text-18 lh-16 fw-500">
+                <h4 className="tourCard__title text-dark-1 text-18 lh-16 fw-600">
                   <span>{item?.title}</span>
                 </h4>
                 <p className="text-light-1 lh-14 text-14 mt-5">
@@ -215,7 +215,7 @@ const ToursJedda = ({ filterTour }) => {
                   {/* <div className="col-auto">
                     <div className="text-14 text-light-1">
                       From {currentCurrency?.symbol} 
-                      <span className="text-16 fw-500 text-dark-1">
+                      <span className="text-16 fw-600 text-dark-1">
                         {" "}
                         
                         {item.price}

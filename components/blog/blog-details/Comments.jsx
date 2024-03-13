@@ -7,11 +7,11 @@ const Comments = () => {
             <img src="/img/avatars/2.png" alt="image" />
           </div>
           <div className="col-auto">
-            <div className="fw-500 lh-15">Tonko</div>
+            <div className="fw-600 lh-15">Tonko</div>
             <div className="text-14 text-light-1 lh-15">March 2022</div>
           </div>
         </div>
-        <h5 className="fw-500 text-blue-1 mt-20">9.2 Superb</h5>
+        <h5 className="fw-600 text-blue-1 mt-20">9.2 Superb</h5>
         <p className="text-15 text-dark-1 mt-10">
           Nice two level apartment in great London location. Located in quiet
           small street, but just 50 meters from main street and bus stop. Tube
@@ -65,11 +65,11 @@ const Comments = () => {
             <img src="/img/avatars/2.png" alt="image" />
           </div>
           <div className="col-auto">
-            <div className="fw-500 lh-15">Tonko</div>
+            <div className="fw-600 lh-15">Tonko</div>
             <div className="text-14 text-light-1 lh-15">March 2022</div>
           </div>
         </div>
-        <h5 className="fw-500 text-blue-1 mt-20">9.2 Superb</h5>
+        <h5 className="fw-600 text-blue-1 mt-20">9.2 Superb</h5>
         <p className="text-15 text-dark-1 mt-10">
           Nice two level apartment in great London location. Located in quiet
           small street, but just 50 meters from main street and bus stop. Tube

@@ -1,11 +1,13 @@
-const Address = ({saudi}) => {
+const Address = ({ saudi }) => {
   const addressContent = [
     {
       id: 1,
       colClass: "col-lg-3",
       title: "Address:",
       content: (
-        <>3893 Ibrahim Al Khalil, Ash Shubaikah 6428, Mecca 24231, Saudi Arabia.</>
+        <>
+          3893 Ibrahim Al Khalil, Ash Shubaikah 6428, Mecca 24231, Saudi Arabia.
+        </>
       ),
     },
     {
@@ -29,7 +31,6 @@ const Address = ({saudi}) => {
         </>
       ),
     },
-    
   ];
 
   const addressContent2 = [
@@ -37,9 +38,7 @@ const Address = ({saudi}) => {
       id: 1,
       colClass: "col-lg-3",
       title: "Italy Address",
-      content: (
-        <>Via Principe Eugenio, 95, 00185 Roma RM, Italy.</>
-      ),
+      content: <>Via Principe Eugenio, 95, 00185 Roma RM, Italy.</>,
     },
     {
       id: 2,
@@ -62,7 +61,6 @@ const Address = ({saudi}) => {
         </>
       ),
     },
-    
   ];
 
   const newAddressContent = saudi ? addressContent : addressContent2;
@@ -72,10 +70,9 @@ const Address = ({saudi}) => {
       {newAddressContent.map((item) => (
         <div className={`${item.colClass}`} key={item.id}>
           <div className="text-14 text-light-1">{item.title}</div>
-          <div className="text-18 fw-500 mt-10">{item.content}</div>
+          <div className="text-18 fw-600 mt-10">{item.content}</div>
         </div>
       ))}
-      
     </>
   );
 };

@@ -2,8 +2,7 @@ import Image from "next/image";
 // import Link from "next/link";
 import { slightContent } from "@/data/desinations";
 
-const Slights = ({slug}) => {
-
+const Slights = ({ slug }) => {
   return (
     <>
       {slightContent[slug]?.items?.map((item) => (
@@ -29,11 +28,13 @@ const Slights = ({slug}) => {
               </div>
               <div className="col">
                 <div className="d-flex flex-column justify-center h-full px-30">
-                  <h3 className="text-lg-start text-center text-18 fw-500">{item.title}</h3>
+                  <h3 className="text-lg-start text-center text-18 fw-600">
+                    {item.title}
+                  </h3>
                   <p className="text-15 mt-5">{item.text}</p>
                   {/* <Link
                     href="#"
-                    className="d-block text-14 text-blue-1 fw-500 underline mt-5"
+                    className="d-block text-14 text-blue-1 fw-600 underline mt-5"
                   >
                     See More
                   </Link> */}

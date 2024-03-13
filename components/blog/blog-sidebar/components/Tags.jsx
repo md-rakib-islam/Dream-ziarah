@@ -64,7 +64,7 @@ const Tags = () => {
           <Link
             href="#"
             // href={`/blog-details/${item.id}`}
-            className="button -blue-1 py-5 px-20 bg-blue-1-05 rounded-100 text-15 fw-500 text-blue-1 text-capitalize"
+            className="button -blue-1 py-5 px-20 bg-blue-1-05 rounded-100 text-15 fw-600 text-blue-1 text-capitalize"
           >
             {item.name}
           </Link>

@@ -169,7 +169,7 @@ const TourSingleV1Dynamic = ({ params, children }) => {
 
       <section className="pt-40">
         <div className="container">
-          <div className="row y-gap-20 justify-between items-end">
+          <div className="row y-gap-30 justify-between items-end">
             {/* <div className="col-auto">
               <h1 className="text-30 fw-600">{tour?.title}</h1>
               <div className="row x-gap-20 y-gap-20 items-center pt-10">
@@ -211,7 +211,7 @@ const TourSingleV1Dynamic = ({ params, children }) => {
             {/* End .col */}
 
             <div className="col-lg-4 col-sm-12">
-              <div className="row x-gap-10 y-gap-10 ">
+              <div className="row x-gap-10 y-gap-10 ml-15">
                 <div className="col-auto btn-group dropup">
                   <button
                     type="button"
@@ -303,7 +303,7 @@ const TourSingleV1Dynamic = ({ params, children }) => {
           <div className="pt-40 border-top-light">
             <div className="row x-gap-40 y-gap-40">
               <div className="col-auto">
-                <h3 className="text-22 fw-500">Important information</h3>
+                <h3 className="text-22 fw-600">Important information</h3>
               </div>
             </div>
             {/* End row */}
@@ -317,7 +317,7 @@ const TourSingleV1Dynamic = ({ params, children }) => {
 
       <section className="border-top-light  mt-40 pt-40">
         <div className="container">
-          <h3 className="text-22 fw-500 mb-20">Itinerary</h3>
+          <h3 className="text-22 fw-600 mb-20">Itinerary</h3>
           <Itinerary />
         </div>
       </section>
@@ -327,7 +327,7 @@ const TourSingleV1Dynamic = ({ params, children }) => {
         <div className="container">
           <div className="row y-gap-40 justify-between">
             <div className="col-xl-3">
-              <h3 className="text-22 fw-500">Guest reviews</h3>
+              <h3 className="text-22 fw-600">Guest reviews</h3>
               <ReviewProgress2 />
             </div>
 
@@ -345,7 +345,7 @@ const TourSingleV1Dynamic = ({ params, children }) => {
             <div className="col-xl-3">
               <div className="row">
                 <div className="col-auto">
-                  <h3 className="text-22 fw-500">Leave a Reply</h3>
+                  <h3 className="text-22 fw-600">Leave a Reply</h3>
                   <p className="text-15 text-dark-1 mt-5">
                     Your email address will not be published.
                   </p>

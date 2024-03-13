@@ -35,7 +35,7 @@ const ReviewProgress2 = () => {
           4.8
         </div>
         <div className="ml-20">
-          <div className="text-16 text-dark-1 fw-500 lh-14">Exceptional</div>
+          <div className="text-16 text-dark-1 fw-600 lh-14">Exceptional</div>
           <div className="text-15 text-light-1 lh-14 mt-4">3,014 reviews</div>
         </div>
       </div>
@@ -45,7 +45,7 @@ const ReviewProgress2 = () => {
         {reviewProgressContent.map((item) => (
           <div className="col-12" key={item.id}>
             <div className="d-flex items-center justify-between">
-              <div className="text-15 fw-500">{item.reviewReason}</div>
+              <div className="text-15 fw-600">{item.reviewReason}</div>
               <div className="text-15 text-light-1">{item.ratings}</div>
             </div>
             <div className="progressBar mt-10">

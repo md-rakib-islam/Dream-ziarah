@@ -1,18 +1,14 @@
-
-'use client'
+"use client";
 
 import { addGuests } from "@/features/bokun/bokunSlice";
 import { useState } from "react";
 import { useDispatch } from "react-redux";
-const counters = [
-  { name: "Adults", defaultValue: 3 },
-  
-];
+const counters = [{ name: "Adults", defaultValue: 3 }];
 
 const Counter = ({ name, defaultValue, onCounterChange }) => {
   const [count, setCount] = useState(defaultValue);
   const incrementCount = () => {
-    if(count < 15){
+    if (count < 15) {
       setCount(count + 1);
       onCounterChange(name, count + 1);
     }
@@ -28,7 +24,7 @@ const Counter = ({ name, defaultValue, onCounterChange }) => {
     <>
       <div className="row y-gap-10 justify-between items-center">
         <div className="col-auto">
-          <div className="text-15 lh-12 fw-500">{name}</div>
+          <div className="text-15 lh-12 fw-600">{name}</div>
           {name === "Children" && (
             <div className="text-14 lh-12 text-light-1 mt-5">Ages 0 - 17</div>
           )}
@@ -71,10 +67,9 @@ const GuestSearch = () => {
   });
   const handleCounterChange = (name, value) => {
     setGuestCounts((prevState) => ({ ...prevState, [name]: value }));
-    
   };
   dispatch(addGuests(guestCounts));
-  
+
   return (
     <div className="searchMenu-guests px-20 py-10 border-light rounded-4 js-form-dd js-form-counters">
       <div
@@ -83,7 +78,7 @@ const GuestSearch = () => {
         aria-expanded="false"
         data-bs-offset="0,22"
       >
-        <h4 className="text-15 fw-500 ls-2 lh-16">Number of travelers</h4>
+        <h4 className="text-15 fw-600 ls-2 lh-16">Number of travelers</h4>
         <div className="text-15 text-light-1 ls-2 lh-16">
           <span className="js-count-adult">{guestCounts.Adults}</span> adults
           {/* <span className="js-count-child">{guestCounts.Children}</span>{" "}

@@ -51,9 +51,9 @@
       border-radius: 4px;
 
       .cardImage__content .swiper-slide,
-      // .cardImage__content > img {
-      //   transition: all 0.8s $easeOutQuart;
-      // }
+      .cardImage__content > img {
+        transition: all 0.8s ease-out; // Adjust the timing function if needed
+      }
 
       .swiper-slide-active {
         position: relative;
@@ -68,22 +68,18 @@
         background-repeat: no-repeat;
         transition: background-size 0.3s cubic-bezier(0.785, 0.135, 0.15, 0.86)
           0s;
+        border-bottom: 0px solid black; // Initial border style
+        transition: border-bottom 0.5s cubic-bezier(0.785, 0.135, 0.15, 0.86) 0s; // Transition for border
       }
     }
   }
 
   &:hover {
     .tourCard {
-      &__image {
-        // .cardImage__content > img,
-        .swiper-slide {
-          transform: scale(1.15);
-        }
-      }
-
       &__title {
         span {
           background-size: 100% !important;
+          border-bottom: 1px solid black; // Hover border style
         }
       }
     }

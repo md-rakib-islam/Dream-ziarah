@@ -8,7 +8,7 @@ import Link from "next/link";
 const RecentPost = () => {
   const blogPosts = useBlogs();
   blogPosts?.sort((a, b) => b.created_at - a.created_at);
-  
+
   return (
     <>
       {blogPosts?.slice(0, 3).map((item) => (
@@ -23,7 +23,7 @@ const RecentPost = () => {
             />
 
             <div className="ml-15">
-              <h5 className="text-15 lh-15 fw-500">
+              <h5 className="text-15 lh-15 fw-600">
                 <Link href={`/blog-details/${item.id}`}>{item.title}</Link>
               </h5>
               <div className="text-13 lh-1 mt-5">{item.date}</div>
