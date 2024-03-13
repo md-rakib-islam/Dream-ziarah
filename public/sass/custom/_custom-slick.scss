@@ -237,3 +237,28 @@
     }
   }
 }
+@media (max-width: 393px) {
+  .slick_arrow-between {
+    &.-prev {
+      left: -10px;
+    }
+
+    &.-next {
+      right: -10px;
+    }
+
+    &.arrow-md {
+      opacity: 0.6;
+
+      top: 28%;
+      visibility: visible;
+      &.-prev {
+        left: 8px;
+      }
+
+      &.-next {
+        right: 8px;
+      }
+    }
+  }
+}

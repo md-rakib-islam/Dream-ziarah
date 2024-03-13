@@ -91,7 +91,9 @@ const MobileMenu = () => {
                   onClick={() => router.push(menu?.routePath)}
                   data-bs-dismiss="offcanvas"
                   className={
-                    pathname === menu?.routePath ? "menu-active-link" : ""
+                    pathname === menu?.routePath
+                      ? "menu-active-link fw-500"
+                      : "fw-500"
                   }
                 >
                   {menu.name}
@@ -108,8 +110,8 @@ const MobileMenu = () => {
                         item.routePath?.split("/")[1] ==
                         currentPathName.split("/")[1]
                     )
-                      ? "menu-active-link"
-                      : ""
+                      ? "menu-active-link fw-500"
+                      : "fw-500"
                   }
                 >
                   {menu?.children?.map((item, i) => (
@@ -119,8 +121,8 @@ const MobileMenu = () => {
                       onClick={() => router.push(item.routePath)}
                       className={
                         isActiveLink(item.routePath, pathname)
-                          ? "menu-active-link"
-                          : "inactive-menu"
+                          ? "menu-active-link fw-400"
+                          : "inactive-menu fw-400"
                       }
                     >
                       {item.name == "Jedda"
@@ -138,7 +140,9 @@ const MobileMenu = () => {
           <MenuItem
             data-bs-dismiss="offcanvas"
             onClick={() => router.push("/contact")}
-            className={pathname === "/contact" ? "menu-active-link" : ""}
+            className={
+              pathname === "/contact" ? "menu-active-link fw-500" : "fw-500"
+            }
           >
             Contact
           </MenuItem>
@@ -158,7 +162,7 @@ const MobileMenu = () => {
         </div>
         {/* <div className="mt-20">
           <Link
-            className=" button -dark-1 px-30 fw-400 text-14 bg-blue-1 h-50 text-white"
+            className=" button -dark-1 px-30 fw-500 text-14 bg-blue-1 h-50 text-white"
             href="/login"
           >
             Become An Expert

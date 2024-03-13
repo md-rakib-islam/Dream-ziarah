@@ -55,7 +55,7 @@ const home_3 = () => {
         style={{
           marginTop: "100pz",
         }}
-        src="https://imagedelivery.net/dIKhvGtesTiRSxhQ2oKWkA/f2d43b3c-067e-4b95-13ec-1b47d57b6f00/public"
+        src="https://imagedelivery.net/dIKhvGtesTiRSxhQ2oKWkA/424b106d-c60f-40fb-739d-76fc8d54cb00/public"
       />
     </div>
   ) : (

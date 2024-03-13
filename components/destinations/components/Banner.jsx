@@ -45,6 +45,7 @@ const Banner = ({ slug }) => {
           <h1
             className="text-50 fw-600 text-white lg:text-40 md:text-30"
             style={{
+              fontFamily: "Great Vibes, cursive",
               textShadow: "2px 2px 4px rgba(0,0,0,0.5)",
             }}
           >
@@ -59,6 +60,7 @@ const Banner = ({ slug }) => {
             className="text-white"
             style={{
               textShadow: "2px 2px 4px rgba(0,0,0,0.5)",
+              fontFamily: "Great Vibes, cursive",
             }}
           >
             Explore deals, travel guides and things to do in{" "}

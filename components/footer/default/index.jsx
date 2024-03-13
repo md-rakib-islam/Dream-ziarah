@@ -83,7 +83,7 @@ const index = () => {
           <div className="pt-60 pb-60">
             <div className="row y-gap-40 justify-between xl:justify-start">
               <div className="col-xl-2 col-lg-4 col-sm-6">
-                <h5 className="text-16 fw-500 mb-30">Contact Us</h5>
+                <h5 className="text-16 fw-500 mb-10">Contact Us</h5>
                 <ContactInfo />
               </div>
               {/* End col */}
@@ -93,7 +93,7 @@ const index = () => {
 
               <div className="col-xl-3 col-lg-4 col-sm-6">
                 {/* <h5 className="text-16 fw-500 mb-30">Mobile</h5> */}
-                <h5 className="text-16 fw-500 mb-30">
+                <h5 className="text-16 fw-500 mb-10">
                   Sign up to our newsletter
                 </h5>
                 {/* <AppButton /> */}
