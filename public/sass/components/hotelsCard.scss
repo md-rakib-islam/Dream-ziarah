@@ -69,7 +69,7 @@
         transition: background-size 0.3s cubic-bezier(0.785, 0.135, 0.15, 0.86)
           0s;
         border-bottom: 0px solid black; // Initial border style
-        transition: border-bottom 0.5s cubic-bezier(0.785, 0.135, 0.15, 0.86) 0s; // Transition for border
+        // transition: border-bottom 0.3s cubic-bezier(0.785, 0.135, 0.15, 0.86) 0s; // Transition for border
       }
     }
   }
