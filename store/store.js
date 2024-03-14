@@ -7,22 +7,24 @@ import findPlaceSlice from "../features/hero/findPlaceSlice";
 import locationReducer from "../features/location/locationSlice";
 import menuReducer from "../features/menu/menuSlice";
 import paginatonReducer from "../features/pagination/paginationSlice";
+import searchReducer from "../features/search/searchSlice";
 import siteSettingReducer from "../features/site-setting/siteSettingSlice";
 import tourReducer from "../features/tour/tourSlice";
 
 export const store = configureStore({
-    reducer: {
-        [apiSlice.reducerPath] : apiSlice.reducer,
-        hero: findPlaceSlice,
-        menus : menuReducer,
-        tour : tourReducer,
-        blog : blogReducer,
-        currency : currencyReducer,
-        siteSettings : siteSettingReducer,
-        pagination : paginatonReducer,
-        location : locationReducer,
-        bokun : bokunReducer,
-    },
-    middleware: (getDefaultMiddleware) =>
+  reducer: {
+    [apiSlice.reducerPath]: apiSlice.reducer,
+    hero: findPlaceSlice,
+    menus: menuReducer,
+    tour: tourReducer,
+    blog: blogReducer,
+    currency: currencyReducer,
+    siteSettings: siteSettingReducer,
+    pagination: paginatonReducer,
+    location: locationReducer,
+    search: searchReducer,
+    bokun: bokunReducer,
+  },
+  middleware: (getDefaultMiddleware) =>
     getDefaultMiddleware().concat(apiSlice.middleware),
 });

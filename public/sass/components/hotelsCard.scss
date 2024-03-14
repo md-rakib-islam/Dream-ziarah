@@ -91,10 +91,10 @@
       overflow: hidden;
       border-radius: 4px;
 
-      .cardImage__content .swiper-slide,
-      .cardImage__content > img {
-        transition: all 0.8s $easeOutQuart;
-      }
+      // .cardImage__content .swiper-slide,
+      // .cardImage__content > img {
+      //   transition: all 0.8s $easeOutQuart;
+      // }
 
       .swiper-slide-active {
         position: relative;
@@ -115,12 +115,12 @@
 
   &:hover {
     .tourCard {
-      &__image {
-        // .cardImage__content > img,
-        .swiper-slide {
-          transform: scale(1.15);
-        }
-      }
+      // &__image {
+      //   // .cardImage__content > img,
+      //   // .swiper-slide {
+      //   //   transform: scale(1.15);
+      //   // }
+      // }
 
       &__title {
         span {

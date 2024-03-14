@@ -14,7 +14,7 @@ const ToursJedda = ({ filterTour }) => {
   const { currentCurrency } = useSelector((state) => state.currency);
   const width = useWindowSize();
   const isMobile = width < 768;
-  // href={`/tours/${item?.title?.toLowerCase()?.split(" ")?.join("-")}`}
+  // href={`/tour/${item?.title?.toLowerCase()?.split(" ")?.join("-")}`}
 
   const settings = {
     dots: true,
@@ -108,7 +108,7 @@ const ToursJedda = ({ filterTour }) => {
             data-aos-delay={item?.delayAnimation}
           >
             <Link
-              href={`/tours/${item?.title
+              href={`/tour/${item?.title
                 ?.toLowerCase()
                 ?.split(" ")
                 ?.join("-")}`}

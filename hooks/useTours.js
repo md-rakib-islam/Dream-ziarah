@@ -1,9 +1,10 @@
 import { BASE_URL } from "@/constant/constants";
 import { useGetAllContentQuery } from "@/features/content/contentApi";
 import { useGetImagesByMenuIdQuery } from "@/features/image/imageApi";
+import { addItemsCount } from "@/features/search/searchSlice";
 import convertCurrency from "@/utils/currency";
 import { useEffect, useState } from "react";
-import { useSelector } from "react-redux";
+import { useDispatch, useSelector } from "react-redux";
 
 export const singleTourInfo = {
   "Madinah City Ziarah Vehicle Sharing With Guide": {
@@ -382,21 +383,23 @@ export const singleTourInfo = {
       "https://www.google.com/maps/d/u/1/embed?mid=1CM8PjQjW7zWc_PpHMpNHHHRYlZU1-cw&ehbc=2E312F&z=7",
   },
 };
-const useTours = () => {
+const useTours = (filerTour) => {
   const [tourItems, setTourItems] = useState([]);
   const { menuItems } = useSelector((state) => state?.menus);
   const { currentCurrency } = useSelector((state) => state?.currency);
-  const ziarahId = menuItems.find((item) => item.name === "Ziarah")?.id;
+  // const ziarahId = menuItems.find((item) => item.name == "Ziarah")?.id;
+  const ziarahId = menuItems
+    .find((item) => item.name === "Tours")
+    ?.children?.find((child) => child?.name == filerTour)?.id;
   const { isSuccess, data, isLoading } = useGetImagesByMenuIdQuery(ziarahId);
   const {
     isSuccess: isContentSuccess,
     data: contentItems,
     isLoading: isContentLoading,
   } = useGetAllContentQuery(ziarahId);
-
+  console.log("filerTour", filerTour);
   useEffect(() => {
     if (isSuccess && isContentSuccess) {
-      console.log("fdfdkf", contentItems);
       let tours = contentItems
         .filter((item) => {
           if (
@@ -404,7 +407,8 @@ const useTours = () => {
             item.name === "medina" ||
             item.name === "jedda" ||
             item.name === "jeddah" ||
-            item.name === "tabuk" ||
+            item.name == "tabuk" ||
+            item.name == "Tabuk" ||
             item.name === "taif"
           )
             return false;
