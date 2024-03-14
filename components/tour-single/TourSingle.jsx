@@ -100,7 +100,7 @@ const TourSingleV1Dynamic = ({ params, children }) => {
     if (!hasReloaded) {
       localStorage.setItem("tourHasReloaded", "true");
       window.location.reload();
-      checkLocation(params?.name);
+      // checkLocation(params?.name);
     }
     localStorage.removeItem("hasReloaded" || "");
   }, []);

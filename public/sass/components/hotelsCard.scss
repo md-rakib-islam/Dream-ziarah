@@ -44,6 +44,47 @@
   }
 }
 
+// .tourCard.-type-1 {
+//   .tourCard {
+//     &__image {
+//       overflow: hidden;
+//       border-radius: 4px;
+
+//       .cardImage__content .swiper-slide,
+//       .cardImage__content > img {
+//         transition: all 0.8s ease-out; // Adjust the timing function if needed
+//       }
+
+//       .swiper-slide-active {
+//         position: relative;
+//         z-index: 2;
+//       }
+//     }
+
+//     &__title {
+//       span {
+//         background-image: linear-gradient(transparent 24px, black 20px);
+//         background-size: 0;
+//         background-repeat: no-repeat;
+//         transition: background-size 0.3s cubic-bezier(0.785, 0.135, 0.15, 0.86)
+//           0s;
+//         border-bottom: 0px solid black; // Initial border style
+//         // transition: border-bottom 0.3s cubic-bezier(0.785, 0.135, 0.15, 0.86) 0s; // Transition for border
+//       }
+//     }
+//   }
+
+//   &:hover {
+//     .tourCard {
+//       &__title {
+//         span {
+//           background-size: 100% !important;
+//           border-bottom: 1px solid black; // Hover border style
+//         }
+//       }
+//     }
+//   }
+// }
 .tourCard.-type-1 {
   .tourCard {
     &__image {
@@ -52,7 +93,7 @@
 
       .cardImage__content .swiper-slide,
       .cardImage__content > img {
-        transition: all 0.8s ease-out; // Adjust the timing function if needed
+        transition: all 0.8s $easeOutQuart;
       }
 
       .swiper-slide-active {
@@ -68,18 +109,22 @@
         background-repeat: no-repeat;
         transition: background-size 0.3s cubic-bezier(0.785, 0.135, 0.15, 0.86)
           0s;
-        border-bottom: 0px solid black; // Initial border style
-        // transition: border-bottom 0.3s cubic-bezier(0.785, 0.135, 0.15, 0.86) 0s; // Transition for border
       }
     }
   }
 
   &:hover {
     .tourCard {
+      &__image {
+        // .cardImage__content > img,
+        .swiper-slide {
+          transform: scale(1.15);
+        }
+      }
+
       &__title {
         span {
           background-size: 100% !important;
-          border-bottom: 1px solid black; // Hover border style
         }
       }
     }
@@ -303,8 +348,8 @@
 .tourTypeCard.-type-1 {
   transition: all 0.3s $easeOutQuart;
 
-  .tourTypeCard {
-  }
+  // .tourTypeCard {
+  // }
 
   &:hover {
     background-color: var(--color-blue-1) !important;
