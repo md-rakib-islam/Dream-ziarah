@@ -391,7 +391,7 @@ const TourHeading = async ({ params }) => {
   }
 
   return (
-    <div className="col-lg-8 col-sm-12">
+    <div className="col-xl-8">
       <h1 className="text-25 fw-600">{data?.name}</h1>
       <div className="row x-gap-10 y-gap-10 items-center pt-10">
         <div className="col-auto">

@@ -8,6 +8,7 @@ import Slider from "react-slick";
 import isTextMatched from "../../utils/isTextMatched";
 import useToursMadina from "@/hooks/useToursMadina";
 import useWindowSize from "@/hooks/useWindowSize";
+import TourSkeleton from "../skeleton/TourSkeleton";
 
 const ToursMadina = ({ filterTour }) => {
   const tourItems = useToursMadina(filterTour);
@@ -92,7 +93,7 @@ const ToursMadina = ({ filterTour }) => {
   }
 
   return tourItems?.length === 0 ? (
-    " "
+    <TourSkeleton />
   ) : (
     <>
       <Slider

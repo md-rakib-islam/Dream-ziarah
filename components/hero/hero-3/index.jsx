@@ -7,6 +7,7 @@ import { useGetSliderImagesQuery } from "@/features/image/imageApi";
 import Image from "next/image";
 import { useEffect } from "react";
 import MainFilterSearchBox from "./MainFilterSearchBox";
+import CoverSkeleton from "@/components/skeleton/CoverSkeleton";
 // import { Interweave } from "interweave";
 const index = ({ onDataAvailable }) => {
   // const dispatch = useDispatch();
@@ -26,7 +27,17 @@ const index = ({ onDataAvailable }) => {
     }
   }, [onDataAvailable, sliderImageItems]);
   // localStorage.clear();
-  return (
+
+  // if (isLoading) {
+  //   return (
+  //     <div>
+  //       <CoverSkeleton />
+  //     </div>
+  //   );
+  // }
+  return isLoading ? (
+    <CoverSkeleton />
+  ) : (
     <>
       {/* <div className="row justify-center text-center bannar_mobile overflow-hidden">
         <div className="col-auto">
@@ -137,19 +148,13 @@ const index = ({ onDataAvailable }) => {
       </div> */}
 
       <section className="masthead -type-6">
-        <div className="masthead__bg">
-          {isLoading ? (
-            <div className="d-flex justify-content-center align-items-center">
-              <Loading></Loading>
-            </div>
-          ) : (
-            <Image
-              src={sliderImageItems[1]?.cloudflare_image_url}
-              width={1920}
-              height={860}
-              alt="image"
-            />
-          )}
+        <div className="masthead__bg ">
+          <Image
+            src={sliderImageItems[1]?.cloudflare_image_url}
+            width={1920}
+            height={860}
+            alt="image"
+          />
         </div>
 
         <div className="container">

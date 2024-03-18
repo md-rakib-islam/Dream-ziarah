@@ -8,6 +8,7 @@ import Slider from "react-slick";
 import isTextMatched from "../../utils/isTextMatched";
 import useToursMakka from "@/hooks/useToursMakka";
 import useWindowSize from "@/hooks/useWindowSize";
+import TourSkeleton from "../skeleton/TourSkeleton";
 
 const Tours = ({ filterTour }) => {
   const tourItems = useToursMakka(filterTour);
@@ -15,6 +16,7 @@ const Tours = ({ filterTour }) => {
   const { currentCurrency } = useSelector((state) => state.currency);
   const width = useWindowSize();
   const isMobile = width < 768;
+  const isNotMobile = width > 768;
   // href={`/tour/${item?.title?.toLowerCase()?.split(" ")?.join("-")}`}
   console.log(
     "tourItemsFilter",
@@ -98,7 +100,7 @@ const Tours = ({ filterTour }) => {
   }
 
   return tourItems?.length === 0 ? (
-    " "
+    <TourSkeleton />
   ) : (
     <>
       <Slider
@@ -110,8 +112,8 @@ const Tours = ({ filterTour }) => {
         {tourItems?.map((item) => (
           <div
             key={item?.id}
-            data-aos="fade"
-            data-aos-delay={item?.delayAnimation}
+            // data-aos="fade"
+            // data-aos-delay={item?.delayAnimation}
           >
             <Link
               href={`/tour/${item?.title

@@ -167,9 +167,9 @@ const TourSingleV1Dynamic = ({ params, children }) => {
       <div className="header-margin"></div>
       {/* header top margin */}
 
-      <section className="pt-40">
+      <section className="pt-40 js-pin-container">
         <div className="container">
-          <div className="row y-gap-30 justify-between items-end">
+          <div className="row y-gap-30">
             {/* <div className="col-auto">
               <h1 className="text-30 fw-600">{tour?.title}</h1>
               <div className="row x-gap-20 y-gap-20 items-center pt-10">
@@ -210,8 +210,8 @@ const TourSingleV1Dynamic = ({ params, children }) => {
             {children}
             {/* End .col */}
 
-            <div className="col-lg-4 col-sm-12">
-              <div className="row x-gap-10 y-gap-10 ml-15">
+            <div className="col-xl-4">
+              <div className="row ">
                 <div className="col-auto btn-group dropup">
                   <button
                     type="button"
