@@ -12,7 +12,7 @@ module.exports = [
   // },
   {
     id: 2,
-    title: "Support",
+    title: "Navigation",
     menuList: [
       { name: "About Us", routerPath: "/about" },
       { name: "Contact", routerPath: "/contact" },

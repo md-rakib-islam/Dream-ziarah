@@ -83,7 +83,7 @@ const index = () => {
             theme="dark"
           />
           <div className="pt-60 pb-60">
-            <div className="row y-gap-10">
+            <div className="row y-gap-40">
               <div className="col-xl-4 col-lg-4 col-sm-6">
                 <div className="d-flex items-center">
                   {/* <Link href="/" className="header-logo mr-20"> */}
@@ -101,8 +101,8 @@ const index = () => {
                       alt="Hajj, Umrah and Ziarah"
                     /> */}
                   {/* </Link> */}
-                  <h5 className="text-16 fw-600 mb-10 w-100">
-                    About Dream Ziarah
+                  <h5 className="text-18 fw-600 mb-10 w-100">
+                  Dream Ziarah 
                   </h5>
                   {/* End logo */}
                 </div>
@@ -110,16 +110,11 @@ const index = () => {
                   className={"text-14 mt-0 w-100 text-justify"}
                   style={{ textAlign: "justify" }}
                 >
-                  Welcome to Dream Ziarah, your trusted partner for spiritual
-                  journeys. We specialize in making your pilgrimage comfortable
-                  and meaningful. Whether it's Ziarah, Hajj, or Umrah, we're
-                  here to simplify your experience. Our legacy is built on
-                  excellence, ensuring every detail is taken care of for a
-                  hassle-free journey.
+                  Discover spiritual fulfillment with Dream Ziarah. We offer Umrah, Hajj, and Ziarah packages, guiding you through Makkah, Madinah, Jeddah, and Taif. Experience the essence of pilgrimage with us.
                 </div>
               </div>
               <div className="col-xl-3 col-lg-3 col-sm-6">
-                <h5 className="text-16 fw-600 mb-10 w-100">Contact Us</h5>
+                <h5 className="text-18 fw-600 mb-10 w-100">Contact Us</h5>
                 <ContactInfo />
               </div>
               {/* End col */}
@@ -128,8 +123,8 @@ const index = () => {
               {/* End footer menu content */}
 
               <div className="col-xl-3 col-lg-3 col-sm-6 ">
-                {/* <h5 className="text-16 fw-600 mb-30">Mobile</h5> */}
-                <h5 className="text-16 fw-600 mb-10 w-100">
+                {/* <h5 className="text-18 fw-600 mb-30">Mobile</h5> */}
+                <h5 className="text-18 fw-600 mb-10 w-100">
                   Sign up to our newsletter
                 </h5>
                 {/* <AppButton /> */}
@@ -151,7 +146,8 @@ const index = () => {
                     <button
                       disabled={!email || isLoading}
                       onClick={handleSubmit}
-                      className="button -md h-50 bg-blue-1 w-100 text-white"
+                      className="button -md h-5 border border-secondary  w-100"
+
                     >
                       Subscribe
                     </button>

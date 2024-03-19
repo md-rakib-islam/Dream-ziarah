@@ -1,9 +1,23 @@
 .footer.-type-1 {
+  color: rgba(var(--bs-white-rgb));
+  background-color: var(--color-dark-2);
+  
   @media (max-width: 576px) {
     .border-sm-top-light {
       border-top: 1px solid #dddddd; /* Whatever color you desire */
     }
   }
+  
+}
+.button{
+  color: rgba(var(--bs-white-rgb));
+  background-color: var(--color-dark-2);
+  cursor: pointer;
+
+
+}
+.row {
+  --bs-gutter-x: 67px !important;
 }
 
 .footer.-dashboard {
@@ -17,7 +31,8 @@
 }
 .footer-link {
   &:hover {
-    color: var(--color-blue-1);
-    font-weight: 600;
+    // color: var(--color-blue-1);
+    color: rgb(169, 241, 225);
+    // font-weight: 600;
   }
 }
