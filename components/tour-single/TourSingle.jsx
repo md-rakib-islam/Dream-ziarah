@@ -39,6 +39,7 @@ import {
   WhatsappIcon,
   WhatsappShareButton,
 } from "react-share";
+import Image from "next/image";
 
 const TourSingleV1Dynamic = ({ params, children }) => {
   const dispatch = useDispatch();
@@ -49,6 +50,8 @@ const TourSingleV1Dynamic = ({ params, children }) => {
   const id = params?.slug;
   const { menuItems } = useSelector((state) => state.menus);
   const tourId = menuItems.find((item) => item.name === "Tour")?.id;
+  const [copied, setCopied] = useState(false);
+  const [isCopyLoading, setIsCopyLoading] = useState(false);
 
   // const ziarahId = menuItems
   //   .find((item) => item.name === "Tours")
@@ -162,12 +165,30 @@ const TourSingleV1Dynamic = ({ params, children }) => {
   //   // Return the states
   // }
 
+  //copy link
+  const copyToClipboard = () => {
+    setIsCopyLoading(true);
+    setTimeout(() => {
+      navigator?.clipboard
+        ?.writeText(window?.location?.href)
+        .then(() => {
+          setIsCopyLoading(false);
+          setCopied(true);
+          setTimeout(() => {
+            setCopied(false);
+          }, 300); // Remove "Copied!" message after 3 seconds
+        })
+        .catch(() => {
+          setIsCopyLoading(false);
+        });
+    }, 300); // Remove "Copied!" message after 3 seconds
+  };
   return (
     <>
       <div className="header-margin"></div>
       {/* header top margin */}
 
-      <section className="pt-40 js-pin-container">
+      <section className="pt-50 js-pin-container">
         <div className="container">
           <div className="row y-gap-30">
             {/* <div className="col-auto">
@@ -226,7 +247,7 @@ const TourSingleV1Dynamic = ({ params, children }) => {
                     <li className="d-flex my-2">
                       <FacebookShareButton
                         className="me-2"
-                        url={`https://dreamziarah.com/tours/${tour?.title
+                        url={`https://dreamziarah.com/tour/${tour?.title
                           ?.toLowerCase()
                           ?.split(" ")
                           ?.join("-")}`}
@@ -235,7 +256,7 @@ const TourSingleV1Dynamic = ({ params, children }) => {
                       </FacebookShareButton>
                       <FacebookMessengerShareButton
                         className="me-2"
-                        url={`https://dreamziarah.com/tours/${tour?.title
+                        url={`https://dreamziarah.com/tour/${tour?.title
                           ?.toLowerCase()
                           ?.split(" ")
                           ?.join("-")}`}
@@ -244,7 +265,7 @@ const TourSingleV1Dynamic = ({ params, children }) => {
                       </FacebookMessengerShareButton>
                       <WhatsappShareButton
                         className="me-2"
-                        url={`https://dreamziarah.com/tours/${tour?.title
+                        url={`https://dreamziarah.com/tour/${tour?.title
                           ?.toLowerCase()
                           ?.split(" ")
                           ?.join("-")}`}
@@ -253,7 +274,7 @@ const TourSingleV1Dynamic = ({ params, children }) => {
                       </WhatsappShareButton>
                       <EmailShareButton
                         className="me-2"
-                        url={`https://dreamziarah.com/tours/${tour?.title
+                        url={`https://dreamziarah.com/tour/${tour?.title
                           ?.toLowerCase()
                           ?.split(" ")
                           ?.join("-")}`}
@@ -261,13 +282,55 @@ const TourSingleV1Dynamic = ({ params, children }) => {
                         <EmailIcon size={32} round={true} />
                       </EmailShareButton>
                       <LinkedinShareButton
-                        url={`https://dreamziarah.com/tours/${tour?.title
+                        url={`https://dreamziarah.com/tour/${tour?.title
                           ?.toLowerCase()
                           ?.split(" ")
                           ?.join("-")}`}
                       >
                         <LinkedinIcon size={32} round={true} />
                       </LinkedinShareButton>
+                      <div
+                        style={{
+                          display: "flex",
+                          alignItems: "center",
+                        }}
+                        onClick={copyToClipboard}
+                      >
+                        {isCopyLoading ? (
+                          // <CircularProgress
+                          //   style={{ color: "#e02043", marginRight: "10px" }}
+                          //   size={20}
+                          // />
+                          <Image
+                            width={32}
+                            height={32}
+                            objectFit="cover"
+                            // style={{
+
+                            //   marginRight: "10px",
+                            // }}
+                            src="/img/gif/progress.gif"
+                          />
+                        ) : (
+                          <i className="icon-copy"></i>
+                        )}
+                        {copied ? (
+                          <h6>copied!</h6>
+                        ) : (
+                          // <i className="icon-files-o"></i>
+                          <Image
+                            width={32}
+                            height={32}
+                            style={{
+                              // height: "32px",
+                              // width: "32px",
+                              // marginRight: "10px",
+                              cursor: "pointer",
+                            }}
+                            src="/img/gif/copy.png"
+                          />
+                        )}
+                      </div>
                     </li>
                   </ul>
                 </div>

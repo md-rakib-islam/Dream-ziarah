@@ -8,7 +8,7 @@ const UmrahSidebarRight = () => {
   //   const {data, isSuccess} = useGetContentsByMenuContentIdQuery(params.slug);
 
   return (
-    <div className="d-flex justify-end js-pin-content">
+    <div className="d-flex js-pin-content">
       <div className="w-360 lg:w-full items-left">
         <div
           className="bokunWidget"

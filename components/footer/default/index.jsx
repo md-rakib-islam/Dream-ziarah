@@ -86,12 +86,12 @@ const index = () => {
             <div className="row y-gap-10">
               <div className="col-xl-4 col-lg-4 col-sm-6">
                 <div className="d-flex items-center">
-                  <Link href="/" className="header-logo mr-20">
-                    {/* {
+                  {/* <Link href="/" className="header-logo mr-20"> */}
+                  {/* {
                     isLoading ? (<Loading/>) : (<Image style={{width : "60px", height:"60px"}} src={logoUrl} width={128} height={128} alt="logo"/>)
                   } */}
 
-                    <Image
+                  {/* <Image
                       unoptimized
                       quality={100}
                       style={{ width: "80px", height: "80px" }}
@@ -99,11 +99,17 @@ const index = () => {
                       width={128}
                       height={128}
                       alt="Hajj, Umrah and Ziarah"
-                    />
-                  </Link>
+                    /> */}
+                  {/* </Link> */}
+                  <h5 className="text-16 fw-600 mb-10 w-100">
+                    About Dream Ziarah
+                  </h5>
                   {/* End logo */}
                 </div>
-                <div className={"text-14 mt-0 w-100 text-start"}>
+                <div
+                  className={"text-14 mt-0 w-100 text-justify"}
+                  style={{ textAlign: "justify" }}
+                >
                   Welcome to Dream Ziarah, your trusted partner for spiritual
                   journeys. We specialize in making your pilgrimage comfortable
                   and meaningful. Whether it's Ziarah, Hajj, or Umrah, we're

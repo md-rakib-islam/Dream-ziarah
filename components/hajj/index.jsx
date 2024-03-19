@@ -22,7 +22,7 @@ import { useGetImagesByMenuIdQuery } from "@/features/image/imageApi";
 import { addItenarayItems, addtourItem } from "@/features/tour/tourSlice";
 import { singleTourInfo } from "@/hooks/useTours";
 import Link from "next/link";
-import { useEffect } from "react";
+import { useEffect, useState } from "react";
 import { useDispatch, useSelector } from "react-redux";
 import {
   EmailIcon,
@@ -36,9 +36,12 @@ import {
   WhatsappIcon,
   WhatsappShareButton,
 } from "react-share";
+import Image from "next/image";
 
 const Hajj = ({ children }) => {
   const dispatch = useDispatch();
+  const [copied, setCopied] = useState(false);
+  const [isCopyLoading, setIsCopyLoading] = useState(false);
   const { menuItems } = useSelector((state) => state.menus);
   const hajjId = menuItems.find((item) => item.name === "Hajj")?.id;
   const { data, isSuccess } = useGetContentsByMenuContentIdQuery(40);
@@ -83,6 +86,25 @@ const Hajj = ({ children }) => {
     localStorage.removeItem("tourHasReloaded");
   }, []);
 
+  //copy link
+  const copyToClipboard = () => {
+    setIsCopyLoading(true);
+    setTimeout(() => {
+      navigator?.clipboard
+        ?.writeText(window?.location?.href)
+        .then(() => {
+          setIsCopyLoading(false);
+          setCopied(true);
+          setTimeout(() => {
+            setCopied(false);
+          }, 300); // Remove "Copied!" message after 3 seconds
+        })
+        .catch(() => {
+          setIsCopyLoading(false);
+        });
+    }, 300); // Remove "Copied!" message after 3 seconds
+  };
+
   return (
     <>
       {/* End Page Title */}
@@ -97,7 +119,7 @@ const Hajj = ({ children }) => {
       {/* <TopBreadCrumb /> */}
       {/* End top breadcrumb */}
 
-      <section className="pt-40 js-pin-container">
+      <section className="pt-50 js-pin-container">
         <div className="container">
           <div className="row y-gap-30">
             {/* <div className="col-auto">
@@ -198,6 +220,48 @@ const Hajj = ({ children }) => {
                       >
                         <LinkedinIcon size={32} round={true} />
                       </LinkedinShareButton>
+                      <div
+                        style={{
+                          display: "flex",
+                          alignItems: "center",
+                        }}
+                        onClick={copyToClipboard}
+                      >
+                        {isCopyLoading ? (
+                          // <CircularProgress
+                          //   style={{ color: "#e02043", marginRight: "10px" }}
+                          //   size={20}
+                          // />
+                          <Image
+                            width={32}
+                            height={32}
+                            objectFit="cover"
+                            // style={{
+
+                            //   marginRight: "10px",
+                            // }}
+                            src="/img/gif/progress.gif"
+                          />
+                        ) : (
+                          <i className="icon-copy"></i>
+                        )}
+                        {copied ? (
+                          <h6>copied!</h6>
+                        ) : (
+                          // <i className="icon-files-o"></i>
+                          <Image
+                            width={32}
+                            height={32}
+                            style={{
+                              // height: "32px",
+                              // width: "32px",
+                              // marginRight: "10px",
+                              cursor: "pointer",
+                            }}
+                            src="/img/gif/copy.png"
+                          />
+                        )}
+                      </div>
                     </li>
                   </ul>
                 </div>
