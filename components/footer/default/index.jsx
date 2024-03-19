@@ -9,6 +9,8 @@ import FooterContent from "./FooterContent";
 
 import "react-toastify/dist/ReactToastify.css";
 import { useGetLogoUrlQuery } from "@/features/site-setting/siteSettingApi";
+import Image from "next/image";
+import Link from "next/link";
 
 const index = () => {
   const [email, setEmail] = useState("");
@@ -81,9 +83,37 @@ const index = () => {
             theme="dark"
           />
           <div className="pt-60 pb-60">
-            <div className="row y-gap-40 justify-between xl:justify-start">
-              <div className="col-xl-2 col-lg-4 col-sm-6">
-                <h5 className="text-16 fw-600 mb-10">Contact Us</h5>
+            <div className="row y-gap-10">
+              <div className="col-xl-4 col-lg-4 col-sm-6">
+                <div className="d-flex items-center">
+                  <Link href="/" className="header-logo mr-20">
+                    {/* {
+                    isLoading ? (<Loading/>) : (<Image style={{width : "60px", height:"60px"}} src={logoUrl} width={128} height={128} alt="logo"/>)
+                  } */}
+
+                    <Image
+                      unoptimized
+                      quality={100}
+                      style={{ width: "80px", height: "80px" }}
+                      src="/img/logo_loading.webp"
+                      width={128}
+                      height={128}
+                      alt="Hajj, Umrah and Ziarah"
+                    />
+                  </Link>
+                  {/* End logo */}
+                </div>
+                <div className={"text-14 mt-0 w-100 text-start"}>
+                  Welcome to Dream Ziarah, your trusted partner for spiritual
+                  journeys. We specialize in making your pilgrimage comfortable
+                  and meaningful. Whether it's Ziarah, Hajj, or Umrah, we're
+                  here to simplify your experience. Our legacy is built on
+                  excellence, ensuring every detail is taken care of for a
+                  hassle-free journey.
+                </div>
+              </div>
+              <div className="col-xl-3 col-lg-3 col-sm-6">
+                <h5 className="text-16 fw-600 mb-10 w-100">Contact Us</h5>
                 <ContactInfo />
               </div>
               {/* End col */}
@@ -91,13 +121,13 @@ const index = () => {
               <FooterContent />
               {/* End footer menu content */}
 
-              <div className="col-xl-3 col-lg-4 col-sm-6">
+              <div className="col-xl-3 col-lg-3 col-sm-6 ">
                 {/* <h5 className="text-16 fw-600 mb-30">Mobile</h5> */}
-                <h5 className="text-16 fw-600 mb-10">
+                <h5 className="text-16 fw-600 mb-10 w-100">
                   Sign up to our newsletter
                 </h5>
                 {/* <AppButton /> */}
-                <div className="single-field w-100 d-flex flex-column y-gap-20">
+                <div className="single-field w-100 d-flex flex-column y-gap-20 w-100">
                   <div>
                     <input
                       onChange={(e) => setEmail(e.target.value)}

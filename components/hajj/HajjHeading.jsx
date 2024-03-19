@@ -386,9 +386,9 @@ const HajjHeading = async () => {
   }
 
   return (
-    <div className="col-auto">
-      <h1 className="text-30 fw-600">{data?.name}</h1>
-      <div className="row x-gap-20 y-gap-20 items-center pt-10">
+    <div className="col-xl-8">
+      <h1 className="text-25 fw-600">{data?.name}</h1>
+      <div className="row x-gap-10 y-gap-10 items-center pt-10">
         <div className="col-auto">
           <div className="d-flex items-center">
             <div className="d-flex x-gap-5 items-center">
@@ -421,13 +421,13 @@ const HajjHeading = async () => {
             </div>
 
             {/* <div className="col-auto">
-                      <button
-                        data-x-click="mapFilter"
-                        className="text-blue-1 text-15 underline"
-                      >
-                        Show on map
-                      </button>
-                    </div> */}
+                    <button
+                      data-x-click="mapFilter"
+                      className="text-blue-1 text-15 underline"
+                    >
+                      Show on map
+                    </button>
+                  </div> */}
           </div>
         </div>
       </div>

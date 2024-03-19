@@ -29,6 +29,7 @@ const ToursTaif = dynamic(() => import("@/components/tours/ToursTaif"));
 // };
 
 const home_3 = () => {
+  // const router = useRouter();
   const [dataAvailable, setDataAvailable] = useState(false);
   const { isLoading } = useGetSliderImagesQuery();
 
@@ -83,7 +84,7 @@ const home_3 = () => {
 
             <div className="col-4 col-lg-auto">
               <Link
-                href="#"
+                href="/tours/?location=Makkah"
                 className="button -md -blue-1 bg-blue-1-05 text-blue-1"
               >
                 More <div className="icon-arrow-top-right ml-15" />
@@ -125,7 +126,7 @@ const home_3 = () => {
 
             <div className="col-4 col-lg-auto">
               <Link
-                href="#"
+                href="/tours/?location=Medina"
                 className="button -md -blue-1 bg-blue-1-05 text-blue-1"
               >
                 More <div className="icon-arrow-top-right ml-15" />
@@ -161,7 +162,7 @@ const home_3 = () => {
 
               <div className="col-4 col-lg-auto">
                 <Link
-                  href="#"
+                  href="/tours/?location=Jedda"
                   className="button -md -blue-1 bg-blue-1-05 text-blue-1"
                 >
                   More <div className="icon-arrow-top-right ml-15" />
@@ -197,7 +198,7 @@ const home_3 = () => {
 
               <div className="col-4 col-lg-auto">
                 <Link
-                  href="#"
+                  href="/tours/?location=Taif"
                   className="button -md -blue-1 bg-blue-1-05 text-blue-1"
                 >
                   More <div className="icon-arrow-top-right ml-15" />

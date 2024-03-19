@@ -97,9 +97,9 @@ const Umrah = ({ children }) => {
       {/* <TopBreadCrumb /> */}
       {/* End top breadcrumb */}
 
-      <section className="pt-40">
+      <section className="pt-40 js-pin-container">
         <div className="container">
-          <div className="row y-gap-20 justify-between items-end">
+          <div className="row y-gap-30">
             {/* <div className="col-auto">
               <h1 className="text-30 fw-600">{tour?.title}</h1>
               <div className="row x-gap-20 y-gap-20 items-center pt-10">
@@ -140,14 +140,14 @@ const Umrah = ({ children }) => {
             {children}
             {/* End .col */}
 
-            <div className="col-auto">
-              <div className="row x-gap-10 y-gap-10">
+            <div className="col-xl-4">
+              <div className="row ">
                 <div className="col-auto btn-group dropup">
                   <button
                     type="button"
                     data-bs-toggle="dropdown"
                     aria-expanded="false"
-                    className="button px-15 py-10 -blue-1 "
+                    className="button px-10 py-10 -blue-1 "
                   >
                     <i className="icon-share mr-10"></i>
                     Share
@@ -157,39 +157,44 @@ const Umrah = ({ children }) => {
                       <FacebookShareButton
                         className="me-2"
                         url={`https://dreamziarah.com/tours/${tour?.title
+                          ?.toLowerCase()
                           ?.split(" ")
-                          ?.join("_")}/${tour.id}`}
+                          ?.join("-")}`}
                       >
                         <FacebookIcon size={32} round={true} />
                       </FacebookShareButton>
                       <FacebookMessengerShareButton
                         className="me-2"
                         url={`https://dreamziarah.com/tours/${tour?.title
+                          ?.toLowerCase()
                           ?.split(" ")
-                          ?.join("_")}/${tour.id}`}
+                          ?.join("-")}`}
                       >
                         <FacebookMessengerIcon size={32} round={true} />
                       </FacebookMessengerShareButton>
                       <WhatsappShareButton
                         className="me-2"
                         url={`https://dreamziarah.com/tours/${tour?.title
+                          ?.toLowerCase()
                           ?.split(" ")
-                          ?.join("_")}/${tour.id}`}
+                          ?.join("-")}`}
                       >
                         <WhatsappIcon size={32} round={true} />
                       </WhatsappShareButton>
                       <EmailShareButton
                         className="me-2"
                         url={`https://dreamziarah.com/tours/${tour?.title
+                          ?.toLowerCase()
                           ?.split(" ")
-                          ?.join("_")}/${tour.id}`}
+                          ?.join("-")}`}
                       >
                         <EmailIcon size={32} round={true} />
                       </EmailShareButton>
                       <LinkedinShareButton
                         url={`https://dreamziarah.com/tours/${tour?.title
+                          ?.toLowerCase()
                           ?.split(" ")
-                          ?.join("_")}/${tour.id}`}
+                          ?.join("-")}`}
                       >
                         <LinkedinIcon size={32} round={true} />
                       </LinkedinShareButton>
@@ -198,7 +203,7 @@ const Umrah = ({ children }) => {
                 </div>
 
                 <div className="col-auto">
-                  <button className="button px-15 py-10 -blue-1 bg-light-2">
+                  <button className="button px-10 py-10 -blue-1 bg-light-2">
                     <i className="icon-heart mr-10"></i>
                     Save
                   </button>
@@ -272,7 +277,7 @@ const Umrah = ({ children }) => {
       </section> */}
       {/* End Faq about sections */}
 
-      <section className="mt-40 border-top-light pt-40">
+      {/* <section className="mt-40 border-top-light pt-40">
         <div className="container">
           <div className="row y-gap-40 justify-between">
             <div className="col-xl-3">
@@ -280,12 +285,12 @@ const Umrah = ({ children }) => {
               <ReviewProgress2 />
             </div>
 
-            {/* <div className="col-xl-8">
+          <div className="col-xl-8">
               <DetailsReview2 />
-            </div> */}
+            </div> 
           </div>
         </div>
-      </section>
+      </section> */}
       {/* End Review section */}
 
       {/* <section className="mt-40 border-top-light pt-40">
@@ -334,7 +339,7 @@ const Umrah = ({ children }) => {
 
             <div className="col-auto">
               <Link
-                href="#"
+                href="/tours/?location=Makkah"
                 className="button -md -blue-1 bg-blue-1-05 text-blue-1"
               >
                 More <div className="icon-arrow-top-right ml-15" />

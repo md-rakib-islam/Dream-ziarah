@@ -5,11 +5,11 @@ const FooterContent = () => {
   return (
     <>
       {footerDataContent.map((item) => (
-        <div className="col-xl-2 col-lg-4 col-sm-6 " key={item.id}>
-          <h5 className="text-16 fw-600 mb-10">{item.title}</h5>
-          <div className="d-flex y-gap-0 flex-column">
+        <div className="col-xl-2 col-lg-2 col-sm-6" key={item.id}>
+          <h5 className="text-16 fw-600 mb-10  w-100">{item.title}</h5>
+          <div className="d-flex y-gap-0 flex-column w-100">
             {item.menuList.map((menu, i) => (
-              <Link href={menu.routerPath} key={i}>
+              <Link className="footer-link" href={menu.routerPath} key={i}>
                 {menu.name}
               </Link>
             ))}

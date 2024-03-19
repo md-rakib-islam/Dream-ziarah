@@ -1,5 +1,4 @@
-
-'use client'
+"use client";
 
 import Image from "next/image";
 import { Swiper, SwiperSlide } from "swiper/react";
@@ -45,11 +44,11 @@ const TourProperties = () => {
                   </div>
                   {/* End .cardImage__content */}
 
-                  <div className="cardImage__wishlist">
+                  {/* <div className="cardImage__wishlist">
                     <button className="button -blue-1 bg-white size-30 rounded-full shadow-2">
                       <i className="icon-heart text-12" />
                     </button>
-                  </div>
+                  </div> */}
                   {/* End .cardImage__wishlist */}
                 </div>
                 {/* End cartImage */}

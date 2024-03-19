@@ -36,7 +36,7 @@ const Banner = ({ slug }) => {
           src={bannerUrl}
           alt={slug}
           className="col-12 rounded-4 destination_banner_img"
-          loading="lazy"
+          // loading="lazy"
           height={860}
           width={1920}
           style={{ maxHeight: "448px" }}

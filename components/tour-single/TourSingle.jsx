@@ -387,7 +387,7 @@ const TourSingleV1Dynamic = ({ params, children }) => {
 
               <div className="col-auto">
                 <Link
-                  href="#"
+                  href="/tours/?location=Makkah"
                   className="button -md -blue-1 bg-blue-1-05 text-blue-1"
                 >
                   More <div className="icon-arrow-top-right ml-15" />
@@ -426,7 +426,7 @@ const TourSingleV1Dynamic = ({ params, children }) => {
 
               <div className="col-auto">
                 <Link
-                  href="#"
+                  href="/tours/?location=Medina"
                   className="button -md -blue-1 bg-blue-1-05 text-blue-1"
                 >
                   More <div className="icon-arrow-top-right ml-15" />
@@ -464,7 +464,7 @@ const TourSingleV1Dynamic = ({ params, children }) => {
 
               <div className="col-auto">
                 <Link
-                  href="#"
+                  href="/tours/?location=Jedda"
                   className="button -md -blue-1 bg-blue-1-05 text-blue-1"
                 >
                   More <div className="icon-arrow-top-right ml-15" />
@@ -500,7 +500,7 @@ const TourSingleV1Dynamic = ({ params, children }) => {
 
               <div className="col-auto">
                 <Link
-                  href="#"
+                  href="/tours/?location=Taif"
                   className="button -md -blue-1 bg-blue-1-05 text-blue-1"
                 >
                   More <div className="icon-arrow-top-right ml-15" />

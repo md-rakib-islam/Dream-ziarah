@@ -4,7 +4,7 @@ import AccordionContent from "./ItineraryContent";
 import { useSelector } from "react-redux";
 
 const index = () => {
-  const {tourItem} = useSelector(state => state.tour);
+  const { tourItem } = useSelector((state) => state.tour);
   return (
     <div className="row y-gap-30">
       <div className="col-lg-4">
@@ -20,11 +20,13 @@ const index = () => {
       <div className="col-lg-8 map_height">
         <div className="map rounded-4 overflow-hidden" id="itineraryContent">
           {/* <MarkerInfoWindow /> */}
-          <iframe className="itinerary_map" src={singleTourInfo[tourItem?.name]?.itinerarySrc}></iframe>
+          <iframe
+            className="itinerary_map"
+            src={singleTourInfo[tourItem?.name]?.itinerarySrc}
+          ></iframe>
         </div>
       </div>
       {/* End col-lg-8 */}
-      
     </div>
   );
 };

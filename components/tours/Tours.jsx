@@ -147,11 +147,11 @@ const Tours = ({ filterTour }) => {
                     ))}
                   </Slider>
 
-                  <div className="cardImage__wishlist">
+                  {/* <div className="cardImage__wishlist">
                     <button className="button -blue-1 bg-white size-30 rounded-full shadow-2">
                       <i className="icon-heart text-12" />
                     </button>
-                  </div>
+                  </div> */}
 
                   <div className="cardImage__leftBadge">
                     <div
@@ -196,7 +196,7 @@ const Tours = ({ filterTour }) => {
                     </div>
                   </div>
                 </div>
-                <h4 className="tourCard__title text-dark-1 text-18 lh-16 fw-600">
+                <h4 className="tourCard__title text-dark-5 text-18 lh-16 fw-600">
                   <span>{item?.title}</span>
                 </h4>
                 <p className="text-light-1 lh-14 text-14 mt-5">
