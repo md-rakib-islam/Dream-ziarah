@@ -204,6 +204,9 @@ const TourProperties = () => {
                   </div> */}
               </div>
             </div>
+            <button className="button -md h-5 border border-secondary bg-blue-1 text-white w-100">
+              Book Now
+            </button>
           </Link>
         </div>
       ))}

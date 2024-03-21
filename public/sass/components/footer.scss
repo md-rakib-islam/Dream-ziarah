@@ -1,22 +1,19 @@
 .footer.-type-1 {
   color: rgba(var(--bs-white-rgb));
   background-color: var(--color-dark-2);
-  
+
   @media (max-width: 576px) {
     .border-sm-top-light {
       border-top: 1px solid #dddddd; /* Whatever color you desire */
     }
   }
-  
 }
-.button{
+.footer .button {
   color: rgba(var(--bs-white-rgb));
   background-color: var(--color-dark-2);
   cursor: pointer;
-
-
 }
-.row {
+.footer .row {
   --bs-gutter-x: 67px !important;
 }
 
