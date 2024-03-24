@@ -27,9 +27,11 @@
   }
 }
 .footer-link {
+  transition: 0.3s;
   &:hover {
     // color: var(--color-blue-1);
-    color: rgb(169, 241, 225);
+    // color: rgb(169, 241, 225);
+    transform: translateX(4px);
     // font-weight: 600;
   }
 }

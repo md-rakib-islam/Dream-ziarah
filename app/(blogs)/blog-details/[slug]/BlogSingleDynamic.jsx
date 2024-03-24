@@ -183,7 +183,7 @@ const BlogSingleDynamic = ({ params }) => {
       </section>
       {/* End Related Content */}
 
-      <CallToActions />
+      {/*<CallToActions /> */}
       {/* End Call To Actions Section */}
 
       {/* <DefaultFooter /> */}

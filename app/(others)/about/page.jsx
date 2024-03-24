@@ -1,6 +1,6 @@
 // import CallToActions from "@/components/common/CallToActions";
 import Block1 from "@/components/about/Block1";
-import dynamic from 'next/dynamic';
+import dynamic from "next/dynamic";
 // import WhyChoose from "@/components/block/BlockGuide";
 import Brand from "@/components/brand/Brand";
 import Counter from "@/components/counter/Counter";
@@ -10,18 +10,17 @@ import Testimonial from "@/components/testimonial/Testimonial";
 const WhyChoose = dynamic(() => import("@/components/home/home-3/WhyChoose"));
 
 export const metadata = {
-  title: "About DreamZiarah - Crafting Spiritual Journeys for Hajj, Umrah, and Ziarah",
-  description: "Welcome to DreamZiarah, where we specialize in tailoring exceptional travel experiences for Muslims. Explore our commitment to crafting spiritual journeys, with a focus on Hajj, Umrah, and Ziarah tours. Join us on a pilgrimage of faith, culture, and unforgettable exploration.",
+  title: "About Dream Ziarah | Your Trusted Partner in Spiritual Journeys",
+  description:
+    "Learn about Dream Ziarah, your premier guide for Ziyarat, Umrah, and Hajj in Saudi Arabia. Discover our passion for facilitating unforgettable spiritual journeys and how we ensure a deeply enriching pilgrimage experience.",
 };
 
 const About = () => {
   return (
     <>
       {/* End Page Title */}
-
       <div className="header-margin"></div>
       {/* header top margin */}
-
       <section className="layout-pt-md">
         <div className="container">
           <div className="row y-gap-30 justify-between items-center">
@@ -30,7 +29,6 @@ const About = () => {
         </div>
       </section>
       {/* End about block section */}
-
       <section className="pt-60">
         <div className="container">
           <div className="border-bottom-light pb-40">
@@ -41,7 +39,6 @@ const About = () => {
         </div>
       </section>
       {/* End counter Section */}
-
       <section className="section-bg layout-pt-lg layout-pb-lg">
         <div className="section-bg__item -mx-20 bg-light-2" />
         <div className="container">
@@ -84,7 +81,6 @@ const About = () => {
         {/* End .container */}
       </section>
       {/* End testimonial section */}
-
       <section className="layout-pt-lg layout-pb-md">
         <div className="container">
           <div className="row justify-center text-center">
@@ -107,18 +103,28 @@ const About = () => {
         {/* End .container */}
       </section>
       {/* End Why Choose Us section */}
-
-      <section style={{backgroundColor : "#EAFBF7"}} className="layout-pt-md layout-pb-md">
+      <section
+        style={{ backgroundColor: "#EAFBF7" }}
+        className="layout-pt-md layout-pb-md"
+      >
         <div className="container">
           <div className="row justify-center text-center">
             <div className="col-auto">
               <div className="sectionTitle -md">
                 <h2 className="sectionTitle__title">Free cancellation</h2>
-                <p style={{color : "black"}} className="mt-5 sm:mt-4 bannar_mobile">
-                You'll receive a full refund if you cancel at least 24 <br/> hours in advance of most experiences.
+                <p
+                  style={{ color: "black" }}
+                  className="mt-5 sm:mt-4 bannar_mobile"
+                >
+                  You'll receive a full refund if you cancel at least 24 <br />{" "}
+                  hours in advance of most experiences.
                 </p>
-                <p style={{color : "black"}} className="mt-5 sm:mt-4 bannar_desktop">
-                You'll receive a full refund if you cancel at least 24 hours in advance of most experiences.
+                <p
+                  style={{ color: "black" }}
+                  className="mt-5 sm:mt-4 bannar_desktop"
+                >
+                  You'll receive a full refund if you cancel at least 24 hours
+                  in advance of most experiences.
                 </p>
               </div>
             </div>
@@ -127,10 +133,8 @@ const About = () => {
         </div>
         {/* End .container */}
       </section>
-
-      {/* <CallToActions /> */}
+      {/*    {/*<CallToActions /> */}
       {/* End Call To Actions Section */}
-
       {/* <DefaultFooter /> */}
       {/* End Call To Actions Section */}
     </>

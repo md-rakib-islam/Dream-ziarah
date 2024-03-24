@@ -212,14 +212,14 @@ const Hajj = ({ children }) => {
                       >
                         <EmailIcon size={32} round={true} />
                       </EmailShareButton>
-                      <LinkedinShareButton
+                      {/* <LinkedinShareButton
                         url={`https://dreamziarah.com/tours/${tour?.title
                           ?.toLowerCase()
                           ?.split(" ")
                           ?.join("-")}`}
                       >
                         <LinkedinIcon size={32} round={true} />
-                      </LinkedinShareButton>
+                      </LinkedinShareButton> */}
                       <div
                         style={{
                           display: "flex",
@@ -258,7 +258,7 @@ const Hajj = ({ children }) => {
                               // marginRight: "10px",
                               cursor: "pointer",
                             }}
-                            src="/img/gif/copy.png"
+                            src="https://imagedelivery.net/dIKhvGtesTiRSxhQ2oKWkA/babfebab-d197-45fa-cffd-cb05dccac600/public"
                           />
                         )}
                       </div>
@@ -422,7 +422,7 @@ const Hajj = ({ children }) => {
       </section>
       {/* End Tours Sections */}
 
-      <CallToActions />
+      {/*<CallToActions /> */}
       {/* End Call To Actions Section */}
 
       {/* <DefaultFooter /> */}

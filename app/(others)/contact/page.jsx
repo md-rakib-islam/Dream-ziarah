@@ -8,9 +8,9 @@ import ContactForm from "@/components/common/ContactForm";
 import Social from "@/components/common/social/Social";
 
 export const metadata = {
-  title: "Connect with DreamZiarah - Your Gateway to Tailored Muslim Tours",
+  title: "Contact Dream Ziarah | Get in Touch for Your Spiritual Journey",
   description:
-    "Ready to embark on a spiritual journey? Connect with DreamZiarah for personalized assistance on our Hajj, Umrah, and Ziarah tours. Our team is here to guide you through a seamless experience. Reach out today, and let's start planning your meaningful pilgrimage.",
+    "Ready to plan your spiritual journey? Contact Dream Ziarah today. Whether you’re interested in Ziyarat, Umrah, or Hajj packages, our team is here to provide guidance and support every step of the way.",
 };
 
 const Contact = () => {
@@ -85,7 +85,7 @@ const Contact = () => {
       {/* End Address Section */}
 
       <section
-        style={{ backgroundColor: "#d3f6ee" }}
+        style={{ backgroundColor: "#EAFBF7" }}
         className="layout-pt-md layout-pb-md"
       >
         <div className="container">
@@ -107,7 +107,7 @@ const Contact = () => {
 
       {/* End Why Choose Us section */}
 
-      <CallToActions />
+      {/*<CallToActions /> */}
       {/* End Call To Actions Section */}
 
       {/* <DefaultFooter /> */}

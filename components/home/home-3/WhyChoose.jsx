@@ -45,6 +45,8 @@ const WhyChoose = () => {
         breakpoint: 992,
         settings: {
           slidesToShow: 2,
+          autoplay: true, // Enable autoplay
+          autoplaySpeed: 3000, // Set autoplay speed in milliseconds
           slidesToScroll: 2,
         },
       },
@@ -53,6 +55,8 @@ const WhyChoose = () => {
         breakpoint: 768,
         settings: {
           slidesToShow: 2,
+          autoplay: true, // Enable autoplay
+          autoplaySpeed: 5000, // Set autoplay speed in milliseconds
           slidesToScroll: 2,
         },
       },
@@ -60,6 +64,8 @@ const WhyChoose = () => {
         breakpoint: 520,
         settings: {
           slidesToShow: 1,
+          autoplay: true, // Enable autoplay
+          autoplaySpeed: 5000, // Set autoplay speed in milliseconds
           slidesToScroll: 1,
         },
       },

@@ -101,16 +101,17 @@ const index = () => {
                       alt="Hajj, Umrah and Ziarah"
                     /> */}
                   {/* </Link> */}
-                  <h5 className="text-18 fw-600 mb-10 w-100">
-                  Dream Ziarah 
-                  </h5>
+                  <h5 className="text-18 fw-600 mb-10 w-100">Dream Ziarah</h5>
                   {/* End logo */}
                 </div>
                 <div
                   className={"text-14 mt-0 w-100 text-justify"}
                   style={{ textAlign: "justify" }}
                 >
-                  Discover spiritual fulfillment with Dream Ziarah. We offer Umrah, Hajj, and Ziarah packages, guiding you through Makkah, Madinah, Jeddah, and Taif. Experience the essence of pilgrimage with us.
+                  Discover spiritual fulfillment with Dream Ziarah. We offer
+                  Umrah, Hajj, and Ziarah packages, guiding you through Makkah,
+                  Madinah, Jeddah, and Taif. Experience the essence of
+                  pilgrimage with us.
                 </div>
               </div>
               <div className="col-xl-3 col-lg-3 col-sm-6">
@@ -136,6 +137,7 @@ const index = () => {
                       required
                       name="email"
                       className="border border-secondary h-50"
+                      style={{ backgroundColor: "#ffffff" }}
                       type="email"
                       placeholder="Your Email"
                     />
@@ -146,8 +148,7 @@ const index = () => {
                     <button
                       disabled={!email || isLoading}
                       onClick={handleSubmit}
-                      className="button -md h-5 border border-secondary  w-100"
-
+                      className="px-30 fw-400 text-14 border-white -outline-white h-50 text-white  w-100 pointer"
                     >
                       Subscribe
                     </button>

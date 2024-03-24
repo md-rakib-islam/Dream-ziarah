@@ -7,9 +7,10 @@ const MainHome = dynamic(() => import("@/components/home/MainHome"));
 const Wrapper = dynamic(() => import("@/components/layout/Wrapper"));
 
 export const metadata = {
-  title: "Ziarah Packages for Spiritual Exploration - Dream Ziarah",
+  title:
+    "Dream Ziarah - Luxury Ziyarat Tours in Makkah & Madina | Umrah and Hajj Packages",
   description:
-    "Embark on a soul-stirring Ziarah journey with DreamZiarah.com. Discover sacred destinations and enrich your spiritual experience with our meticulously curated Ziarah packages.",
+    "Dream Ziarah specializes in providing spiritual journeys with exclusive Ziyarat tours in Makkah & Madina, alongside comprehensive Umrah and Hajj packages. Explore sacred sites with us and embark on a journey of faith and discovery.",
 };
 
 export default function Home() {

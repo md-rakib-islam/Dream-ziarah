@@ -23,7 +23,7 @@
 //       <UnderConstraction/>
 //       {/* End 404 section */}
 
-//       <CallToActions />
+//          {/*<CallToActions /> */}
 //       {/* End Call To Actions Section */}
 
 //       {/* <DefaultFooter /> */}
@@ -34,24 +34,22 @@
 
 // export default dynamic(() => Promise.resolve(index), { ssr: false });
 
-
 import Wrapper from "@/components/layout/Wrapper";
 import Umrah from "@/components/umrah";
 import UmrahHeading from "@/components/umrah/UmrahHeading";
 
-
 export const metadata = {
-  title: "Umrah Tours for a Spiritual Pilgrimage - Dream Ziarah",
-  description: "Experience the essence of devotion with our Umrah tours at DreamZiarah.com. Tailored for spiritual seekers, our Umrah packages offer a sacred pilgrimage to the holiest destinations, ensuring a meaningful and transformative journey.",
+  title: "Umrah Packages | Spiritual Umrah Journeys with Dream Ziarah",
+  description:
+    "Experience spiritual renewal and tranquility with Dream Ziarah’s Umrah packages. Our carefully curated services provide a meaningful pilgrimage, designed for your peace and spiritual deepening.",
 };
 
 export default function UmrahPage() {
-  
   return (
     <>
       <Wrapper>
         <Umrah>
-          <UmrahHeading/>
+          <UmrahHeading />
         </Umrah>
       </Wrapper>
     </>

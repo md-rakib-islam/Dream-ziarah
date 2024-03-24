@@ -281,14 +281,14 @@ const TourSingleV1Dynamic = ({ params, children }) => {
                       >
                         <EmailIcon size={32} round={true} />
                       </EmailShareButton>
-                      <LinkedinShareButton
+                      {/* <LinkedinShareButton
                         url={`https://dreamziarah.com/tour/${tour?.title
                           ?.toLowerCase()
                           ?.split(" ")
                           ?.join("-")}`}
                       >
                         <LinkedinIcon size={32} round={true} />
-                      </LinkedinShareButton>
+                      </LinkedinShareButton> */}
                       <div
                         style={{
                           display: "flex",
@@ -327,7 +327,7 @@ const TourSingleV1Dynamic = ({ params, children }) => {
                               // marginRight: "10px",
                               cursor: "pointer",
                             }}
-                            src="/img/gif/copy.png"
+                            src="https://imagedelivery.net/dIKhvGtesTiRSxhQ2oKWkA/babfebab-d197-45fa-cffd-cb05dccac600/public"
                           />
                         )}
                       </div>
@@ -583,7 +583,7 @@ const TourSingleV1Dynamic = ({ params, children }) => {
       )}
       {/* End Tours Sections */}
 
-      <CallToActions />
+      {/*<CallToActions /> */}
       {/* End Call To Actions Section */}
 
       {/* <DefaultFooter /> */}

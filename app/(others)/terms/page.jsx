@@ -10,23 +10,25 @@ import TermsConent from "@/components/common/TermsConent";
 // };
 
 const metaDatas = {
-  "general_terms_of_use" : {
-    title : "Dream Ziarah - Terms and Conditions",
-    description : "Explore the terms and conditions that govern your experience with Dream Ziarah. Understand our commitment to quality, fairness, and your satisfaction.",
+  general_terms_of_use: {
+    title: "Terms and Conditions | Dream Ziarah's Booking Guidelines",
+    description:
+      "Review Dream Ziarah's Privacy Policy to understand how we protect your information. Our commitment to your privacy is paramount as you plan your spiritual journey with us.",
   },
-  "privacy_policy" : {
-    title : "Dream Ziarah Privacy Policy - Your Privacy, Our Priority",
-    description : "Read Dream Ziarah's privacy policy to understand how we handle and protect your information. Your privacy is important to us, and we prioritize keeping your data secure.",
+  privacy_policy: {
+    title: "Privacy Policy | Dream Ziarah's Commitment to Your Privacy",
+    description:
+      "Read Dream Ziarah's privacy policy to understand how we handle and protect your information. Your privacy is important to us, and we prioritize keeping your data secure.",
   },
-}
+};
 
 export async function generateMetadata({ params, searchParams }, parent) {
-  const {type} = searchParams;
- 
+  const { type } = searchParams;
+
   return {
     title: metaDatas[type]?.title,
-    description : metaDatas[type]?.description
-  }
+    description: metaDatas[type]?.description,
+  };
 }
 
 const Terms = () => {
@@ -49,7 +51,7 @@ const Terms = () => {
       </section>
       {/* End terms section */}
 
-      <CallToActions />
+      {/*<CallToActions /> */}
       {/* End Call To Actions Section */}
 
       {/* <DefaultFooter /> */}

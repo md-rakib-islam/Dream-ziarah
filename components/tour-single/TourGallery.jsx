@@ -77,7 +77,7 @@ export default function TourGallery({ tour, hajj, umrah }) {
                             onClick={open}
                             role="button"
                           >
-                            See All Photos
+                            {slide ? "See All Photos" : ""}
                           </div>
                         )}
                       </Item>
@@ -104,7 +104,7 @@ export default function TourGallery({ tour, hajj, umrah }) {
               {/* End toursnapshot */}
               <div className="border-top-light mt-40 mb-40"></div>
 
-              <Overview hajj={hajj} />
+              {!isMobile && <Overview hajj={hajj} />}
               {/* End  Overview */}
             </div>
             {/* End .col-xl-8 */}
@@ -118,6 +118,11 @@ export default function TourGallery({ tour, hajj, umrah }) {
                 <SidebarRight />
               )}
             </div>
+            {isMobile && (
+              <div style={{ marginTop: "-260px" }}>
+                <Overview hajj={hajj} />
+              </div>
+            )}
             {/* End .col-xl-4 */}
           </div>
           {/* End .row */}

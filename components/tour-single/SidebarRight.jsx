@@ -57,6 +57,7 @@ const SidebarRight = () => {
     <div
       // className="d-flex justify-end js-pin-content"
       className="d-flex js-pin-content"
+      style={{ height: "fit-content" }}
     >
       <div className="w-360 lg:w-full  items-left">
         {isSuccess && <div className="bokunWidget" data-src={data?.url}></div>}
