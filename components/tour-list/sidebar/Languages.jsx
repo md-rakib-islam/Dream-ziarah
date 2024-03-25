@@ -1,9 +1,11 @@
 const Languages = () => {
   const languages = [
-    { name: "English", count: 92 },
-    { name: "Spanish", count: 45 },
-    { name: "French", count: 21 },
-    { name: "Turkish", count: 78 },
+    { name: "English", count: 28 },
+    { name: "Bengali", count: 28 },
+    { name: "Indonesian", count: 28 },
+    { name: "Hindi", count: 28 },
+    { name: "Urdu", count: 28 },
+    { name: "Malay", count: 28 },
   ];
 
   return (

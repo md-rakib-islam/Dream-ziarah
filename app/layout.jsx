@@ -83,6 +83,12 @@ export default function RootLayout({ children }) {
           href="https://fonts.cdnfonts.com/css/felicitationarabic-feasts"
           rel="stylesheet"
         ></link>
+
+        <link
+          rel="stylesheet"
+          href="path/to/font-awesome/css/font-awesome.min.css"
+        />
+
         {/* <link
           href="https://fonts.googleapis.com/css2?family=Cabin:wght@400;500;600&display=swap"
           rel="stylesheet"
@@ -101,6 +107,7 @@ export default function RootLayout({ children }) {
             <SrollTop />
           </Provider>
         </main>
+
         {/* <Script type="text/javascript" src="https://widgets.bokun.io/assets/javascripts/apps/build/BokunWidgetsLoader.js?bookingChannelUUID=d894d0d4-5eab-4e15-821d-6770f0186810" async={true}/>
         <Script type="text/javascript" src="https://widgets.bokun.io/assets/javascripts/apps/build/BokunWidgetsLoader.js?bookingChannelUUID=aa4c5059-8d0b-43dc-8bd3-bac143537416" async={true}/> */}
       </body>

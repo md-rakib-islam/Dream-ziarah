@@ -176,12 +176,12 @@ const TourSingleV1Dynamic = ({ params, children }) => {
           setCopied(true);
           setTimeout(() => {
             setCopied(false);
-          }, 300); // Remove "Copied!" message after 3 seconds
+          }, 1500); // Remove "Copied!" message after 3 seconds
         })
         .catch(() => {
           setIsCopyLoading(false);
         });
-    }, 300); // Remove "Copied!" message after 3 seconds
+    }, 1500); // Remove "Copied!" message after 3 seconds
   };
   return (
     <>
@@ -293,6 +293,7 @@ const TourSingleV1Dynamic = ({ params, children }) => {
                         style={{
                           display: "flex",
                           alignItems: "center",
+                          marginLeft: "-15px",
                         }}
                         onClick={copyToClipboard}
                       >
@@ -301,34 +302,44 @@ const TourSingleV1Dynamic = ({ params, children }) => {
                           //   style={{ color: "#e02043", marginRight: "10px" }}
                           //   size={20}
                           // />
-                          <Image
-                            width={32}
-                            height={32}
-                            objectFit="cover"
-                            // style={{
-
-                            //   marginRight: "10px",
-                            // }}
-                            src="/img/gif/progress.gif"
-                          />
+                          <h6
+                            style={{
+                              marginLeft: "10px",
+                            }}
+                          >
+                            copying
+                          </h6>
                         ) : (
-                          <i className="icon-copy"></i>
+                          <i
+                            className="icon-copy"
+                            style={{ height: 32, width: 32 }}
+                          ></i>
                         )}
                         {copied ? (
-                          <h6>copied!</h6>
+                          <h6
+                            style={{
+                              marginLeft: "-15px",
+                            }}
+                          >
+                            copied!
+                          </h6>
                         ) : (
                           // <i className="icon-files-o"></i>
-                          <Image
-                            width={32}
-                            height={32}
-                            style={{
-                              // height: "32px",
-                              // width: "32px",
-                              // marginRight: "10px",
-                              cursor: "pointer",
-                            }}
-                            src="https://imagedelivery.net/dIKhvGtesTiRSxhQ2oKWkA/babfebab-d197-45fa-cffd-cb05dccac600/public"
-                          />
+                          <>
+                            {!isCopyLoading && (
+                              <Image
+                                width={40}
+                                height={40}
+                                style={{
+                                  // height: "32px",
+                                  // width: "32px",
+                                  // marginRight: "10px",
+                                  cursor: "pointer",
+                                }}
+                                src="https://imagedelivery.net/dIKhvGtesTiRSxhQ2oKWkA/80bd75f3-6ddb-4c93-1acf-7b4fb358f200/public"
+                              />
+                            )}
+                          </>
                         )}
                       </div>
                     </li>

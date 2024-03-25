@@ -12,6 +12,9 @@
   color: rgba(var(--bs-white-rgb));
   background-color: var(--color-dark-2);
   cursor: pointer;
+  &:hover {
+    background-color: #010814;
+  }
 }
 .footer .row {
   --bs-gutter-x: 67px !important;

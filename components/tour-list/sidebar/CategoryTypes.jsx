@@ -1,6 +1,6 @@
 const CategoryTypes = () => {
   const categories = [
-    { name: "Tours", count: 7 },
+    { name: "Tours", count: 28 },
     { name: "Attractions", count: 0 },
     { name: "Day Trips", count: 0 },
     { name: "Outdoor Activities", count: 0 },

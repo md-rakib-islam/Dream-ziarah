@@ -1,8 +1,8 @@
 const Duration = () => {
   const durationOptions = [
-    { label: "Up to 1 hour", count: 92 },
-    { label: "1 to 4 hours", count: 45 },
-    { label: "4 hours to 1 day", count: 21 },
+    { label: "Up to 3 hour", count: 18 },
+    { label: "3 to 4 hours", count: 5 },
+    { label: "4 hours to 6 hours", count: 5 },
   ];
 
   return (

@@ -83,7 +83,10 @@ const TourProperties = () => {
   }
 
   return (
-    <div className="row row-cols-1 row-cols-md-3 g-4">
+    <div
+      className="row row-cols-1 row-cols-md-3 g-3 "
+      style={{ marginTop: "-20px" }}
+    >
       {tourItems?.map((item) => (
         <div
           key={item?.id}
@@ -204,9 +207,11 @@ const TourProperties = () => {
                   </div> */}
               </div>
             </div>
-            <button className="button -md h-5 border border-secondary bg-blue-1 text-white w-100">
-              Book Now
-            </button>
+            {isMobile && (
+              <button className="button -md h-5 border border-secondary bg-blue-1 text-white w-100">
+                Book Now
+              </button>
+            )}
           </Link>
         </div>
       ))}

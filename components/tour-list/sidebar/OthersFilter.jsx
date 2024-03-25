@@ -1,5 +1,5 @@
 const OthersFilter = () => {
-  const others = [{ name: "Free Cancellation", count: 92 }];
+  const others = [{ name: "Free Cancellation", count: 28 }];
   return (
     <>
       {others.map((item, index) => (
