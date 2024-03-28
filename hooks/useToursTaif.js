@@ -14,7 +14,7 @@ export const singleTourInfo = {
     departure:
       "Start your Madinah tour with an easy pickup from Silver Karam Hotel. Be there on time, and our guide will meet you and take you to the tour vehicle. To help us leave on time, please arrive 15 minutes early. This way, we can get going quickly and begin our journey through the city's history.",
     itinerarySrc:
-      "https://www.google.com/maps/d/u/1/embed?mid=1XdwewvF4NOyYwvTRAKEt2s3elk0Jc6U&ehbc=2E312F&z=9",
+      "https://fortress.maptive.com/ver4/1efe3aa6825a1923f42d78e85817942a/639490",
   },
   "Madinah City Ziarah Luxury Private Vehicle With Guide (3 Person Luxury)": {
     location: "Madinah, Saudi Arabia",
@@ -25,7 +25,7 @@ export const singleTourInfo = {
       "Start your Madinah tour with an easy pickup from Silver Karam Hotel. Be there on time, and our guide will meet you and take you to the tour vehicle. To help us leave on time, please arrive 15 minutes early. This way, we can get going quickly and begin our journey through the city's history.",
 
     itinerarySrc:
-      "https://www.google.com/maps/d/u/1/embed?mid=1XdwewvF4NOyYwvTRAKEt2s3elk0Jc6U&ehbc=2E312F&z=9",
+      "https://fortress.maptive.com/ver4/1efe3aa6825a1923f42d78e85817942a/639490",
   },
   "Madinah City Ziarah Luxury Private Vehicle With Guide (5 Person Family)": {
     location: "Madinah, Saudi Arabia",
@@ -36,7 +36,7 @@ export const singleTourInfo = {
       "Start your Madinah tour with an easy pickup from Silver Karam Hotel. Be there on time, and our guide will meet you and take you to the tour vehicle. To help us leave on time, please arrive 15 minutes early. This way, we can get going quickly and begin our journey through the city's history.",
 
     itinerarySrc:
-      "https://www.google.com/maps/d/u/1/embed?mid=1XdwewvF4NOyYwvTRAKEt2s3elk0Jc6U&ehbc=2E312F&z=9",
+      "https://fortress.maptive.com/ver4/1efe3aa6825a1923f42d78e85817942a/639490",
   },
   "Madinah City Ziarah Luxury Private Vehicle With Guide (10 Person Group)": {
     location: "Madinah, Saudi Arabia",
@@ -47,7 +47,7 @@ export const singleTourInfo = {
       "Start your Madinah tour with an easy pickup from Silver Karam Hotel. Be there on time, and our guide will meet you and take you to the tour vehicle. To help us leave on time, please arrive 15 minutes early. This way, we can get going quickly and begin our journey through the city's history.",
 
     itinerarySrc:
-      "https://www.google.com/maps/d/u/1/embed?mid=1XdwewvF4NOyYwvTRAKEt2s3elk0Jc6U&ehbc=2E312F&z=9",
+      "https://fortress.maptive.com/ver4/1efe3aa6825a1923f42d78e85817942a/639490",
   },
   "Madinah City Ziarah Luxury Private Vehicle With Guide (15 Person Large Group)":
     {
@@ -59,7 +59,7 @@ export const singleTourInfo = {
         "Start your Madinah tour with an easy pickup from Silver Karam Hotel. Be there on time, and our guide will meet you and take you to the tour vehicle. To help us leave on time, please arrive 15 minutes early. This way, we can get going quickly and begin our journey through the city's history.",
 
       itinerarySrc:
-        "https://www.google.com/maps/d/u/1/embed?mid=1XdwewvF4NOyYwvTRAKEt2s3elk0Jc6U&ehbc=2E312F&z=9",
+        "https://fortress.maptive.com/ver4/1efe3aa6825a1923f42d78e85817942a/639490",
     },
   "Madinah City Ziarah Luxury Private Vehicle Without Guide (3 Person Luxury)":
     {
@@ -70,7 +70,7 @@ export const singleTourInfo = {
       departure: `For your private tour experience, enjoy the convenience of being picked up from any location within a 9 km radius of "Silver Karam Hotel". Our driver will meet you at your chosen spot and time, ensuring a personalized and seamless start to your journey through Madinah. To ensure a timely departure, we recommend being ready to go 15 minutes before your scheduled pickup time. This exclusive service is tailored for comfort, privacy, and a deep dive into the city's spiritual heritage`,
 
       itinerarySrc:
-        "https://www.google.com/maps/d/u/1/embed?mid=1XdwewvF4NOyYwvTRAKEt2s3elk0Jc6U&ehbc=2E312F&z=9",
+        "https://fortress.maptive.com/ver4/1efe3aa6825a1923f42d78e85817942a/639490",
     },
   "Madinah City Ziarah Luxury Private Vehicle Without Guide (5 Person Family)":
     {
@@ -81,7 +81,7 @@ export const singleTourInfo = {
       departure: `For your private tour experience, enjoy the convenience of being picked up from any location within a 9 km radius of "Silver Karam Hotel". Our driver will meet you at your chosen spot and time, ensuring a personalized and seamless start to your journey through Madinah. To ensure a timely departure, we recommend being ready to go 15 minutes before your scheduled pickup time. This exclusive service is tailored for comfort, privacy, and a deep dive into the city's spiritual heritage`,
 
       itinerarySrc:
-        "https://www.google.com/maps/d/u/1/embed?mid=1XdwewvF4NOyYwvTRAKEt2s3elk0Jc6U&ehbc=2E312F&z=9",
+        "https://fortress.maptive.com/ver4/1efe3aa6825a1923f42d78e85817942a/639490",
     },
   "Madinah City Ziarah Luxury Private Vehicle Without Guide (10 Person Group)":
     {
@@ -92,7 +92,7 @@ export const singleTourInfo = {
       departure: `For your private tour experience, enjoy the convenience of being picked up from any location within a 9 km radius of "Silver Karam Hotel". Our driver will meet you at your chosen spot and time, ensuring a personalized and seamless start to your journey through Madinah. To ensure a timely departure, we recommend being ready to go 15 minutes before your scheduled pickup time. This exclusive service is tailored for comfort, privacy, and a deep dive into the city's spiritual heritage`,
 
       itinerarySrc:
-        "https://www.google.com/maps/d/u/1/embed?mid=1XdwewvF4NOyYwvTRAKEt2s3elk0Jc6U&ehbc=2E312F&z=9",
+        "https://fortress.maptive.com/ver4/1efe3aa6825a1923f42d78e85817942a/639490",
     },
   "Madinah City Ziarah Luxury Private Vehicle Without Guide (15 Person Large Group)":
     {
@@ -103,7 +103,7 @@ export const singleTourInfo = {
       departure: `For your private tour experience, enjoy the convenience of being picked up from any location within a 9 km radius of "Silver Karam Hotel". Our driver will meet you at your chosen spot and time, ensuring a personalized and seamless start to your journey through Madinah. To ensure a timely departure, we recommend being ready to go 15 minutes before your scheduled pickup time. This exclusive service is tailored for comfort, privacy, and a deep dive into the city's spiritual heritage`,
 
       itinerarySrc:
-        "https://www.google.com/maps/d/u/1/embed?mid=1XdwewvF4NOyYwvTRAKEt2s3elk0Jc6U&ehbc=2E312F&z=9",
+        "https://fortress.maptive.com/ver4/1efe3aa6825a1923f42d78e85817942a/639490",
     },
 
   "Day Trip From Makkah To Taif Vehicle Sharing With Guide": {
@@ -115,7 +115,7 @@ export const singleTourInfo = {
       "Our service includes convenient traveler pickup within the Makkah City area, within a distance not exceeding 9 kilometers from your hotel. We are pleased to offer pickup services for all tourists and Umrah pilgrims from their respective hotels. We ensure a timely and efficient pickup process to make your journey as smooth as possible. Please be ready for pickup at your hotel within the specified distance limit in the Makkah City area.",
 
     itinerarySrc:
-      "https://www.google.com/maps/d/u/1/embed?mid=1XdwewvF4NOyYwvTRAKEt2s3elk0Jc6U&ehbc=2E312F&z=9",
+      "https://fortress.maptive.com/ver4/8db40da5064f3fff6e35d8f2879413fd/639498",
   },
   "Day Trip From Makkah To Taif Luxury Private Vehicle (3 Person Luxury)": {
     location: "Taif, Saudi Arabia",
@@ -126,7 +126,7 @@ export const singleTourInfo = {
       "Our service includes convenient traveler pickup within the Makkah City area, within a distance not exceeding 9 kilometers from your hotel. We are pleased to offer pickup services for all tourists and Umrah pilgrims from their respective hotels. We ensure a timely and efficient pickup process to make your journey as smooth as possible. Please be ready for pickup at your hotel within the specified distance limit in the Makkah City area.",
 
     itinerarySrc:
-      "https://www.google.com/maps/d/u/1/embed?mid=1XdwewvF4NOyYwvTRAKEt2s3elk0Jc6U&ehbc=2E312F&z=9",
+      "https://fortress.maptive.com/ver4/8db40da5064f3fff6e35d8f2879413fd/639498",
   },
   "Day Trip From Makkah To Taif Luxury Private Vehicle (5 Person Family)": {
     location: "Taif, Saudi Arabia",
@@ -137,7 +137,7 @@ export const singleTourInfo = {
       "Our service includes convenient traveler pickup within the Makkah City area, within a distance not exceeding 9 kilometers from your hotel. We are pleased to offer pickup services for all tourists and Umrah pilgrims from their respective hotels. We ensure a timely and efficient pickup process to make your journey as smooth as possible. Please be ready for pickup at your hotel within the specified distance limit in the Makkah City area.",
 
     itinerarySrc:
-      "https://www.google.com/maps/d/u/1/embed?mid=1XdwewvF4NOyYwvTRAKEt2s3elk0Jc6U&ehbc=2E312F&z=9",
+      "https://fortress.maptive.com/ver4/8db40da5064f3fff6e35d8f2879413fd/639498",
   },
   "Day Trip From Makkah To Taif Luxury Private Vehicle (10 Person Group)": {
     location: "Taif, Saudi Arabia",
@@ -148,7 +148,7 @@ export const singleTourInfo = {
       "Our service includes convenient traveler pickup within the Makkah City area, within a distance not exceeding 9 kilometers from your hotel. We are pleased to offer pickup services for all tourists and Umrah pilgrims from their respective hotels. We ensure a timely and efficient pickup process to make your journey as smooth as possible. Please be ready for pickup at your hotel within the specified distance limit in the Makkah City area.",
 
     itinerarySrc:
-      "https://www.google.com/maps/d/u/1/embed?mid=1XdwewvF4NOyYwvTRAKEt2s3elk0Jc6U&ehbc=2E312F&z=9",
+      "https://fortress.maptive.com/ver4/8db40da5064f3fff6e35d8f2879413fd/639498",
   },
   "Day Trip From Makkah To Taif Luxury Private Vehicle (15 Person Large Group)":
     {
@@ -160,7 +160,7 @@ export const singleTourInfo = {
         "Our service includes convenient traveler pickup within the Makkah City area, within a distance not exceeding 9 kilometers from your hotel. We are pleased to offer pickup services for all tourists and Umrah pilgrims from their respective hotels. We ensure a timely and efficient pickup process to make your journey as smooth as possible. Please be ready for pickup at your hotel within the specified distance limit in the Makkah City area.",
 
       itinerarySrc:
-        "https://www.google.com/maps/d/u/1/embed?mid=1XdwewvF4NOyYwvTRAKEt2s3elk0Jc6U&ehbc=2E312F&z=9",
+        "https://fortress.maptive.com/ver4/8db40da5064f3fff6e35d8f2879413fd/639498",
     },
   "Day Trip From Makkah To Taif Vehicle Sharing With Guide": {
     location: "Taif, Saudi Arabia",
@@ -171,7 +171,7 @@ export const singleTourInfo = {
       "Our service includes convenient traveler pickup within the Makkah City area, within a distance not exceeding 9 kilometers from your hotel. We are pleased to offer pickup services for all tourists and Umrah pilgrims from their respective hotels. We ensure a timely and efficient pickup process to make your journey as smooth as possible. Please be ready for pickup at your hotel within the specified distance limit in the Makkah City area.",
 
     itinerarySrc:
-      "https://www.google.com/maps/d/u/1/embed?mid=1XdwewvF4NOyYwvTRAKEt2s3elk0Jc6U&ehbc=2E312F&z=9",
+      "https://fortress.maptive.com/ver4/8db40da5064f3fff6e35d8f2879413fd/639498",
   },
   "Day Trip From Makkah To Taif Luxury Private Vehicle": {
     location: "Taif, Saudi Arabia",
@@ -182,7 +182,7 @@ export const singleTourInfo = {
       "Our service includes convenient traveler pickup within the Makkah City area, within a distance not exceeding 9 kilometers from your hotel. We are pleased to offer pickup services for all tourists and Umrah pilgrims from their respective hotels. We ensure a timely and efficient pickup process to make your journey as smooth as possible. Please be ready for pickup at your hotel within the specified distance limit in the Makkah City area.",
 
     itinerarySrc:
-      "https://www.google.com/maps/d/u/1/embed?mid=1rQuDRVLt4RMV0ojn7AtB5vhr9CgCt2Y&ehbc=2E312F&z=10",
+      "https://fortress.maptive.com/ver4/8db40da5064f3fff6e35d8f2879413fd/639498",
   },
   "Day Trip From Makkah To Jeddah Vehicle Sharing With Guide": {
     location: "Jeddah, Saudi Arabia",
@@ -193,7 +193,7 @@ export const singleTourInfo = {
       "Our service includes convenient traveler pickup within the Makkah City area, within a distance not exceeding 9 kilometers from your hotel. We are pleased to offer pickup services for all tourists and Umrah pilgrims from their respective hotels. We ensure a timely and efficient pickup process to make your journey as smooth as possible. Please be ready for pickup at your hotel within the specified distance limit in the Makkah City area.",
 
     itinerarySrc:
-      "https://www.google.com/maps/d/u/1/embed?mid=1ucOabmqQaTyhe91RypSigvaZl_5UG-E&ehbc=2E312F&z=10",
+      "https://fortress.maptive.com/ver4/e1603d039ef860eec3629158991cd67b/639494",
   },
   "Day Trip From Makkah To Jeddah Luxury Private Vehicle (3 Person Luxury)": {
     location: "Jeddah, Saudi Arabia",
@@ -204,7 +204,7 @@ export const singleTourInfo = {
       "Our service includes convenient traveler pickup within the Makkah City area, within a distance not exceeding 9 kilometers from your hotel. We are pleased to offer pickup services for all tourists and Umrah pilgrims from their respective hotels. We ensure a timely and efficient pickup process to make your journey as smooth as possible. Please be ready for pickup at your hotel within the specified distance limit in the Makkah City area.",
 
     itinerarySrc:
-      "https://www.google.com/maps/d/u/1/embed?mid=1ucOabmqQaTyhe91RypSigvaZl_5UG-E&ehbc=2E312F&z=10",
+      "https://fortress.maptive.com/ver4/e1603d039ef860eec3629158991cd67b/639494",
   },
   "Day Trip From Makkah To Jeddah Luxury Private Vehicle (5 Person Family)": {
     location: "Jeddah, Saudi Arabia",
@@ -215,7 +215,7 @@ export const singleTourInfo = {
       "Our service includes convenient traveler pickup within the Makkah City area, within a distance not exceeding 9 kilometers from your hotel. We are pleased to offer pickup services for all tourists and Umrah pilgrims from their respective hotels. We ensure a timely and efficient pickup process to make your journey as smooth as possible. Please be ready for pickup at your hotel within the specified distance limit in the Makkah City area.",
 
     itinerarySrc:
-      "https://www.google.com/maps/d/u/1/embed?mid=1ucOabmqQaTyhe91RypSigvaZl_5UG-E&ehbc=2E312F&z=10",
+      "https://fortress.maptive.com/ver4/e1603d039ef860eec3629158991cd67b/639494",
   },
   "Day Trip From Makkah To Jeddah Luxury Private Vehicle (10 Person Group)": {
     location: "Jeddah, Saudi Arabia",
@@ -226,7 +226,7 @@ export const singleTourInfo = {
       "Our service includes convenient traveler pickup within the Makkah City area, within a distance not exceeding 9 kilometers from your hotel. We are pleased to offer pickup services for all tourists and Umrah pilgrims from their respective hotels. We ensure a timely and efficient pickup process to make your journey as smooth as possible. Please be ready for pickup at your hotel within the specified distance limit in the Makkah City area.",
 
     itinerarySrc:
-      "https://www.google.com/maps/d/u/1/embed?mid=1ucOabmqQaTyhe91RypSigvaZl_5UG-E&ehbc=2E312F&z=10",
+      "https://fortress.maptive.com/ver4/e1603d039ef860eec3629158991cd67b/639494",
   },
   "Day Trip From Makkah To Jeddah Luxury Private Vehicle (15 Person Large Group)":
     {
@@ -238,7 +238,7 @@ export const singleTourInfo = {
         "Our service includes convenient traveler pickup within the Makkah City area, within a distance not exceeding 9 kilometers from your hotel. We are pleased to offer pickup services for all tourists and Umrah pilgrims from their respective hotels. We ensure a timely and efficient pickup process to make your journey as smooth as possible. Please be ready for pickup at your hotel within the specified distance limit in the Makkah City area.",
 
       itinerarySrc:
-        "https://www.google.com/maps/d/u/1/embed?mid=1ucOabmqQaTyhe91RypSigvaZl_5UG-E&ehbc=2E312F&z=10",
+        "https://fortress.maptive.com/ver4/e1603d039ef860eec3629158991cd67b/639494",
     },
   "Day Trip From Makkah To Jeddah Luxury Private Vehicle": {
     location: "Jeddah, Saudi Arabia",
@@ -260,7 +260,7 @@ export const singleTourInfo = {
       "Our service includes convenient traveler pickup within the Makkah City area, within a distance not exceeding 9 kilometers from your hotel. We are pleased to offer pickup services for all tourists and Umrah pilgrims from their respective hotels. We ensure a timely and efficient pickup process to make your journey as smooth as possible. Please be ready for pickup at your hotel within the specified distance limit in the Makkah City area.",
 
     itinerarySrc:
-      "https://www.google.com/maps/d/u/1/embed?mid=1oq8duyGvFqjaYzmTdOgZ6m6RHZKH6-4&ehbc=2E312F&z=6",
+      "https://fortress.maptive.com/ver4/340f5e1fb6abcb39936f253495f11edc/639488",
   },
   "Makkah City Ziarah Luxury Private Vehicle With Guide (3 Person Luxury)": {
     location: "Mecca, Saudi Arabia",
@@ -271,7 +271,7 @@ export const singleTourInfo = {
       "Our service includes convenient traveler pickup within the Makkah City area, within a distance not exceeding 9 kilometers from your hotel. We are pleased to offer pickup services for all tourists and Umrah pilgrims from their respective hotels. We ensure a timely and efficient pickup process to make your journey as smooth as possible. Please be ready for pickup at your hotel within the specified distance limit in the Makkah City area.",
 
     itinerarySrc:
-      "https://www.google.com/maps/d/u/1/embed?mid=12hqGh2hTCmUqQIo60aGhSTOz3wqtpSQ&ehbc=2E312F&z=6",
+      "https://fortress.maptive.com/ver4/340f5e1fb6abcb39936f253495f11edc/639488",
   },
   "Makkah City Ziarah Luxury Private Vehicle With Guide (5 Person Family)": {
     location: "Mecca, Saudi Arabia",
@@ -282,7 +282,7 @@ export const singleTourInfo = {
       "Our service includes convenient traveler pickup within the Makkah City area, within a distance not exceeding 9 kilometers from your hotel. We are pleased to offer pickup services for all tourists and Umrah pilgrims from their respective hotels. We ensure a timely and efficient pickup process to make your journey as smooth as possible. Please be ready for pickup at your hotel within the specified distance limit in the Makkah City area.",
 
     itinerarySrc:
-      "https://www.google.com/maps/d/u/1/embed?mid=12hqGh2hTCmUqQIo60aGhSTOz3wqtpSQ&ehbc=2E312F&z=6",
+      "https://fortress.maptive.com/ver4/340f5e1fb6abcb39936f253495f11edc/639488",
   },
   "Makkah City Ziarah Luxury Private Vehicle With Guide (10 Person Group)": {
     location: "Mecca, Saudi Arabia",
@@ -293,7 +293,7 @@ export const singleTourInfo = {
       "Our service includes convenient traveler pickup within the Makkah City area, within a distance not exceeding 9 kilometers from your hotel. We are pleased to offer pickup services for all tourists and Umrah pilgrims from their respective hotels. We ensure a timely and efficient pickup process to make your journey as smooth as possible. Please be ready for pickup at your hotel within the specified distance limit in the Makkah City area.",
 
     itinerarySrc:
-      "https://www.google.com/maps/d/u/1/embed?mid=12hqGh2hTCmUqQIo60aGhSTOz3wqtpSQ&ehbc=2E312F&z=6",
+      "https://fortress.maptive.com/ver4/340f5e1fb6abcb39936f253495f11edc/639488",
   },
   "Makkah City Ziarah Luxury Private Vehicle With Guide (15 Person Large Group)":
     {
@@ -305,7 +305,7 @@ export const singleTourInfo = {
         "Our service includes convenient traveler pickup within the Makkah City area, within a distance not exceeding 9 kilometers from your hotel. We are pleased to offer pickup services for all tourists and Umrah pilgrims from their respective hotels. We ensure a timely and efficient pickup process to make your journey as smooth as possible. Please be ready for pickup at your hotel within the specified distance limit in the Makkah City area.",
 
       itinerarySrc:
-        "https://www.google.com/maps/d/u/1/embed?mid=12hqGh2hTCmUqQIo60aGhSTOz3wqtpSQ&ehbc=2E312F&z=6",
+        "https://fortress.maptive.com/ver4/340f5e1fb6abcb39936f253495f11edc/639488",
     },
   "Makkah City Ziarah Luxury Private Vehicle Without Guide (3 Person Luxury)": {
     location: "Mecca, Saudi Arabia",
@@ -316,7 +316,7 @@ export const singleTourInfo = {
       "Our service includes convenient traveler pickup within the Makkah City area, within a distance not exceeding 9 kilometers from your hotel. We are pleased to offer pickup services for all tourists and Umrah pilgrims from their respective hotels. We ensure a timely and efficient pickup process to make your journey as smooth as possible. Please be ready for pickup at your hotel within the specified distance limit in the Makkah City area.",
 
     itinerarySrc:
-      "https://www.google.com/maps/d/u/1/embed?mid=12hqGh2hTCmUqQIo60aGhSTOz3wqtpSQ&ehbc=2E312F&z=6",
+      "https://fortress.maptive.com/ver4/340f5e1fb6abcb39936f253495f11edc/639488",
   },
   "Makkah City Ziarah Luxury Private Vehicle Without Guide (5 Person Family)": {
     location: "Mecca, Saudi Arabia",
@@ -327,7 +327,7 @@ export const singleTourInfo = {
       "Our service includes convenient traveler pickup within the Makkah City area, within a distance not exceeding 9 kilometers from your hotel. We are pleased to offer pickup services for all tourists and Umrah pilgrims from their respective hotels. We ensure a timely and efficient pickup process to make your journey as smooth as possible. Please be ready for pickup at your hotel within the specified distance limit in the Makkah City area.",
 
     itinerarySrc:
-      "https://www.google.com/maps/d/u/1/embed?mid=12hqGh2hTCmUqQIo60aGhSTOz3wqtpSQ&ehbc=2E312F&z=6",
+      "https://fortress.maptive.com/ver4/340f5e1fb6abcb39936f253495f11edc/639488",
   },
   "Makkah City Ziarah Luxury Private Vehicle Without Guide (10 Person Group)": {
     location: "Mecca, Saudi Arabia",
@@ -338,7 +338,7 @@ export const singleTourInfo = {
       "Our service includes convenient traveler pickup within the Makkah City area, within a distance not exceeding 9 kilometers from your hotel. We are pleased to offer pickup services for all tourists and Umrah pilgrims from their respective hotels. We ensure a timely and efficient pickup process to make your journey as smooth as possible. Please be ready for pickup at your hotel within the specified distance limit in the Makkah City area.",
 
     itinerarySrc:
-      "https://www.google.com/maps/d/u/1/embed?mid=12hqGh2hTCmUqQIo60aGhSTOz3wqtpSQ&ehbc=2E312F&z=6",
+      "https://fortress.maptive.com/ver4/340f5e1fb6abcb39936f253495f11edc/639488",
   },
   "Makkah City Ziarah Luxury Private Vehicle Without Guide (15 Person Large Group)":
     {
@@ -350,7 +350,7 @@ export const singleTourInfo = {
         "Our service includes convenient traveler pickup within the Makkah City area, within a distance not exceeding 9 kilometers from your hotel. We are pleased to offer pickup services for all tourists and Umrah pilgrims from their respective hotels. We ensure a timely and efficient pickup process to make your journey as smooth as possible. Please be ready for pickup at your hotel within the specified distance limit in the Makkah City area.",
 
       itinerarySrc:
-        "https://www.google.com/maps/d/u/1/embed?mid=12hqGh2hTCmUqQIo60aGhSTOz3wqtpSQ&ehbc=2E312F&z=6",
+        "https://fortress.maptive.com/ver4/340f5e1fb6abcb39936f253495f11edc/639488",
     },
 
   "Makkah City Ziarah Luxury Private Vehicle Without Guide": {
