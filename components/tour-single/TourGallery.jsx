@@ -119,7 +119,7 @@ export default function TourGallery({ tour, hajj, umrah }) {
               )}
             </div>
             {isMobile && (
-              <div style={{ marginTop: "-260px" }}>
+              <div style={{ marginTop: "" }}>
                 <Overview hajj={hajj} />
               </div>
             )}

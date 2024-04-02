@@ -89,7 +89,7 @@ const Overview = ({ hajj }) => {
               ) : (
                 <li>
                   We will charge a cancellation fee of 100% if booking is
-                  cancelled 1 day or less before the event
+                  cancelled 1 day or less before the event.
                 </li>
               )}
             </ul>

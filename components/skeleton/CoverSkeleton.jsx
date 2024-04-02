@@ -15,7 +15,8 @@ const CoverSkeleton = () => {
                 src={sliderImageItems[1]?.image}
                 width={1420}
                 height={460}
-                loading="lazy"
+                  loading="eager"
+
                 alt="Hajj, Umrah and Ziarah"
               />
             </div>
@@ -70,7 +71,8 @@ const CoverSkeleton = () => {
                   src={sliderImageItems[0]?.image}
                   width={1420}
                   height={460}
-                  loading="lazy"
+                    loading="eager"
+
                   alt="Hajj, Umrah and Ziarah"
                 />
               )}

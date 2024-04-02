@@ -129,7 +129,7 @@ const TopDestinations2 = ({ slug }) => {
             data-aos-delay={item.delayAnimation}
           >
             <Link
-              href={`/destinations/${item?.name?.toLowerCase()}`}
+              href={`/destinations/${item?.location?.toLowerCase()}`}
               className="citiesCard -type-3 d-block h-full rounded-4 "
             >
               <div className="citiesCard__image ratio ratio-3:2">

@@ -371,7 +371,7 @@ export const singleTourInfo = {
     groupSize: "1-42",
 
     itinerarySrc:
-      "https://www.google.com/maps/d/u/1/embed?mid=1zyUakEQI3Oi8hrnipIJ1Hhkl1NtzG4c&ehbc=2E312F&z=12",
+      "https://fortress.maptive.com/ver4/5dd42db317c11e9700d4713ca36e6426/640397",
   },
   Umrah: {
     location: "Mecca, Saudi Arabia",
@@ -379,7 +379,7 @@ export const singleTourInfo = {
     languages: "",
     groupSize: "3-8",
     itinerarySrc:
-      "https://www.google.com/maps/d/u/1/embed?mid=1CM8PjQjW7zWc_PpHMpNHHHRYlZU1-cw&ehbc=2E312F&z=7",
+      "https://fortress.maptive.com/ver4/5dd42db317c11e9700d4713ca36e6426/640397",
   },
 };
 

@@ -302,13 +302,17 @@ const TourSingleV1Dynamic = ({ params, children }) => {
                           //   style={{ color: "#e02043", marginRight: "10px" }}
                           //   size={20}
                           // />
-                          <h6
+                          <div
+                            // className="col-12 h-20 text-center"
                             style={{
                               marginLeft: "10px",
+                              display: "flex",
+                              justifyContent: "center",
+                              alignItems: "center",
                             }}
                           >
-                            copying
-                          </h6>
+                            <Loading />
+                          </div>
                         ) : (
                           <i
                             className="icon-copy"
@@ -392,7 +396,7 @@ const TourSingleV1Dynamic = ({ params, children }) => {
       <section className="border-top-light  mt-40 pt-40">
         <div className="container">
           <h3 className="text-22 fw-600 mb-20">Itinerary</h3>
-          <Itinerary />
+          <Itinerary name={params?.name} />
         </div>
       </section>
       {/* End Itinerary */}

@@ -49,7 +49,8 @@ const index = ({ onDataAvailable }) => {
                 src={sliderImageItems[1]?.cloudflare_image_url}
                 width={1420}
                 height={460}
-                loading="lazy"
+                  loading="eager"
+
                 alt="Hajj, Umrah and Ziarah"
               />
             </div>
@@ -104,7 +105,8 @@ const index = ({ onDataAvailable }) => {
                   src={sliderImageItems[0]?.cloudflare_image_url}
                   width={1420}
                   height={460}
-                  loading="lazy"
+                    loading="eager"
+
                   alt="Hajj, Umrah and Ziarah"
                 />
               )}

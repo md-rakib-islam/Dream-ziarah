@@ -37,6 +37,7 @@ import {
   WhatsappShareButton,
 } from "react-share";
 import Image from "next/image";
+import Loading from "@/app/loading";
 
 const Hajj = ({ children }) => {
   const dispatch = useDispatch();
@@ -178,7 +179,7 @@ const Hajj = ({ children }) => {
                     <li className="d-flex my-2">
                       <FacebookShareButton
                         className="me-2"
-                        url={`https://dreamziarah.com/tours/${tour?.title
+                        url={`https://dreamziarah.com/tour/${tour?.title
                           ?.toLowerCase()
                           ?.split(" ")
                           ?.join("-")}`}
@@ -187,7 +188,7 @@ const Hajj = ({ children }) => {
                       </FacebookShareButton>
                       <FacebookMessengerShareButton
                         className="me-2"
-                        url={`https://dreamziarah.com/tours/${tour?.title
+                        url={`https://dreamziarah.com/tour/${tour?.title
                           ?.toLowerCase()
                           ?.split(" ")
                           ?.join("-")}`}
@@ -196,7 +197,7 @@ const Hajj = ({ children }) => {
                       </FacebookMessengerShareButton>
                       <WhatsappShareButton
                         className="me-2"
-                        url={`https://dreamziarah.com/tours/${tour?.title
+                        url={`https://dreamziarah.com/tour/${tour?.title
                           ?.toLowerCase()
                           ?.split(" ")
                           ?.join("-")}`}
@@ -205,7 +206,7 @@ const Hajj = ({ children }) => {
                       </WhatsappShareButton>
                       <EmailShareButton
                         className="me-2"
-                        url={`https://dreamziarah.com/tours/${tour?.title
+                        url={`https://dreamziarah.com/tour/${tour?.title
                           ?.toLowerCase()
                           ?.split(" ")
                           ?.join("-")}`}
@@ -213,7 +214,7 @@ const Hajj = ({ children }) => {
                         <EmailIcon size={32} round={true} />
                       </EmailShareButton>
                       {/* <LinkedinShareButton
-                        url={`https://dreamziarah.com/tours/${tour?.title
+                        url={`https://dreamziarah.com/tour/${tour?.title
                           ?.toLowerCase()
                           ?.split(" ")
                           ?.join("-")}`}
@@ -233,13 +234,17 @@ const Hajj = ({ children }) => {
                           //   style={{ color: "#e02043", marginRight: "10px" }}
                           //   size={20}
                           // />
-                          <h6
+                          <div
+                            // className="col-12 h-20 text-center"
                             style={{
                               marginLeft: "10px",
+                              display: "flex",
+                              justifyContent: "center",
+                              alignItems: "center",
                             }}
                           >
-                            copying
-                          </h6>
+                            <Loading />
+                          </div>
                         ) : (
                           <i
                             className="icon-copy"
