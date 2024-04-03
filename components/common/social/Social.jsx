@@ -26,6 +26,7 @@ const Social = () => {
         target="_blank"
         rel="noopener noreferrer"
         // key={item.id}
+        style={{ marginTop: "-4.9px" }}
       >
         <svg
           xmlns="http://www.w3.org/2000/svg"

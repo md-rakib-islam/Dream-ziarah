@@ -57,8 +57,11 @@ const ItineraryContent = () => {
                   data-bs-parent="#itineraryContent"
                 >
                   <div className="pt-15 pb-15">
-                    <div className="text-14 lh-17 mt-15">
-                      <Interweave content={item.content} />
+                    <div className="text-14 lh-17 mt-15 text-black">
+                      <Interweave
+                        className="text-black"
+                        content={item.content}
+                      />
                     </div>
                   </div>
                 </div>

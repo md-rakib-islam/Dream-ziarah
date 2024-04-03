@@ -47,7 +47,9 @@
     cursor: pointer;
   }
 }
-
+.accordion p {
+  color: black;
+}
 .accordion.-simple .accordion {
   &__item {
   }
