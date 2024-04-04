@@ -194,7 +194,7 @@ export const singleTourInfo = {
       "Our service includes convenient traveler pickup within the Makkah City area, within a distance not exceeding 9 kilometers from your hotel. We are pleased to offer pickup services for all tourists and Umrah pilgrims from their respective hotels. We ensure a timely and efficient pickup process to make your journey as smooth as possible. Please be ready for pickup at your hotel within the specified distance limit in the Makkah City area.",
 
     itinerarySrc:
-      "https://fortress.maptive.com/ver4/e1603d039ef860eec3629158991cd67b/639494",
+      "https://fortress.maptive.com/ver4/e1603d039ef860eec3629158991cd67b/641125",
   },
   "Day Trip From Makkah To Jeddah Luxury Private Vehicle (3 Person Luxury)": {
     location: "Jeddah, Saudi Arabia",
@@ -205,7 +205,7 @@ export const singleTourInfo = {
       "Our service includes convenient traveler pickup within the Makkah City area, within a distance not exceeding 9 kilometers from your hotel. We are pleased to offer pickup services for all tourists and Umrah pilgrims from their respective hotels. We ensure a timely and efficient pickup process to make your journey as smooth as possible. Please be ready for pickup at your hotel within the specified distance limit in the Makkah City area.",
 
     itinerarySrc:
-      "https://fortress.maptive.com/ver4/e1603d039ef860eec3629158991cd67b/639494",
+      "https://fortress.maptive.com/ver4/e1603d039ef860eec3629158991cd67b/641125",
   },
   "Day Trip From Makkah To Jeddah Luxury Private Vehicle (5 Person Family)": {
     location: "Jeddah, Saudi Arabia",
@@ -216,7 +216,7 @@ export const singleTourInfo = {
       "Our service includes convenient traveler pickup within the Makkah City area, within a distance not exceeding 9 kilometers from your hotel. We are pleased to offer pickup services for all tourists and Umrah pilgrims from their respective hotels. We ensure a timely and efficient pickup process to make your journey as smooth as possible. Please be ready for pickup at your hotel within the specified distance limit in the Makkah City area.",
 
     itinerarySrc:
-      "https://fortress.maptive.com/ver4/e1603d039ef860eec3629158991cd67b/639494",
+      "https://fortress.maptive.com/ver4/e1603d039ef860eec3629158991cd67b/641125",
   },
   "Day Trip From Makkah To Jeddah Luxury Private Vehicle (10 Person Group)": {
     location: "Jeddah, Saudi Arabia",
@@ -227,7 +227,7 @@ export const singleTourInfo = {
       "Our service includes convenient traveler pickup within the Makkah City area, within a distance not exceeding 9 kilometers from your hotel. We are pleased to offer pickup services for all tourists and Umrah pilgrims from their respective hotels. We ensure a timely and efficient pickup process to make your journey as smooth as possible. Please be ready for pickup at your hotel within the specified distance limit in the Makkah City area.",
 
     itinerarySrc:
-      "https://fortress.maptive.com/ver4/e1603d039ef860eec3629158991cd67b/639494",
+      "https://fortress.maptive.com/ver4/e1603d039ef860eec3629158991cd67b/641125",
   },
   "Day Trip From Makkah To Jeddah Luxury Private Vehicle (15 Person Large Group)":
     {
@@ -239,7 +239,7 @@ export const singleTourInfo = {
         "Our service includes convenient traveler pickup within the Makkah City area, within a distance not exceeding 9 kilometers from your hotel. We are pleased to offer pickup services for all tourists and Umrah pilgrims from their respective hotels. We ensure a timely and efficient pickup process to make your journey as smooth as possible. Please be ready for pickup at your hotel within the specified distance limit in the Makkah City area.",
 
       itinerarySrc:
-        "https://fortress.maptive.com/ver4/e1603d039ef860eec3629158991cd67b/639494",
+        "https://fortress.maptive.com/ver4/e1603d039ef860eec3629158991cd67b/641125",
     },
   "Day Trip From Makkah To Jeddah Luxury Private Vehicle": {
     location: "Jeddah, Saudi Arabia",

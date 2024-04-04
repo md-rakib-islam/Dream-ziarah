@@ -26,7 +26,7 @@ const index = ({ name }) => {
         <div className="map  overflow-hidden" id="itineraryContent">
           {/* <MarkerInfoWindow /> */}
           <iframe
-            className="itinerary_map"
+            className="itinerary_map map_height"
             style={{
               marginLeft:
                 isMobile && name && name.includes("makkah-city")
@@ -38,6 +38,11 @@ const index = ({ name }) => {
                   : isMobile && name && name.includes("taif")
                   ? "-200px"
                   : "",
+
+              // marginRight:
+              //   !isMobile && name && name.includes("makkah-city")
+              //     ? "-200px"
+              //     : "",
             }}
             src={singleTourInfo[tourItem?.name]?.itinerarySrc}
           ></iframe>
