@@ -27,23 +27,24 @@ const index = ({ name }) => {
           {/* <MarkerInfoWindow /> */}
           <iframe
             className="itinerary_map map_height"
-            style={{
-              marginLeft:
-                isMobile && name && name.includes("makkah-city")
-                  ? "-250px"
-                  : isMobile && name && name.includes("madinah-city")
-                  ? "-320px"
-                  : isMobile && name && name.includes("madinah-city")
-                  ? "-320px"
-                  : isMobile && name && name.includes("taif")
-                  ? "-200px"
-                  : "",
-
-              // marginRight:
-              //   !isMobile && name && name.includes("makkah-city")
-              //     ? "-200px"
-              //     : "",
-            }}
+            style={
+              {
+                // marginLeft:
+                //   isMobile && name && name.includes("makkah-city")
+                //     ? "-250px"
+                //     : isMobile && name && name.includes("madinah-city")
+                //     ? "-320px"
+                //     : isMobile && name && name.includes("madinah-city")
+                //     ? "-320px"
+                //     : isMobile && name && name.includes("taif")
+                //     ? "-200px"
+                //     : "",
+                // marginRight:
+                //   !isMobile && name && name.includes("makkah-city")
+                //     ? "-200px"
+                //     : "",
+              }
+            }
             src={singleTourInfo[tourItem?.name]?.itinerarySrc}
           ></iframe>
         </div>
