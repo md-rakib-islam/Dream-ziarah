@@ -1,12 +1,8 @@
 "use client";
-
 import Image from "next/image";
 import Link from "next/link";
-
 import Loading from "@/app/loading";
-import { BASE_URL } from "@/constant/constants";
 import { useGetLogoUrlQuery } from "@/features/site-setting/siteSettingApi";
-
 import useMenus from "@/hooks/useMenus";
 import { usePathname, useRouter } from "next/navigation";
 import { Menu, MenuItem, Sidebar, SubMenu } from "react-pro-sidebar";
@@ -33,24 +29,6 @@ const MobileMenu = () => {
       : pathname.split("/")[1] === "blog-details"
       ? "/blog"
       : pathname;
-
-  //    useEffect(() => {
-
-  //     categorieMegaMenuItems.map((megaMenu=>{
-  //     megaMenu?.menuCol?.map((megaCol=>{
-  //       megaCol?.menuItems?.map((item=>{
-  //         item?.menuList?.map((list)=>{
-  //           if (list.routePath?.split('/')[1] == pathname.split('/')[1]) {
-  //             setIsActiveParent(true)
-  //             setisActiveNestedParentTwo(item?.title)
-  //             setisActiveNestedParent(megaMenu?.id)
-  //           }
-  //         })
-  //       }))
-  //     }))
-  //   }))
-
-  //  }, [])
 
   return (
     <>

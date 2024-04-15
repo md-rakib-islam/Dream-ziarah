@@ -1,17 +1,7 @@
 "use client";
-import { useGetSliderImagesQuery } from "@/features/image/imageApi";
 import dynamic from "next/dynamic";
-import Image from "next/image";
-
-// import TopDestinations from "@/components/destinations/TopDestinations";
-// import Hero7 from "@/components/hero/hero-7";
-// import Hero3 from "@/components/hero/hero-3";
-// import WhyChoose from "@/components/home/home-3/WhyChoose";
-// import Tours from "@/components/tours/Tours";
 import Link from "next/link";
 import { useState } from "react";
-import TourSkeleton from "../skeleton/TourSkeleton";
-import useToursMakka from "@/hooks/useToursMakka";
 
 const TopDestinations = dynamic(() =>
   import("@/components/destinations/TopDestinations")
@@ -23,46 +13,14 @@ const ToursMadina = dynamic(() => import("@/components/tours/ToursMadina"));
 const ToursJedda = dynamic(() => import("@/components/tours/ToursJedda"));
 const ToursTaif = dynamic(() => import("@/components/tours/ToursTaif"));
 
-// export const metadata = {
-//   title: "Home-3 || GoTrip - Travel & Tour React NextJS Template",
-//   description: "GoTrip - Travel & Tour React NextJS Template",
-// };
-
 const home_3 = () => {
-  // const router = useRouter();
   const [dataAvailable, setDataAvailable] = useState(false);
-  const { isLoading } = useGetSliderImagesQuery();
 
   // Function to handle data availability
   const handleDataAvailability = (isDataAvailable) => {
     setDataAvailable(isDataAvailable);
   };
   return (
-    // isLoading ? (
-    //   <div
-    //     style={{
-    //       position: "fixed",
-    //       height: "100%",
-    //       width: "100%",
-    //       top: "0px",
-    //       left: "0px",
-    //       display: "flex",
-    //       justifyContent: "center",
-    //       backgroundColor: "#ffffff",
-    //       alignItems: "center",
-    //       zIndex: 100,
-    //     }}
-    //   >
-    //     <Image
-    //       height={200}
-    //       width={300}
-    //       style={{
-    //         marginTop: "100pz",
-    //       }}
-    //       src="https://imagedelivery.net/dIKhvGtesTiRSxhQ2oKWkA/424b106d-c60f-40fb-739d-76fc8d54cb00/public"
-    //     />
-    //   </div>
-    // ) : (
     <>
       {/* <Hero7/> */}
       <div className="header-margin"></div>

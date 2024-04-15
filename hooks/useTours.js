@@ -1,10 +1,8 @@
-import { BASE_URL } from "@/constant/constants";
 import { useGetAllContentQuery } from "@/features/content/contentApi";
 import { useGetImagesByMenuIdQuery } from "@/features/image/imageApi";
-import { addItemsCount } from "@/features/search/searchSlice";
 import convertCurrency from "@/utils/currency";
 import { useEffect, useState } from "react";
-import { useDispatch, useSelector } from "react-redux";
+import { useSelector } from "react-redux";
 
 export const singleTourInfo = {
   "Madinah City Ziarah Vehicle Sharing With Guide": {
@@ -397,7 +395,7 @@ const useTours = (filerTour) => {
     data: contentItems,
     isLoading: isContentLoading,
   } = useGetAllContentQuery(ziarahId);
-  console.log("filerTour", filerTour);
+
   useEffect(() => {
     if (isSuccess && isContentSuccess) {
       let tours = contentItems

@@ -133,7 +133,6 @@ const About = () => {
         </div>
         {/* End .container */}
       </section>
-      {/*    {/*<CallToActions /> */}
       {/* End Call To Actions Section */}
       {/* <DefaultFooter /> */}
       {/* End Call To Actions Section */}

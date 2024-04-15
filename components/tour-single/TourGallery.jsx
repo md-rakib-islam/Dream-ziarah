@@ -20,7 +20,6 @@ export default function TourGallery({ tour, hajj, umrah }) {
   const [isOpen, setOpen] = useState(false);
   const width = useWindowSize();
   const isMobile = width < 768;
-  console.log("tour?.slideImg", tour?.slideImg);
 
   return (
     <>

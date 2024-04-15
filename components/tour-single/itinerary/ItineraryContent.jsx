@@ -6,7 +6,6 @@ import { useSelector } from "react-redux";
 
 const ItineraryContent = () => {
   const { itenarayItems } = useSelector((state) => state.tour);
-  console.log("itenaray", itenarayItems);
 
   // Maintain state for expanded items
   const [expandedItems, setExpandedItems] = useState({});

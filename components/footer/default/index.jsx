@@ -1,4 +1,3 @@
-// import AppButton from "./AppButton";
 "use client";
 import { useCreateNewsLetterJustEmailMutation } from "@/features/newsLetter/newsLetterSlice";
 import { useState } from "react";
@@ -6,11 +5,8 @@ import { ToastContainer, toast } from "react-toastify";
 import ContactInfo from "./ContactInfo";
 import Copyright from "./Copyright";
 import FooterContent from "./FooterContent";
-
 import "react-toastify/dist/ReactToastify.css";
 import { useGetLogoUrlQuery } from "@/features/site-setting/siteSettingApi";
-import Image from "next/image";
-import Link from "next/link";
 
 const index = () => {
   const [email, setEmail] = useState("");
@@ -21,9 +17,8 @@ const index = () => {
   const handleSubmit = async () => {
     try {
       const res = await createNewsLetterJustEmail({ email });
-      console.log(res?.error?.data?.email[0]);
+
       if (res.data) {
-        // alert("subcription added! thank you");
         toast.success(
           "Your subscription confirms your seat on a journey designed for Muslim travelers.",
           {
@@ -86,21 +81,6 @@ const index = () => {
             <div className="row y-gap-40">
               <div className="col-xl-4 col-lg-4 col-sm-6">
                 <div className="d-flex items-center">
-                  {/* <Link href="/" className="header-logo mr-20"> */}
-                  {/* {
-                    isLoading ? (<Loading/>) : (<Image style={{width : "60px", height:"60px"}} src={logoUrl} width={128} height={128} alt="logo"/>)
-                  } */}
-
-                  {/* <Image
-                      unoptimized
-                      quality={100}
-                      style={{ width: "80px", height: "80px" }}
-                      src="/img/logo_loading.webp"
-                      width={128}
-                      height={128}
-                      alt="Hajj, Umrah and Ziarah"
-                    /> */}
-                  {/* </Link> */}
                   <h5 className="text-18 fw-600 mb-10 w-100">Dream Ziarah</h5>
                   {/* End logo */}
                 </div>
@@ -124,11 +104,9 @@ const index = () => {
               {/* End footer menu content */}
 
               <div className="col-xl-3 col-lg-3 col-sm-6 ">
-                {/* <h5 className="text-18 fw-600 mb-30">Mobile</h5> */}
                 <h5 className="text-18 fw-600 mb-10 w-100">
                   Sign up to our newsletter
                 </h5>
-                {/* <AppButton /> */}
                 <div className="single-field w-100 d-flex flex-column y-gap-20 w-100">
                   <div>
                     <input

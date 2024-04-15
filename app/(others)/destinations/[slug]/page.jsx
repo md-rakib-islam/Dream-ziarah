@@ -1,21 +1,11 @@
-import CallToActions from "@/components/common/CallToActions";
-// import DefaultHeader from "@/components/header/default-header";
-// import DefaultFooter from "@/components/footer/default";
-// import Activity from "@/components/activity/Activity";
 import Slights from "@/components/block/Slights";
-// import Cars from "@/components/cars/Cars";
-// import LocationTopBar from "@/components/common/LocationTopBar";
 import TopDestinations2 from "@/components/destinations/TopDestinations2";
 import Banner from "@/components/destinations/components/Banner";
-// import Categories from "@/components/destinations/components/Categories";
-// import GeneralInfo from "@/components/destinations/components/GeneralInfo";
 import IntroTown from "@/components/destinations/components/IntroTown";
 import Weather from "@/components/destinations/components/Weather";
 import Faq from "@/components/faq/Faq";
 import Testimonial from "@/components/home/home-1/Testimonial";
 import TestimonialLeftCol from "@/components/home/home-1/TestimonialLeftCol";
-// import Hotels from "@/components/hotels/Hotels2";
-// import Rentals from "@/components/rentals/Rentals";
 import Tours from "@/components/tours/Tours";
 import ToursMadina from "@/components/tours/ToursMadina";
 import ToursJedda from "@/components/tours/ToursJedda";
@@ -23,7 +13,6 @@ import ToursTaif from "@/components/tours/ToursTaif";
 import { slightContent } from "@/data/desinations";
 import getAllMenuItem from "@/services/menuService";
 import Link from "next/link";
-// import { useEffect, useState } from "react";
 
 const destinationsMetadatas = {
   jedda: {
@@ -53,14 +42,8 @@ const destinationsMetadatas = {
   },
 };
 
-// export const metadata = {
-//   title: "Destinations || GoTrip - Travel & Tour React NextJS Template",
-//   description: "GoTrip - Travel & Tour React NextJS Template",
-// };
-
 export async function generateStaticParams() {
   const data = await getAllMenuItem();
-  // console.log(menus);
 
   return data?.menus
     .find((item) => item.name === "Destinations")
@@ -79,29 +62,7 @@ export async function generateMetadata({ params, searchParams }, parent) {
 }
 
 const Destinations = ({ params }) => {
-  // const [makka, setMakka] = useState(false);
-  // const [jedda, setJedda] = useState(false);
-  // const [madina, setMadina] = useState(false);
-  // const [taif, setTaif] = useState(false);
   const slug = params.slug;
-
-  // useEffect(() => {
-  //   if (params?.slug && params?.slug.includes("makkah-city")) {
-  //     setMakka(true);
-  //   } else if (params?.slug && params?.slug.includes("madinah-city")) {
-  //     setMadina(true);
-  //   } else if (params?.slug && params?.slug.includes("taif")) {
-  //     setTaif(true);
-  //   } else if (params?.slug && params?.slug.includes("Jeddah")) {
-  //     setJedda(true);
-  //   } else {
-  //     setMakka(false);
-  //     setMadina(false);
-  //     setTaif(false);
-  //     setJedda(false);
-  //   }
-  // }, [params?.slug]);
-  // console.log("slug", params.slug);
 
   return (
     <>
@@ -110,10 +71,6 @@ const Destinations = ({ params }) => {
       <div className="header-margin"></div>
       {/* header top margin */}
 
-      {/* <DefaultHeader /> */}
-      {/* End Header 1 */}
-
-      {/* <LocationTopBar /> */}
       {/* End location top bar section */}
 
       <section className="layout-pb-md">
@@ -123,9 +80,6 @@ const Destinations = ({ params }) => {
           </div>
           {/* End .row */}
 
-          {/* <div className="row x-gap-20 y-gap-20 items-center pt-20 item_gap-x10">
-            <Categories />
-          </div> */}
           {/* End .row */}
 
           <div className="row y-gap-20 pt-40">
@@ -159,15 +113,6 @@ const Destinations = ({ params }) => {
           {/* End local weather */}
 
           <div className="pt-30 mt-30 border-top-light" />
-          {/* <div className="row y-gap-20">
-            <div className="col-12">
-              <h2 className="text-22 fw-600">General info</h2>
-            </div>
-            
-            <GeneralInfo />
-          </div> */}
-
-          {/* <div className="mt-30 border-top-light" /> */}
         </div>
         {/* End .container */}
       </section>
@@ -463,14 +408,11 @@ const Destinations = ({ params }) => {
       </section>
       {/* End top destinations */}
 
-      {/*<CallToActions /> */}
       {/* End Call To Actions Section */}
 
-      {/* <DefaultFooter /> */}
       {/* End Call To Actions Section */}
     </>
   );
 };
 
-// export default dynamic(() => Promise.resolve(Destinations), { ssr: false });
 export default Destinations;

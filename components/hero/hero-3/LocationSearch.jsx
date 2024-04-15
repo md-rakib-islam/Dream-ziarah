@@ -70,9 +70,6 @@ const LocationSearch = () => {
                           ? "Madina"
                           : item.name}
                       </div>
-                      {/* <div className="text-14 lh-12 text-light-1 mt-5">
-                        {item.address}
-                      </div> */}
                     </div>
                   </div>
                 </li>

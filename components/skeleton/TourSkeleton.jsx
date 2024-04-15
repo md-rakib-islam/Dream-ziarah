@@ -4,12 +4,10 @@ import Image from "next/image";
 import Link from "next/link";
 import Slider from "react-slick";
 import isTextMatched from "../../utils/isTextMatched";
-import useWindowSize from "@/hooks/useWindowSize";
 
 const TourSkeleton = () => {
   //   const width = useWindowSize();
   //   const isMobile = width < 768;
-  //   console.log("widdh", width, isMobile);
 
   const settings = {
     speed: 500,
@@ -209,19 +207,7 @@ const TourSkeleton = () => {
 
                 <div className="cardImage__leftBadge skeleton">
                   <div
-                    className={`py-5 px-15 rounded-right-4 text-12 lh-16 fw-600 uppercase ${
-                      isTextMatched(item?.tag, "likely to sell out*")
-                        ? "bg-dark-1 text-white"
-                        : ""
-                    } ${
-                      isTextMatched(item?.tag, "best seller")
-                        ? "bg-blue-1 text-white"
-                        : ""
-                    }  ${
-                      isTextMatched(item?.tag, "top rated")
-                        ? "bg-yellow-1 text-dark-1"
-                        : ""
-                    }`}
+                    className={`py-5 px-15 rounded-right-4 text-12 lh-16 fw-600 uppercase bg-blue-1 text-white `}
                   >
                     {item?.tag}
                   </div>

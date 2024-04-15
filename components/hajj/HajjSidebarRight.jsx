@@ -1,12 +1,6 @@
 "use client";
-
-// import { useGetContentsByMenuContentIdQuery } from '@/features/content/contentApi';
-// import { useParams } from 'next/navigation';
 import Script from "next/script";
-
 const HajjSidebarRight = () => {
-  //   const {data, isSuccess} = useGetContentsByMenuContentIdQuery(params.slug);
-
   return (
     <div className="d-flex  js-pin-content">
       <div className="w-360 lg:w-full items-left">

@@ -1,9 +1,6 @@
 "use client";
-
 import { useRouter } from "next/navigation";
-
 import DateSearch from "./DateSearch";
-// import GuestSearch from "./GuestSearch";
 import { useSelector } from "react-redux";
 import LocationSearch from "./LocationSearch";
 
@@ -32,22 +29,12 @@ const MainFilterSearchBox = () => {
           </div>
           {/* End check-in-out */}
 
-          {/* <GuestSearch /> */}
           {/* End guest */}
 
           <div className="button-item">
             <button
               className="mainSearch__submit button -dark-1 h-60 px-35 col-11 rounded-100 bg-blue-1 text-white"
-              onClick={() =>
-                Router.push(
-                  `/tours/?location=${
-                    searchValue
-                    // ?.toLowerCase()
-                    // ?.split(" ")
-                    // ?.join("_")
-                  }`
-                )
-              }
+              onClick={() => Router.push(`/tours/?location=${searchValue}`)}
             >
               <i className="icon-search text-20 mr-10" />
               Search

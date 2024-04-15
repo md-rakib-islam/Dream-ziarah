@@ -1,6 +1,5 @@
 "use client";
 import Loading from "@/app/loading";
-import { BASE_URL } from "@/constant/constants";
 import { useGetImagesByMenuIdQuery } from "@/features/image/imageApi";
 import Image from "next/image";
 import { useEffect } from "react";
@@ -20,7 +19,7 @@ const Banner = ({ slug }) => {
       data?.content_images[slug.charAt(0).toUpperCase() + slug.slice(1)]
     }`;
   }
-  console.log("skdfjsdfwer", slug);
+
   useEffect(() => {
     localStorage.clear();
   }, []);
@@ -45,7 +44,6 @@ const Banner = ({ slug }) => {
           <h1
             className="text-50 fw-600 text-white lg:text-40 md:text-30"
             style={{
-              // fontFamily: "basmala, sans-serif",
               textShadow: "2px 2px 4px rgba(0,0,0,0.5)",
             }}
           >
@@ -60,7 +58,6 @@ const Banner = ({ slug }) => {
             className="text-white"
             style={{
               textShadow: "2px 2px 4px rgba(0,0,0,0.5)",
-              // fontFamily: "Khumairoh, sans-serif",
             }}
           >
             Explore deals, travel guides and things to do in{" "}
@@ -71,11 +68,6 @@ const Banner = ({ slug }) => {
               : slug.charAt(0).toUpperCase() + slug.slice(1)}
           </div>
         </div>
-        {/* <div className="absolute d-flex justify-end items-end col-12 h-full z-1 px-10 py-10">
-      <button className="button -md -blue-1 bg-white text-dark-1 text-14 fw-600">
-        See All Photos
-      </button>
-    </div> */}
       </div>
     </div>
   );

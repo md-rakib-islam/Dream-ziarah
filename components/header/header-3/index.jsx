@@ -1,6 +1,4 @@
 "use client";
-
-import { BASE_URL } from "@/constant/constants";
 import { useGetAllMenuQuery } from "@/features/menu/menuApi";
 import { addMenuItems } from "@/features/menu/menuSlice";
 import { useGetLogoUrlQuery } from "@/features/site-setting/siteSettingApi";
@@ -9,7 +7,6 @@ import Link from "next/link";
 import { useEffect, useState } from "react";
 import { useDispatch } from "react-redux";
 import CurrenctyMegaMenu from "../CurrenctyMegaMenu";
-// import HeaderSearch from "../HeaderSearch";
 import MainMenu from "../MainMenu";
 import MobileCurrencyMenu from "../MobileCurrencyMenu";
 import MobileMenu from "../MobileMenu";
@@ -120,6 +117,7 @@ const Header1 = () => {
                       src="/img/whatsapp.svg"
                       width={30}
                       height={30}
+                      alt="images"
                     />
                   </a>
                   {/* <HeaderSearch /> */}
@@ -137,12 +135,6 @@ const Header1 = () => {
 
                   {/* Start mobile menu icon */}
                   <div className="d-none xl:d-flex x-gap-20 items-center pl-30 text-dark-1">
-                    {/* <div>
-                    <Link
-                      href="/login"
-                      className="d-flex items-center icon-user text-inherit text-22"
-                    />
-                  </div> */}
                     <div>
                       <MobileCurrencyMenu />
                     </div>

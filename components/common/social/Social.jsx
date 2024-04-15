@@ -1,10 +1,4 @@
 const Social = () => {
-  const socialContent = [
-    { id: 1, icon: "icon-facebook", link: "https://facebok.com/" },
-    { id: 2, icon: "icon-twitter", link: "https://twitter.com/" },
-    { id: 3, icon: "icon-instagram", link: "https://instagram.com/" },
-    { id: 4, icon: "icon-whatsapp", link: "https://linkedin.com/" },
-  ];
   return (
     <>
       <a href="https://facebok.com/" target="_blank" rel="noopener noreferrer">
@@ -21,11 +15,9 @@ const Social = () => {
         <i className={`icon-instagram text-14`} />
       </a>
       <a
-        // href={item.link}
         href="#"
         target="_blank"
         rel="noopener noreferrer"
-        // key={item.id}
         style={{ marginTop: "-4.9px" }}
       >
         <svg
@@ -41,7 +33,6 @@ const Social = () => {
           />
         </svg>
       </a>
-      {/* ))} */}
     </>
   );
 };

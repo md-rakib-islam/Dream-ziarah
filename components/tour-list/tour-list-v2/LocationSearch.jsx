@@ -17,8 +17,6 @@ const SearchBar = () => {
     (item) => item?.name === "Destinations"
   )?.children;
 
-  // console.log(destinations)
-
   const locationSearchContent = destinations?.map((item) => ({
     id: item?.id,
     name: item?.name,
@@ -26,13 +24,11 @@ const SearchBar = () => {
   }));
 
   const handleOptionClick = (item) => {
-    console.log("item", item.name);
     setSearchValue(item.name);
     setSelectedItem(item);
     dispatch(addSearchValue(item.name));
     // router.push(`/tours/?location=${item.name}`);
   };
-  console.log("searchParams", search);
 
   return (
     <>
@@ -56,7 +52,6 @@ const SearchBar = () => {
                   value={searchValue}
                   onChange={(e) => {
                     setSearchValue(e.target.value);
-                    console.log("e.target.value", e.target.value);
                   }}
                 />
               </div>

@@ -1,13 +1,4 @@
-import CallToActions from "@/components/common/CallToActions";
-// import dynamic from "next/dynamic";
-// import DefaultHeader from "@/components/header/default-header";
-// import DefaultFooter from "@/components/footer/default";
 import TermsConent from "@/components/common/TermsConent";
-
-// export const metadata = {
-//   title: "Terms & Conditions || DreamZiarah - Hajj, Umrah And Ziarah",
-//   description: "DreamZiarah - Hajj, Umrah And Ziarah",
-// };
 
 const metaDatas = {
   general_terms_of_use: {
@@ -50,12 +41,6 @@ const Terms = () => {
         </div>
       </section>
       {/* End terms section */}
-
-      {/*<CallToActions /> */}
-      {/* End Call To Actions Section */}
-
-      {/* <DefaultFooter /> */}
-      {/* End Call To Actions Section */}
     </>
   );
 };

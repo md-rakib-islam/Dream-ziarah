@@ -54,7 +54,7 @@ const Testimonial = () => {
             <h4 className="text-16 fw-600 text-blue-1 mb-20">{item.meta}</h4>
             <p
               style={{ height: "140px" }}
-              className="testimonials__text lh-18 fw-600 text-dark-1"
+              className="testimonials__text lh-17 fw-400 text-dark-1 text-14"
             >
               {item.text}
             </p>

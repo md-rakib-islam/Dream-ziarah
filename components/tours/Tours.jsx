@@ -1,6 +1,4 @@
 "use client";
-
-// import useTours from "@/hooks/useTours";
 import Image from "next/image";
 import Link from "next/link";
 import { useSelector } from "react-redux";
@@ -12,17 +10,10 @@ import TourSkeleton from "../skeleton/TourSkeleton";
 
 const Tours = ({ filterTour }) => {
   const tourItems = useToursMakka(filterTour);
-  const filterItem = tourItems.filter((item) => item.title !== filterTour);
   const { currentCurrency } = useSelector((state) => state.currency);
   const width = useWindowSize();
   const isMobile = width < 768;
-  const isNotMobile = width > 768;
-  // href={`/tour/${item?.title?.toLowerCase()?.split(" ")?.join("-")}`}
-  console.log(
-    "tourItemsFilter",
-    tourItems.filter((item) => item.title !== filterTour),
-    filterTour
-  );
+
   const settings = {
     dots: true,
     infinite: true,
@@ -147,12 +138,6 @@ const Tours = ({ filterTour }) => {
                     ))}
                   </Slider>
 
-                  {/* <div className="cardImage__wishlist">
-                    <button className="button -blue-1 bg-white size-30 rounded-full shadow-2">
-                      <i className="icon-heart text-12" />
-                    </button>
-                  </div> */}
-
                   <div className="cardImage__leftBadge">
                     <div
                       className={`py-5 px-15 rounded-right-4 text-12 lh-16 fw-600 uppercase ${
@@ -183,9 +168,7 @@ const Tours = ({ filterTour }) => {
                       ? `${item?.duration}+ hrs`
                       : `${item?.duration}+ hours`}
                   </div>
-                  {/* <div className="size-3 bg-light-1 rounded-full ml-10 mr-10" /> */}
                   <div className="ml-10 mr-10" />
-                  {/* <div className="text-14 text-light-1">{item?.tourType}</div> */}
                   <div className="col-auto">
                     <div className="text-14 text-dark-1 fw-bold">
                       From {currentCurrency?.symbol}
@@ -220,16 +203,6 @@ const Tours = ({ filterTour }) => {
                       </div>
                     </div>
                   </div>
-                  {/* <div className="col-auto">
-                    <div className="text-14 text-light-1">
-                      From {currentCurrency?.symbol} 
-                      <span className="text-16 fw-600 text-dark-1">
-                        {" "}
-                        
-                        {item.price}
-                      </span>
-                    </div>
-                  </div> */}
                 </div>
               </div>
             </Link>

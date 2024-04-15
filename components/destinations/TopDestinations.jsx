@@ -1,11 +1,9 @@
 "use client";
-import { BASE_URL } from "@/constant/constants";
 import { useGetImagesByMenuIdQuery } from "@/features/image/imageApi";
 import Image from "next/image";
 import Link from "next/link";
 import { useSelector } from "react-redux";
 import Slider from "react-slick";
-// import { destinations5 } from "../../data/desinations";
 
 const TopDestinations = () => {
   const { menuItems } = useSelector((state) => state.menus);
@@ -13,9 +11,7 @@ const TopDestinations = () => {
     (item) => item.name === "Destinations"
   )?.children;
   const ziarahId = menuItems?.find((item) => item.name === "Ziarah")?.id;
-  const { isSuccess, data, isLoading } = useGetImagesByMenuIdQuery(ziarahId);
-
-  // (indx + 1) <= 3 ? (indx + 1) % 2 !== 0? "col-xl-3 col-md-4 col-sm-6" : "col-xl-6 col-md-4 col-sm-6" : "col-xl-6 col-md-4 col-sm-6"
+  const { isSuccess, data } = useGetImagesByMenuIdQuery(ziarahId);
 
   let modifiedDestinations = [];
   if (isSuccess) {
@@ -94,9 +90,6 @@ const TopDestinations = () => {
                     ? "Madina"
                     : item.name}
                 </h4>
-                {/* <div className="text-15 text-white">
-                {item.numberOfProperties} properties
-              </div> */}
               </div>
             </Link>
           </div>

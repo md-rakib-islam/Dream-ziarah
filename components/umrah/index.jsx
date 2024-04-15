@@ -1,23 +1,13 @@
 "use client";
-// import toursData from "@/data/tours";
 import {
   useGetContentsByMenuContentIdQuery,
   useGetItenariesByMenuContentIdQuery,
 } from "@/features/content/contentApi";
 import "photoswipe/dist/photoswipe.css";
-// import Header11 from "@/components/header/header-11";
-import CallToActions from "@/components/common/CallToActions";
-// import DefaultFooter from "@/components/footer/default";
-// import Header3 from "@/components/header/header-3";
 import ImportantInfo from "@/components/tour-single/ImportantInfo";
-// import TopBreadCrumb from "@/components/tour-single/TopBreadCrumb";
 import TourGallery from "@/components/tour-single/TourGallery";
-// import DetailsReview2 from "@/components/tour-single/guest-reviews/DetailsReview2";
-// import ReviewProgress2 from "@/components/tour-single/guest-reviews/ReviewProgress2";
-import ReviewProgress2 from "@/components/activity-single/guest-reviews/ReviewProgress2";
 import Itinerary from "@/components/tour-single/itinerary";
 import Tours from "@/components/tours/Tours";
-import { BASE_URL } from "@/constant/constants";
 import { useGetImagesByMenuIdQuery } from "@/features/image/imageApi";
 import { addItenarayItems, addtourItem } from "@/features/tour/tourSlice";
 import { singleTourInfo } from "@/hooks/useTours";
@@ -31,8 +21,6 @@ import {
   FacebookMessengerIcon,
   FacebookMessengerShareButton,
   FacebookShareButton,
-  LinkedinIcon,
-  LinkedinShareButton,
   WhatsappIcon,
   WhatsappShareButton,
 } from "react-share";
@@ -52,12 +40,10 @@ const Umrah = ({ children }) => {
     useGetImagesByMenuIdQuery(umrahId);
 
   if (isItenariesSuccess) {
-    // console.log("Itenaries", itenarayItems);
     dispatch(addItenarayItems(itenarayItems));
   }
   let tour = {};
   if (isSuccess && isImageContentsSuccess) {
-    // console.log("images", imageContents.content_images[data?.name]);
     tour = {
       id: data?.id,
       tag: "",
@@ -73,7 +59,7 @@ const Umrah = ({ children }) => {
       delayAnimation: "200",
       languages: singleTourInfo[data?.name]?.languages,
     };
-    // console.log("Hele", data);
+
     dispatch(addtourItem(data));
   }
 
@@ -112,53 +98,11 @@ const Umrah = ({ children }) => {
       <div className="header-margin"></div>
       {/* header top margin */}
 
-      {/* <Header11 /> */}
-      {/* <Header3/> */}
-      {/* End Header 1 */}
-
-      {/* <TopBreadCrumb /> */}
       {/* End top breadcrumb */}
 
       <section className="pt-50 js-pin-container">
         <div className="container">
           <div className="row y-gap-30">
-            {/* <div className="col-auto">
-              <h1 className="text-30 fw-600">{tour?.title}</h1>
-              <div className="row x-gap-20 y-gap-20 items-center pt-10">
-                <div className="col-auto">
-                  <div className="d-flex items-center">
-                    <div className="d-flex x-gap-5 items-center">
-                      <i className="icon-star text-10 text-yellow-1"></i>
-
-                      <i className="icon-star text-10 text-yellow-1"></i>
-
-                      <i className="icon-star text-10 text-yellow-1"></i>
-
-                      <i className="icon-star text-10 text-yellow-1"></i>
-
-                      <i className="icon-star text-10 text-yellow-1"></i>
-                    </div>
-
-                    <div className="text-14 text-light-1 ml-10">
-                      {tour?.numberOfReviews} reviews
-                    </div>
-                  </div>
-                </div>
-
-                <div className="col-auto">
-                  <div className="row x-gap-10 items-center">
-                    <div className="col-auto">
-                      <div className="d-flex x-gap-5 items-center">
-                        <i className="icon-placeholder text-16 text-light-1"></i>
-                        <div className="text-15 text-light-1">
-                          {tour?.location}
-                        </div>
-                      </div>
-                    </div>
-                  </div>
-                </div>
-              </div>
-            </div> */}
             {children}
             {/* End .col */}
 
@@ -212,14 +156,7 @@ const Umrah = ({ children }) => {
                       >
                         <EmailIcon size={32} round={true} />
                       </EmailShareButton>
-                      {/* <LinkedinShareButton
-                        url={`https://dreamziarah.com/tour/${tour?.title
-                          ?.toLowerCase()
-                          ?.split(" ")
-                          ?.join("-")}`}
-                      >
-                        <LinkedinIcon size={32} round={true} />
-                      </LinkedinShareButton> */}
+
                       <div
                         style={{
                           display: "flex",
@@ -229,12 +166,7 @@ const Umrah = ({ children }) => {
                         onClick={copyToClipboard}
                       >
                         {isCopyLoading ? (
-                          // <CircularProgress
-                          //   style={{ color: "#e02043", marginRight: "10px" }}
-                          //   size={20}
-                          // />
                           <div
-                            // className="col-12 h-20 text-center"
                             style={{
                               marginLeft: "10px",
                               display: "flex",
@@ -259,18 +191,15 @@ const Umrah = ({ children }) => {
                             copied!
                           </h6>
                         ) : (
-                          // <i className="icon-files-o"></i>
                           <>
                             {!isCopyLoading && (
                               <Image
                                 width={40}
                                 height={40}
                                 style={{
-                                  // height: "32px",
-                                  // width: "32px",
-                                  // marginRight: "10px",
                                   cursor: "pointer",
                                 }}
+                                alt="images"
                                 src="https://imagedelivery.net/dIKhvGtesTiRSxhQ2oKWkA/80bd75f3-6ddb-4c93-1acf-7b4fb358f200/public"
                               />
                             )}
@@ -326,82 +255,6 @@ const Umrah = ({ children }) => {
       </section>
       {/* End Itinerary */}
 
-      {/* <section className="mt-40">
-        <div className="container ">
-          <div className="pt-40 border-top-light">
-            <div className="row y-gap-20">
-              <div className="col-lg-4">
-                <h2 className="text-22 fw-600">
-                  FAQs about
-                  <br /> The Crown Hotel
-                </h2>
-              </div>
-              
-
-              <div className="col-lg-8">
-                <div
-                  className="accordion -simple row y-gap-20 js-accordion"
-                  id="Faq1"
-                >
-                  <Faq />
-                </div>
-              </div>
-              
-            </div>
-           
-          </div>
-         
-        </div>
-     
-      </section> */}
-      {/* End Faq about sections */}
-
-      {/* <section className="mt-40 border-top-light pt-40">
-        <div className="container">
-          <div className="row y-gap-40 justify-between">
-            <div className="col-xl-3">
-              <h3 className="text-22 fw-600">Guest reviews</h3>
-              <ReviewProgress2 />
-            </div>
-
-          <div className="col-xl-8">
-              <DetailsReview2 />
-            </div> 
-          </div>
-        </div>
-      </section> */}
-      {/* End Review section */}
-
-      {/* <section className="mt-40 border-top-light pt-40">
-        <div className="container">
-          <div className="row y-gap-30 justify-between">
-            <div className="col-xl-3">
-              <div className="row">
-                <div className="col-auto">
-                  <h3 className="text-22 fw-600">Leave a Reply</h3>
-                  <p className="text-15 text-dark-1 mt-5">
-                    Your email address will not be published.
-                  </p>
-                </div>
-              </div>
-          
-
-              <ReplyFormReview2 />
-          
-            </div>
-         
-
-            <div className="col-xl-8">
-              <ReplyForm />
-            </div>
-      
-          </div>
-        
-        </div>
-   
-      </section> */}
-      {/* End Reply Comment box section */}
-
       <section className="layout-pt-lg layout-pb-lg mt-50 border-top-light">
         <div className="container">
           <div className="row y-gap-20 justify-between items-end">
@@ -436,16 +289,8 @@ const Umrah = ({ children }) => {
         {/* End .container */}
       </section>
       {/* End Tours Sections */}
-
-      {/*<CallToActions /> */}
-      {/* End Call To Actions Section */}
-
-      {/* <DefaultFooter /> */}
     </>
   );
 };
 
-// export default dynamic(() => Promise.resolve(Umrah), {
-//   ssr: false,
-// });
 export default Umrah;

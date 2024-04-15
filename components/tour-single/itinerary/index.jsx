@@ -9,7 +9,7 @@ const index = ({ name }) => {
   const { tourItem } = useSelector((state) => state.tour);
   const width = useWindowSize();
   const isMobile = width < 768;
-  console.log("map sourch", singleTourInfo[tourItem?.name]?.itinerarySrc);
+
   return (
     <div className="row y-gap-30">
       <div className="col-lg-4">

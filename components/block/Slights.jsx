@@ -1,5 +1,4 @@
 import Image from "next/image";
-// import Link from "next/link";
 import { slightContent } from "@/data/desinations";
 
 const Slights = ({ slug }) => {
@@ -32,12 +31,6 @@ const Slights = ({ slug }) => {
                     {item.title}
                   </h3>
                   <p className="text-15 mt-5">{item.text}</p>
-                  {/* <Link
-                    href="#"
-                    className="d-block text-14 text-blue-1 fw-600 underline mt-5"
-                  >
-                    See More
-                  </Link> */}
                 </div>
               </div>
             </div>

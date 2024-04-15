@@ -187,14 +187,8 @@ const tourMetadatas = {
   //end taif
 };
 
-// export const metadata = {
-//   title: "Ziarah Packages for Spiritual Exploration - Dream Ziarah",
-//   description:  "Embark on a soul-stirring Ziarah journey with DreamZiarah.com. Discover sacred destinations and enrich your spiritual experience with our meticulously curated Ziarah packages.",
-// };
-
 export async function generateStaticParams() {
   const data = await getAllMenuItem();
-  // const ziarahId = data?.menus?.find((item) => item.name === "Ziarah")?.id;
   const ziarahId = data?.menus
     ?.find((item) => item.name == "Tours")
     ?.children?.find((child) => child?.name == "Makka Tours")?.id;
@@ -202,7 +196,6 @@ export async function generateStaticParams() {
   const tourContents = await getAllContentByMenuId(ziarahId);
 
   const modifiedContents = tourContents?.filter((item) => {
-    console.log("modifiedContents", item);
     if (
       item.name === "makkah" ||
       item.name === "medina" ||
@@ -214,10 +207,9 @@ export async function generateStaticParams() {
       return false;
     return true;
   });
-  // console.log("fdf", modifiedContents);
+
   return modifiedContents?.map((item) => ({
     name: item?.name?.toLowerCase()?.split(" ")?.join("-"),
-    // slug : item?.id?.toString()
   }));
 }
 

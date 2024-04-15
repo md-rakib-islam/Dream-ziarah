@@ -1,6 +1,4 @@
 "use client";
-
-// import useTours from "@/hooks/useTours";
 import Image from "next/image";
 import Link from "next/link";
 import { useSelector } from "react-redux";
@@ -14,7 +12,6 @@ const ToursJedda = ({ filterTour }) => {
   const { currentCurrency } = useSelector((state) => state.currency);
   const width = useWindowSize();
   const isMobile = width < 768;
-  // href={`/tour/${item?.title?.toLowerCase()?.split(" ")?.join("-")}`}
 
   const settings = {
     dots: true,

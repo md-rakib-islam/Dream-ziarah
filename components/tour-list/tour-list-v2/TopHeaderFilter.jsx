@@ -3,7 +3,6 @@ import { useSelector } from "react-redux";
 
 const TopHeaderFilter = () => {
   const { itemsCount } = useSelector((state) => state.search);
-  console.log("sdfsdftourItems", itemsCount);
 
   return (
     <>

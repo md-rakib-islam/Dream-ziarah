@@ -396,10 +396,9 @@ const useToursMakka = (filterTour) => {
     data: contentItems,
     isLoading: isContentLoading,
   } = useGetAllContentQuery(ziarahId);
-  console.log("filterTourSlice", filterTour);
+
   useEffect(() => {
     if (isSuccess && isContentSuccess) {
-      console.log("fdfdkf", contentItems);
       let tours = contentItems
         .filter((item) => {
           if (

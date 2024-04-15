@@ -418,15 +418,6 @@ const UmrahHeading = async () => {
                 </div>
               </div>
             </div>
-
-            {/* <div className="col-auto">
-                    <button
-                      data-x-click="mapFilter"
-                      className="text-blue-1 text-15 underline"
-                    >
-                      Show on map
-                    </button>
-                  </div> */}
           </div>
         </div>
       </div>

@@ -1,8 +1,5 @@
 "use client";
-
 import Image from "next/image";
-
-// Import Swiper React components
 import { Scrollbar } from "swiper";
 import { Swiper, SwiperSlide } from "swiper/react";
 import { testimonial1 } from "../../../data/testimonialData";
@@ -32,9 +29,6 @@ const Testimonial = () => {
               </div>
               <div className="col-auto">
                 <h5 className="text-16 fw-600">{item.name}</h5>
-                {/* <div className="text-15 text-light-1 lh-15">
-                  {item.designation}
-                </div> */}
               </div>
             </div>
             <p className="text-18 fw-600 text-dark-1 mt-30 sm:mt-20">

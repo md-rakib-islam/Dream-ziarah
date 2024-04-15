@@ -15,7 +15,6 @@ const ToursMadina = ({ filterTour }) => {
   const { currentCurrency } = useSelector((state) => state.currency);
   const width = useWindowSize();
   const isMobile = width < 768;
-  // href={`/tour/${item?.title?.toLowerCase()?.split(" ")?.join("-")}`}
 
   const settings = {
     dots: true,

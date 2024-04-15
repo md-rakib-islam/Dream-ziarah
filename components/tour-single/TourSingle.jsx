@@ -76,7 +76,6 @@ const TourSingleV1Dynamic = ({ params, children }) => {
   }
   let tour = {};
   if (isSuccess && isImageContentsSuccess) {
-    // console.log("images", imageContents.content_images[data?.name]);
     tour = {
       id: data?.id,
       tag: "",
@@ -94,7 +93,7 @@ const TourSingleV1Dynamic = ({ params, children }) => {
       departure: singleTourInfo[data?.name]?.departure,
     };
     // checkLocation(params?.name);
-    // console.log("Hele", data);
+
     dispatch(addtourItem(data));
   }
   useEffect(() => {
@@ -123,15 +122,6 @@ const TourSingleV1Dynamic = ({ params, children }) => {
       setJedda(false);
     }
   }, [params?.name]);
-
-  console.log(
-    "imageContents",
-    // data?.name,
-    imageContents,
-    data?.id,
-    // capitalize(params?.name),
-    imageContents?.content_images[data?.name]
-  );
 
   // function checkLocation(params) {
   //   // Convert params.name to lowercase for case-insensitive comparison
@@ -340,6 +330,7 @@ const TourSingleV1Dynamic = ({ params, children }) => {
                                   // marginRight: "10px",
                                   cursor: "pointer",
                                 }}
+                                alt="images"
                                 src="https://imagedelivery.net/dIKhvGtesTiRSxhQ2oKWkA/80bd75f3-6ddb-4c93-1acf-7b4fb358f200/public"
                               />
                             )}
@@ -597,11 +588,6 @@ const TourSingleV1Dynamic = ({ params, children }) => {
         </section>
       )}
       {/* End Tours Sections */}
-
-      {/*<CallToActions /> */}
-      {/* End Call To Actions Section */}
-
-      {/* <DefaultFooter /> */}
     </>
   );
 };

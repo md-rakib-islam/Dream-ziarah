@@ -398,7 +398,6 @@ const useToursJedda = (filterTour) => {
 
   useEffect(() => {
     if (isSuccess && isContentSuccess) {
-      console.log("fdfdkf", contentItems);
       let tours = contentItems
         .filter((item) => {
           if (

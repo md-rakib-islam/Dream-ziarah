@@ -1,10 +1,5 @@
-import CallToActions from "@/components/common/CallToActions";
-// import dynamic from "next/dynamic";
-// import DefaultHeader from "@/components/header/default-header";
-// import DefaultFooter from "@/components/footer/default";
 import Address from "@/components/block/Address";
 import ContactForm from "@/components/common/ContactForm";
-// import LocationTopBar from "@/components/common/LocationTopBar";
 import Social from "@/components/common/social/Social";
 
 export const metadata = {
@@ -21,10 +16,6 @@ const Contact = () => {
       <div className="header-margin"></div>
       {/* header top margin */}
 
-      {/* <DefaultHeader /> */}
-      {/* End Header 1 */}
-
-      {/* <LocationTopBar /> */}
       {/* End location top bar section */}
 
       <div className="map-outer">
@@ -69,15 +60,6 @@ const Contact = () => {
               </div>
             </div>
             {/* End .col */}
-            {/* <Address /> */}
-            {/* <div className="col-auto">
-              <div className="text-14 text-light-1">
-                Follow us on social media
-              </div>
-              <div className="d-flex x-gap-20 items-center mt-10">
-                <Social />
-              </div>
-            </div> */}
           </div>
           {/* End .row */}
         </div>
@@ -107,10 +89,8 @@ const Contact = () => {
 
       {/* End Why Choose Us section */}
 
-      {/*<CallToActions /> */}
       {/* End Call To Actions Section */}
 
-      {/* <DefaultFooter /> */}
       {/* End Call To Actions Section */}
     </>
   );

@@ -84,7 +84,6 @@ const GuestCalculate = ({ contentItem }) => {
   ) : (
     <div className="d-flex justify-end js-pin-content">
       <div className="w-360 lg:w-full d-flex flex-column items-center">
-        {console.log("bokunUrl", bokunUrl)}
         <div className="bokunWidget" data-src={bokunUrl}></div>
       </div>
       <Script

@@ -1,10 +1,7 @@
-// 'use client';
-// import useWeather from "@/hooks/useWeather";
 import getTemperatureByLocation from "@/services/weatherService";
 import "../../../styles/weather.scss";
 
 const Weather = async ({ slug }) => {
-  // const temperature = useWeather(slug);
   const temperature = await getTemperatureByLocation(slug);
 
   const weatherContent = [
