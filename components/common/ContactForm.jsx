@@ -34,18 +34,29 @@ const ContactForm = () => {
           theme: "dark",
         });
         setFormState(initialState);
+      } else {
+        toast.error("Something went wrong!", {
+          position: "top-center",
+          autoClose: 4000,
+          hideProgressBar: false,
+          closeOnClick: true,
+          pauseOnHover: true,
+          draggable: true,
+          progress: undefined,
+          theme: "dark",
+        });
       }
-    } catch (err) {
-      toast.error("Something went wrong!", {
-        position: "top-center",
-        autoClose: 4000,
-        hideProgressBar: false,
-        closeOnClick: true,
-        pauseOnHover: true,
-        draggable: true,
-        progress: undefined,
-        theme: "dark",
-      });
+    } catch (_err) {
+      // toast.error("Something went wrong!", {
+      //   position: "top-center",
+      //   autoClose: 4000,
+      //   hideProgressBar: false,
+      //   closeOnClick: true,
+      //   pauseOnHover: true,
+      //   draggable: true,
+      //   progress: undefined,
+      //   theme: "dark",
+      // });
     }
   };
 
