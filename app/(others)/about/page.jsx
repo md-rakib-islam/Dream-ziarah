@@ -1,7 +1,5 @@
-// import CallToActions from "@/components/common/CallToActions";
 import Block1 from "@/components/about/Block1";
 import dynamic from "next/dynamic";
-// import WhyChoose from "@/components/block/BlockGuide";
 import Brand from "@/components/brand/Brand";
 import Counter from "@/components/counter/Counter";
 import Counter2 from "@/components/counter/Counter2";

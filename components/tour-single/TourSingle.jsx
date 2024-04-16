@@ -1,5 +1,4 @@
 "use client";
-import CallToActions from "@/components/common/CallToActions";
 import {
   useGetContentsByMenuContentTitleQuery,
   useGetItenariesByMenuContentIdQuery,

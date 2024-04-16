@@ -32,7 +32,7 @@ const home_3 = () => {
           <div className="row y-gap-22 justify-between items-start">
             <div className="col-8 col-lg-auto">
               <div className="sectionTitle -md">
-                <h1 className="sectionTitle__title">Ziyarat In Makkah</h1>
+                <h2 className="sectionTitle__title">Ziyarat In Makkah</h2>
                 <p className=" sectionTitle__text mt-5 sm:mt-0">
                   Explore Sacred Ziyarat Places in Makkah
                 </p>
@@ -74,7 +74,7 @@ const home_3 = () => {
           <div className="row y-gap-22 justify-between items-start">
             <div className="col-8 col-lg-auto ">
               <div className="sectionTitle -md">
-                <h1 className="sectionTitle__title">Ziyarat In Madina</h1>
+                <h2 className="sectionTitle__title">Ziyarat In Madina</h2>
                 <p className=" sectionTitle__text mt-5 sm:mt-0">
                   Explore Sacred Ziyarat Places in Madina
                 </p>
@@ -110,7 +110,7 @@ const home_3 = () => {
             <div className="row y-gap-22 justify-between items-start">
               <div className="col-8 col-lg-auto">
                 <div className="sectionTitle -md">
-                  <h1 className="sectionTitle__title">Ziyarat In Jeddah</h1>
+                  <h2 className="sectionTitle__title">Ziyarat In Jeddah</h2>
                   <p className=" sectionTitle__text mt-5 sm:mt-0">
                     Explore Sacred Ziyarat Places in Jeddah
                   </p>
@@ -146,7 +146,7 @@ const home_3 = () => {
             <div className="row y-gap-22 justify-between items-start">
               <div className="col-8 col-lg-auto">
                 <div className="sectionTitle -md">
-                  <h1 className="sectionTitle__title">Ziyarat In Taif</h1>
+                  <h2 className="sectionTitle__title">Ziyarat In Taif</h2>
                   <p className=" sectionTitle__text mt-5 sm:mt-0">
                     Explore Sacred Ziyarat Places in Taif
                   </p>
