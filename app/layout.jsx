@@ -38,20 +38,20 @@ export default function RootLayout({ children }) {
           crossOrigin="true"
         />
 
-        <link
+        {/* <link
           href="https://fonts.googleapis.com/css2?family=Jost:wght@400;500;600&display=swap"
           rel="stylesheet"
         />
         <link
           href="https://fonts.googleapis.com/css2?family=Open+Sans:wght@400;500;600&display=swap"
           rel="stylesheet"
-        />
+        /> */}
         <link
           href="https://fonts.googleapis.com/css2?family=Poppins:wght@400;500;600&display=swap"
           rel="stylesheet"
         />
 
-        <link
+        {/* <link
           href="https://db.onlinewebfonts.com/c/3dad38b96d1a28deaba765fa3a16697f?family=GT+Eesti+Pro+Display+Regular"
           rel="stylesheet"
         />
@@ -87,7 +87,7 @@ export default function RootLayout({ children }) {
         <link
           rel="stylesheet"
           href="path/to/font-awesome/css/font-awesome.min.css"
-        />
+        /> */}
 
         {/* <link
           href="https://fonts.googleapis.com/css2?family=Cabin:wght@400;500;600&display=swap"
