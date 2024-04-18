@@ -15,7 +15,7 @@ const Social = () => {
         <i className={`icon-instagram text-14`} />
       </a>
       <a
-        href="#"
+        href="https://api.whatsapp.com/send/?phone=966548037409&amp;text=Hi DreamZiarah, I need assistance&amp;type=phone_number&amp;lang=en"
         target="_blank"
         rel="noopener noreferrer"
         style={{ marginTop: "-4.9px" }}

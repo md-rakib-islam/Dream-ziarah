@@ -39,6 +39,7 @@ import {
   WhatsappShareButton,
 } from "react-share";
 import Image from "next/image";
+import { toast } from "react-toastify";
 
 const TourSingleV1Dynamic = ({ params, children }) => {
   const dispatch = useDispatch();
@@ -157,20 +158,49 @@ const TourSingleV1Dynamic = ({ params, children }) => {
   //copy link
   const copyToClipboard = () => {
     setIsCopyLoading(true);
-    setTimeout(() => {
-      navigator?.clipboard
-        ?.writeText(window?.location?.href)
-        .then(() => {
-          setIsCopyLoading(false);
-          setCopied(true);
-          setTimeout(() => {
-            setCopied(false);
-          }, 1500); // Remove "Copied!" message after 3 seconds
-        })
-        .catch(() => {
-          setIsCopyLoading(false);
-        });
-    }, 1500); // Remove "Copied!" message after 3 seconds
+
+    // Create a custom promise to handle the copying process
+    const copyingPromise = new Promise((resolve, reject) => {
+      setTimeout(() => {
+        navigator?.clipboard
+          ?.writeText(window?.location?.href)
+          .then(() => {
+            setIsCopyLoading(false);
+            setCopied(true);
+            setTimeout(() => {
+              setCopied(false);
+            }, 1500); // Remove "Copied!" message after 1.5 seconds
+            resolve(); // Resolve the promise when copying is successful
+          })
+          .catch(() => {
+            setIsCopyLoading(false);
+            reject(); // Reject the promise if copying fails
+          });
+      }, 1500); // Remove "Copied!" message after 1.5 seconds
+    });
+
+    // Show a pending toast using toast.promise()
+    toast.promise(
+      copyingPromise,
+      {
+        pending: "Copying link to clipboard...", // Message to show while promise is pending
+        success: "Link copied successfully", // Message to show on success
+        error: "Failed to copy link to clipboard", // Message to show on error
+        pendingToastId: "pending-toast", // Custom ID for the pending toast
+        successToastId: "success-toast", // Custom ID for the success toast
+        errorToastId: "error-toast", // Custom ID for the error toast
+      },
+      {
+        position: "bottom-left",
+        autoClose: 2000,
+        hideProgressBar: false,
+        closeOnClick: true,
+        pauseOnHover: true,
+        draggable: true,
+        progress: undefined,
+        theme: "light",
+      }
+    );
   };
   return (
     <>

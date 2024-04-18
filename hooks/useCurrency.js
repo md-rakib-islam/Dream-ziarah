@@ -2,8 +2,8 @@ import { addCurrency } from "@/features/currency/currencySlice";
 import { useEffect, useState } from "react";
 import { useDispatch } from "react-redux";
 const useCurrency = () => {
-    const dispatch = useDispatch();
-    
+  const dispatch = useDispatch();
+
   const currencyContent = [
     { id: 1, name: "United States dollar", currency: "USD", symbol: "$" },
     { id: 2, name: "Australian dollar", currency: "AUD", symbol: "$" },
@@ -29,31 +29,40 @@ const useCurrency = () => {
 
   const [currency, setCurrency] = useState(currencyContent[0]);
 
-  
   useEffect(() => {
     if (typeof window !== "undefined") {
-      const successfulLookup = position => {
+      const successfulLookup = (position) => {
         const { latitude, longitude } = position.coords;
         // let latitude = 55;
         // let longitude = -3;
-        fetch(`https://api.opencagedata.com/geocode/v1/json?q=${latitude}+${longitude}&key=4c6d199989144fd1b8d3f6adbcf3b9ac`)
-          .then(response => response.json())
-          .then((data) => setCurrency({id : 300, name : data?.results[0]?.annotations?.currency?.name, currency: data?.results[0]?.annotations?.currency?.iso_code, symbol : data?.results[0]?.annotations?.currency?.symbol }))
-      }    
-    
-      if(window.navigator.geolocation){
-        navigator.geolocation
-        .getCurrentPosition(successfulLookup, console.log);
+        fetch(
+          `https://api.opencagedata.com/geocode/v1/json?q=${latitude}+${longitude}&key=4c6d199989144fd1b8d3f6adbcf3b9ac`
+        )
+          .then((response) => response.json())
+          .then((data) =>
+            setCurrency({
+              id: 300,
+              name: data?.results[0]?.annotations?.currency?.name,
+              currency: data?.results[0]?.annotations?.currency?.iso_code,
+              symbol: data?.results[0]?.annotations?.currency?.symbol,
+            })
+          );
+      };
+
+      if (window.navigator.geolocation) {
+        navigator.geolocation.getCurrentPosition(
+          successfulLookup,
+          console.log()
+        );
       }
     }
-    
   }, []);
 
   dispatch(addCurrency(currency));
   return {
     currency,
-    currencyContent
-  }
+    currencyContent,
+  };
 };
 
 export default useCurrency;

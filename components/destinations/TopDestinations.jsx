@@ -79,7 +79,7 @@ const TopDestinations = () => {
                   height={600}
                   quality={100}
                   priority
-                  alt={item?.name}
+                  alt={`${item?.name} Images`}
                 />
               </div>
               <div className="citiesCard__content d-flex justify-content-center align-items-center">
