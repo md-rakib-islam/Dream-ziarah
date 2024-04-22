@@ -129,8 +129,8 @@ const Tours = ({ filterTour }) => {
                 </Slider>
 
                 <div className="cardImage__leftBadge">
-                  <div
-                    className={`py-5 px-15 rounded-right-4 text-12 lh-16 fw-600 uppercase ${
+                  {/* <div
+                    className={`py-5  rounded-right-4 text-12 lh-16 fw-600 uppercase ${
                       isTextMatched(item?.tag, "likely to sell out*")
                         ? "bg-dark-1 text-white"
                         : ""
@@ -144,7 +144,20 @@ const Tours = ({ filterTour }) => {
                         : ""
                     }`}
                   >
-                    {item?.tag}
+                    Item
+                  </div> */}
+                  <div class="buttons">
+                    <button
+                      style={{
+                        backgroundColor: "#353537",
+                        backgroundImage:
+                          "linear-gradient(to right, #353537 , #0d0c0d)",
+                      }}
+                    >
+                      {`${currentCurrency?.symbol} ${item.price}`}{" "}
+                      <span> PER PERSON</span>
+                    </button>
+                    <button>No</button>
                   </div>
                 </div>
               </div>

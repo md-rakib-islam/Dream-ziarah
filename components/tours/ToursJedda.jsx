@@ -143,22 +143,35 @@ const ToursJedda = ({ filterTour }) => {
                   </div> */}
 
                   <div className="cardImage__leftBadge">
-                    <div
-                      className={`py-5 px-15 rounded-right-4 text-12 lh-16 fw-600 uppercase ${
-                        isTextMatched(item?.tag, "likely to sell out*")
-                          ? "bg-dark-1 text-white"
-                          : ""
-                      } ${
-                        isTextMatched(item?.tag, "best seller")
-                          ? "bg-blue-1 text-white"
-                          : ""
-                      }  ${
-                        isTextMatched(item?.tag, "top rated")
-                          ? "bg-yellow-1 text-dark-1"
-                          : ""
-                      }`}
-                    >
-                      {item?.tag}
+                    {/* <div
+                    className={`py-5  rounded-right-4 text-12 lh-16 fw-600 uppercase ${
+                      isTextMatched(item?.tag, "likely to sell out*")
+                        ? "bg-dark-1 text-white"
+                        : ""
+                    } ${
+                      isTextMatched(item?.tag, "best seller")
+                        ? "bg-blue-1 text-white"
+                        : ""
+                    }  ${
+                      isTextMatched(item?.tag, "top rated")
+                        ? "bg-yellow-1 text-dark-1"
+                        : ""
+                    }`}
+                  >
+                    Item
+                  </div> */}
+                    <div class="buttons">
+                      <button
+                        style={{
+                          backgroundColor: "#078de6",
+                          backgroundImage:
+                            "linear-gradient(to right, #078de6 , #29317a)",
+                        }}
+                      >
+                        {`${currentCurrency?.symbol} ${item.price}`}{" "}
+                        <span> PER PERSON</span>
+                      </button>
+                      <button>No</button>
                     </div>
                   </div>
                 </div>
