@@ -128,9 +128,9 @@ const TourProperties = () => {
                     </button>
                   </div> */}
 
-                <div className="cardImage__leftBadge">
-                  <div
-                    className={`py-5 px-15 rounded-right-4 text-12 lh-16 fw-600 uppercase ${
+                <div className="cardImage__leftBadge cardImage-2__leftBadge">
+                  {/* <div
+                    className={`py-5  rounded-right-4 text-12 lh-16 fw-600 uppercase ${
                       isTextMatched(item?.tag, "likely to sell out*")
                         ? "bg-dark-1 text-white"
                         : ""
@@ -144,7 +144,37 @@ const TourProperties = () => {
                         : ""
                     }`}
                   >
-                    {item?.tag}
+                    Item
+                  </div> */}
+                  <div class="buttons-2">
+                    <button
+                      style={{
+                        backgroundColor:
+                          search == "Makkah"
+                            ? "#353537"
+                            : search == "Medina"
+                            ? "#21b510"
+                            : search == "Taif"
+                            ? "#824007"
+                            : search == "Jedda"
+                            ? "#078de6"
+                            : "",
+                        backgroundImage:
+                          search == "Makkah"
+                            ? "linear-gradient(to right, #353537 , #0d0c0d)"
+                            : search == "Medina"
+                            ? "linear-gradient(to right, #21b510 , #158805)"
+                            : search == "Taif"
+                            ? "linear-gradient(to right, #824007 , #601817)"
+                            : search == "Jedda"
+                            ? "linear-gradient(to right, #078de6 , #29317a)"
+                            : "",
+                      }}
+                    >
+                      {`${currentCurrency?.symbol} ${item.price}`}{" "}
+                      <span> PER PERSON</span>
+                    </button>
+                    <button>No</button>
                   </div>
                 </div>
               </div>
