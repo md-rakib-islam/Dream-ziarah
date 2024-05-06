@@ -1,18 +1,19 @@
-import Slights from "@/components/block/Slights";
-import TopDestinations2 from "@/components/destinations/TopDestinations2";
+import Link from "next/link";
 import Banner from "@/components/destinations/components/Banner";
 import IntroTown from "@/components/destinations/components/IntroTown";
 import Weather from "@/components/destinations/components/Weather";
 import Faq from "@/components/faq/Faq";
 import Testimonial from "@/components/home/home-1/Testimonial";
 import TestimonialLeftCol from "@/components/home/home-1/TestimonialLeftCol";
+import Slights from "@/components/block/Slights";
+import TopDestinations2 from "@/components/destinations/TopDestinations2";
 import Tours from "@/components/tours/Tours";
 import ToursMadina from "@/components/tours/ToursMadina";
 import ToursJedda from "@/components/tours/ToursJedda";
 import ToursTaif from "@/components/tours/ToursTaif";
 import { slightContent } from "@/data/desinations";
 import getAllMenuItem from "@/services/menuService";
-import Link from "next/link";
+import dynamic from "next/dynamic";
 
 const destinationsMetadatas = {
   jedda: {
@@ -42,232 +43,77 @@ const destinationsMetadatas = {
   },
 };
 
-export async function generateStaticParams() {
-  const data = await getAllMenuItem();
-
-  return data?.menus
-    .find((item) => item.name === "Destinations")
-    ?.children?.map((item) => ({
-      slug: item.name,
-    }));
-}
-
-export async function generateMetadata({ params, searchParams }, parent) {
-  const slug = params.slug;
-
-  return {
-    title: destinationsMetadatas[slug]?.title,
-    description: destinationsMetadatas[slug]?.description,
-  };
-}
-
 const Destinations = ({ params }) => {
   const slug = params.slug;
 
+  const renderToursSection = (location) => (
+    <section className="layout-pb-lg">
+      <div className="container">
+        <div className="row y-gap-20 justify-between items-end">
+          <div className="col-auto">
+            <div className="sectionTitle -md">
+              <h2 className="sectionTitle__title">
+                Popular Tours In {location}
+              </h2>
+              <p className=" sectionTitle__text mt-5 sm:mt-0">
+                Find Your Perfect {location} Tour: Private, Shared, and More
+              </p>
+            </div>
+          </div>
+          <div className="col-auto">
+            <Link
+              href={`/tours/?location=${location}`}
+              className="button -md -blue-1 bg-blue-1-05 text-blue-1"
+            >
+              More <div className="icon-arrow-top-right ml-15" />
+            </Link>
+          </div>
+        </div>
+        <div className="row y-gap-30 pt-40 sm:pt-20 item_gap-x30">
+          {location === "Makkah" && <Tours />}
+          {location === "Medina" && <ToursMadina />}
+          {location === "Jeddah" && <ToursJedda />}
+          {location === "Taif" && <ToursTaif />}
+        </div>
+      </div>
+    </section>
+  );
+
   return (
     <>
-      {/* End Page Title */}
-
       <div className="header-margin"></div>
-      {/* header top margin */}
-
-      {/* End location top bar section */}
-
       <section className="layout-pb-md">
         <div className="container">
           <div className="row">
             <Banner slug={slug} />
           </div>
-          {/* End .row */}
-
-          {/* End .row */}
-
           <div className="row y-gap-20 pt-40">
             <div className="col-auto">
               <h2>
                 What to know before visiting{" "}
-                {slug == "medina"
+                {slug === "medina"
                   ? "Madina"
-                  : slug == "jedda"
+                  : slug === "jedda"
                   ? "Jeddah"
                   : slug.charAt(0).toUpperCase() + slug.slice(1)}
               </h2>
             </div>
-            {/* End .col-auto */}
-
             <IntroTown slug={slug} />
           </div>
-          {/* End .row */}
-
           <div className="pt-30 mt-30 border-top-light" />
-          {/* border separation */}
-
           <div className="row y-gap-20">
             <div className="col-12">
               <h2 className="text-22 fw-600">Local weather</h2>
             </div>
-            {/* End. col-12 */}
-
             <Weather slug={slug} />
           </div>
-          {/* End local weather */}
-
           <div className="pt-30 mt-30 border-top-light" />
         </div>
-        {/* End .container */}
       </section>
-      {/* End Top Banner,categorie,intro,weather, generic info section */}
-
-      {params?.slug && params?.slug.includes("makkah") && (
-        <section className=" layout-pb-lg ">
-          <div className="container">
-            <div className="row y-gap-20 justify-between items-end">
-              <div className="col-auto">
-                <div className="sectionTitle -md">
-                  <h2 className="sectionTitle__title">
-                    Popular Tours In Makkah
-                  </h2>
-                  <p className=" sectionTitle__text mt-5 sm:mt-0">
-                    Find Your Perfect Makkah Tour: Private, Shared, and More
-                  </p>
-                </div>
-              </div>
-              {/* End .col */}
-
-              <div className="col-auto">
-                <Link
-                  href="/tours/?location=Makkah"
-                  className="button -md -blue-1 bg-blue-1-05 text-blue-1"
-                >
-                  More <div className="icon-arrow-top-right ml-15" />
-                </Link>
-              </div>
-              {/* End .col */}
-            </div>
-            {/* End .row */}
-
-            <div className="row y-gap-30 pt-40 sm:pt-20 item_gap-x30">
-              <Tours />
-            </div>
-            {/* End .row */}
-          </div>
-          {/* End .container */}
-        </section>
-      )}
-
-      {/* End Tours Sections */}
-
-      {params?.slug && params?.slug.includes("medina") && (
-        <section className=" layout-pb-lg ">
-          <div className="container">
-            <div className="row y-gap-20 justify-between items-end">
-              <div className="col-auto">
-                <div className="sectionTitle -md">
-                  <h1 className="sectionTitle__title">
-                    Popular Tours In Madina
-                  </h1>
-                  <p className=" sectionTitle__text mt-5 sm:mt-0">
-                    Find Your Perfect Madina Tour: Private, Shared, and More
-                  </p>
-                </div>
-              </div>
-              {/* End .col */}
-
-              <div className="col-auto">
-                <Link
-                  href="/tours/?location=Medina"
-                  className="button -md -blue-1 bg-blue-1-05 text-blue-1"
-                >
-                  More <div className="icon-arrow-top-right ml-15" />
-                </Link>
-              </div>
-              {/* End .col */}
-            </div>
-            {/* End .row */}
-
-            <div className="row y-gap-30 pt-40 sm:pt-20 item_gap-x30">
-              <ToursMadina />
-            </div>
-            {/* End .row */}
-          </div>
-          {/* End .container */}
-        </section>
-      )}
-      {/* End Tours Sections */}
-
-      {params?.slug && params?.slug.includes("jedda") && (
-        <section className=" layout-pb-lg ">
-          <div className="container">
-            <div className="row y-gap-20 justify-between items-end">
-              <div className="col-auto">
-                <div className="sectionTitle -md">
-                  <h1 className="sectionTitle__title">
-                    Popular Tours In Jeddah
-                  </h1>
-                  <p className=" sectionTitle__text mt-5 sm:mt-0">
-                    Find Your Perfect Jeddah Tour: Private, Shared, and More
-                  </p>
-                </div>
-              </div>
-              {/* End .col */}
-
-              <div className="col-auto">
-                <Link
-                  href="/tours/?location=Jedda"
-                  className="button -md -blue-1 bg-blue-1-05 text-blue-1"
-                >
-                  More <div className="icon-arrow-top-right ml-15" />
-                </Link>
-              </div>
-              {/* End .col */}
-            </div>
-            {/* End .row */}
-
-            <div className="row y-gap-30 pt-40 sm:pt-20 item_gap-x30">
-              <ToursJedda />
-            </div>
-            {/* End .row */}
-          </div>
-          {/* End .container */}
-        </section>
-      )}
-      {/* End Tours Sections */}
-
-      {params?.slug && params?.slug.includes("taif") && (
-        <section className=" layout-pb-lg ">
-          <div className="container">
-            <div className="row y-gap-20 justify-between items-end">
-              <div className="col-auto">
-                <div className="sectionTitle -md">
-                  <h1 className="sectionTitle__title">Popular Tours In Taif</h1>
-                  <p className=" sectionTitle__text mt-5 sm:mt-0">
-                    Find Your Perfect Taif Tour: Private, Shared, and More
-                  </p>
-                </div>
-              </div>
-              {/* End .col */}
-
-              <div className="col-auto">
-                <Link
-                  href="/tours/?location=Taif"
-                  className="button -md -blue-1 bg-blue-1-05 text-blue-1"
-                >
-                  More <div className="icon-arrow-top-right ml-15" />
-                </Link>
-              </div>
-              {/* End .col */}
-            </div>
-            {/* End .row */}
-
-            <div className="row y-gap-30 pt-40 sm:pt-20 item_gap-x30">
-              <ToursTaif />
-            </div>
-            {/* End .row */}
-          </div>
-          {/* End .container */}
-        </section>
-      )}
-      {/* End Tours Sections */}
+      {slug === "makkah" && renderToursSection("Makkah")}
+      {slug === "medina" && renderToursSection("Madina")}
+      {slug === "jedda" && renderToursSection("Jeddah")}
+      {slug === "taif" && renderToursSection("Taif")}
 
       <section className="layout-pt-md layout-pb-lg">
         <div className="container">
@@ -320,60 +166,39 @@ const Destinations = ({ params }) => {
         {/* End .container */}
       </section>
       {/* End Top sights in London */}
-
-      <section className="layout-pt-lg layout-pb-lg bg-light-2">
+      <section className="layout-pt-md layout-pb-lg bg-light-2">
         <div className="container">
           <div className="row y-gap-40 justify-between">
             <div className="col-xl-5 col-lg-6" data-aos="fade-up">
               <TestimonialLeftCol />
             </div>
-            {/* End col */}
-
             <div className="col-lg-6">
-              <div
-                className="overflow-hidden js-testimonials-slider-3"
-                data-aos="fade-up"
-                data-aos-delay="50"
-              >
-                <Testimonial />
-              </div>
+              <Testimonial />
             </div>
           </div>
-          {/* End .row */}
         </div>
-        {/* End container */}
       </section>
-      {/* End testimonial Section */}
-
       <section className="layout-pt-lg layout-pb-md">
         <div className="container">
           <div className="row y-gap-20">
             <div className="col-lg-4">
               <h2 className="text-30 fw-600">
-                FAQs about
-                <br />
-                {slug == "medina"
+                FAQs about{" "}
+                {slug === "medina"
                   ? "Madina"
-                  : slug == "jedda"
+                  : slug === "jedda"
                   ? "Jeddah"
                   : slug.charAt(0).toUpperCase() + slug.slice(1)}
               </h2>
             </div>
-            {/* End .col */}
-
             <div className="col-lg-8">
               <div className="accordion -simple row y-gap-20 js-accordion">
                 <Faq slug={slug} />
               </div>
             </div>
-            {/* End .col-lg-8 */}
           </div>
-          {/* End .row */}
         </div>
-        {/* End .container */}
       </section>
-      {/* End Faq Section */}
-
       <section className="layout-pt-md layout-pb-lg">
         <div className="container">
           <div className="row y-gap-20">
@@ -381,9 +206,9 @@ const Destinations = ({ params }) => {
               <div className="sectionTitle -md">
                 <h2 className="sectionTitle__title">
                   Destinations near{" "}
-                  {slug == "medina"
+                  {slug === "medina"
                     ? "Madina"
-                    : slug == "jedda"
+                    : slug === "jedda"
                     ? "Jeddah"
                     : slug.charAt(0).toUpperCase() + slug.slice(1)}
                 </h2>
@@ -393,26 +218,28 @@ const Destinations = ({ params }) => {
               </div>
             </div>
           </div>
-          {/* End .row */}
-
-          <div
-            className="pt-40 relative"
-            style={{
-              width: "700px",
-            }}
-          >
+          <div className="pt-40 relative" style={{ width: "700px" }}>
             <TopDestinations2 slug={slug} />
           </div>
         </div>
-        {/* End .container */}
       </section>
-      {/* End top destinations */}
-
-      {/* End Call To Actions Section */}
-
-      {/* End Call To Actions Section */}
     </>
   );
 };
 
-export default Destinations;
+export async function generateStaticParams() {
+  const data = await getAllMenuItem();
+  return data?.menus
+    .find((item) => item.name === "Destinations")
+    ?.children?.map((item) => ({ slug: item.name }));
+}
+
+export async function generateMetadata({ params, searchParams }, parent) {
+  const slug = params.slug;
+  return {
+    title: destinationsMetadatas[slug]?.title,
+    description: destinationsMetadatas[slug]?.description,
+  };
+}
+
+export default dynamic(() => Promise.resolve(Destinations), { ssr: true });

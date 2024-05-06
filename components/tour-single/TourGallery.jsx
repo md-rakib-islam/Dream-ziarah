@@ -46,7 +46,7 @@ export default function TourGallery({ tour, hajj, umrah }) {
                         height={860}
                         width={1920}
                         style={{ maxHeight: "448px" }}
-                        priority
+                        priority={true}
                         src={`${slide}`}
                         alt={tour?.title}
                         // className="rounded-4 col-12 cover object-cover"
