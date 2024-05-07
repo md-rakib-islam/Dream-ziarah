@@ -32,6 +32,7 @@ const Umrah = ({ children }) => {
   const dispatch = useDispatch();
   const [copied, setCopied] = useState(false);
   const [isCopyLoading, setIsCopyLoading] = useState(false);
+  const [dataAvailable, setDataAvailable] = useState(false);
   const { menuItems } = useSelector((state) => state.menus);
   const umrahId = menuItems.find((item) => item.name === "Umrah")?.id;
   const { data, isSuccess } = useGetContentsByMenuContentIdQuery(41);
@@ -73,6 +74,10 @@ const Umrah = ({ children }) => {
     }
     localStorage.removeItem("tourHasReloaded");
   }, []);
+
+  const handleDataAvailability = (isDataAvailable) => {
+    setDataAvailable(isDataAvailable);
+  };
   //copy link
   const copyToClipboard = () => {
     setIsCopyLoading(true);
@@ -256,68 +261,76 @@ const Umrah = ({ children }) => {
       </section>
       {/* End gallery grid wrapper */}
 
-      <TourGallery tour={tour} umrah={true} />
+      <TourGallery
+        tour={tour}
+        umrah={true}
+        onDataAvailable={handleDataAvailability}
+      />
 
       {/* End single page content */}
 
-      <section className="pt-40">
-        <div className="container">
-          <div className="pt-40 border-top-light">
-            <div className="row x-gap-40 y-gap-40">
-              <div className="col-auto">
-                <h3 className="text-22 fw-600">Important information</h3>
+      {dataAvailable && (
+        <>
+          <section className="pt-40">
+            <div className="container">
+              <div className="pt-40 border-top-light">
+                <div className="row x-gap-40 y-gap-40">
+                  <div className="col-auto">
+                    <h3 className="text-22 fw-600">Important information</h3>
+                  </div>
+                </div>
+                {/* End row */}
+                <ImportantInfo umrah={true} />
               </div>
+              {/* End pt-40 */}
             </div>
-            {/* End row */}
-            <ImportantInfo umrah={true} />
-          </div>
-          {/* End pt-40 */}
-        </div>
-        {/* End .container */}
-      </section>
-      {/* End important info */}
+            {/* End .container */}
+          </section>
+          {/* End important info */}
 
-      <section className="border-top-light  mt-40 pt-40">
-        <div className="container">
-          <h3 className="text-22 fw-600 mb-20">Itinerary</h3>
-          <Itinerary />
-        </div>
-      </section>
-      {/* End Itinerary */}
+          <section className="border-top-light  mt-40 pt-40">
+            <div className="container">
+              <h3 className="text-22 fw-600 mb-20">Itinerary</h3>
+              <Itinerary />
+            </div>
+          </section>
+          {/* End Itinerary */}
 
-      <section className="layout-pt-lg layout-pb-lg mt-50 border-top-light">
-        <div className="container">
-          <div className="row y-gap-20 justify-between items-end">
-            <div className="col-auto">
-              <div className="sectionTitle -md">
-                <h2 className="sectionTitle__title">Most Popular Tours</h2>
-                <p className=" sectionTitle__text mt-5 sm:mt-0">
-                  Explore Our Best Sellers: Unmatched Experiences in Every
-                  Journey
-                </p>
+          <section className="layout-pt-lg layout-pb-lg mt-50 border-top-light">
+            <div className="container">
+              <div className="row y-gap-20 justify-between items-end">
+                <div className="col-auto">
+                  <div className="sectionTitle -md">
+                    <h2 className="sectionTitle__title">Most Popular Tours</h2>
+                    <p className=" sectionTitle__text mt-5 sm:mt-0">
+                      Explore Our Best Sellers: Unmatched Experiences in Every
+                      Journey
+                    </p>
+                  </div>
+                </div>
+                {/* End .col */}
+
+                <div className="col-auto">
+                  <Link
+                    href="/tours/?location=Makkah"
+                    className="button -md -blue-1 bg-blue-1-05 text-blue-1"
+                  >
+                    More <div className="icon-arrow-top-right ml-15" />
+                  </Link>
+                </div>
+                {/* End .col */}
               </div>
-            </div>
-            {/* End .col */}
+              {/* End .row */}
 
-            <div className="col-auto">
-              <Link
-                href="/tours/?location=Makkah"
-                className="button -md -blue-1 bg-blue-1-05 text-blue-1"
-              >
-                More <div className="icon-arrow-top-right ml-15" />
-              </Link>
+              <div className="row y-gap-30 pt-40 sm:pt-20 item_gap-x30">
+                <Tours />
+              </div>
+              {/* End .row */}
             </div>
-            {/* End .col */}
-          </div>
-          {/* End .row */}
-
-          <div className="row y-gap-30 pt-40 sm:pt-20 item_gap-x30">
-            <Tours />
-          </div>
-          {/* End .row */}
-        </div>
-        {/* End .container */}
-      </section>
+            {/* End .container */}
+          </section>
+        </>
+      )}
       {/* End Tours Sections */}
     </>
   );

@@ -4,20 +4,23 @@ import Overview from "@/components/tour-single/Overview";
 import SidebarRight from "@/components/tour-single/SidebarRight";
 import TourSnapShot from "@/components/tour-single/TourSnapShot";
 import Image from "next/image";
-import { useState } from "react";
 import { Gallery, Item } from "react-photoswipe-gallery";
-import { Navigation } from "swiper";
-import { Swiper, SwiperSlide } from "swiper/react";
 import HajjSidebarRight from "../hajj/HajjSidebarRight";
 import UmrahSidebarRight from "../umrah/UmrahSidebarRight";
-import { BASE_URL } from "@/constant/constants";
 import useWindowSize from "@/hooks/useWindowSize";
 import "../../styles/weather.scss";
 
+import { useEffect, useState } from "react";
+import OverviewSkeleton from "../skeleton/OverviewSkeleton";
+import GalarySkeleton from "../skeleton/GalarySkeleton";
+import { Swiper, SwiperSlide } from "swiper/react";
+import { Navigation, Zoom } from "swiper";
+
 // import useWindowSize from "@/hooks/useWindowSize";
 
-export default function TourGallery({ tour, hajj, umrah }) {
-  const [isOpen, setOpen] = useState(false);
+export default function TourGallery({ tour, hajj, umrah, onDataAvailable }) {
+  const [dataAvailable, setDataAvailable] = useState(false);
+
   const width = useWindowSize();
   const isMobile = width < 768;
 
@@ -32,8 +35,9 @@ export default function TourGallery({ tour, hajj, umrah }) {
                 // style={{ height: isMobile ? 300 : 400 }}
               >
                 <Swiper
-                  modules={[Navigation]}
+                  modules={[Zoom, Navigation]}
                   loop={true}
+                  zoom={true}
                   navigation={{
                     nextEl: ".js-img-next",
                     prevEl: ".js-img-prev",
@@ -41,21 +45,29 @@ export default function TourGallery({ tour, hajj, umrah }) {
                 >
                   {tour?.slideImg?.map((slide, i) => (
                     <SwiperSlide key={i}>
-                      <Image
-                        className="col-12 rounded-4 destination_banner_img"
-                        height={860}
-                        width={1920}
-                        style={{ maxHeight: "448px" }}
-                        priority={true}
-                        src={`${slide}`}
-                        alt={tour?.title}
-                        // className="rounded-4 col-12 cover object-cover"
-                      />
+                      <div className="swiper-zoom-container">
+                        <Image
+                          className="col-12 rounded-4 destination_banner_img swiper-zoom-container"
+                          height={860}
+                          width={1920}
+                          style={{ maxHeight: "448px" }}
+                          priority={true}
+                          src={`${slide}`}
+                          alt={tour?.title}
+                          onLoad={(e) => {
+                            if (e) {
+                              onDataAvailable(true);
+                              setDataAvailable(true);
+                            }
+                          }} // Attach onLoad event handler
+                          // className="rounded-4 col-12 cover object-cover"
+                        />
+                      </div>
                     </SwiperSlide>
                   ))}
                 </Swiper>
 
-                <Gallery>
+                {/* <Gallery>
                   {tour?.slideImg?.map((slide, i) => (
                     <div
                       className="absolute px-10 py-10 col-12 h-full d-flex justify-end items-end z-2 bottom-0 end-0"
@@ -82,18 +94,19 @@ export default function TourGallery({ tour, hajj, umrah }) {
                       </Item>
                     </div>
                   ))}
-                </Gallery>
+                </Gallery> */}
 
                 <div className="absolute h-full col-11">
-                  <button className="section-slider-nav -prev flex-center button -blue-1 bg-white shadow-1 size-40 rounded-full sm:d-none js-img-prev">
+                  <button className="section-slider-nav -prev flex-center button -blue-1  shadow-1 size-40 rounded-full sm:d-none js-img-prev">
                     <i className="icon icon-chevron-left text-12" />
                   </button>
-                  <button className="section-slider-nav -next flex-center button -blue-1 bg-white shadow-1 size-40 rounded-full sm:d-none js-img-next">
+                  <button className="section-slider-nav -next flex-center button -blue-1  shadow-1 size-40 rounded-full sm:d-none js-img-next">
                     <i className="icon icon-chevron-right text-12" />
                   </button>
                 </div>
                 {/* End prev nav button wrapper */}
               </div>
+              {!dataAvailable && <GalarySkeleton />}
               {/* End relative */}
 
               {/* slider gallery */}
@@ -103,7 +116,11 @@ export default function TourGallery({ tour, hajj, umrah }) {
               {/* End toursnapshot */}
               <div className="border-top-light mt-40 mb-40"></div>
 
-              {!isMobile && <Overview hajj={hajj} />}
+              {!isMobile && dataAvailable ? (
+                <Overview hajj={hajj} />
+              ) : (
+                <OverviewSkeleton />
+              )}
               {/* End  Overview */}
             </div>
             {/* End .col-xl-8 */}

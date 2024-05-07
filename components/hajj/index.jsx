@@ -32,6 +32,8 @@ const Hajj = ({ children }) => {
   const dispatch = useDispatch();
   const [copied, setCopied] = useState(false);
   const [isCopyLoading, setIsCopyLoading] = useState(false);
+  const [dataAvailable, setDataAvailable] = useState(false);
+
   const { menuItems } = useSelector((state) => state.menus);
   const hajjId = menuItems.find((item) => item.name === "Hajj")?.id;
   const { data, isSuccess } = useGetContentsByMenuContentIdQuery(40);
@@ -73,6 +75,10 @@ const Hajj = ({ children }) => {
     }
     localStorage.removeItem("tourHasReloaded");
   }, []);
+
+  const handleDataAvailability = (isDataAvailable) => {
+    setDataAvailable(isDataAvailable);
+  };
 
   //copy link
   const copyToClipboard = () => {
@@ -266,7 +272,11 @@ const Hajj = ({ children }) => {
       </section>
       {/* End gallery grid wrapper */}
 
-      <TourGallery tour={tour} hajj={true} />
+      <TourGallery
+        tour={tour}
+        hajj={true}
+        onDataAvailable={handleDataAvailability}
+      />
 
       {/* End single page content */}
 

@@ -18,6 +18,7 @@ const home_3 = () => {
 
   // Function to handle data availability
   const handleDataAvailability = (isDataAvailable) => {
+    console.log("isDataAvailableHome", isDataAvailable);
     setDataAvailable(isDataAvailable);
   };
   return (

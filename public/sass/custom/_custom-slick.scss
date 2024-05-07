@@ -5,6 +5,7 @@
 }
 .section-slider-nav {
   position: absolute;
+  background-color: hsla(0, 0%, 100%, 0.308) !important;
   top: 50%;
   transform: translateY(-50%);
   z-index: 5;
@@ -43,7 +44,7 @@
     line-height: 1.2;
     border-radius: 100%;
     border: 1px solid transparent;
-    background-color: var(--color-white) !important;
+    background-color: #ffffff4d !important;
     transition: all 0.3s cubic-bezier(0.165, 0.84, 0.44, 1);
     opacity: 0;
 

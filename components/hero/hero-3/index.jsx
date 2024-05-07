@@ -13,11 +13,11 @@ const index = ({ onDataAvailable }) => {
       image: `${item.image}`,
     }));
   }
-  useEffect(() => {
-    if (sliderImageItems !== 0) {
-      onDataAvailable(true);
-    }
-  }, [onDataAvailable, sliderImageItems]);
+  // useEffect(() => {
+  //   if (sliderImageItems !== 0) {
+  //     onDataAvailable(true);
+  //   }
+  // }, [onDataAvailable, sliderImageItems]);
 
   return isLoading ? (
     <CoverSkeleton />
@@ -29,6 +29,7 @@ const index = ({ onDataAvailable }) => {
             src={sliderImageItems[1]?.cloudflare_image_url}
             width={1920}
             height={860}
+            onLoad={onDataAvailable(true)}
             alt="image"
           />
         </div>

@@ -47,6 +47,7 @@ const TourSingleV1Dynamic = ({ params, children }) => {
   const [jedda, setJedda] = useState(false);
   const [madina, setMadina] = useState(false);
   const [taif, setTaif] = useState(false);
+  const [dataAvailable, setDataAvailable] = useState(false);
   const id = params?.slug;
   const { menuItems } = useSelector((state) => state.menus);
   const tourId = menuItems.find((item) => item.name === "Tour")?.id;
@@ -154,6 +155,10 @@ const TourSingleV1Dynamic = ({ params, children }) => {
 
   //   // Return the states
   // }
+
+  const handleDataAvailability = (isDataAvailable) => {
+    setDataAvailable(isDataAvailable);
+  };
 
   //copy link
   const copyToClipboard = () => {
@@ -386,39 +391,37 @@ const TourSingleV1Dynamic = ({ params, children }) => {
       </section>
       {/* End gallery grid wrapper */}
 
-      {isLoading ? (
-        <div className="col-12 h-50 text-center">
-          <Loading />
-        </div>
-      ) : (
-        <TourGallery tour={tour} />
-      )}
+      <TourGallery tour={tour} onDataAvailable={handleDataAvailability} />
 
       {/* End single page content */}
 
-      <section className="pt-40">
-        <div className="container">
-          <div className="pt-40 border-top-light">
-            <div className="row x-gap-40 y-gap-40">
-              <div className="col-auto">
-                <h3 className="text-22 fw-600">Important information</h3>
+      {dataAvailable && (
+        <>
+          <section className="pt-40">
+            <div className="container">
+              <div className="pt-40 border-top-light">
+                <div className="row x-gap-40 y-gap-40">
+                  <div className="col-auto">
+                    <h3 className="text-22 fw-600">Important information</h3>
+                  </div>
+                </div>
+                {/* End row */}
+                <ImportantInfo departure={tour} />
               </div>
+              {/* End pt-40 */}
             </div>
-            {/* End row */}
-            <ImportantInfo departure={tour} />
-          </div>
-          {/* End pt-40 */}
-        </div>
-        {/* End .container */}
-      </section>
-      {/* End important info */}
+            {/* End .container */}
+          </section>
+          {/* End important info */}
 
-      <section className="border-top-light  mt-40 pt-40">
-        <div className="container">
-          <h3 className="text-22 fw-600 mb-20">Itinerary</h3>
-          <Itinerary name={params?.name} />
-        </div>
-      </section>
+          <section className="border-top-light  mt-40 pt-40">
+            <div className="container">
+              <h3 className="text-22 fw-600 mb-20">Itinerary</h3>
+              <Itinerary name={params?.name} />
+            </div>
+          </section>
+        </>
+      )}
       {/* End Itinerary */}
 
       {/* <section className="mt-40 border-top-light pt-40">
@@ -467,7 +470,7 @@ const TourSingleV1Dynamic = ({ params, children }) => {
       </section> */}
       {/* End Reply Comment box section */}
 
-      {makka && data?.name && (
+      {makka && data?.name && dataAvailable && (
         <section className="layout-pt-lg layout-pb-lg mt-50 border-top-light">
           <div className="container">
             <div className="row y-gap-20 justify-between items-end">
@@ -506,7 +509,7 @@ const TourSingleV1Dynamic = ({ params, children }) => {
 
       {/* End Tours Sections */}
 
-      {madina && data?.name && (
+      {madina && data?.name && dataAvailable && (
         <section className="layout-pt-lg layout-pb-lg mt-50 border-top-light">
           <div className="container">
             <div className="row y-gap-20 justify-between items-end">
@@ -544,7 +547,7 @@ const TourSingleV1Dynamic = ({ params, children }) => {
       )}
       {/* End Tours Sections */}
 
-      {jedda && data?.name && (
+      {jedda && data?.name && dataAvailable && (
         <section className="layout-pt-lg layout-pb-lg mt-50 border-top-light">
           <div className="container">
             <div className="row y-gap-20 justify-between items-end">
@@ -582,7 +585,7 @@ const TourSingleV1Dynamic = ({ params, children }) => {
       )}
       {/* End Tours Sections */}
 
-      {taif && data?.name && (
+      {taif && data?.name && dataAvailable && (
         <section className="layout-pt-lg layout-pb-lg mt-50 border-top-light">
           <div className="container">
             <div className="row y-gap-20 justify-between items-end">
