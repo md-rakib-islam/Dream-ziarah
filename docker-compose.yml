@@ -2,6 +2,7 @@ version: "3.8"
 services:
   dreamziarah:
     build: .
+    image: dreamziarahcom-dreamziarah
     container_name: ziarahapp
     restart: always
     ports:

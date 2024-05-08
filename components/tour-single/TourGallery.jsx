@@ -116,11 +116,12 @@ export default function TourGallery({ tour, hajj, umrah, onDataAvailable }) {
               {/* End toursnapshot */}
               <div className="border-top-light mt-40 mb-40"></div>
 
-              {!isMobile && dataAvailable ? (
-                <Overview hajj={hajj} />
-              ) : (
-                <OverviewSkeleton />
-              )}
+              {!isMobile &&
+                (dataAvailable ? (
+                  <Overview hajj={hajj} />
+                ) : (
+                  <OverviewSkeleton />
+                ))}
               {/* End  Overview */}
             </div>
             {/* End .col-xl-8 */}
@@ -134,11 +135,14 @@ export default function TourGallery({ tour, hajj, umrah, onDataAvailable }) {
                 <SidebarRight />
               )}
             </div>
-            {isMobile && (
-              <div style={{ marginTop: "" }}>
-                <Overview hajj={hajj} />
-              </div>
-            )}
+            {isMobile &&
+              (dataAvailable ? (
+                <div style={{ marginTop: "" }}>
+                  <Overview hajj={hajj} />
+                </div>
+              ) : (
+                <OverviewSkeleton />
+              ))}
             {/* End .col-xl-4 */}
           </div>
           {/* End .row */}
