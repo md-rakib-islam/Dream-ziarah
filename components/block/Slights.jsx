@@ -4,7 +4,7 @@ import { slightContent } from "@/data/desinations";
 const Slights = ({ slug }) => {
   return (
     <>
-      {slightContent[slug]?.items?.map((item) => (
+      {slightContent[slug]?.items?.map((item, idx) => (
         <div
           className="col-lg-6"
           key={item.id}
@@ -16,11 +16,10 @@ const Slights = ({ slug }) => {
               <div className="col-auto d-flex justify-content-center align-items-center ">
                 <div className="ratio ratio-1:1 w-200 py-lg-2 my-lg-0 my-2">
                   <Image
-                    unoptimized
                     width={200}
                     height={200}
                     src={item?.img}
-                    alt={item?.title}
+                    alt="slights"
                     className="mh-100 img-ratio"
                   />
                 </div>

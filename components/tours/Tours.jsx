@@ -153,7 +153,7 @@ const Tours = ({ filterTour }) => {
                   >
                     Item
                   </div> */}
-                  <div class="buttons">
+                  <div className="buttons">
                     <button
                       style={{
                         backgroundColor: "#353537",

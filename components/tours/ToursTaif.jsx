@@ -167,7 +167,7 @@ const ToursTaif = ({ filterTour }) => {
                   >
                     Item
                   </div> */}
-                    <div class="buttons">
+                    <div className="buttons">
                       <button
                         style={{
                           backgroundColor: "#824007",

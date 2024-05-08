@@ -13,12 +13,11 @@ const ToursMadina = dynamic(() => import("@/components/tours/ToursMadina"));
 const ToursJedda = dynamic(() => import("@/components/tours/ToursJedda"));
 const ToursTaif = dynamic(() => import("@/components/tours/ToursTaif"));
 
-const home_3 = () => {
+const MainHome = () => {
   const [dataAvailable, setDataAvailable] = useState(false);
 
   // Function to handle data availability
   const handleDataAvailability = (isDataAvailable) => {
-    console.log("isDataAvailableHome", isDataAvailable);
     setDataAvailable(isDataAvailable);
   };
   return (
@@ -263,5 +262,5 @@ const home_3 = () => {
   );
 };
 
-// export default dynamic(() => Promise.resolve(home_3), { ssr: false });
-export default home_3;
+// export default dynamic(() => Promise.resolve(MainHome), { ssr: false });
+export default MainHome;

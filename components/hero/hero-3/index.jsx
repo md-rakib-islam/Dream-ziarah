@@ -29,6 +29,7 @@ const index = ({ onDataAvailable }) => {
             src={sliderImageItems[1]?.cloudflare_image_url}
             width={1920}
             height={860}
+            priority={true}
             onLoad={onDataAvailable(true)}
             alt="image"
           />

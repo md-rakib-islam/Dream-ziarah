@@ -167,7 +167,7 @@ const ToursJedda = ({ filterTour }) => {
                   >
                     Item
                   </div> */}
-                    <div class="buttons">
+                    <div className="buttons">
                       <button
                         style={{
                           backgroundColor: "#078de6",

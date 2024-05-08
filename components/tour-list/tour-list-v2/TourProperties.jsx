@@ -146,7 +146,7 @@ const TourProperties = () => {
                   >
                     Item
                   </div> */}
-                  <div class="buttons-2">
+                  <div className="buttons-2">
                     <button
                       style={{
                         backgroundColor:

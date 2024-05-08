@@ -170,7 +170,7 @@ const ToursMadina = ({ filterTour }) => {
                   >
                     Item
                   </div> */}
-                    <div class="buttons">
+                    <div className="buttons">
                       <button
                         style={{
                           backgroundColor: "#21b510",

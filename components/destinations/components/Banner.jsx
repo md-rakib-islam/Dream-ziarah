@@ -1,23 +1,18 @@
 "use client";
 import DestinationSkeleton from "@/components/skeleton/DestinationSkeleton";
-import { useGetImagesByMenuIdQuery } from "@/features/image/imageApi";
+import { useGetImagesByMenuNameQuery } from "@/features/image/imageApi";
 import Image from "next/image";
-import { useSelector } from "react-redux";
+// import { useSelector } from "react-redux";
 
 const Banner = ({ slug }) => {
-  const { menuItems } = useSelector((state) => state.menus);
-  const destinationId = menuItems
-    ?.find((item) => item.name === "Destinations")
-    ?.children?.find((item) => item.name.toLowerCase() === slug)?.id;
+  const { isSuccess, data, isLoading } = useGetImagesByMenuNameQuery(slug);
 
-  const { isSuccess, data, isLoading } =
-    useGetImagesByMenuIdQuery(destinationId);
   let bannerUrl = "";
   if (isSuccess) {
-    localStorage.clear();
     bannerUrl = `${
       data?.content_images[slug.charAt(0).toUpperCase() + slug.slice(1)]
     }`;
+    localStorage.clear();
   }
 
   return isLoading ? (
@@ -27,7 +22,7 @@ const Banner = ({ slug }) => {
       <div className="relative d-flex">
         <Image
           src={bannerUrl}
-          alt={slug}
+          alt="banner"
           className="col-12 rounded-4 destination_banner_img"
           // loading="lazy"
           height={860}
