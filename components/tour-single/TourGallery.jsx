@@ -4,13 +4,12 @@ import Overview from "@/components/tour-single/Overview";
 import SidebarRight from "@/components/tour-single/SidebarRight";
 import TourSnapShot from "@/components/tour-single/TourSnapShot";
 import Image from "next/image";
-import { Gallery, Item } from "react-photoswipe-gallery";
 import HajjSidebarRight from "../hajj/HajjSidebarRight";
 import UmrahSidebarRight from "../umrah/UmrahSidebarRight";
 import useWindowSize from "@/hooks/useWindowSize";
 import "../../styles/weather.scss";
 
-import { useEffect, useState } from "react";
+import { useState } from "react";
 import OverviewSkeleton from "../skeleton/OverviewSkeleton";
 import GalarySkeleton from "../skeleton/GalarySkeleton";
 import { Swiper, SwiperSlide } from "swiper/react";
