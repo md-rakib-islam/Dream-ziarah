@@ -1,59 +1,34 @@
 "use client";
 
-import useTours from "@/hooks/useTours";
 import Image from "next/image";
 import Link from "next/link";
-import { useSearchParams } from "next/navigation";
 import { useDispatch, useSelector } from "react-redux";
-import isTextMatched from "../../../utils/isTextMatched";
 import { useEffect } from "react";
 import { addItemsCount } from "@/features/search/searchSlice";
 import Slider from "react-slick";
 import useWindowSize from "@/hooks/useWindowSize";
+import useToursMobile from "@/hooks/useToursMobile";
 
-const TourProperties = ({ searchLocation }) => {
+const ToursForMobile = ({ searchLocation }) => {
   const dispatch = useDispatch();
-  const searchParams = useSearchParams();
   const width = useWindowSize();
   const isMobile = width < 768;
-  const search = searchParams.get("location");
-  const tourItems = useTours(
-    search
-      ? search == "Makkah"
-        ? "Makka Tours"
-        : search == "Medina"
-        ? "Madina Tours"
-        : search == "Taif"
-        ? "Taif Tours"
-        : search == "Jedda"
-        ? "Jeddah Tours"
-        : ""
-      : searchLocation
-      ? searchLocation == "Makkah"
-        ? "Makka Tours"
-        : searchLocation == "Madina"
-        ? "Madina Tours"
-        : searchLocation == "Taif"
-        ? "Taif Tours"
-        : searchLocation == "Jeddah"
-        ? "Jeddah Tours"
-        : "Makkah"
-      : ""
-  );
-  console.log("sdkf", searchLocation, tourItems);
+  const tourItems = useToursMobile();
   const { currentCurrency } = useSelector((state) => state.currency);
+  const items = useSelector((state) => state.tourItems);
+  console.log("sditemsitemskf", tourItems, items);
 
   useEffect(() => {
     dispatch(
       addItemsCount(
-        `${tourItems.length} tours in ${
-          search == "Makkah"
+        `${tourItems?.length} tours in ${
+          searchLocation == "Makkah"
             ? "Makkah"
-            : search == "Medina"
+            : searchLocation == "Madina"
             ? "Madina"
-            : search == "Taif"
+            : searchLocation == "Taif"
             ? "Taif"
-            : search == "Jedda"
+            : searchLocation == "Jeddah"
             ? "Jeddah"
             : ""
         }`
@@ -161,23 +136,23 @@ const TourProperties = ({ searchLocation }) => {
                     <button
                       style={{
                         backgroundColor:
-                          search == "Makkah"
+                          searchLocation == "Makkah"
                             ? "#353537"
-                            : search == "Medina"
+                            : searchLocation == "Madina"
                             ? "#21b510"
-                            : search == "Taif"
+                            : searchLocation == "Taif"
                             ? "#824007"
-                            : search == "Jedda"
+                            : searchLocation == "Jeddah"
                             ? "#078de6"
                             : "",
                         backgroundImage:
-                          search == "Makkah"
+                          searchLocation == "Makkah"
                             ? "linear-gradient(to right, #353537 , #0d0c0d)"
-                            : search == "Medina"
+                            : searchLocation == "Madina"
                             ? "linear-gradient(to right, #21b510 , #158805)"
-                            : search == "Taif"
+                            : searchLocation == "Taif"
                             ? "linear-gradient(to right, #824007 , #601817)"
-                            : search == "Jedda"
+                            : searchLocation == "Jeddah"
                             ? "linear-gradient(to right, #078de6 , #29317a)"
                             : "",
                       }}
@@ -260,4 +235,4 @@ const TourProperties = ({ searchLocation }) => {
   );
 };
 
-export default TourProperties;
+export default ToursForMobile;

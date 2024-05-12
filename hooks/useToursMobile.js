@@ -381,33 +381,56 @@ export const singleTourInfo = {
       "https://www.google.com/maps/d/u/2/embed?mid=1CM8PjQjW7zWc_PpHMpNHHHRYlZU1-cw&ehbc=2E312F",
   },
 };
-const useTours = (filerTour) => {
+const useToursMobile = () => {
   const [tourItems, setTourItems] = useState([]);
   const { menuItems } = useSelector((state) => state?.menus);
   const { currentCurrency } = useSelector((state) => state?.currency);
+  const currentTab = useSelector((state) => state.hero.currentTab) || {};
+
   // const ziarahId = menuItems.find((item) => item.name == "Ziarah")?.id;
   const ziarahId = menuItems
     .find((item) => item.name === "Tours")
-    ?.children?.find((child) => child?.name == filerTour)?.id;
-  const { isSuccess, data, isLoading } = useGetImagesByMenuIdQuery(ziarahId);
+    ?.children?.find(
+      (child) =>
+        child?.name ==
+        (currentTab == "Makkah"
+          ? "Makka Tours"
+          : currentTab == "Madina"
+          ? "Madina Tours"
+          : currentTab == "Jeddah"
+          ? "Jeddah Tours"
+          : currentTab == "Taif"
+          ? "Taif Tours"
+          : "Makka Tours")
+    )?.id;
+  const { isSuccess, data, isLoading, refetch } =
+    useGetImagesByMenuIdQuery(ziarahId);
   const {
     isSuccess: isContentSuccess,
     data: contentItems,
     isLoading: isContentLoading,
+    refetch: contentRefetch,
   } = useGetAllContentQuery(ziarahId);
+  console.log("filterTour", currentTab, data, contentItems, ziarahId);
+  // console.log("filterTour", isSuccess, isContentSuccess, currentTab);
 
   useEffect(() => {
-    if (isSuccess && isContentSuccess) {
-      let tours = contentItems
+    refetch(ziarahId);
+    contentRefetch(ziarahId);
+  }, [ziarahId]);
+
+  useEffect(() => {
+    if (isSuccess && isContentSuccess && currentTab) {
+      const tours = contentItems
         .filter((item) => {
           if (
-            item.name == "makkah" ||
-            item.name == "medina" ||
-            item.name == "jedda" ||
-            item.name == "jeddah" ||
+            item.name === "makkah" ||
+            item.name === "medina" ||
+            item.name === "jedda" ||
+            item.name === "jeddah" ||
             item.name == "tabuk" ||
             item.name == "Tabuk" ||
-            item.name == "taif"
+            item.name === "taif"
           )
             return false;
           return true;
@@ -431,11 +454,12 @@ const useTours = (filerTour) => {
           position: tour?.position,
         }));
       tours?.sort((a, b) => a.position - b.position);
+      console.log("toures", tours);
       setTourItems(tours);
     }
-  }, [isSuccess, isContentSuccess, currentCurrency]);
+  }, [isSuccess, isContentSuccess, currentCurrency, currentTab]);
 
   return tourItems;
 };
 
-export default useTours;
+export default useToursMobile;
