@@ -67,8 +67,8 @@
       }
     }
 
-    img:nth-child(1) {
-    }
+    // img:nth-child(1) {
+    // }
 
     img:nth-child(2) {
       position: absolute;
@@ -188,12 +188,12 @@
 
 .header .header-menu {
   @include media-above(xl) {
-    &__content {
-    }
+    // &__content {
+    // }
 
     .menu {
-      .menu__nav {
-      }
+      // .menu__nav {
+      // }
       li {
         position: relative;
 
@@ -317,8 +317,8 @@
           grid-template-columns: auto auto auto;
         }
 
-        &__item {
-        }
+        // &__item {
+        // }
 
         &__image {
           width: 270px;
@@ -395,8 +395,8 @@
       height: 100%;
     }
 
-    &-close {
-    }
+    // &-close {
+    // }
 
     .mobile-overlay {
       display: none;

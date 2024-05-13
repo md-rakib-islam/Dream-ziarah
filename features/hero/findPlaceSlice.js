@@ -6,9 +6,9 @@ const initialState = {
     { id: 2, name: "Madina" },
     { id: 3, name: "Jeddah" },
     { id: 4, name: "Taif" },
-    // { id: 5, name: "Car", icon: "icon-car" },
-    // { id: 6, name: "Cruise", icon: "icon-yatch" },
-    // { id: 7, name: "Flights", icon: "icon-tickets" },
+    // { id: 5, name: "Car" },
+    // { id: 6, name: "Cruise" },
+    // { id: 7, name: "Flights" },
   ],
   currentTab: "Makkah",
 };

@@ -37,8 +37,11 @@ const MainHome = () => {
       {/* End Hero 3 */}
       {!isMobile ? (
         <div className="container">
-          <div className="row y-gap-30">
-            <ToursForMobile searchLocation={currentTab} />
+          <div className="row y-gap-30 mb-5">
+            <ToursForMobile
+              searchLocation={currentTab}
+              onDataAvailable={handleDataAvailability}
+            />
           </div>
         </div>
       ) : (

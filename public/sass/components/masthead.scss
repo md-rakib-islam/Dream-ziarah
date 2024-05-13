@@ -55,7 +55,7 @@
 .header-masterhead {
   position: fixed;
   z-index: 1000;
-  top: 90px;
+  top: 75px;
   left: 0;
   display: flex;
   align-items: center;
@@ -64,11 +64,20 @@
   transition: all 0.4s $easeOutQuart;
 
   @include media-below(md) {
-    height: 30px;
+    height: 57px;
   }
 
   &.-fixed {
     position: absolute !important;
+  }
+  &.controls-head {
+    overflow: auto;
+    scroll-snap-type: x mandatory;
+    white-space: nowrap;
+
+    > div {
+      scroll-snap-align: center;
+    }
   }
 
   &.is-sticky {
@@ -157,11 +166,11 @@
         grid-row: span 2;
       }
 
-      > *:nth-child(2) {
-      }
+      // > *:nth-child(2) {
+      // }
 
-      > *:nth-child(3) {
-      }
+      // > *:nth-child(3) {
+      // }
     }
   }
 }

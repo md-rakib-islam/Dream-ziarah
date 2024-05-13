@@ -1,6 +1,6 @@
 .accordion {
-  &__item {
-  }
+  // &__item {
+  // }
 
   &__icon {
     position: relative;
@@ -40,8 +40,8 @@
     transition: max-height 0.2s ease-out;
   }
 
-  &__content__inner {
-  }
+  // &__content__inner {
+  // }
 
   &__button {
     cursor: pointer;
@@ -51,14 +51,14 @@
   color: black;
 }
 .accordion.-simple .accordion {
-  &__item {
-  }
+  // &__item {
+  // }
 
-  &__content {
-  }
+  // &__content {
+  // }
 
-  &__content__inner {
-  }
+  // &__content__inner {
+  // }
 
   &__button {
     cursor: pointer;
@@ -118,14 +118,14 @@
 }
 
 .accordion.-db-sidebar .accordion {
-  &__item {
-  }
+  // &__item {
+  // }
 
-  &__content {
-  }
+  // &__content {
+  // }
 
-  &__content__inner {
-  }
+  // &__content__inner {
+  // }
 
   &__button {
     cursor: pointer;

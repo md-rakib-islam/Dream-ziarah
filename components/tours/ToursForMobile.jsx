@@ -9,7 +9,7 @@ import Slider from "react-slick";
 import useWindowSize from "@/hooks/useWindowSize";
 import useToursMobile from "@/hooks/useToursMobile";
 
-const ToursForMobile = ({ searchLocation }) => {
+const ToursForMobile = ({ searchLocation, onDataAvailable }) => {
   const dispatch = useDispatch();
   const width = useWindowSize();
   const isMobile = width < 768;
@@ -102,6 +102,7 @@ const ToursForMobile = ({ searchLocation }) => {
                           className="col-12 js-lazy"
                           src={slide}
                           alt={item?.title}
+                          onLoad={onDataAvailable(true)}
                         />
                       </div>
                     </div>
