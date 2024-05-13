@@ -21,7 +21,7 @@ const ToursForMobile = dynamic(() =>
 const MainHome = () => {
   const [dataAvailable, setDataAvailable] = useState(false);
   const width = useWindowSize();
-  const isMobile = width < 768;
+  const isMobile = width > 768;
 
   const { currentTab } = useSelector((state) => state.hero) || {};
   // Function to handle data availability
@@ -35,7 +35,7 @@ const MainHome = () => {
       <div className="header-margin"></div>
       <Hero3 onDataAvailable={handleDataAvailability} />
       {/* End Hero 3 */}
-      {isMobile ? (
+      {!isMobile ? (
         <div className="container">
           <div className="row y-gap-30">
             <ToursForMobile searchLocation={currentTab} />

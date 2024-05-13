@@ -403,22 +403,17 @@ const useToursMobile = () => {
           ? "Taif Tours"
           : "Makka Tours")
     )?.id;
-  const { isSuccess, data, isLoading, refetch } =
-    useGetImagesByMenuIdQuery(ziarahId);
+  const { isSuccess, data, isLoading } = useGetImagesByMenuIdQuery(ziarahId);
   const {
     isSuccess: isContentSuccess,
     data: contentItems,
     isLoading: isContentLoading,
-    refetch: contentRefetch,
   } = useGetAllContentQuery(ziarahId);
   console.log("filterTour", currentTab, data, contentItems, ziarahId);
   // console.log("filterTour", isSuccess, isContentSuccess, currentTab);
-
   useEffect(() => {
-    refetch(ziarahId);
-    contentRefetch(ziarahId);
-  }, [ziarahId]);
-
+    console.log("Updated contentItems", contentItems);
+  }, [contentItems]);
   useEffect(() => {
     if (isSuccess && isContentSuccess && currentTab) {
       const tours = contentItems
@@ -428,8 +423,8 @@ const useToursMobile = () => {
             item.name === "medina" ||
             item.name === "jedda" ||
             item.name === "jeddah" ||
-            item.name == "tabuk" ||
-            item.name == "Tabuk" ||
+            item.name === "tabuk" ||
+            item.name === "Tabuk" ||
             item.name === "taif"
           )
             return false;
@@ -437,7 +432,6 @@ const useToursMobile = () => {
         })
         .map((tour) => ({
           id: tour.id,
-          // tag:  tour.id === 10 ? "top rated": tour.id === 9 ? "best seller" : "LIKELY TO SELL OUT*",
           tag: "",
           slideImg: [`${data.content_images[tour.name]}`],
           title: tour.name,
@@ -456,8 +450,19 @@ const useToursMobile = () => {
       tours?.sort((a, b) => a.position - b.position);
       console.log("toures", tours);
       setTourItems(tours);
+    } else {
+      // Clear tour items when either of the dependencies are not ready
+      setTourItems([]);
     }
-  }, [isSuccess, isContentSuccess, currentCurrency, currentTab]);
+  }, [
+    isSuccess,
+    isContentSuccess,
+    currentCurrency,
+    currentTab,
+    contentItems,
+    !isContentLoading,
+    !isLoading,
+  ]);
 
   return tourItems;
 };
