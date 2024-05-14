@@ -1,9 +1,18 @@
 import { singleTourInfo } from "@/hooks/useTours";
 import { Interweave } from "interweave";
+import { useState } from "react";
 import { useSelector } from "react-redux";
 const Overview = ({ hajj }) => {
   const { tourItem } = useSelector((state) => state.tour);
+  const [showFullDescription, setShowFullDescription] = useState(false);
 
+  // Function to toggle between showing full description or half of it
+  const toggleDescription = () => {
+    setShowFullDescription(!showFullDescription);
+  };
+
+  // Calculate the length for displaying half of the description
+  const halfLength = Math.ceil(tourItem?.description.length / 2);
   return (
     <>
       <div className="row x-gap-40 y-gap-40">
@@ -13,8 +22,19 @@ const Overview = ({ hajj }) => {
             allowAttributes
             allowElements
             disableLineBreaks={true}
-            content={tourItem?.description}
+            content={
+              showFullDescription
+                ? tourItem?.description
+                : tourItem?.description.slice(0, halfLength)
+            }
           />
+
+          <button
+            className="d-block lh-15 text-14 text-blue-1 underline fw-600 mt-5"
+            onClick={toggleDescription}
+          >
+            {showFullDescription ? "See Less" : "See More"}
+          </button>
 
           {/* <p className="text-dark-1 text-15 mt-20">
           Over the course of 3 hours, you will embark on a spiritual odyssey that will deepen your understanding of this sacred city.
