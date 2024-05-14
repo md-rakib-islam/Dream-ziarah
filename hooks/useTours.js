@@ -1,5 +1,4 @@
-import { useGetAllContentQuery } from "@/features/content/contentApi";
-import { useGetImagesByMenuIdQuery } from "@/features/image/imageApi";
+import { useGetContentsAndImagesByMenuIdQuery } from "@/features/image/imageApi";
 import convertCurrency from "@/utils/currency";
 import { useEffect, useState } from "react";
 import { useSelector } from "react-redux";
@@ -389,16 +388,12 @@ const useTours = (filerTour) => {
   const ziarahId = menuItems
     .find((item) => item.name === "Tours")
     ?.children?.find((child) => child?.name == filerTour)?.id;
-  const { isSuccess, data, isLoading } = useGetImagesByMenuIdQuery(ziarahId);
-  const {
-    isSuccess: isContentSuccess,
-    data: contentItems,
-    isLoading: isContentLoading,
-  } = useGetAllContentQuery(ziarahId);
+  const { isSuccess, data, isLoading } =
+    useGetContentsAndImagesByMenuIdQuery(ziarahId);
 
   useEffect(() => {
-    if (isSuccess && isContentSuccess) {
-      let tours = contentItems
+    if (isSuccess) {
+      let tours = data
         .filter((item) => {
           if (
             item.name == "makkah" ||
@@ -416,7 +411,7 @@ const useTours = (filerTour) => {
           id: tour.id,
           // tag:  tour.id === 10 ? "top rated": tour.id === 9 ? "best seller" : "LIKELY TO SELL OUT*",
           tag: "",
-          slideImg: [`${data.content_images[tour.name]}`],
+          slideImg: [`${tour.cloudflare_image[0]}`],
           title: tour.name,
           location: singleTourInfo[tour?.name]?.location,
           duration: tour?.duration,
@@ -433,7 +428,7 @@ const useTours = (filerTour) => {
       tours?.sort((a, b) => a.position - b.position);
       setTourItems(tours);
     }
-  }, [isSuccess, isContentSuccess, currentCurrency]);
+  }, [isSuccess, currentCurrency]);
 
   return tourItems;
 };

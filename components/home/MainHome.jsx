@@ -46,11 +46,15 @@ const MainHome = () => {
         </div>
       ) : (
         <>
-          <section className="layout-pt-md layout-pb-md ">
+          <section
+            className="layout-pt-md layout-pb-md "
+            data-aos="fade"
+            data-aos-delay="100"
+          >
             <div className="container">
               <div className="row y-gap-22 justify-between items-start">
                 <div className="col-8 col-lg-auto">
-                  <div className="sectionTitle -md">
+                  <div className="sectionTitle -md ">
                     <h2 className="sectionTitle__title">Ziyarat In Makkah</h2>
                     <p className=" sectionTitle__text mt-5 sm:mt-0">
                       Explore Sacred Ziyarat Places in Makkah
@@ -87,7 +91,10 @@ const MainHome = () => {
             {/* End .container */}
           </section>
           {/* End Tours Sections */}
-
+        </>
+      )}
+      {dataAvailable && (
+        <>
           <section className="layout-pt-md layout-pb-md">
             <div className="container">
               <div className="row y-gap-22 justify-between items-start">
@@ -125,29 +132,28 @@ const MainHome = () => {
 
           <section className="layout-pt-md layout-pb-md">
             <div className="container">
-              {dataAvailable && (
-                <div className="row y-gap-22 justify-between items-start">
-                  <div className="col-8 col-lg-auto">
-                    <div className="sectionTitle -md">
-                      <h2 className="sectionTitle__title">Ziyarat In Jeddah</h2>
-                      <p className=" sectionTitle__text mt-5 sm:mt-0">
-                        Explore Sacred Ziyarat Places in Jeddah
-                      </p>
-                    </div>
+              <div className="row y-gap-22 justify-between items-start">
+                <div className="col-8 col-lg-auto">
+                  <div className="sectionTitle -md">
+                    <h2 className="sectionTitle__title">Ziyarat In Jeddah</h2>
+                    <p className=" sectionTitle__text mt-5 sm:mt-0">
+                      Explore Sacred Ziyarat Places in Jeddah
+                    </p>
                   </div>
-                  {/* End .col */}
-
-                  <div className="col-4 col-lg-auto">
-                    <Link
-                      href="/tours/?location=Jedda"
-                      className="button -md -blue-1 bg-blue-1-05 text-blue-1"
-                    >
-                      More <div className="icon-arrow-top-right ml-15" />
-                    </Link>
-                  </div>
-                  {/* End .col */}
                 </div>
-              )}
+                {/* End .col */}
+
+                <div className="col-4 col-lg-auto">
+                  <Link
+                    href="/tours/?location=Jedda"
+                    className="button -md -blue-1 bg-blue-1-05 text-blue-1"
+                  >
+                    More <div className="icon-arrow-top-right ml-15" />
+                  </Link>
+                </div>
+                {/* End .col */}
+              </div>
+
               {/* End .row */}
 
               <div className="row y-gap-30 pt-40 sm:pt-20 item_gap-x30">
@@ -161,29 +167,28 @@ const MainHome = () => {
 
           <section className="layout-pt-md layout-pb-md">
             <div className="container">
-              {dataAvailable && (
-                <div className="row y-gap-22 justify-between items-start">
-                  <div className="col-8 col-lg-auto">
-                    <div className="sectionTitle -md">
-                      <h2 className="sectionTitle__title">Ziyarat In Taif</h2>
-                      <p className=" sectionTitle__text mt-5 sm:mt-0">
-                        Explore Sacred Ziyarat Places in Taif
-                      </p>
-                    </div>
+              <div className="row y-gap-22 justify-between items-start">
+                <div className="col-8 col-lg-auto">
+                  <div className="sectionTitle -md">
+                    <h2 className="sectionTitle__title">Ziyarat In Taif</h2>
+                    <p className=" sectionTitle__text mt-5 sm:mt-0">
+                      Explore Sacred Ziyarat Places in Taif
+                    </p>
                   </div>
-                  {/* End .col */}
-
-                  <div className="col-4 col-lg-auto">
-                    <Link
-                      href="/tours/?location=Taif"
-                      className="button -md -blue-1 bg-blue-1-05 text-blue-1"
-                    >
-                      More <div className="icon-arrow-top-right ml-15" />
-                    </Link>
-                  </div>
-                  {/* End .col */}
                 </div>
-              )}
+                {/* End .col */}
+
+                <div className="col-4 col-lg-auto">
+                  <Link
+                    href="/tours/?location=Taif"
+                    className="button -md -blue-1 bg-blue-1-05 text-blue-1"
+                  >
+                    More <div className="icon-arrow-top-right ml-15" />
+                  </Link>
+                </div>
+                {/* End .col */}
+              </div>
+
               {/* End .row */}
 
               <div className="row y-gap-30 pt-40 sm:pt-20 item_gap-x30">
@@ -194,10 +199,6 @@ const MainHome = () => {
             {/* End .container */}
           </section>
           {/* End Tours Sections */}
-        </>
-      )}
-      {dataAvailable && (
-        <>
           <section className="layout-pt-md layout-pb-md">
             <div className="container">
               <div className="row justify-center text-center">

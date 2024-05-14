@@ -105,7 +105,11 @@ const Tours = ({ filterTour }) => {
       prevArrow={<Arrow type="prev" />}
     >
       {tourItems?.map((item) => (
-        <div key={item?.id}>
+        <div
+          key={item?.id}
+          // data-aos="fade"
+          // data-aos-delay={item?.delayAnimation}
+        >
           <Link
             href={`/tour/${item?.title?.toLowerCase()?.split(" ")?.join("-")}`}
             style={{ cursor: "pointer" }}

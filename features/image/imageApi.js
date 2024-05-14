@@ -1,4 +1,5 @@
 import {
+  GET_ALL_CONTENT_AND_IMAGES_BY_MENU_ID,
   GET_IMAGE_BY_MENU_ID,
   GET_IMAGE_BY_MENU_NAME,
   GET_SLIDERSETTINGS,
@@ -10,6 +11,13 @@ export const imageApi = apiSlice.injectEndpoints({
     getImagesByMenuId: builder.query({
       query: (menuId) => ({
         url: `${GET_IMAGE_BY_MENU_ID}/${menuId}`,
+        method: "GET",
+      }),
+    }),
+
+    getContentsAndImagesByMenuId: builder.query({
+      query: (menuId) => ({
+        url: `${GET_ALL_CONTENT_AND_IMAGES_BY_MENU_ID}/${menuId}`,
         method: "GET",
       }),
     }),
@@ -30,6 +38,7 @@ export const imageApi = apiSlice.injectEndpoints({
 
 export const {
   useGetImagesByMenuIdQuery,
+  useGetContentsAndImagesByMenuIdQuery,
   useGetImagesByMenuNameQuery,
   useGetSliderImagesQuery,
 } = imageApi;

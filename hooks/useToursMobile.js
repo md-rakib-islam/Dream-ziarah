@@ -1,5 +1,8 @@
 import { useGetAllContentQuery } from "@/features/content/contentApi";
-import { useGetImagesByMenuIdQuery } from "@/features/image/imageApi";
+import {
+  useGetContentsAndImagesByMenuIdQuery,
+  useGetImagesByMenuIdQuery,
+} from "@/features/image/imageApi";
 import convertCurrency from "@/utils/currency";
 import { useEffect, useState } from "react";
 import { useSelector } from "react-redux";
@@ -403,20 +406,14 @@ const useToursMobile = () => {
           ? "Taif Tours"
           : "Makka Tours")
     )?.id;
-  const { isSuccess, data, isLoading } = useGetImagesByMenuIdQuery(ziarahId);
-  const {
-    isSuccess: isContentSuccess,
-    data: contentItems,
-    isLoading: isContentLoading,
-  } = useGetAllContentQuery(ziarahId);
-  console.log("filterTour", currentTab, data, contentItems, ziarahId);
-  // console.log("filterTour", isSuccess, isContentSuccess, currentTab);
+  const { isSuccess, data, isLoading } =
+    useGetContentsAndImagesByMenuIdQuery(ziarahId);
+
+  console.log("filterTour", currentTab, isSuccess, data, ziarahId);
+
   useEffect(() => {
-    console.log("Updated contentItems", contentItems);
-  }, [contentItems]);
-  useEffect(() => {
-    if (isSuccess && isContentSuccess && currentTab) {
-      const tours = contentItems
+    if (isSuccess && currentTab) {
+      const tours = data
         .filter((item) => {
           if (
             item.name === "makkah" ||
@@ -433,7 +430,7 @@ const useToursMobile = () => {
         .map((tour) => ({
           id: tour.id,
           tag: "",
-          slideImg: [`${data.content_images[tour.name]}`],
+          slideImg: [`${tour.cloudflare_image[0]}`],
           title: tour.name,
           location: singleTourInfo[tour?.name]?.location,
           duration: tour?.duration,
@@ -454,15 +451,7 @@ const useToursMobile = () => {
       // Clear tour items when either of the dependencies are not ready
       setTourItems([]);
     }
-  }, [
-    isSuccess,
-    isContentSuccess,
-    currentCurrency,
-    currentTab,
-    contentItems,
-    !isContentLoading,
-    !isLoading,
-  ]);
+  }, [isSuccess, currentCurrency, currentTab, data, !isLoading]);
 
   return tourItems;
 };
