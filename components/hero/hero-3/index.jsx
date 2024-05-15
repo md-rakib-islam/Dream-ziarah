@@ -7,8 +7,7 @@ import CoverSkeleton from "@/components/skeleton/CoverSkeleton";
 import useWindowSize from "@/hooks/useWindowSize";
 import { useDispatch, useSelector } from "react-redux";
 import { addCurrentTab } from "@/features/hero/findPlaceSlice";
-const index = ({ onDataAvailable }) => {
-  const { isSuccess, isLoading, data } = useGetSliderImagesQuery();
+const index = ({ onDataAvailable, isSuccess, isLoading, data }) => {
   const width = useWindowSize();
   const isMobile = width > 768;
 
@@ -22,6 +21,13 @@ const index = ({ onDataAvailable }) => {
     } else {
       setNavbar(false);
     }
+  };
+
+  const scrollToTop = () => {
+    window.scrollTo({
+      top: 0,
+      behavior: "smooth",
+    });
   };
 
   useEffect(() => {
@@ -73,7 +79,10 @@ const index = ({ onDataAvailable }) => {
                         className={`tabs__button px-30 py-20 sm:px-20 sm:py-15 rounded-4 fw-600 text-white js-tabs-button ${
                           tab?.name === currentTab ? "is-tab-el-active" : ""
                         }`}
-                        onClick={() => dispatch(addCurrentTab(tab?.name))}
+                        onClick={() => {
+                          scrollToTop();
+                          dispatch(addCurrentTab(tab?.name));
+                        }}
                       >
                         {/* <i className={`${tab.icon} text-20 mr-10 sm:mr-5`}></i> */}
                         {tab?.name}

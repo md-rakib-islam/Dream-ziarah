@@ -1,4 +1,5 @@
 "use client";
+import { useGetSliderImagesQuery } from "@/features/image/imageApi";
 import useWindowSize from "@/hooks/useWindowSize";
 import dynamic from "next/dynamic";
 import Link from "next/link";
@@ -19,6 +20,8 @@ const ToursForMobile = dynamic(() =>
 );
 
 const MainHome = () => {
+  const { isSuccess, isLoading, data } = useGetSliderImagesQuery();
+
   const [dataAvailable, setDataAvailable] = useState(false);
   const width = useWindowSize();
   const isMobile = width > 768;
@@ -33,24 +36,120 @@ const MainHome = () => {
     <>
       {/* <Hero7/> */}
       <div className="header-margin"></div>
-      <Hero3 onDataAvailable={handleDataAvailability} />
+      <Hero3
+        onDataAvailable={handleDataAvailability}
+        isSuccess={isSuccess}
+        isLoading={isLoading}
+        data={data}
+      />
       {/* End Hero 3 */}
       {!isMobile ? (
-        <div className="container">
-          <div className="row y-gap-30 mb-5">
-            <ToursForMobile
-              searchLocation={currentTab}
-              onDataAvailable={handleDataAvailability}
-            />
-          </div>
-        </div>
-      ) : (
         <>
-          <section
-            className="layout-pt-md layout-pb-md "
-            data-aos="fade"
-            data-aos-delay="100"
-          >
+          <div className="container">
+            <div className="row y-gap-30 mb-5">
+              <ToursForMobile
+                searchLocation={currentTab}
+                onDataAvailable={handleDataAvailability}
+              />
+            </div>
+          </div>
+
+          {dataAvailable && (
+            <>
+              <section className="layout-pt-md layout-pb-md">
+                <div className="container">
+                  <div className="row justify-center text-center">
+                    <div className="col-auto">
+                      <div className="sectionTitle -md">
+                        <h2 className="sectionTitle__title">
+                          Why Book With Us
+                        </h2>
+                        <p className=" sectionTitle__text mt-5 sm:mt-0">
+                          Experience Quality and Excellence with DreamZiarah
+                        </p>
+                      </div>
+                    </div>
+                  </div>
+                  {/* End .row */}
+
+                  <div className="row y-gap-40 justify-between pt-50">
+                    <WhyChoose />
+                  </div>
+                  {/* End row */}
+                </div>
+                {/* End .container */}
+              </section>
+              {/* End Why choose Section */}
+              <section
+                style={{ backgroundColor: "#EAFBF7" }}
+                className="layout-pt-md layout-pb-md"
+              >
+                <div className="container">
+                  <div className="row justify-center text-center">
+                    <div className="col-auto">
+                      <div className="sectionTitle -md">
+                        <h2 className="sectionTitle__title">
+                          Free cancellation
+                        </h2>
+                        <p
+                          style={{ color: "black" }}
+                          className="mt-5 sm:mt-4 bannar_mobile"
+                        >
+                          You'll receive a full refund if you cancel at least 24{" "}
+                          <br /> hours in advance of most experiences.
+                        </p>
+                        <p
+                          style={{ color: "black" }}
+                          className="mt-5 sm:mt-4 bannar_desktop"
+                        >
+                          You'll receive a full refund if you cancel at least 24
+                          hours in advance of most experiences.
+                        </p>
+                      </div>
+                    </div>
+                  </div>
+                  {/* End .row */}
+                </div>
+                {/* End .container */}
+              </section>
+
+              {/* End Why choose Section */}
+              <section className="layout-pt-md layout-pb-md">
+                <div className="container">
+                  <div className="row justify-center text-center">
+                    <div className="col-auto">
+                      <div className="sectionTitle -md">
+                        <h2 className="sectionTitle__title">
+                          Top Destinations
+                        </h2>
+                        <p className=" sectionTitle__text mt-5 sm:mt-0">
+                          Explore Exciting Destinations, Tailored for Every
+                          Explorer
+                        </p>
+                      </div>
+                    </div>
+                  </div>
+                  {/* End .row */}
+
+                  <div className="row y-gap-40 pt-40 sm:pt-20">
+                    <TopDestinations />
+                  </div>
+                  {/* End .row */}
+                </div>
+                {/* End .container */}
+              </section>
+
+              {/* End Top Destinations Section */}
+            </>
+          )}
+        </>
+      ) : (
+        ""
+      )}
+
+      {isMobile && (
+        <>
+          <section className="layout-pt-md layout-pb-md ">
             <div className="container">
               <div className="row y-gap-22 justify-between items-start">
                 <div className="col-8 col-lg-auto">
@@ -90,10 +189,11 @@ const MainHome = () => {
             </div>
             {/* End .container */}
           </section>
-          {/* End Tours Sections */}
+          {/* End Makka Tours Sections */}
         </>
       )}
-      {dataAvailable && (
+
+      {dataAvailable && isMobile && (
         <>
           <section className="layout-pt-md layout-pb-md">
             <div className="container">
@@ -128,7 +228,7 @@ const MainHome = () => {
             </div>
             {/* End .container */}
           </section>
-          {/* End Tours Sections */}
+          {/* End Madina Tours Sections */}
 
           <section className="layout-pt-md layout-pb-md">
             <div className="container">
@@ -163,7 +263,7 @@ const MainHome = () => {
             </div>
             {/* End .container */}
           </section>
-          {/* End Tours Sections */}
+          {/* End Jedda Tours Sections */}
 
           <section className="layout-pt-md layout-pb-md">
             <div className="container">
@@ -198,7 +298,7 @@ const MainHome = () => {
             </div>
             {/* End .container */}
           </section>
-          {/* End Tours Sections */}
+          {/* End Taif Tours Sections */}
           <section className="layout-pt-md layout-pb-md">
             <div className="container">
               <div className="row justify-center text-center">
