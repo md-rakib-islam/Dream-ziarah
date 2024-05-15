@@ -51,6 +51,175 @@ const MainHome = () => {
                 searchLocation={currentTab}
                 onDataAvailable={handleDataAvailability}
               />
+              {currentTab == "Makkah" ? (
+                ""
+              ) : (
+                <section className="layout-pt-md layout-pb-md ">
+                  <div className="container">
+                    <div className="row y-gap-22 justify-between items-start">
+                      <div className="col-8 col-lg-auto">
+                        <div className="sectionTitle -md ">
+                          <h2 className="sectionTitle__title">
+                            Ziyarat In Makkah
+                          </h2>
+                          <p className=" sectionTitle__text mt-5 sm:mt-0">
+                            Explore Sacred Ziyarat Places in Makkah
+                          </p>
+                        </div>
+                      </div>
+                      {/* End .col */}
+
+                      <div className="col-4 col-lg-auto">
+                        <Link
+                          href="/tours/?location=Makkah"
+                          className="button -md -blue-1 bg-blue-1-05 text-blue-1"
+                        >
+                          More <div className="icon-arrow-top-right ml-15" />
+                        </Link>
+                      </div>
+                      {/* End .col */}
+                    </div>
+
+                    {/* End .row */}
+
+                    <div
+                      className="row y-gap-30 pt-40 sm:pt-20 item_gap-x30"
+                      // style={{ marginLeft: "15px" }}
+                    >
+                      {/* {!dataAvailable ? (
+<TourSkeleton />
+) : ( */}
+                      <Tours />
+                      {/* )} */}
+                    </div>
+                    {/* End .row */}
+                  </div>
+                  {/* End .container */}
+                </section>
+              )}
+              {/* End Makka Tours Sections */}
+              {currentTab == "Madina" ? (
+                ""
+              ) : (
+                <section className="layout-pt-md layout-pb-md">
+                  <div className="container">
+                    <div className="row y-gap-22 justify-between items-start">
+                      <div className="col-8 col-lg-auto ">
+                        <div className="sectionTitle -md">
+                          <h2 className="sectionTitle__title">
+                            Ziyarat In Madina
+                          </h2>
+                          <p className=" sectionTitle__text mt-5 sm:mt-0">
+                            Explore Sacred Ziyarat Places in Madina
+                          </p>
+                        </div>
+                      </div>
+                      {/* End .col */}
+
+                      <div className="col-4 col-lg-auto">
+                        <Link
+                          href="/tours/?location=Medina"
+                          className="button -md -blue-1 bg-blue-1-05 text-blue-1"
+                        >
+                          More <div className="icon-arrow-top-right ml-15" />
+                        </Link>
+                      </div>
+                      {/* End .col */}
+                    </div>
+
+                    {/* End .row */}
+
+                    <div className="row y-gap-30 pt-40 sm:pt-20 item_gap-x30">
+                      <ToursMadina />
+                    </div>
+                    {/* End .row */}
+                  </div>
+                  {/* End .container */}
+                </section>
+              )}
+              {/* End Madina Tours Sections */}
+
+              {currentTab == "Jeddah" ? (
+                ""
+              ) : (
+                <section className="layout-pt-md layout-pb-md">
+                  <div className="container">
+                    <div className="row y-gap-22 justify-between items-start">
+                      <div className="col-8 col-lg-auto">
+                        <div className="sectionTitle -md">
+                          <h2 className="sectionTitle__title">
+                            Ziyarat In Jeddah
+                          </h2>
+                          <p className=" sectionTitle__text mt-5 sm:mt-0">
+                            Explore Sacred Ziyarat Places in Jeddah
+                          </p>
+                        </div>
+                      </div>
+                      {/* End .col */}
+
+                      <div className="col-4 col-lg-auto">
+                        <Link
+                          href="/tours/?location=Jedda"
+                          className="button -md -blue-1 bg-blue-1-05 text-blue-1"
+                        >
+                          More <div className="icon-arrow-top-right ml-15" />
+                        </Link>
+                      </div>
+                      {/* End .col */}
+                    </div>
+
+                    {/* End .row */}
+
+                    <div className="row y-gap-30 pt-40 sm:pt-20 item_gap-x30">
+                      <ToursJedda />
+                    </div>
+                    {/* End .row */}
+                  </div>
+                  {/* End .container */}
+                </section>
+              )}
+              {/* End Jedda Tours Sections */}
+
+              {currentTab == "Taif" ? (
+                ""
+              ) : (
+                <section className="layout-pt-md layout-pb-md">
+                  <div className="container">
+                    <div className="row y-gap-22 justify-between items-start">
+                      <div className="col-8 col-lg-auto">
+                        <div className="sectionTitle -md">
+                          <h2 className="sectionTitle__title">
+                            Ziyarat In Taif
+                          </h2>
+                          <p className=" sectionTitle__text mt-5 sm:mt-0">
+                            Explore Sacred Ziyarat Places in Taif
+                          </p>
+                        </div>
+                      </div>
+                      {/* End .col */}
+
+                      <div className="col-4 col-lg-auto">
+                        <Link
+                          href="/tours/?location=Taif"
+                          className="button -md -blue-1 bg-blue-1-05 text-blue-1"
+                        >
+                          More <div className="icon-arrow-top-right ml-15" />
+                        </Link>
+                      </div>
+                      {/* End .col */}
+                    </div>
+
+                    {/* End .row */}
+
+                    <div className="row y-gap-30 pt-40 sm:pt-20 item_gap-x30">
+                      <ToursTaif />
+                    </div>
+                    {/* End .row */}
+                  </div>
+                  {/* End .container */}
+                </section>
+              )}
+              {/* End Taif Tours Sections */}
             </div>
           </div>
 
